@@ -1,0 +1,19 @@
+# robots.txt — LUCAS
+User-agent: *
+Allow: /
+
+# Block nothing — full site indexable
+# AI crawlers explicitly welcomed for B2B discovery
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+Sitemap: https://lucasua.com/sitemap.xml

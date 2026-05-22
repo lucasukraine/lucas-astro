@@ -1,0 +1,4914 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- Primary SEO -->
+<title>Аудит, SAF-T, ТЦ та міграція на Odoo — LUCAS | Аудиторська компанія</title>
+<meta name="description" content="LUCAS — аудиторська та технологічна компанія. Аудит фінансової звітності за МСА, підготовка МСФЗ-звітності, SAF-T Connector, трансфертне ціноутворення, міграція обліку з 1С/BAS на Odoo. Київ." />
+<meta name="keywords" content="аудит фінансової звітності, аудиторська компанія Київ, обовʼязковий аудит, МСФЗ звітність, SAF-T Україна, SAF-T Connector, трансфертне ціноутворення, ТЦ документація, міграція з 1С на Odoo, заборона 1С, консолідована звітність" />
+<link rel="canonical" href="https://lucasukraine.github.io/lucas-website/" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+<meta name="author" content="ТОВ «Лукас Аудит»" />
+<meta name="geo.region" content="UA-30" />
+<meta name="geo.placename" content="Київ" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="LUCAS" />
+<meta property="og:locale" content="uk_UA" />
+<meta property="og:title" content="LUCAS — аудит, SAF-T, ТЦ та міграція на Odoo" />
+<meta property="og:description" content="Аудиторська та технологічна компанія: аудит за МСА, МСФЗ-звітність, SAF-T Connector, трансфертне ціноутворення, міграція з 1С/BAS на Odoo." />
+<meta property="og:url" content="https://lucasukraine.github.io/lucas-website/" />
+<meta property="og:image" content="https://lucasukraine.github.io/lucas-website/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="LUCAS — аудит, SAF-T, ТЦ та міграція на Odoo" />
+<meta name="twitter:description" content="Аудиторська та технологічна компанія: аудит за МСА, МСФЗ-звітність, SAF-T Connector, ТЦ, міграція з 1С/BAS на Odoo." />
+<meta name="twitter:image" content="https://lucasukraine.github.io/lucas-website/og-image.jpg" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3R5bGU9ImRpc3BsYXk6IGJsb2NrOyIgdmlld0JveD0iMCAwIDIwNDggMjA0OCIgd2lkdGg9IjEwMjQiIGhlaWdodD0iMTAyNCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsMCkiIGZpbGw9InJnYigyNTQsMjU0LDI1NCkiIGQ9Ik0gMCAwIEwgMjA0OCAwIEwgMjA0OCAyMDQ4IEwgMCAyMDQ4IEwgMCAwIHoiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwwKSIgZmlsbD0icmdiKDAsMCwwKSIgZD0iTSAzODcuNjQxIDM2LjQyNzUgQyAzOTkuODE3IDM1LjMyODQgNDE0LjAzNCAzNi4wMzIxIDQyNi4zNzggMzUuODk2OCBDIDQ0My45NTggMzUuNzA0IDQ2MS42NTUgMzUuODk2IDQ3OS4yNDYgMzUuOTAzMiBMIDY0OS4wODQgMzUuOTE1NiBMIDExNzEuMDIgMzUuOTI5NyBMIDE1MDUuMzQgMzUuOTA2MSBMIDE2MDEuMTkgMzUuODc2MyBDIDE2MzguNDkgMzUuODczIDE2NjYuNzQgMzQuOTE5NiAxNzAzLjU1IDQxLjQyNTggQyAxNzcyLjg4IDU0LjA4ODIgMTgzNy4yNiA4NS45NTAzIDE4ODkuMzggMTMzLjM4OSBDIDE5NjMuMzggMjAxLjI0MSAyMDA5LjIgMjkzLjg0NCAyMDEzLjAyIDM5NC42NyBDIDIwMTQuMzUgNDI5Ljg2OCAyMDEzLjcgNDY1LjYyMiAyMDEzLjY3IDUwMC44NzcgTCAyMDEzLjY1IDY2OS4yMzEgTCAyMDEzLjYyIDEyMDYuMTcgTCAyMDEzLjYyIDE1MDUuODYgTCAyMDEzLjYzIDE1OTEuNDIgQyAyMDEzLjYzIDE2MTguNTkgMjAxNCAxNjQ1LjQ1IDIwMTAuOTEgMTY3Mi41MSBDIDE5OTAuODEgMTg0OC41NiAxODM3Ljc3IDE5OTMuOTkgMTY1OS43OCAyMDAxLjE5IEMgMTY1OS4wNiAyMDAxLjI2IDE2NTguMzMgMjAwMS4zMiAxNjU3LjYxIDIwMDEuMzcgQyAxNjMyLjY0IDIwMDMuMTYgMTU5NC4zNiAyMDAyIDE1NjguODYgMjAwMiBMIDE0MDYuMzkgMjAwMS45OCBMIDkwMC41OTkgMjAwMS45OCBMIDU0OC4yODUgMjAwMS45OSBMIDQ0OC40NDcgMjAwMiBDIDQxNC40MzQgMjAwMiAzODEuNDggMjAwMi43NyAzNDcuNzY4IDE5OTYuOTggQyAyNzguNzkzIDE5ODQuOTEgMjE0LjQ4NiAxOTU0LjA0IDE2MS45MTkgMTkwNy43OCBDIDg4LjU0MSAxODQzLjM4IDQzLjE2ODMgMTc1Mi45IDM1LjQ0MTcgMTY1NS41NyBDIDMzLjIwNyAxNjIzLjY4IDM0LjEzMDggMTU4NS42MiAzNC4xNDQ5IDE1NTMuMjQgTCAzNC4xNTkxIDEzOTUuNyBMIDM0LjE4MjkgODkzLjczNyBMIDM0LjE1NjQgNTUyLjUzNCBMIDM0LjEyMzkgNDU1Ljg2MiBDIDM0LjEwNzYgNDE3Ljk3NyAzMy4zMzk1IDM4NS4wNDMgMzkuOTk5NCAzNDcuNTM0IEMgNTIuNDA0OSAyNzkuMTEzIDgzLjM3MjkgMjE1LjQxNSAxMjkuNTIxIDE2My4zOTggQyAxOTUuMzI3IDg4LjUyOTcgMjg4LjE3MSA0Mi44NTkgMzg3LjY0MSAzNi40Mjc1IHoiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwwKSIgZmlsbD0icmdiKDI1NCwyNTQsMjU0KSIgZD0iTSA1MzAuMDU2IDM3NC4wMjggTCA3NDcuNTc0IDM3NC4wODMgTCA3NDcuNTI1IDEzNjQuMDEgTCAxNjQyLjg3IDEzNjQuMDQgQyAxNjMyLjY3IDEzNzcuNTIgMTYyMS42OSAxMzk0LjQyIDE2MTEuODYgMTQwOC42MSBMIDE1NjAuODEgMTQ4MS41MyBDIDE1NDMuMTcgMTUwNy44NCAxNTIyLjQgMTUzNS45NiAxNTAzLjk0IDE1NjEuOTUgTCA1MzAuMDIzIDE1NjEuOTYgQyA1MjkuNDM5IDE1MDguMTUgNTI5Ljk0IDE0NTMuMzggNTI5LjkzNSAxMzk5LjQ2IEwgNTI5Ljk1NSAxMDgyLjU2IEwgNTMwLjA1NiAzNzQuMDI4IHoiLz4KPC9zdmc+" />
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230d0d10'/%3E%3Ctext x='50' y='68' font-family='Arial,sans-serif' font-size='52' font-weight='700' fill='%23ff5c1f' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init({ publicKey: 'iY16Y2CF5ffzdZCbh' });</script>
+
+<!-- Structured Data — Organization / ProfessionalService -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AccountingService",
+  "@id": "https://lucasukraine.github.io/lucas-website/#organization",
+  "name": "LUCAS",
+  "legalName": "ТОВ «Лукас Аудит»",
+  "url": "https://lucasukraine.github.io/lucas-website/",
+  "description": "Аудиторська та технологічна компанія: аудит фінансової звітності за МСА, підготовка МСФЗ-звітності, SAF-T Connector, трансфертне ціноутворення, міграція обліку з 1С/BAS на Odoo.",
+  "telephone": "+380443447915",
+  "email": "info@lucasua.com",
+  "areaServed": { "@type": "Country", "name": "Україна" },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "пл. Спортивна, 1а, БЦ Гулівер, Вежа А, 17 поверх",
+    "addressLocality": "Київ",
+    "postalCode": "01601",
+    "addressCountry": "UA"
+  },
+  "knowsAbout": [
+    "Аудит фінансової звітності",
+    "Міжнародні стандарти аудиту",
+    "МСФЗ звітність",
+    "SAF-T",
+    "Трансфертне ціноутворення",
+    "Міграція на Odoo ERP"
+  ]
+}
+</script>
+
+<!-- Structured Data — Services -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {
+      "@type": "Service",
+      "position": 1,
+      "name": "Аудит та звітність",
+      "serviceType": "Аудит фінансової звітності",
+      "description": "Незалежний аудит фінансової звітності за Міжнародними стандартами аудиту та підготовка МСФЗ-звітності для підприємств суспільного інтересу, великих і середніх компаній.",
+      "provider": { "@id": "https://lucasukraine.github.io/lucas-website/#organization" },
+      "areaServed": { "@type": "Country", "name": "Україна" }
+    },
+    {
+      "@type": "Service",
+      "position": 2,
+      "name": "SAF-T Connector",
+      "serviceType": "Підготовка та подача SAF-T",
+      "description": "Власна платформа для підготовки SAF-T, незалежна від ERP-систем: підключається до SAP, 1С/BAS, Odoo, Microsoft Dynamics та кастомних систем. Впровадження під ключ.",
+      "provider": { "@id": "https://lucasukraine.github.io/lucas-website/#organization" },
+      "areaServed": { "@type": "Country", "name": "Україна" }
+    },
+    {
+      "@type": "Service",
+      "position": 3,
+      "name": "Міграція обліку з 1С / BAS на Odoo",
+      "serviceType": "Міграція ERP",
+      "description": "Перехід з 1С/BAS на сучасну ERP-платформу Odoo під методологічним контролем аудиторської команди — з фокусом на облікову логіку та звітність.",
+      "provider": { "@id": "https://lucasukraine.github.io/lucas-website/#organization" },
+      "areaServed": { "@type": "Country", "name": "Україна" }
+    },
+    {
+      "@type": "Service",
+      "position": 4,
+      "name": "Трансфертне ціноутворення",
+      "serviceType": "Трансфертне ціноутворення",
+      "description": "Документація, аналіз і захист позиції по контрольованих операціях відповідно до ст. 39 ПКУ та настанов ОЕСР: реєстр КО, майстер-файл, локальний файл, benchmark-аналіз, звіт про КО.",
+      "provider": { "@id": "https://lucasukraine.github.io/lucas-website/#organization" },
+      "areaServed": { "@type": "Country", "name": "Україна" }
+    }
+  ]
+}
+</script>
+
+<!-- Structured Data — FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Які компанії в Україні зобов'язані проходити обов'язковий аудит у 2026?", "acceptedAnswer": { "@type": "Answer", "text": "Обов'язковий аудит проходять підприємства суспільного інтересу (ПСІ), великі та середні підприємства відповідно до Закону «Про аудит фінансової звітності». До ПСІ належать публічні акціонерні товариства, банки, страховики та інші категорії. Перевірка виконується за Міжнародними стандартами аудиту." } },
+    { "@type": "Question", "name": "Чим відрізняється аудит від огляду фінансової звітності?", "acceptedAnswer": { "@type": "Answer", "text": "Аудит надає обґрунтовану впевненість і виконується за повним обсягом процедур МСА з аудиторським звітом за МСА 700. Огляд (review) за МСЗО 2400 надає обмежену впевненість, виконується швидше і коштує менше — підходить коли повний аудит не вимагається законом." } },
+    { "@type": "Question", "name": "Чи може аудиторська компанія одночасно вести облік і робити аудит?", "acceptedAnswer": { "@type": "Answer", "text": "Ні. Це пряма заборона за Міжнародним кодексом етики та МСА. Аудитор не може перевіряти звітність, яку сам підготував — це порушує принцип незалежності. LUCAS надає або аудит, або підготовку звітності для одного клієнта, але не обидві послуги одночасно." } },
+    { "@type": "Question", "name": "Що таке SAF-T і кого це стосується в Україні?", "acceptedAnswer": { "@type": "Answer", "text": "SAF-T (Standard Audit File for Tax) — стандартизований XML-файл для передачі детальних облікових даних до Державної податкової служби. В Україні запроваджується поетапно, починаючи з великих платників податків. Файл містить всі господарські операції, первинні документи та довідники." } },
+    { "@type": "Question", "name": "Чи можна подавати SAF-T напряму з 1С/BAS, SAP або Odoo?", "acceptedAnswer": { "@type": "Answer", "text": "Вбудовані модулі SAF-T в 1С/BAS або SAP працюють тільки з однією системою і мають обмежену швидкість обробки. SAF-T Connector від LUCAS підключається до SAP, 1С/BAS, Odoo, Microsoft Dynamics та будь-яких кастомних систем одночасно." } },
+    { "@type": "Question", "name": "Які штрафи передбачені за неподачу SAF-T?", "acceptedAnswer": { "@type": "Answer", "text": "Неподача або несвоєчасна подача SAF-T розглядається як порушення податкового законодавства зі штрафними санкціями відповідно до Податкового кодексу. Компанія ризикує підвищеною увагою ДПС, частішими перевірками та затримками відшкодування ПДВ." } },
+    { "@type": "Question", "name": "Хто зобов'язаний готувати документацію з трансфертного ціноутворення?", "acceptedAnswer": { "@type": "Answer", "text": "Компанії, що здійснюють контрольовані операції з пов'язаними особами або нерезидентами з низькоподаткових юрисдикцій — за умови досягнення вартісних критеріїв ст. 39 ПКУ." } },
+    { "@type": "Question", "name": "Що буде, якщо не подати звіт про контрольовані операції?", "acceptedAnswer": { "@type": "Answer", "text": "Штраф за неподачу звіту про КО встановлюється у відсотках від суми незадекларованих операцій. Якщо ДПС виявить що ціни не відповідають принципу «витягнутої руки» — донараховує податок на прибуток плюс штраф плюс пеня." } },
+    { "@type": "Question", "name": "Що таке Master File і коли він потрібен для ТЦ?", "acceptedAnswer": { "@type": "Answer", "text": "Майстер-файл — частина тристоронньої структури документації ОЕСР: опис глобального бізнесу групи, функцій учасників і ризиків. Готується для учасників міжнародних груп компаній разом із повідомленням про участь у МГК і локальним файлом." } },
+    { "@type": "Question", "name": "Чи заборонено 1С/BAS в Україні у 2026 році?", "acceptedAnswer": { "@type": "Answer", "text": "Для органів державної влади, держпідприємств та об’єктів критичної інфраструктури діють обмеження (Постанова КМУ №1335). Для приватного сектору — обмеження через санкційні списки РНБО та ризик штрафів до 2% річного обороту за законопроєктом №13505. Використання 1C/BAS може створювати додаткові питання з боку банків та інвесторів." } },
+    { "@type": "Question", "name": "Чим замінити 1С/BAS в Україні — реальні альтернативи 2026", "acceptedAnswer": { "@type": "Answer", "text": "Основні альтернативи: Odoo (4 місце у світі, TCO на 70–80% нижчий за SAP), SAP S/4HANA (для великих підприємств), Microsoft Dynamics 365. Для більшості українського середнього бізнесу Odoo є оптимальним вибором за функціональністю, вартістю та швидкістю впровадження." } },
+    { "@type": "Question", "name": "Скільки часу займає міграція з 1С на Odoo?", "acceptedAnswer": { "@type": "Answer", "text": "Від 2 до 6 місяців залежно від масштабу. Малий бізнес — 2–3 місяці, середній з кількома юрособами — 4–6 місяців. Ключовий фактор швидкості: команда яка розуміє і облік, і технологію." } }
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --black:#000000;
+    --paper:#ffffff;
+    --anthracite:#18181b;
+    --offwhite:#f4f4f5;
+    --warm:#edeae2;   /* warm off-white — glass reads against this */
+    --dark-section:#0d0d10; /* near-black for solutions */
+
+    /* Glass surfaces */
+    --glass-light:rgba(255,255,255,.58);
+    --glass-light-border:rgba(255,255,255,.75);
+    --glass-light-shadow:0 2px 28px rgba(0,0,0,.06), inset 0 1px 0 rgba(255,255,255,.92);
+    --glass-dark:rgba(255,255,255,.07);
+    --glass-dark-border:rgba(255,255,255,.12);
+    --glass-dark-shadow:0 4px 32px rgba(0,0,0,.36), inset 0 1px 0 rgba(255,255,255,.07);
+
+    --ink:#0a0a0a;
+    --ink-soft:#52525b;
+    --ink-mute:#71717a;
+    --on-dark:#fafafa;
+    --on-dark-soft:rgba(255,255,255,.66);
+    --on-dark-mute:rgba(255,255,255,.42);
+
+    --line:rgba(10,10,10,.08);
+    --line-strong:rgba(10,10,10,.14);
+    --line-dark:rgba(255,255,255,.10);
+
+    --orange:#ff5c1f;
+    --cyan:#00d8ff;
+
+    --display:"Onest", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --body:"Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mono:ui-monospace, SFMono-Regular, Menlo, Monaco, "Cascadia Code", monospace;
+
+    --max:1280px;
+    --gut:32px;
+
+    --ease:cubic-bezier(.16,.84,.3,1);
+  }
+
+  * { box-sizing:border-box; }
+  html { scroll-behavior:auto; -webkit-text-size-adjust:100%; }
+  body {
+    margin:0;
+    font-family:var(--body);
+    font-weight:400;
+    font-size:16px;
+    line-height:1.6;
+    color:var(--ink);
+    background:var(--warm);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    overflow-x:hidden;
+  }
+  a { color:inherit; text-decoration:none; }
+  img, svg { display:block; max-width:100%; }
+  h1, h2, h3, h4, h5, p { margin:0; }
+  ::selection { background:var(--orange); color:#fff; }
+
+  /* TYPOGRAPHY */
+  h1, h2, h3, h4 {
+    font-family:var(--display);
+    font-weight:500;
+    line-height:1.04;
+    letter-spacing:-0.028em;
+    text-wrap:balance;
+  }
+  h2 {
+    font-size:clamp(36px, 4.8vw, 68px);
+    letter-spacing:-0.035em;
+    line-height:1.02;
+  }
+  h3 {
+    font-size:clamp(20px, 1.8vw, 26px);
+    letter-spacing:-0.018em;
+    line-height:1.22;
+  }
+  h4 {
+    font-size:19px;
+    font-weight:500;
+    letter-spacing:-0.012em;
+    line-height:1.3;
+  }
+  .lead {
+    font-size:clamp(17px, 1.35vw, 20px);
+    line-height:1.55;
+    color:var(--ink-soft);
+    font-weight:400;
+  }
+  p { color:var(--ink-soft); }
+
+  .eyebrow {
+    display:inline-flex;
+    align-items:center;
+    gap:11px;
+    font-family:var(--body);
+    font-size:11.5px;
+    font-weight:500;
+    text-transform:uppercase;
+    letter-spacing:0.22em;
+    color:var(--ink-mute);
+  }
+  .eyebrow::before {
+    content:"";
+    width:6px; height:6px;
+    background:var(--orange);
+    border-radius:50%;
+    flex:none;
+  }
+  .eyebrow.cyan-dot::before { background:var(--cyan); }
+  .eyebrow.on-dark { color:rgba(255,255,255,.7); }
+
+  /* LAYOUT */
+  .container {
+    width:100%;
+    max-width:var(--max);
+    margin:0 auto;
+    padding:0 var(--gut);
+  }
+  section { padding:160px 0; position:relative; }
+
+  .head {
+    text-align:center;
+    max-width:780px;
+    margin:0 auto 96px;
+  }
+  .head .eyebrow { justify-content:center; }
+  .head h2 { margin-top:22px; }
+  .head .lead { margin:30px auto 0; max-width:62ch; }
+
+  .on-dark .head .lead { color:var(--on-dark-soft); }
+  .on-dark .head .eyebrow { color:rgba(255,255,255,.7); }
+  .on-dark h1, .on-dark h2, .on-dark h3, .on-dark h4 { color:#fff; }
+
+  /* LOGO */
+  .logo {
+    display:inline-flex;
+    align-items:center;
+    color:currentColor;
+    transition:opacity .2s ease;
+  }
+  .logo:hover { opacity:.78; }
+  .logo-svg {
+    display:block;
+    width:104px;
+    height:auto;
+    fill:currentColor;
+    flex:none;
+  }
+
+  /* BUTTONS */
+  .btn {
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:14px 28px;
+    font-family:var(--body);
+    font-size:14.5px;
+    font-weight:500;
+    letter-spacing:-0.005em;
+    border-radius:999px;
+    border:1px solid transparent;
+    cursor:pointer;
+    background:var(--ink);
+    color:#fff;
+    transition:background .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease), transform .25s var(--ease);
+  }
+  .btn:hover { background:var(--orange); transform:translateY(-1px); }
+  .btn .arrow {
+    width:14px; height:10px;
+    background:currentColor;
+    -webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 16'><path d='M0 8h22M16 1l7 7-7 7' fill='none' stroke='black' stroke-width='2.4'/></svg>") center/contain no-repeat;
+            mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 16'><path d='M0 8h22M16 1l7 7-7 7' fill='none' stroke='black' stroke-width='2.4'/></svg>") center/contain no-repeat;
+    transition:transform .25s var(--ease);
+  }
+  .btn:hover .arrow { transform:translateX(4px); }
+
+  .btn.ghost {
+    background:transparent;
+    color:var(--ink);
+    border-color:rgba(10,10,10,.22);
+  }
+  .btn.ghost:hover {
+    background:var(--ink);
+    border-color:var(--ink);
+    color:#fff;
+  }
+  .btn.ghost-dark {
+    background:rgba(255,255,255,.08);
+    color:#fff;
+    border-color:rgba(255,255,255,.24);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+  }
+  .btn.ghost-dark:hover {
+    background:#fff;
+    color:var(--ink);
+    border-color:#fff;
+  }
+  .btn.cta-orange { background:var(--orange); border-color:var(--orange); }
+  .btn.cta-orange:hover { background:#fff; color:var(--ink); border-color:#fff; }
+
+  .arrow-link {
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:var(--body);
+    font-size:14.5px;
+    font-weight:500;
+    color:var(--ink);
+    transition:color .2s var(--ease), gap .2s var(--ease);
+  }
+  .arrow-link::after {
+    content:"→";
+    font-size:15px;
+    transition:transform .25s var(--ease);
+  }
+  .arrow-link:hover { color:var(--orange); gap:12px; }
+  .arrow-link.on-dark { color:rgba(255,255,255,.86); }
+  .arrow-link.on-dark:hover { color:var(--cyan); }
+
+  /* Sticky page scrim — gradient under header to keep nav legible over content */
+  .page-scrim {
+    position:fixed;
+    top:0; left:0; right:0;
+    height:120px;
+    z-index:70;
+    pointer-events:none;
+    background:linear-gradient(to bottom, rgba(0,0,0,.45) 0%, rgba(0,0,0,.18) 60%, transparent 100%);
+    opacity:1;
+    transition:opacity .35s var(--ease), background .35s var(--ease);
+  }
+  .page-scrim.light {
+    background:linear-gradient(to bottom, rgba(255,255,255,.0) 0%, transparent 100%);
+    opacity:0;
+  }
+
+  /* HEADER */
+  .header {
+    position:fixed;
+    top:0; left:0; right:0;
+    z-index:80;
+    /* Dark glass over hero — always present */
+    background:rgba(0,0,0,.10);
+    backdrop-filter:blur(16px) saturate(1.2);
+    -webkit-backdrop-filter:blur(16px) saturate(1.2);
+    color:#fff;
+    transition:background .35s var(--ease), color .35s var(--ease),
+               border-color .35s var(--ease), box-shadow .35s var(--ease);
+  }
+  .header.scrolled {
+    /* Light glass over white sections */
+    background:rgba(255,255,255,.82);
+    backdrop-filter:blur(20px) saturate(1.5);
+    -webkit-backdrop-filter:blur(20px) saturate(1.5);
+    border-bottom:1px solid rgba(10,10,10,.07);
+    color:var(--ink);
+    box-shadow:0 1px 0 rgba(255,255,255,.7) inset, 0 8px 32px -16px rgba(0,0,0,.10);
+  }
+  .header-inner {
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    align-items:center;
+    gap:32px;
+    padding:0 var(--gut);
+    height:78px;
+    max-width:1440px;
+    margin:0 auto;
+  }
+  .header .logo-svg { width:130px; height:20px; }
+  .nav {
+    display:flex;
+    justify-self:center;
+    gap:36px;
+    font-family:var(--body);
+    font-size:14px;
+    font-weight:500;
+    letter-spacing:-0.005em;
+  }
+  .nav a {
+    color:inherit;
+    opacity:.78;
+    transition:opacity .2s var(--ease);
+  }
+  .nav a:hover { opacity:1; }
+
+  .header-cta {
+    display:inline-flex;
+    align-items:center;
+    padding:8px 18px;
+    border-radius:999px;
+    font-size:13.5px;
+    font-weight:500;
+    background:rgba(255,255,255,.12);
+    color:#fff;
+    border:1px solid rgba(255,255,255,.22);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    transition:background .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease);
+  }
+  .header-cta:hover { background:#fff; color:var(--ink); border-color:#fff; }
+  .header.scrolled .header-cta {
+    background:var(--ink);
+    color:#fff;
+    border-color:var(--ink);
+    backdrop-filter:none;
+  }
+  .header.scrolled .header-cta:hover { background:var(--orange); border-color:var(--orange); }
+
+  /* ============================================================
+     HERO — CINEMATIC, LAYERED, ALIVE
+     ============================================================ */
+  .hero {
+    position:relative;
+    background:#000;
+    color:var(--on-dark);
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+    isolation:isolate;
+  }
+
+  /* Atmospheric background — three radial blobs, slow morph */
+  .hero-atmos {
+    position:absolute;
+    inset:-10%;
+    z-index:1;
+    pointer-events:none;
+    background:
+      radial-gradient(ellipse 50% 40% at 22% 38%, rgba(255,92,31,.22), transparent 65%),
+      radial-gradient(ellipse 55% 45% at 78% 62%, rgba(0,216,255,.13), transparent 65%),
+      radial-gradient(ellipse 70% 50% at 50% -10%, rgba(255,255,255,.06), transparent 70%);
+    filter:blur(80px);
+    animation:atmosDrift 32s ease-in-out infinite alternate;
+  }
+  @keyframes atmosDrift {
+    0%   { transform:translate(0,0) scale(1); }
+    50%  { transform:translate(-2.5%, 1.5%) scale(1.04); }
+    100% { transform:translate(2%, -1%) scale(1.06); }
+  }
+
+  /* Faint grid overlay, masked to fade at edges */
+  .hero-grid {
+    position:absolute;
+    inset:0;
+    z-index:1;
+    pointer-events:none;
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,.045) 1px, transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(ellipse 80% 65% at 50% 40%, #000 25%, transparent 95%);
+            mask-image:radial-gradient(ellipse 80% 65% at 50% 40%, #000 25%, transparent 95%);
+  }
+
+  /* Bottom scrim — grounds cards, cinematic depth */
+  .hero::after {
+    content:"";
+    position:absolute;
+    left:0; right:0; bottom:0;
+    height:280px;
+    z-index:2;
+    pointer-events:none;
+    background:linear-gradient(to top, rgba(0,0,0,.65) 0%, transparent 100%);
+  }
+
+  /* Hero content (text) */
+  .hero-content {
+    position:relative;
+    z-index:5;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:96px var(--gut) 32px;
+    max-width:1100px;
+    margin:0 auto;
+    width:100%;
+  }
+
+  .hero-eyebrow { color:rgba(255,255,255,.74); }
+
+  .hero h1 {
+    margin-top:30px;
+    font-family:var(--display);
+    font-weight:500;
+    font-size:clamp(42px, 5.4vw, 80px);
+    letter-spacing:-0.035em;
+    line-height:1.0;
+    color:#fff;
+    max-width:18ch;
+  }
+  .hero h1 .line { display:block; }
+  .hero h1 .underline {
+    position:relative;
+    display:inline-block;
+  }
+  .hero h1 .underline::after {
+    content:"";
+    position:absolute;
+    left:4%;
+    right:4%;
+    bottom:0.06em;
+    height:0.08em;
+    min-height:3px;
+    background:var(--orange);
+    border-radius:4px;
+    transform:scaleX(0);
+    transform-origin:left;
+    animation:drawUnderline .8s 1.2s cubic-bezier(.4,0,.2,1) forwards;
+  }
+  @keyframes drawUnderline {
+    to { transform:scaleX(1); }
+  }
+
+  .hero-lead {
+    margin-top:32px;
+    font-size:clamp(17px, 1.35vw, 20px);
+    line-height:1.55;
+    color:var(--on-dark-soft);
+    max-width:54ch;
+    font-weight:400;
+  }
+
+  .hero-actions {
+    margin-top:88px;
+    margin-bottom:88px;
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  /* Hero animation classes — orchestrated entrance */
+  .ha {
+    opacity:0;
+    transform:translateY(28px);
+    animation:haIn 1s var(--ease) forwards;
+  }
+  .ha.d1 { animation-delay:.1s; }
+  .ha.d2 { animation-delay:.25s; }
+  .ha.d3 { animation-delay:.45s; }
+  .ha.d4 { animation-delay:.65s; }
+  .ha.d5 { animation-delay:.85s; }
+  @keyframes haIn {
+    to { opacity:1; transform:translateY(0); }
+  }
+
+  /* ============================================================
+     HERO CARDS — FLOATING PRODUCT UI IN 3D
+     ============================================================ */
+  .hero-cards {
+    position:relative;
+    z-index:4;
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    gap:0;
+    padding:24px var(--gut) 80px;
+    perspective:1800px;
+    transform-style:preserve-3d;
+  }
+
+  .hero-card-wrap {
+    opacity:0;
+    transform:translateY(40px);
+    animation:cardEnter 1.4s var(--ease) forwards;
+    position:relative;
+  }
+  /* Glow bloom — light radiates from all card edges on hover */
+  .hero-card-wrap:hover .hero-card {
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.07),
+      0 1px 1px rgba(0,0,0,.4),
+      0 0 32px 8px rgba(255,255,255,.12),
+      0 0 80px 20px rgba(255,255,255,.07),
+      0 24px 48px -12px rgba(0,0,0,.55),
+      0 60px 120px -30px rgba(0,0,0,.7);
+    transition:box-shadow .4s var(--ease);
+  }
+  /* Cyan perimeter glow for the centre SAF-T card */
+  .hero-card-wrap.c:hover .hero-card {
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.07),
+      0 1px 1px rgba(0,0,0,.4),
+      0 0 32px 8px rgba(0,216,255,.18),
+      0 0 80px 20px rgba(0,216,255,.09),
+      0 24px 48px -12px rgba(0,0,0,.55),
+      0 60px 120px -30px rgba(0,0,0,.7);
+  }
+  .hero-card-wrap.l { animation-delay:1.05s; margin-right:-32px; }
+  .hero-card-wrap.c { animation-delay:.95s; z-index:2; }
+  .hero-card-wrap.r { animation-delay:1.15s; margin-left:-32px; }
+  @keyframes cardEnter {
+    to { opacity:1; transform:translateY(0); }
+  }
+
+  /* ============================================================
+     SYSTEM SIGNATURE CORNER
+     Semantic marker for "live operational surface" — applied to
+     hero floating cards, product visuals (vis), and contact form.
+     A corner means: this is a real working interface, not decoration.
+     ============================================================ */
+  /* NOTE: no position:relative on .has-corner — would override position:sticky on .product */
+  .has-corner::after {
+    content:"";
+    position:absolute;
+    top:0; left:0;
+    width:44px; height:44px;
+    border-top:2px solid var(--orange);
+    border-left:2px solid var(--orange);
+    border-top-left-radius:inherit;
+    pointer-events:none;
+    z-index:5;
+  }
+  .has-corner.corner-sm::after  { width:32px; height:32px; }
+  .has-corner.corner-cyan::after  { border-color:var(--cyan); }
+  .has-corner.corner-orange::after { border-color:var(--orange); }
+  /* Legacy .cy variant — same as corner-cyan */
+  .has-corner.cy::after { border-color:var(--cyan); }
+
+  .hero-card {
+    position:relative;
+    width:308px;
+    background:linear-gradient(180deg, rgba(28,28,32,.78) 0%, rgba(18,18,22,.88) 100%);
+    backdrop-filter:blur(24px) saturate(1.5);
+    -webkit-backdrop-filter:blur(24px) saturate(1.5);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:16px;
+    padding:18px 20px;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.07),
+      0 1px 1px rgba(0,0,0,.4),
+      0 24px 48px -12px rgba(0,0,0,.55),
+      0 60px 120px -30px rgba(0,0,0,.7);
+    transform-style:preserve-3d;
+    will-change:transform;
+    transition:box-shadow .4s var(--ease);
+  }
+
+  .hero-card-wrap.l .hero-card {
+    transform:translateY(36px) translateX(28px) rotateY(14deg) rotateX(-3deg);
+    animation:floatL 11s ease-in-out infinite;
+  }
+  .hero-card-wrap.c .hero-card {
+    width:344px;
+    transform:translateY(0) rotateX(-1.5deg);
+    animation:floatC 13s ease-in-out infinite;
+  }
+  .hero-card-wrap.r .hero-card {
+    transform:translateY(36px) translateX(-28px) rotateY(-14deg) rotateX(-3deg);
+    animation:floatR 12s ease-in-out infinite -2.5s;
+  }
+
+  @keyframes floatL {
+    0%, 100% { transform:translateY(36px) translateX(28px) rotateY(14deg) rotateX(-3deg); }
+    50%      { transform:translateY(22px) translateX(28px) rotateY(13deg) rotateX(-2deg); }
+  }
+  @keyframes floatC {
+    0%, 100% { transform:translateY(0) rotateX(-1.5deg); }
+    50%      { transform:translateY(-12px) rotateX(-.8deg); }
+  }
+  @keyframes floatR {
+    0%, 100% { transform:translateY(36px) translateX(-28px) rotateY(-14deg) rotateX(-3deg); }
+    50%      { transform:translateY(22px) translateX(-28px) rotateY(-13deg) rotateX(-2deg); }
+  }
+
+  /* Card head */
+  .hc-head {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    padding-bottom:14px;
+    margin-bottom:14px;
+    border-bottom:1px solid rgba(255,255,255,.07);
+  }
+  .hc-title {
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size:13.5px;
+    font-weight:500;
+    color:#fff;
+    letter-spacing:-0.01em;
+  }
+  .hc-status, .hc-meta-tiny {
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:10.5px;
+    font-weight:500;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:rgba(255,255,255,.5);
+  }
+  .hc-badge {
+    font-family:var(--mono);
+    font-size:10px;
+    font-weight:600;
+    letter-spacing:0.1em;
+    padding:4px 8px;
+    border-radius:5px;
+    background:rgba(0,216,255,.12);
+    color:var(--cyan);
+    border:1px solid rgba(0,216,255,.22);
+  }
+
+  .dot {
+    display:inline-block;
+    width:6px; height:6px;
+    border-radius:50%;
+    flex:none;
+  }
+  .dot-orange { background:var(--orange); box-shadow:0 0 0 3px rgba(255,92,31,.18); }
+  .dot-cyan {
+    background:var(--cyan);
+    box-shadow:0 0 0 3px rgba(0,216,255,.20);
+    animation:pulseDot 1.8s ease-in-out infinite;
+  }
+  .dot-green { background:#22c55e; box-shadow:0 0 0 3px rgba(34,197,94,.16); }
+  @keyframes pulseDot {
+    0%, 100% { box-shadow:0 0 0 3px rgba(0,216,255,.20); }
+    50%      { box-shadow:0 0 0 5px rgba(0,216,255,.10); }
+  }
+
+  /* Audit card rows */
+  .hc-rows {
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    padding:2px 0 6px;
+  }
+  .hc-row {
+    display:grid;
+    grid-template-columns:14px 1fr auto;
+    gap:10px;
+    align-items:center;
+    font-size:12.5px;
+    color:rgba(255,255,255,.86);
+  }
+  .hc-row.dim { color:rgba(255,255,255,.5); }
+  .hc-check {
+    font-size:11px;
+    font-weight:600;
+    text-align:center;
+    line-height:1;
+  }
+  .hc-check.ok { color:#22c55e; }
+  .hc-check.pending { color:rgba(255,255,255,.4); }
+  .hc-label { font-weight:500; letter-spacing:-0.005em; }
+  .hc-meta {
+    font-family:var(--mono);
+    font-size:11px;
+    color:rgba(255,255,255,.55);
+    letter-spacing:0;
+  }
+
+  /* SAF-T code card */
+  .hc-code {
+    font-family:var(--mono);
+    font-size:11.5px;
+    line-height:1.7;
+    color:rgba(255,255,255,.7);
+    background:rgba(0,0,0,.32);
+    border:1px solid rgba(255,255,255,.04);
+    border-radius:8px;
+    padding:12px 14px;
+    margin:2px 0 4px;
+    overflow:hidden;
+  }
+  .hc-code .ln { display:block; white-space:nowrap; }
+  .hc-code .ln.idt1 { padding-left:12px; }
+  .hc-code .ln.idt2 { padding-left:24px; }
+  .hc-code .tk { color:rgba(255,255,255,.55); }
+  .hc-code em {
+    font-style:normal;
+    color:var(--cyan);
+    font-weight:500;
+  }
+
+  /* TP card */
+  .hc-tp {
+    position:relative;
+    height:64px;
+    margin:14px 0 6px;
+  }
+  .hc-tp-axis {
+    position:absolute;
+    left:0; right:0; top:50%;
+    height:1px;
+    background:rgba(255,255,255,.16);
+  }
+  .hc-tp-band {
+    position:absolute;
+    left:32%; right:32%;
+    top:38%; bottom:38%;
+    background:rgba(0,216,255,.08);
+    border-left:1px solid rgba(0,216,255,.4);
+    border-right:1px solid rgba(0,216,255,.4);
+    border-radius:2px;
+  }
+  .hc-tp-marker {
+    position:absolute;
+    top:50%;
+    width:7px; height:7px;
+    background:rgba(255,255,255,.7);
+    border-radius:50%;
+    transform:translate(-50%, -50%);
+  }
+  .hc-tp-marker.active {
+    background:var(--cyan);
+    width:10px; height:10px;
+    box-shadow:0 0 0 4px rgba(0,216,255,.18);
+  }
+  .hc-tp-label {
+    position:absolute;
+    bottom:14px;
+    left:50%;
+    transform:translateX(-50%);
+    font-family:var(--mono);
+    font-size:11px;
+    font-weight:600;
+    color:var(--cyan);
+    white-space:nowrap;
+    letter-spacing:-0.005em;
+  }
+  .hc-tp-legend {
+    display:flex;
+    justify-content:space-between;
+    font-size:9.5px;
+    font-weight:500;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:rgba(255,255,255,.42);
+    padding:0 4px;
+  }
+
+  /* Card footer */
+  .hc-foot {
+    margin-top:14px;
+    padding-top:12px;
+    border-top:1px solid rgba(255,255,255,.06);
+    font-size:11px;
+    font-weight:500;
+    color:rgba(255,255,255,.55);
+    letter-spacing:-0.003em;
+  }
+  .hc-foot-row {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .hc-foot-row > span {
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+  }
+  .hc-foot-meta {
+    font-family:var(--mono);
+    color:rgba(255,255,255,.45);
+    font-size:10.5px;
+  }
+
+  /* ============================================================
+     PRINCIPLES
+     ============================================================ */
+  /* AUDIT AS THE CORE */
+  .principles {
+    background:var(--warm);
+    padding:0 0 160px;
+    position:relative;
+    overflow:hidden;
+  }
+
+  /* Faint grid — same DNA as hero grid */
+  .principles::before {
+    content:"";
+    position:absolute; inset:0;
+    pointer-events:none;
+    z-index:0;
+  }
+
+  /* Atmospheric orange echo — mirrors hero */
+  .principles::after {
+    content:"";
+    position:absolute;
+    width:700px; height:600px;
+    right:-120px; top:160px;
+    background:radial-gradient(ellipse at center, rgba(255,92,31,.09), transparent 68%);
+    filter:blur(80px);
+    pointer-events:none;
+    z-index:0;
+  }
+
+  /* Gradient bleed from hero → warm — creates continuity */
+  .audit-bleed {
+    height:110px;
+    background:linear-gradient(to bottom, rgba(0,0,0,.07) 0%, transparent 100%);
+    flex:none;
+    margin-bottom:64px;
+    position:relative; z-index:1;
+  }
+
+  /* Intro — eyebrow + company description centered */
+  .audit-intro {
+    position:relative; z-index:1;
+    text-align:center;
+    max-width:760px;
+    margin:0 auto 32px;
+  }
+  .audit-intro .eyebrow { justify-content:center; }
+  .audit-company {
+    margin:22px auto 0;
+    font-family:var(--display);
+    font-size:clamp(18px, 1.8vw, 24px);
+    font-weight:400;
+    letter-spacing:-0.016em;
+    line-height:1.45;
+    color:var(--ink-soft);
+  }
+
+  /* Theatrical tagline — the section's visual climax */
+  /* These are <h2> for SEO; actual sizing lives on -a/-b children */
+  .audit-tagline {
+    position:relative; z-index:1;
+    text-align:center;
+    margin-bottom:72px;
+    font-size:0;          /* neutralize default h2 sizing — children set their own */
+    line-height:1;
+    letter-spacing:0;
+  }
+  .audit-tagline-a {
+    display:block;
+    font-family:var(--display);
+    font-size:clamp(52px, 6.8vw, 100px);
+    font-weight:500;
+    letter-spacing:-0.045em;
+    line-height:0.96;
+    color:var(--ink);
+  }
+  /* Orange period — same signal as hero underline */
+  .audit-tagline-a .op { color:var(--orange); }
+
+  .audit-tagline-b {
+    display:block;
+    margin:14px auto 0;
+    max-width:54ch;
+    font-family:var(--display);
+    font-size:clamp(20px, 2.4vw, 34px);
+    font-weight:400;
+    font-style:italic;
+    letter-spacing:-0.022em;
+    line-height:1.25;
+    color:var(--ink-mute);
+  }
+
+  /* Body text block */
+  .audit-body {
+    position:relative; z-index:1;
+    max-width:700px;
+    margin:0 auto 80px;
+    text-align:left;
+  }
+  .audit-body > p {
+    font-size:clamp(16px, 1.25vw, 18px);
+    line-height:1.65;
+    color:var(--ink-soft);
+    margin-bottom:28px;
+  }
+  .audit-bullets {
+    list-style:none;
+    padding:0; margin:0;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    counter-reset:bullet-counter;
+  }
+  .audit-bullets li {
+    counter-increment:bullet-counter;
+    display:grid;
+    grid-template-columns:38px 1fr;
+    gap:4px;
+    align-items:start;
+    font-size:clamp(15px, 1.15vw, 17px);
+    line-height:1.6;
+    color:var(--ink-soft);
+  }
+  .audit-bullets li::before {
+    content:"0" counter(bullet-counter);
+    font-family:var(--mono);
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:0.06em;
+    color:var(--orange);
+    margin-top:0.3em;
+    line-height:1;
+    flex:none;
+  }
+
+  /* Bento cards grid — asymmetric, not boring */
+  .audit-cards {
+    position:relative; z-index:1;
+    display:grid;
+    grid-template-columns:1.45fr 1fr;
+    grid-template-rows:auto auto;
+    gap:16px;
+  }
+
+  .audit-card {
+    background:var(--glass-light);
+    backdrop-filter:blur(24px) saturate(1.35);
+    -webkit-backdrop-filter:blur(24px) saturate(1.35);
+    border:1px solid var(--glass-light-border);
+    border-radius:20px;
+    padding:44px 44px 40px;
+    box-shadow:var(--glass-light-shadow);
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    transition:transform .35s var(--ease), background .3s var(--ease);
+    position:relative;
+    overflow:hidden;
+  }
+  .audit-card:hover {
+    transform:translateY(-4px);
+    background:rgba(255,255,255,.72);
+  }
+
+  /* Card 01 — spans both rows on left, featured */
+  .audit-card:nth-child(1) {
+    grid-column:1;
+    grid-row:1 / span 2;
+  }
+  /* Large decorative number behind content */
+  .audit-card:nth-child(1) .audit-card-num {
+    font-size:200px;
+    bottom:-24px;
+    right:28px;
+    opacity:.055;
+  }
+  /* Cards 02, 03 — right column */
+  .audit-card:nth-child(2) { grid-column:2; grid-row:1; }
+  .audit-card:nth-child(3) { grid-column:2; grid-row:2; }
+
+  .audit-card-num {
+    position:absolute;
+    font-family:var(--display);
+    font-weight:600;
+    font-size:120px;
+    letter-spacing:-0.06em;
+    line-height:1;
+    color:var(--ink);
+    opacity:.06;
+    bottom:-16px; right:20px;
+    pointer-events:none;
+    user-select:none;
+  }
+
+  .audit-card-label {
+    font-size:11px;
+    font-weight:500;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    color:var(--ink-mute);
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+  }
+  .audit-card-label::before {
+    content:"";
+    width:18px; height:2px;
+    background:var(--orange);
+    border-radius:2px;
+    flex:none;
+  }
+  /* First card cyan accent */
+  .audit-card:nth-child(1) .audit-card-label::before { background:var(--orange); }
+  .audit-card:nth-child(2) .audit-card-label::before { background:var(--cyan); }
+  .audit-card:nth-child(3) .audit-card-label::before { background:var(--orange); }
+
+  .audit-card h3 {
+    font-size:clamp(20px, 1.7vw, 24px);
+    letter-spacing:-0.018em;
+    line-height:1.22;
+    color:var(--ink);
+    margin:0;
+  }
+  .audit-card p {
+    font-size:15px;
+    line-height:1.65;
+    color:var(--ink-soft);
+    margin:0;
+    max-width:42ch;
+  }
+  /* Featured card (01) gets bigger heading */
+  .audit-card:nth-child(1) h3 {
+    font-size:clamp(24px, 2.1vw, 32px);
+    max-width:18ch;
+  }
+  .audit-card:nth-child(1) p { font-size:16px; max-width:44ch; }
+
+  /* ============================================================
+     SOLUTIONS — Product Showcase
+     Sticky sidebar nav + asymmetric product card stream
+     Each product has its own unique abstract UI mockup
+     ============================================================ */
+  .solutions {
+    background:var(--dark-section);
+    color:#fff;
+    /* NO overflow:hidden — it kills position:sticky on children */
+    position:relative;
+  }
+
+  /* Decorative layer — clipped separately so sticky still works */
+  .solutions-deco {
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:0;
+  }
+  .solutions-deco::before {
+    content:"";
+    position:absolute;
+    top:-100px; left:50%;
+    transform:translateX(-50%);
+    width:1200px; height:600px;
+    background:radial-gradient(ellipse at center, rgba(0,216,255,.08), transparent 65%);
+    filter:blur(80px);
+  }
+  /* solutions-deco::after — grid removed, conflicts with chapter layout */
+
+  /* Solutions v6 — chapter layout */
+  .solutions-intro {
+    position:relative; z-index:1;
+    max-width:var(--max);
+    margin:0 auto;
+    padding:120px var(--gut) 72px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    border-bottom:none;
+  }
+  /* Solutions intro — editorial chapter opener */
+  .solutions-intro-header {
+    margin:0 auto 32px;
+    text-align:center;
+  }
+  .solutions-intro-headline { display:flex; flex-direction:column; gap:16px; }
+  .solutions-eyebrow { color:rgba(255,255,255,.45); }
+  .solutions-eyebrow::before { background:var(--cyan); }
+  .solutions-title {
+    font-family:var(--display); font-weight:500;
+    font-size:clamp(48px, 6vw, 88px);
+    letter-spacing:-0.045em; line-height:0.96; color:#fff;
+  }
+  .solutions-title .op { color:var(--orange); }
+  .solutions-intro-lead {
+    font-family:var(--display); font-size:clamp(16px, 1.3vw, 18px);
+    font-weight:400; line-height:1.6; color:rgba(255,255,255,.48);
+    letter-spacing:-0.008em; max-width:54ch;
+    margin:24px auto 0;
+    text-align:center;
+  }
+  /* Section divider within features — separates audit from reporting */
+  .fc-divider {
+    display:flex;
+    align-items:center;
+    gap:16px;
+    padding:8px 0;
+    margin:4px 0;
+  }
+  .fc-divider-line {
+    flex:1;
+    height:1px;
+    background:rgba(255,255,255,.07);
+  }
+  .fc-divider-label {
+    font-family:var(--mono);
+    font-size:9.5px;
+    font-weight:600;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:rgba(255,255,255,.22);
+    white-space:nowrap;
+  }
+
+  /* Independence note — small disclaimer after cards */
+  .fc-note {
+    padding:16px 20px;
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:10px;
+    margin-top:4px;
+  }
+  .fc-note p {
+    font-family:var(--mono);
+    font-size:10.5px;
+    font-weight:400;
+    letter-spacing:0.04em;
+    line-height:1.6;
+    color:rgba(255,255,255,.32);
+    margin:0;
+  }
+  .fc-note strong { color:rgba(255,255,255,.45); font-weight:600; }
+
+  /* Service context disclaimer */
+
+  .solutions-index {
+    display:flex;
+    gap:0;
+    margin:48px 0 0;
+    justify-content:center;
+  }
+  .solutions-index-item {
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:0 28px;
+    text-decoration:none;
+    border-right:1px solid rgba(255,255,255,.12);
+    transition:opacity .2s var(--ease);
+    opacity:.55;
+  }
+  .solutions-index-item:first-child { padding-left:0; }
+  .solutions-index-item:last-child { padding-right:0; border-right:none; }
+  .solutions-index-item:hover { opacity:1; }
+  .solutions-index-num {
+    font-family:var(--mono);
+    font-size:10px;
+    font-weight:600;
+    letter-spacing:0.18em;
+    color:var(--orange);
+  }
+  .solutions-index-name {
+    font-family:var(--body);
+    font-size:13px;
+    font-weight:500;
+    letter-spacing:0.01em;
+    color:rgba(255,255,255,.85);
+    white-space:nowrap;
+  }
+  .service-chapter {
+    position:relative; z-index:1;
+    max-width:var(--max); margin:0 auto;
+    display:grid; grid-template-columns:5fr 7fr;
+    border-bottom:1px solid rgba(255,255,255,.06);
+    min-height:100vh;
+  }
+  /* Service context — starts invisible, reveals with chapter */
+  .service-context {
+    position:sticky; top:78px;
+    height:calc(100vh - 78px);
+    display:flex; flex-direction:column; justify-content:flex-start;
+    padding:80px var(--gut) 80px;
+    border-right:1px solid rgba(255,255,255,.06); gap:0;
+    opacity:0;
+    transition:opacity .7s var(--ease);
+  }
+  .service-context.is-visible { opacity:1; }
+
+  /* First chapter — fade the vertical border in from the top */
+  #svc-audit .service-context {
+    border-right:none;
+    background-image:linear-gradient(to bottom,
+      transparent 0%,
+      rgba(255,255,255,.06) 120px,
+      rgba(255,255,255,.06) 100%);
+    background-size:1px 100%;
+    background-position:right 0 top 0;
+    background-repeat:no-repeat;
+  }
+  .service-num {
+    font-family:var(--mono); font-size:11px; font-weight:600;
+    letter-spacing:0.22em; color:rgba(255,255,255,.28);
+    margin-bottom:16px;
+  }
+  .service-name {
+    font-family:var(--display); font-weight:500;
+    font-size:clamp(32px, 3.2vw, 48px);
+    letter-spacing:-0.038em; line-height:1.05; color:#fff;
+    margin:0 0 20px;
+  }
+  .service-accent {
+    width:32px; height:2px; background:var(--orange);
+    border-radius:2px; margin:0 0 22px;
+  }
+  #svc-saft .service-accent { background:var(--cyan); }
+  .service-desc {
+    font-family:var(--display); font-size:clamp(15px, 1.2vw, 17px);
+    font-weight:400; line-height:1.65; color:rgba(255,255,255,.52);
+    letter-spacing:-0.006em; margin:0;
+  }
+
+  /* Team — editorial pull-quote with left accent bar */
+  .service-team {
+    margin-top:32px;
+    padding-left:16px;
+    border-left:2px solid var(--orange);
+  }
+  #svc-saft .service-team { border-left-color:var(--cyan); }
+  .service-team-label {
+    font-family:var(--mono);
+    font-size:9.5px; font-weight:600;
+    letter-spacing:0.22em; text-transform:uppercase;
+    color:var(--orange);
+    margin-bottom:8px;
+  }
+  #svc-saft .service-team-label { color:var(--cyan); }
+  .service-team-text {
+    font-family:var(--display);
+    font-size:clamp(14px, 1.1vw, 15.5px);
+    font-weight:400;
+    line-height:1.6;
+    letter-spacing:-0.006em;
+    color:rgba(255,255,255,.72);
+    font-style:italic;
+  }
+
+  /* CTA link */
+  .service-context .arrow-link { margin-top:36px; }
+  .service-features {
+    padding:80px var(--gut);
+    display:flex; flex-direction:column; gap:14px;
+  }
+  /* Feature cards — restrained, editorial */
+  .fc {
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.07);
+    border-left:2px solid transparent;
+    border-radius:12px;
+    padding:28px 30px;
+    display:flex;
+    flex-direction:column;
+    gap:11px;
+    opacity:0;
+    transform:translateY(18px);
+    transition:
+      opacity .65s var(--ease),
+      transform .65s var(--ease),
+      background .2s var(--ease),
+      border-left-color .2s var(--ease);
+  }
+  .fc.is-visible {
+    opacity:1;
+    transform:translateY(0);
+  }
+  .fc:hover {
+    background:rgba(255,255,255,.065);
+    border-left-color:var(--orange);
+  }
+  #svc-saft .fc:hover { border-left-color:var(--cyan); }
+
+  .fc-label {
+    font-family:var(--mono);
+    font-size:10px;
+    font-weight:600;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--orange);
+  }
+  #svc-saft .fc-label { color:var(--cyan); }
+
+  .fc-title {
+    font-family:var(--display);
+    font-weight:500;
+    font-size:clamp(17px, 1.4vw, 20px);
+    letter-spacing:-0.02em;
+    line-height:1.22;
+    color:#fff;
+    margin:0;
+  }
+  .fc-body {
+    font-family:var(--display);
+    font-size:14.5px;
+    font-weight:400;
+    line-height:1.6;
+    color:rgba(255,255,255,.52);
+    letter-spacing:-0.006em;
+    margin:0;
+  }
+
+
+    /* ─── CREDENTIALS — floating editorial anchors ─── */
+  .credentials {
+    position:relative; z-index:1;
+    max-width:1180px;
+    margin:88px auto 0;
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:24px;
+  }
+  .credentials-eyebrow {
+    grid-column:1 / -1;
+    display:flex;
+    align-items:center;
+    gap:16px;
+    margin-bottom:16px;
+  }
+  .credentials-eyebrow .eyebrow { color:var(--ink-mute); }
+  .credentials-eyebrow .eyebrow::before { background:var(--orange); }
+  .credentials-eyebrow-rule {
+    flex:1;
+    height:1px;
+    background:rgba(10,10,10,.10);
+  }
+  .cred {
+    position:relative;
+    padding:28px 24px 24px;
+    border-left:2px solid var(--orange);
+    background:transparent;
+  }
+  .cred:nth-child(2) { border-left-color:var(--cyan); }
+  .cred:nth-child(3) { border-left-color:var(--ink); }
+
+  .cred-roman {
+    font-family:var(--mono);
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:0.18em;
+    color:var(--orange);
+    margin-bottom:8px;
+  }
+  .cred:nth-child(2) .cred-roman { color:var(--cyan); }
+  .cred:nth-child(3) .cred-roman { color:var(--ink); }
+
+  .cred h4 {
+    font-family:var(--display);
+    font-weight:500;
+    font-size:20px;
+    letter-spacing:-0.018em;
+    color:var(--ink);
+    margin-bottom:10px;
+  }
+  .cred p {
+    font-size:14px;
+    line-height:1.55;
+    color:var(--ink-soft);
+    margin:0;
+  }
+
+  /* ============================================================
+     DELIVERY MODEL — Editorial process atlas on light bg
+     5 steps as living schema + 3 credentials as floating anchors
+     ============================================================ */
+  .method {
+    background:var(--warm);
+    color:var(--ink);
+    padding:120px 0 160px;
+    position:relative;
+    overflow:hidden;
+  }
+
+  /* Faint grid — same DNA as audit-as-core */
+  .method::before {
+    content:"";
+    position:absolute; inset:0;
+    pointer-events:none;
+    z-index:0;
+  }
+
+  /* Atmospheric orange echo — left side, mirrors audit-as-core's right */
+  .method::after {
+    content:"";
+    position:absolute;
+    width:700px; height:600px;
+    left:-140px; top:200px;
+    background:radial-gradient(ellipse at center, rgba(255,92,31,.07), transparent 65%);
+    filter:blur(80px);
+    pointer-events:none;
+    z-index:0;
+  }
+
+  /* Section intro — same editorial pattern as audit */
+  .method-intro {
+    position:relative; z-index:1;
+    text-align:center;
+    max-width:760px;
+    margin:0 auto 32px;
+  }
+  .method-intro .eyebrow { justify-content:center; }
+  .method-meta {
+    margin:18px auto 0;
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--ink-mute);
+    display:inline-flex;
+    align-items:center;
+    gap:14px;
+  }
+  .method-meta::before, .method-meta::after {
+    content:"";
+    width:36px; height:1px;
+    background:var(--ink-mute);
+    opacity:.4;
+  }
+
+  .method-tagline {
+    position:relative; z-index:1;
+    text-align:center;
+    margin:0 auto 32px;
+  }
+  .method-tagline-a {
+    display:block;
+    font-family:var(--display);
+    font-size:clamp(52px, 6.8vw, 100px);
+    font-weight:500;
+    letter-spacing:-0.045em;
+    line-height:0.96;
+    color:var(--ink);
+  }
+  .method-tagline-a .op { color:var(--orange); }
+  .method-tagline-b {
+    display:block;
+    margin:14px auto 0;
+    max-width:54ch;
+    font-family:var(--display);
+    font-size:clamp(20px, 2.4vw, 34px);
+    font-weight:400;
+    font-style:italic;
+    letter-spacing:-0.022em;
+    line-height:1.25;
+    color:var(--ink-mute);
+  }
+
+  /* ── ATLAS — clean sequential mosaic strip ──────────────────── */
+  .atlas {
+    position:relative;
+    z-index:1;
+    margin-top:64px;
+  }
+
+  /* Track row — 5 nodes + connecting segments */
+  .atlas-track {
+    display:flex;
+    align-items:center;
+    margin-bottom:20px;
+  }
+  .atlas-track-seg {
+    flex:1;
+    height:1px;
+    background:rgba(10,10,10,.14);
+  }
+  .atlas-track-node {
+    width:8px; height:8px;
+    border-radius:50%;
+    background:rgba(10,10,10,.22);
+    border:2px solid var(--warm);
+    flex:none;
+    position:relative;
+    z-index:2;
+  }
+  .atlas-track-node.is-core {
+    width:14px; height:14px;
+    background:var(--orange);
+    border-color:var(--warm);
+    box-shadow:0 0 0 5px rgba(255,92,31,.15);
+  }
+  .atlas-track-label {
+    position:absolute;
+    top:calc(100% + 10px);
+    transform:translateX(-50%);
+    font-family:var(--mono);
+    font-size:10px;
+    font-weight:600;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--orange);
+    white-space:nowrap;
+  }
+
+  .atlas-cards {
+    display:grid;
+    grid-template-columns:1fr 1fr 1.15fr 1fr 1fr;
+    gap:14px;
+    border-radius:0;
+    overflow:visible;
+    border:none;
+    background:transparent;
+  }
+
+  .station {
+    background:rgba(255,255,255,.68);
+    backdrop-filter:blur(20px) saturate(1.3);
+    -webkit-backdrop-filter:blur(20px) saturate(1.3);
+    border:1px solid rgba(255,255,255,.75);
+    border-radius:16px;
+    box-shadow:0 2px 24px rgba(0,0,0,.05), inset 0 1px 0 rgba(255,255,255,.9);
+    padding:32px 26px 28px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    min-height:260px;
+    transition:background .25s var(--ease), transform .3s var(--ease);
+    position:relative;
+  }
+  .station:hover {
+    background:rgba(255,255,255,.88);
+    transform:translateY(-3px);
+  }
+
+  /* s03 — same glass as others, but with orange signature corner */
+  .station.s03 {
+    background:rgba(255,255,255,.68);
+    color:var(--ink);
+  }
+  .station.s03:hover { background:rgba(255,255,255,.88); }
+  .station.s03 h3 { color:var(--ink); }
+  .station.s03 .station-num { color:rgba(10,10,10,.28); }
+  .station.s03 p { color:var(--ink-soft); }
+
+  .station-num {
+    font-family:var(--display);
+    font-size:clamp(28px, 2.8vw, 44px);
+    font-weight:500;
+    letter-spacing:-0.04em;
+    line-height:1;
+    color:rgba(10,10,10,.28);
+  }
+  .station p {
+    font-size:13.5px;
+    line-height:1.58;
+    color:var(--ink-soft);
+    margin:0;
+  }
+  .station-tag {
+    margin-top:auto;
+    padding-top:14px;
+    border-top:1px solid rgba(10,10,10,.07);
+    font-family:var(--mono);
+    font-size:10px;
+    font-weight:500;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--ink-mute);
+  }
+
+  /* Micro visuals */
+  .vis-files {
+    display:flex;
+    gap:4px;
+    margin-top:4px;
+  }
+  .vis-files span {
+    flex:1; height:4px;
+    background:rgba(10,10,10,.12);
+    border-radius:1px;
+  }
+  .vis-files span.full { background:var(--ink); }
+  .vis-files span.cyan { background:var(--cyan); }
+
+  .vis-build {
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+    margin-top:2px;
+  }
+  .vis-build-row {
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:8px;
+    align-items:center;
+    font-family:var(--mono);
+    font-size:10px;
+    color:var(--ink-mute);
+    letter-spacing:0.08em;
+  }
+  .vis-build-bar {
+    grid-column:1 / -1;
+    height:3px;
+    background:rgba(10,10,10,.08);
+    border-radius:2px;
+    overflow:hidden;
+    position:relative;
+  }
+  .vis-build-bar::after {
+    content:\;
+    position:absolute;
+    inset:0;
+    width:var(--p, 0%);
+    background:var(--ink);
+    border-radius:2px;
+  }
+  .vis-build-bar.orange::after { background:var(--orange); }
+
+  .vis-stamp {
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-top:4px;
+    padding:7px 12px;
+    border:1.5px solid rgba(255,255,255,.28);
+    border-radius:999px;
+    color:rgba(255,255,255,.72);
+    font-family:var(--mono);
+    font-size:10.5px;
+    font-weight:600;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    align-self:flex-start;
+  }
+  .vis-stamp::before {
+    content:\;
+    width:6px; height:6px;
+    border-radius:50%;
+    background:var(--orange);
+  }
+
+  /* ─── CREDENTIALS — floating editorial anchors ─── */
+  .credentials {
+    position:relative; z-index:1;
+    max-width:1180px;
+    margin:88px auto 0;
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:24px;
+  }
+  .credentials-eyebrow {
+    grid-column:1 / -1;
+    display:flex;
+    align-items:center;
+    gap:16px;
+    margin-bottom:16px;
+  }
+  .credentials-eyebrow .eyebrow { color:var(--ink-mute); }
+  .credentials-eyebrow .eyebrow::before { background:var(--orange); }
+  .credentials-eyebrow-rule {
+    flex:1;
+    height:1px;
+    background:rgba(10,10,10,.10);
+  }
+  .cred {
+    position:relative;
+    padding:28px 24px 24px;
+    border-left:2px solid var(--orange);
+    background:transparent;
+  }
+  .cred:nth-child(2) { border-left-color:var(--cyan); }
+  .cred:nth-child(3) { border-left-color:var(--ink); }
+
+  .cred-roman {
+    font-family:var(--mono);
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:0.18em;
+    color:var(--orange);
+    margin-bottom:8px;
+  }
+  .cred:nth-child(2) .cred-roman { color:var(--cyan); }
+  .cred:nth-child(3) .cred-roman { color:var(--ink); }
+
+  .cred h4 {
+    font-family:var(--display);
+    font-weight:500;
+    font-size:20px;
+    letter-spacing:-0.018em;
+    color:var(--ink);
+    margin-bottom:10px;
+  }
+  .cred p {
+    font-size:14px;
+    line-height:1.55;
+    color:var(--ink-soft);
+    margin:0;
+  }
+
+
+  /* ============================================================
+     INDUSTRIES — Bento color cards (inspired by Amplemarket)
+     4 row groups: 2 colored fact-cards + 1 wide text card per row
+     Pastel palette tuned to LUCAS warm bg + accent system
+     ============================================================ */
+
+
+  .industries {
+    background:var(--warm);
+    padding:120px 0 160px;
+    position:relative;
+    overflow:hidden;
+  }
+
+  /* Same faint grid DNA as audit + method sections */
+  .industries::before {
+    content:"";
+    position:absolute; inset:0;
+    pointer-events:none;
+    z-index:0;
+  }
+
+  /* Editorial intro — same pattern as audit & method */
+  .ind-intro {
+    position:relative; z-index:1;
+    text-align:center;
+    max-width:780px;
+    margin:0 auto 32px;
+  }
+  .ind-intro .eyebrow { justify-content:center; }
+  .ind-meta {
+    margin:18px auto 0;
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--ink-mute);
+    display:inline-flex;
+    align-items:center;
+    gap:14px;
+  }
+  .ind-meta::before, .ind-meta::after {
+    content:"";
+    width:36px; height:1px;
+    background:var(--ink-mute);
+    opacity:.4;
+  }
+
+  .ind-tagline {
+    position:relative; z-index:1;
+    text-align:center;
+    margin:0 auto 88px;
+    font-size:0; line-height:1; letter-spacing:0;
+  }
+  .ind-tagline-a {
+    display:block;
+    font-family:var(--display);
+    font-size:clamp(52px, 6.8vw, 100px);
+    font-weight:500;
+    letter-spacing:-0.045em;
+    line-height:0.96;
+    color:var(--ink);
+  }
+  .ind-tagline-a .op { color:var(--orange); }
+  .ind-tagline-b {
+    display:block;
+    margin:14px auto 0;
+    max-width:54ch;
+    font-family:var(--display);
+    font-size:clamp(20px, 2.4vw, 34px);
+    font-weight:400;
+    font-style:italic;
+    letter-spacing:-0.022em;
+    line-height:1.25;
+    color:var(--ink-mute);
+  }
+
+  /* Bento — 4 rows, each with 2 colored squares + 1 wide text */
+  .bento {
+    position:relative; z-index:1;
+    max-width:1180px;
+    margin:0 auto;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+  }
+  .bento-row {
+    display:grid;
+    /* Two squares + one wide text card, total = 4 columns
+       Square + square + text(2 cols) */
+    grid-template-columns:1fr 1fr 2fr;
+    gap:20px;
+  }
+  /* Alternating row layout — odd rows: text left, squares right */
+  .bento-row.alt {
+    grid-template-columns:2fr 1fr 1fr;
+  }
+
+  /* Row category label — sits on top of each row, editorial */
+  .bento-category {
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:30px;
+    padding:0 4px;
+  }
+  .bento-category-num {
+    font-family:var(--mono);
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:0.16em;
+    color:var(--orange);
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+  }
+  .bento-category-num::before {
+    content:"";
+    width:18px; height:2px;
+    background:currentColor;
+    border-radius:2px;
+  }
+  .bento-category-label {
+    font-family:var(--display);
+    font-size:22px;
+    font-weight:500;
+    letter-spacing:-0.018em;
+    color:var(--ink);
+  }
+  .bento-category-rule {
+    flex:1;
+    height:1px;
+    background:rgba(10,10,10,.10);
+  }
+
+  .bento-group {
+    display:flex;
+    flex-direction:column;
+    gap:0;
+    margin-bottom:64px;
+  }
+  .bento-group:last-child { margin-bottom:0; }
+
+  /* Cards */
+  .b-card {
+    border-radius:20px;
+    border:1px solid rgba(10,10,10,.10);
+    box-shadow:0 2px 20px rgba(0,0,0,.07), inset 0 1px 0 rgba(255,255,255,.65);
+    padding:28px 28px 24px;
+    display:flex;
+    flex-direction:column;
+    transition:transform .3s var(--ease), box-shadow .3s var(--ease);
+  }
+  .b-card:hover {
+    transform:translateY(-3px);
+    box-shadow:0 8px 32px rgba(0,0,0,.11), inset 0 1px 0 rgba(255,255,255,.8);
+  }
+
+  /* Fact cards — colored */
+  .b-fact {
+    min-height:240px;
+    justify-content:flex-start;
+  }
+  .b-fact .b-num {
+    font-family:var(--display);
+    font-weight:500;
+    font-size:clamp(32px, 3.6vw, 54px);
+    letter-spacing:-0.045em;
+    line-height:1.0;
+    color:var(--ink);
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+  }
+  /* Subscript inside b-num (ERP, industries) */
+  .b-num .b-sub {
+    font-size:0.28em;
+    font-weight:400;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    vertical-align:super;
+    opacity:.45;
+    margin-left:5px;
+    font-family:var(--mono);
+  }
+  /* Editorial sentence — display font, medium weight */
+  .b-fact .b-desc {
+    font-family:var(--display);
+    font-size:clamp(14px, 1.1vw, 16px);
+    font-weight:400;
+    line-height:1.48;
+    color:var(--ink);
+    opacity:.78;
+    flex:1;
+    padding-top:12px;
+    letter-spacing:-0.008em;
+  }
+  /* Quiet mono anchor — hairline separator above */
+  .b-tag {
+    font-family:var(--mono);
+    font-size:10px;
+    font-weight:600;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    color:rgba(10,10,10,.38);
+    padding-top:14px;
+    border-top:1px solid rgba(10,10,10,.10);
+    margin-top:auto;
+  }
+
+  /* Richer, more saturated pastels — legible against warm bg */
+  .b-cream { background:#f0e0b8; }
+  .b-mint  { background:#c8dfbf; }
+  .b-blush { background:#e8c8cc; }
+  .b-lilac { background:#c8cadf; }
+  .b-sky   { background:#bed0e0; }
+  .b-sand  { background:#e4d0a8; }
+
+  /* Text cards — editorial pull-quote with left accent */
+  .b-text {
+    background:var(--glass-light);
+    backdrop-filter:blur(24px) saturate(1.35);
+    -webkit-backdrop-filter:blur(24px) saturate(1.35);
+    border:1px solid var(--glass-light-border);
+    box-shadow:var(--glass-light-shadow);
+    border-radius:20px;
+    padding:32px 30px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:12px;
+    min-height:220px;
+  }
+  .b-text-label {
+    font-family:var(--mono);
+    font-size:10px;
+    font-weight:600;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    color:var(--orange);
+  }
+  .b-text p {
+    font-family:var(--display);
+    font-weight:400;
+    font-size:clamp(16px, 1.3vw, 19px);
+    letter-spacing:-0.014em;
+    line-height:1.45;
+    color:var(--ink);
+    margin:0;
+  }
+
+
+  /* ============================================================
+     FAQ — accordion, feeds FAQPage schema + AI Overviews
+     ============================================================ */
+  .faq {
+    background:var(--dark-section);
+    padding:96px 0 100px;
+    position:relative;
+  }
+  .faq-intro { text-align:center; margin:0 auto 56px; }
+  .faq-intro .eyebrow {
+    justify-content:center;
+    color:rgba(255,255,255,.45);
+  }
+  .faq-title {
+    font-family:var(--display); font-weight:500;
+    font-size:clamp(36px,4vw,56px);
+    letter-spacing:-0.038em; line-height:1.05;
+    color:#fff;
+  }
+  .faq-title .op { color:var(--orange); }
+  .faq-title {
+    font-family:var(--display);
+    font-weight:500;
+    font-size:clamp(36px, 4.4vw, 60px);
+    letter-spacing:-0.035em;
+    line-height:1.0;
+    color:var(--ink);
+    margin-top:18px;
+  }
+  .faq-title .op { color:var(--orange); }
+  .faq-list {
+    max-width:840px;
+    margin:0 auto;
+    border-top:1px solid rgba(255,255,255,.1);
+  }
+  .faq-item {
+    border-bottom:1px solid rgba(255,255,255,.1);
+  }
+  .faq-q {
+    width:100%;
+    background:none;
+    border:none;
+    cursor:pointer;
+    text-align:left;
+    padding:28px 48px 28px 0;
+    position:relative;
+    font-family:var(--display);
+    font-weight:500;
+    font-size:clamp(17px, 1.5vw, 21px);
+    letter-spacing:-0.018em;
+    line-height:1.35;
+    color:#fff;
+    transition:color .2s var(--ease);
+  }
+  .faq-q:hover { color:var(--orange); }
+  .faq-q::after {
+    content:"";
+    position:absolute;
+    right:8px; top:50%;
+    width:13px; height:13px;
+    margin-top:-7px;
+    background:
+      linear-gradient(#fff,#fff) center/100% 1.5px no-repeat,
+      linear-gradient(#fff,#fff) center/1.5px 100% no-repeat;
+    transition:transform .3s var(--ease), opacity .2s var(--ease);
+  }
+  .faq-item.is-open .faq-q::after {
+    transform:rotate(135deg);
+  }
+  .faq-item.is-open .faq-q { color:var(--orange); }
+  .faq-a {
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .4s var(--ease);
+  }
+  .faq-a-inner {
+    padding:0 60px 30px 0;
+    font-family:var(--body);
+    font-size:15.5px;
+    line-height:1.7;
+    color:rgba(255,255,255,.55);
+  }
+  @media (max-width: 720px) {
+    .faq { padding:80px 0 90px; }
+    .faq-intro { margin-bottom:40px; }
+    .faq-q { padding:22px 40px 22px 0; }
+    .faq-a-inner { padding-right:30px; font-size:14.5px; }
+  }
+
+  /* ============================================================
+     CONTACT — Editorial closing spread
+     Asymmetric: statement+ledger left, form residency right
+     Same editorial DNA as audit / method / industries
+     ============================================================ */
+
+  /* ── Blog strip — compact article list before contact ── */
+  .blog-strip {
+    background:var(--warm);
+    padding:0 var(--gut);
+  }
+  .blog-strip-inner {
+    max-width:var(--max); margin:0 auto;
+    border-top:1px solid var(--line-strong);
+    padding:48px 0 56px;
+    display:flex; flex-direction:column;
+  }
+  .bstrip-card {
+    display:flex; align-items:center; justify-content:space-between;
+    gap:24px; text-decoration:none;
+    padding:20px 0;
+    border-bottom:1px solid var(--line-strong);
+  }
+  .bstrip-card:hover .bstrip-title { color:var(--orange); }
+  .bstrip-card:hover .bstrip-arrow { color:var(--orange); transform:translateX(4px); }
+  .bstrip-left { display:flex; align-items:flex-start; gap:20px; flex:1; min-width:0; }
+  .bstrip-cat {
+    font-family:var(--mono); font-size:9.5px; font-weight:600;
+    letter-spacing:0.18em; text-transform:uppercase;
+    color:var(--ink-mute); white-space:nowrap; flex:none;
+    width:220px;
+  }
+  .bstrip-title {
+    font-family:var(--display); font-weight:400;
+    font-size:clamp(15px, 1.3vw, 18px);
+    letter-spacing:-0.012em; line-height:1.3;
+    color:var(--ink); margin:0;
+    transition:color .2s var(--ease);
+  }
+  .bstrip-arrow {
+    font-size:18px; color:var(--ink-mute); flex:none;
+    transition:color .2s var(--ease), transform .2s var(--ease);
+  }
+  .bstrip-more {
+    margin-top:20px; align-self:flex-end;
+    font-family:var(--mono); font-size:10.5px; font-weight:600;
+    letter-spacing:0.16em; text-transform:uppercase;
+    color:var(--orange); text-decoration:none;
+    transition:opacity .2s var(--ease);
+  }
+  .bstrip-more:hover { opacity:.65; }
+  @media (max-width: 720px) {
+    .blog-strip-inner { padding:36px 0 44px; }
+    .bstrip-left { flex-direction:column; gap:6px; align-items:flex-start; }
+    .bstrip-cat { min-width:0; }
+    .bstrip-title { font-size:15px; }
+    .bstrip-card { padding:16px 0; }
+  }
+
+  .contact {
+    background:#e2ddd3;
+    padding:120px 0 100px;
+    position:relative;
+    overflow:hidden;
+  }
+
+  /* Same faint grid as other light sections */
+  .contact::before {
+    content:"";
+    position:absolute; inset:0;
+    pointer-events:none;
+    z-index:0;
+  }
+
+  /* Cyan atmospheric echo — bottom-right, mirrors hero cyan */
+  .contact::after {
+    content:"";
+    position:absolute;
+    width:700px; height:600px;
+    right:-140px; bottom:-100px;
+    background:radial-gradient(ellipse at center, rgba(0,216,255,.08), transparent 65%);
+    filter:blur(80px);
+    pointer-events:none;
+    z-index:0;
+  }
+
+  /* Editorial intro — same pattern as other sections */
+  .contact-intro {
+    position:relative; z-index:1;
+    text-align:center;
+    max-width:780px;
+    margin:0 auto 32px;
+  }
+  .contact-intro .eyebrow { justify-content:center; }
+  .contact-meta {
+    margin:18px auto 0;
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--ink-mute);
+    display:inline-flex;
+    align-items:center;
+    gap:14px;
+  }
+  .contact-meta::before, .contact-meta::after {
+    content:"";
+    width:36px; height:1px;
+    background:var(--ink-mute);
+    opacity:.4;
+  }
+
+  .contact-tagline {
+    position:relative; z-index:1;
+    text-align:center;
+    margin:0 auto 80px;
+    font-size:0; line-height:1; letter-spacing:0;
+  }
+  .contact-tagline-a {
+    display:block;
+    font-family:var(--display);
+    font-size:clamp(52px, 6.8vw, 100px);
+    font-weight:500;
+    letter-spacing:-0.045em;
+    line-height:0.96;
+    color:var(--ink);
+  }
+  .contact-tagline-a .op { color:var(--orange); }
+  .contact-tagline-b {
+    display:block;
+    margin:14px auto 0;
+    max-width:54ch;
+    font-family:var(--display);
+    font-size:clamp(20px, 2.4vw, 34px);
+    font-weight:400;
+    font-style:italic;
+    letter-spacing:-0.022em;
+    line-height:1.25;
+    color:var(--ink-mute);
+  }
+
+  /* Two-column composition: statement+ledger | form residency */
+  .contact-spread {
+    position:relative; z-index:1;
+    display:grid;
+    grid-template-columns:5fr 4fr;
+    gap:80px;
+    align-items:start;
+    max-width:1180px;
+    margin:0 auto;
+  }
+
+  /* LEFT: Editorial statement column */
+  .contact-statement {
+    display:flex;
+    flex-direction:column;
+    gap:32px;
+  }
+  .contact-statement-q {
+    font-family:var(--display);
+    font-weight:500;
+    font-size:clamp(28px, 2.6vw, 40px);
+    letter-spacing:-0.025em;
+    line-height:1.12;
+    color:var(--ink);
+    margin:0;
+    max-width:22ch;
+  }
+  .contact-statement-q em {
+    font-style:normal;
+    background:linear-gradient(180deg, transparent 70%, rgba(255,92,31,.22) 70%);
+    padding:0 2px;
+  }
+  .contact-statement-p {
+    font-size:17px;
+    line-height:1.55;
+    color:var(--ink-soft);
+    max-width:46ch;
+    margin:0;
+  }
+
+  /* Ledger — contact rows as editorial entries */
+  .contact-ledger {
+    display:flex;
+    flex-direction:column;
+    margin-top:12px;
+  }
+  .ledger-row {
+    display:grid;
+    grid-template-columns:120px 1fr auto;
+    gap:24px;
+    align-items:baseline;
+    padding:22px 0;
+    border-bottom:1px solid rgba(10,10,10,.08);
+    transition:padding .25s var(--ease);
+  }
+  .ledger-row:first-child { border-top:1px solid rgba(10,10,10,.08); }
+  .ledger-row .lr-label {
+    font-family:var(--mono);
+    font-size:11px;
+    font-weight:500;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--ink-mute);
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+  }
+  .ledger-row .lr-label::before {
+    content:"";
+    width:14px; height:2px;
+    background:var(--orange);
+    border-radius:2px;
+    flex:none;
+  }
+  .ledger-row:nth-child(2) .lr-label::before { background:var(--cyan); }
+  .ledger-row:nth-child(3) .lr-label::before { background:var(--ink); }
+  .ledger-row .lr-value {
+    font-family:var(--display);
+    font-weight:500;
+    font-size:21px;
+    letter-spacing:-0.018em;
+    line-height:1.3;
+    color:var(--ink);
+    transition:color .2s var(--ease);
+  }
+  .ledger-row a.lr-value:hover { color:var(--orange); }
+  .ledger-row .lr-value.small {
+    font-family:var(--body);
+    font-size:15.5px;
+    font-weight:500;
+    letter-spacing:0;
+    line-height:1.5;
+    color:var(--ink);
+  }
+  .ledger-row .lr-hint {
+    font-family:var(--mono);
+    font-size:10.5px;
+    font-weight:500;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--ink-mute);
+  }
+
+  /* Hours block — three subtle indicators below ledger */
+  .contact-hours {
+    margin-top:24px;
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:24px;
+  }
+  .contact-hours-cell {
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+  }
+  .contact-hours-cell .ch-val {
+    font-family:var(--display);
+    font-size:24px;
+    font-weight:500;
+    letter-spacing:-0.02em;
+    line-height:1;
+    color:var(--ink);
+  }
+  .contact-hours-cell .ch-val .ch-unit {
+    font-size:14px;
+    font-weight:400;
+    color:var(--ink-mute);
+    letter-spacing:0;
+    margin-left:2px;
+  }
+  .contact-hours-cell .ch-label {
+    font-family:var(--mono);
+    font-size:10.5px;
+    font-weight:500;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--ink-mute);
+  }
+
+  /* RIGHT: Form residency — frosted glass card */
+  .contact-residency {
+    position:relative;
+    background:var(--glass-light);
+    backdrop-filter:blur(24px) saturate(1.4);
+    -webkit-backdrop-filter:blur(24px) saturate(1.4);
+    border:1px solid var(--glass-light-border);
+    border-radius:24px;
+    padding:44px 40px 40px;
+    box-shadow:var(--glass-light-shadow);
+  }
+
+  /* ============================================================
+     SIGNATURE CORNER — design system marker
+     Used sparingly to flag "this is ours" moments:
+       · Hero SAF-T floating card (cyan, in-product context)
+       · Audit-as-core first principle (orange, lead principle)
+       · Solutions SAF-T product (cyan, featured flagship)
+       · Contact form (orange, point of contact)
+     One corner per major composition zone. Never repeated within a row.
+     ============================================================ */
+
+  .residency-head {
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    margin-bottom:6px;
+  }
+  .residency-title {
+    font-family:var(--display);
+    font-weight:500;
+    font-size:24px;
+    letter-spacing:-0.02em;
+    color:var(--ink);
+  }
+  .residency-meta {
+    font-family:var(--mono);
+    font-size:10.5px;
+    font-weight:500;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--ink-mute);
+  }
+  .residency-sub {
+    font-size:14.5px;
+    line-height:1.55;
+    color:var(--ink-soft);
+    margin:0 0 24px;
+    max-width:42ch;
+  }
+
+  /* Form with floating labels */
+  /* Honeypot — hidden from humans, visible to bots */
+  .hp-field {
+    position:absolute;
+    left:-9999px; top:-9999px;
+    width:0; height:0;
+    overflow:hidden; opacity:0;
+    pointer-events:none;
+  }
+  .field-error { border-color: rgba(255,92,31,.6) !important; }
+  .field-err-msg {
+    display:block;
+    margin-top:5px;
+    font-family:var(--mono);
+    font-size:10.5px;
+    letter-spacing:0.04em;
+    color:rgba(255,92,31,.85);
+    padding-left:2px;
+  }
+  .residency-form {
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .field {
+    position:relative;
+  }
+  .field input,
+  .field textarea {
+    width:100%;
+    padding:18px 16px 12px;
+    background:rgba(255,255,255,.55);
+    border:1px solid rgba(10,10,10,.08);
+    border-radius:10px;
+    font-family:var(--body);
+    font-size:15px;
+    color:var(--ink);
+    outline:none;
+    transition:border-color .2s var(--ease), background .2s var(--ease);
+    resize:none;
+  }
+  .field textarea {
+    min-height:96px;
+    resize:vertical;
+  }
+  .field input:focus,
+  .field textarea:focus {
+    border-color:var(--orange);
+    background:rgba(255,255,255,.92);
+  }
+  .field-label {
+    position:absolute;
+    top:14px; left:16px;
+    font-size:13px;
+    color:var(--ink-mute);
+    pointer-events:none;
+    transition:transform .18s var(--ease), font-size .18s var(--ease), color .18s var(--ease);
+    transform-origin:0 0;
+    background:transparent;
+  }
+  .field input:focus + .field-label,
+  .field input:not(:placeholder-shown) + .field-label,
+  .field textarea:focus + .field-label,
+  .field textarea:not(:placeholder-shown) + .field-label {
+    transform:translateY(-7px) scale(0.78);
+    color:var(--ink-mute);
+  }
+  .field input:focus + .field-label,
+  .field textarea:focus + .field-label {
+    color:var(--orange);
+  }
+
+  .residency-submit {
+    margin-top:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:16px 24px;
+    background:var(--ink);
+    color:#fff;
+    border:1px solid var(--ink);
+    border-radius:999px;
+    font-family:var(--body);
+    font-size:14.5px;
+    font-weight:500;
+    cursor:pointer;
+    transition:background .25s var(--ease), border-color .25s var(--ease), transform .25s var(--ease);
+  }
+  .residency-submit:hover {
+    background:var(--orange);
+    border-color:var(--orange);
+    transform:translateY(-1px);
+  }
+  .residency-submit .arrow {
+    width:14px; height:10px;
+    background:currentColor;
+    -webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 16'><path d='M0 8h22M16 1l7 7-7 7' fill='none' stroke='black' stroke-width='2.4'/></svg>") center/contain no-repeat;
+            mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 16'><path d='M0 8h22M16 1l7 7-7 7' fill='none' stroke='black' stroke-width='2.4'/></svg>") center/contain no-repeat;
+    transition:transform .25s var(--ease);
+  }
+  .residency-submit:hover .arrow { transform:translateX(4px); }
+
+  .residency-foot {
+    margin-top:14px;
+    font-family:var(--mono);
+    font-size:10.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--ink-mute);
+    text-align:center;
+  }
+
+  /* FOOTER */
+  .footer {
+    background:#000;
+    color:rgba(255,255,255,.5);
+    padding:0;
+  }
+
+  /* Single unified footer zone */
+  .footer-inner {
+    max-width:var(--max);
+    margin:0 auto;
+    padding:64px var(--gut) 0;
+  }
+
+  /* Main grid — brand + 3 nav columns */
+  .footer-grid {
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1.6fr;
+    gap:48px;
+    padding-bottom:56px;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    align-items:start;
+  }
+
+  /* Brand column */
+  .footer-brand {
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    margin-top:-60px;
+  }
+  .footer-mark {
+    color:#fff;
+    line-height:0;
+    font-size:0;
+    display:block;
+    margin:0;
+    padding:0;
+  }
+  .footer-mark .logo-svg { width:160px; }
+  .footer-tagline {
+    font-family:var(--display);
+    font-size:18px;
+    font-weight:400;
+    line-height:1.5;
+    letter-spacing:-0.012em;
+    color:rgba(255,255,255,.65);
+    max-width:28ch;
+  }
+  .footer-tagline .op { color:var(--orange); }
+  .footer-legal {
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:0.05em;
+    line-height:1.65;
+    color:rgba(255,255,255,.38);
+    margin-top:4px;
+  }
+
+  /* Nav columns */
+  .footer-col-label {
+    font-family:var(--mono);
+    font-size:10px;
+    font-weight:600;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    color:rgba(255,255,255,.4);
+    margin-bottom:16px;
+  }
+  .footer ul {
+    list-style:none; padding:0; margin:0;
+    display:flex; flex-direction:column; gap:10px;
+  }
+  .footer a {
+    font-family:var(--body);
+    font-size:14px;
+    color:rgba(255,255,255,.6);
+    text-decoration:none;
+    transition:color .2s var(--ease);
+  }
+  .footer a:hover { color:#fff; }
+
+  /* Contact column */
+  .footer-contact { display:flex; flex-direction:column; gap:14px; }
+  .footer-contact-row {
+    display:flex; flex-direction:column; gap:3px;
+  }
+  .footer-contact-lbl {
+    font-family:var(--mono); font-size:10px;
+    font-weight:600; letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:rgba(255,255,255,.38);
+  }
+  .footer-contact-val {
+    font-family:var(--body); font-size:14px;
+    color:rgba(255,255,255,.6);
+    text-decoration:none;
+    line-height:1.5;
+    transition:color .2s var(--ease);
+  }
+  a.footer-contact-val:hover { color:#fff; }
+
+  /* Email reveal button — same look as surrounding text */
+  button.email-reveal {
+    background:none; border:none; cursor:pointer; padding:0; margin:0;
+    font-family:inherit; font-size:inherit;
+    line-height:inherit; text-align:left;
+    display:inline-flex; align-items:center; gap:6px;
+    text-decoration:underline;
+    text-decoration-style:dashed;
+    text-decoration-color:currentColor;
+    text-underline-offset:3px;
+    transition:color .2s var(--ease), opacity .2s var(--ease);
+  }
+  button.email-reveal::before {
+    content:"✉";
+    font-size:0.85em;
+    opacity:.6;
+  }
+  /* In contact section — dark text */
+  .lr-value.email-reveal {
+    color:var(--ink);
+    font-family:var(--display);
+    font-size:clamp(18px, 1.5vw, 22px);
+    font-weight:400;
+    letter-spacing:-0.01em;
+  }
+  .lr-value.email-reveal:hover { color:var(--orange); }
+  /* In footer — light text */
+  .footer-contact-val.email-reveal {
+    color:rgba(255,255,255,.5);
+  }
+  .footer-contact-val.email-reveal:hover { color:#fff; }
+
+  /* Bottom bar */
+  .footer-bot {
+    padding:20px 0 28px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  .footer-bot-copy {
+    font-family:var(--mono); font-size:11px;
+    letter-spacing:0.06em;
+    color:rgba(255,255,255,.38);
+  }
+  .footer-bot-cta {
+    font-family:var(--mono); font-size:10.5px;
+    font-weight:600; letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--orange);
+    text-decoration:none;
+    transition:opacity .2s var(--ease);
+  }
+  .footer-bot-cta:hover { opacity:.65; }
+
+
+  /* REVEAL (sections after hero) */
+  .reveal {
+    opacity:0;
+    transform:translateY(28px);
+    transition:opacity 1s var(--ease), transform 1s var(--ease);
+  }
+  .reveal.in { opacity:1; transform:translateY(0); }
+  .reveal[data-d="1"] { transition-delay:.08s; }
+  .reveal[data-d="2"] { transition-delay:.16s; }
+  .reveal[data-d="3"] { transition-delay:.24s; }
+  .reveal[data-d="4"] { transition-delay:.32s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal, .ha { opacity:1; transform:none; transition:none; animation:none; }
+    .hero-card-wrap, .hero-card { opacity:1; animation:none; transform:none !important; }
+    .hero-atmos { animation:none; }
+    .dot-cyan { animation:none; }
+    .hero h1 .underline::after { animation:none; transform:scaleX(1); }
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 1180px) {
+    .hero-card-wrap.l, .hero-card-wrap.r { display:none; }
+    .hero-card-wrap.c .hero-card {
+      width:min(380px, 92vw);
+      transform:none;
+      animation:none;
+    }
+    .hero-cards { padding:16px var(--gut) 64px; perspective:none; }
+    .hero-card-wrap.l, .hero-card-wrap.r { margin:0; }
+  }
+  @media (max-width: 1080px) {
+    section { padding:96px 0; }
+
+    /* AUDIT */
+    .audit-cards { grid-template-columns:1fr; }
+    .audit-card:nth-child(1),
+    .audit-card:nth-child(2),
+    .audit-card:nth-child(3) {
+      grid-column:1 !important;
+      grid-row:auto !important;
+    }
+    .audit-card:nth-child(1) .audit-card-num { font-size:140px; }
+    .audit-card:nth-child(1) h3 { font-size:clamp(20px, 3vw, 26px); }
+    /* Eyebrow labels — tighter tracking so they don't wrap awkwardly */
+    .audit-card-label {
+      font-size:10px;
+      letter-spacing:0.14em;
+    }
+    .audit-body { padding:0; }
+
+    /* SOLUTIONS — disable sticky stack on tablet */
+    /* Solutions v6 — tablet */
+    .solutions-intro { padding:80px var(--gut) 0; }
+    .solutions-index { margin-top:40px; display:none; }
+    .solutions-index-item { padding:16px 0; }
+    .solutions-index-num { padding:0 16px; }
+    .solutions-index-name { padding:0 16px; font-size:13px; }
+    .service-chapter { grid-template-columns:1fr; min-height:auto; }
+    .service-context { position:relative; top:auto; height:auto; padding:60px var(--gut) 40px; border-right:none; border-bottom:1px solid rgba(255,255,255,.06); opacity:1; }
+    .service-features { padding:40px var(--gut) 60px; }
+    .product {
+      position:relative;
+      top:auto !important;
+      min-height:auto;
+      margin-bottom:16px;
+      z-index:auto !important;
+    }
+    #prod-audit, #prod-saft, #prod-odoo, #prod-tp {
+      top:auto !important;
+      z-index:auto !important;
+      min-height:auto !important;
+      margin-bottom:16px !important;
+      padding-top:0 !important;
+      background:#111116 !important;
+    }
+    #prod-saft { background:#0f0f15 !important; }
+    .product-body {
+      grid-template-columns:1fr;
+      gap:32px;
+      padding:32px;
+    }
+    .product-header { padding:0 32px; }
+    .product-bignum { font-size:120px; }
+
+    /* METHOD — atlas reflows to single column */
+    .atlas { margin-top:48px; }
+    .atlas-track { display:none; }
+    .atlas-cards {
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+    .station.s03 { grid-column:1 / -1; }
+    .credentials {
+      grid-template-columns:1fr;
+      gap:14px;
+      max-width:580px;
+      margin-top:64px;
+    }
+
+    /* INDUSTRIES — bento on tablet/mobile: 2 squares side-by-side, text below */
+    .bento-row, .bento-row.alt {
+      grid-template-columns:1fr 1fr;
+    }
+    .b-fact:nth-of-type(1) { grid-column:1; grid-row:1; }
+    .b-fact:nth-of-type(2) { grid-column:2; grid-row:1; }
+    .b-text { grid-column:1 / -1; grid-row:2; min-height:auto; }
+    .ind-tagline { margin-bottom:60px; }
+
+    /* CONTACT */
+    .contact-spread { grid-template-columns:1fr; gap:48px; max-width:620px; }
+    .contact-hours { grid-template-columns:repeat(3, 1fr); }
+    .ledger-row { grid-template-columns:120px 1fr; }
+    .ledger-row .lr-hint { grid-column:1 / -1; padding-left:24px; }
+
+    /* FOOTER */
+
+    /* HEADER */
+    .nav { display:none; }
+  }
+
+  @media (max-width: 720px) {
+    :root { --gut:18px; }
+    section { padding:72px 0; }
+
+    /* HERO */
+    .hero { min-height:88vh; }
+    .hero-content { padding:88px var(--gut) 28px; }
+    .hero h1 {
+      margin-top:22px;
+      font-size:clamp(36px, 11vw, 56px);
+      letter-spacing:-0.03em;
+      line-height:1.02;
+      max-width:14ch;
+    }
+    .hero-lead { margin-top:24px; font-size:16px; }
+    .hero-actions { margin-top:32px; width:100%; }
+    .hero-actions .btn { flex:1; justify-content:center; padding:14px 18px; }
+    .hero-cards { display:none; }
+    .hero::after { height:120px; }
+    .scroll-cue { display:none; }
+
+    /* AUDIT */
+    .audit-tagline { margin-bottom:56px; }
+    .audit-tagline-a {
+      font-size:clamp(38px, 11vw, 56px);
+      letter-spacing:-0.03em;
+    }
+    .audit-tagline-b {
+      font-size:clamp(17px, 5vw, 22px);
+      margin-top:12px;
+    }
+    .audit-intro .audit-company { font-size:17px; }
+    .audit-body { margin-bottom:56px; }
+    .audit-card { padding:28px 24px; }
+    .audit-card:nth-child(1) { padding:28px 24px; }
+    .audit-card:nth-child(1) .audit-card-num { font-size:100px; right:14px; bottom:-10px; }
+    .audit-card-num { font-size:90px; }
+
+    /* SOLUTIONS — products */
+    .solutions-layout { padding:72px 0 0; gap:32px; }
+    .solutions-title { font-size:clamp(30px, 8vw, 42px); }
+    .product { border-radius:14px; }
+    .product-body {
+      padding:24px 20px 28px;
+      gap:24px;
+    }
+    .product-header {
+      padding:0 20px;
+      height:54px;
+      gap:10px;
+    }
+    .product-header .ph-label { display:none; }
+    .product-header .ph-title { font-size:14px; }
+    .product-header .ph-num { font-size:10px; }
+    .product-bignum { font-size:90px; bottom:8px; right:18px; }
+    .product-content h3 { font-size:20px; max-width:none; }
+    .product-content > p { font-size:14.5px; max-width:none; }
+    .vis { min-height:240px; padding:14px 16px; }
+    .vis-head { padding-bottom:10px; }
+    .vis-title { font-size:12px; }
+    /* SAF-T table — drop date column on mobile, only ID + Entity + Status */
+    .vs-th, .vs-tr {
+      grid-template-columns:28px 1fr 86px;
+      gap:8px;
+    }
+    .vs-th span:nth-child(3),
+    .vs-tr .vs-date { display:none; }
+    .vs-entity { font-size:11.5px; }
+    .vs-id { font-size:10.5px; }
+    .vs-status {
+      font-size:9.5px;
+      padding:3px 7px;
+    }
+    .vs-create { padding:5px 10px; font-size:10.5px; }
+    .vs-search, .vs-filter { font-size:10.5px; padding:5px 9px; }
+    .vo-flow { grid-template-columns:1fr 24px 1fr; gap:8px; }
+    .vo-col-label { font-size:9px; }
+    .vo-item-name { font-size:10px; }
+
+    /* METHOD */
+    .method { padding:72px 0 88px; }
+    .method-intro { margin-bottom:20px; }
+    .method-tagline { margin-bottom:24px; }
+    .method-tagline-a {
+      font-size:clamp(38px, 11vw, 56px);
+      letter-spacing:-0.03em;
+    }
+    .method-tagline-b {
+      font-size:clamp(17px, 5vw, 22px);
+      margin-top:12px;
+    }
+    .method-meta { font-size:10.5px; letter-spacing:0.14em; }
+    .method-meta::before, .method-meta::after { width:24px; }
+    .atlas { margin-top:40px; }
+    .atlas-cards {
+      grid-template-columns:1fr;
+      gap:10px;
+    }
+    .station.s03 { grid-column:1; }
+    .station { padding:24px 22px; min-height:auto; }
+    .station h3 { font-size:17px; }
+    .station p { font-size:13.5px; }
+    .credentials { margin-top:48px; }
+    .cred { padding:22px 18px; }
+    .cred h4 { font-size:18px; }
+
+    /* INDUSTRIES — mobile: 2 facts side by side, text card below as full-width caption */
+    .bento { gap:20px; }
+    .bento-row, .bento-row.alt {
+      grid-template-columns:1fr 1fr !important;
+      grid-template-rows:auto auto;
+      gap:10px;
+    }
+    /* Fact cards always top row */
+    .bento-row .b-fact, .bento-row.alt .b-fact {
+      grid-row:1 !important;
+      grid-column:auto !important;
+    }
+    /* Text card always bottom, full width — styled as caption strip */
+    .bento-row .b-text, .bento-row.alt .b-text {
+      grid-column:1 / -1 !important;
+      grid-row:2 !important;
+      /* Strip style — less card-like, more like a caption */
+      background:transparent !important;
+      backdrop-filter:none !important;
+      -webkit-backdrop-filter:none !important;
+      border:none !important;
+      box-shadow:none !important;
+      border-top:1px solid rgba(10,10,10,.1) !important;
+      border-radius:0 !important;
+      padding:14px 4px 0 !important;
+      min-height:auto !important;
+    }
+    .bento-row .b-text p, .bento-row.alt .b-text p {
+      font-size:13.5px;
+      line-height:1.5;
+      color:var(--ink-soft);
+    }
+    .bento-row .b-text .b-text-label, .bento-row.alt .b-text .b-text-label {
+      font-size:9px;
+      letter-spacing:0.2em;
+      margin-bottom:6px;
+    }
+    .b-fact { padding:18px 16px; min-height:120px; }
+    .b-fact .b-num { font-size:clamp(26px, 8vw, 36px); line-height:1.0; }
+    .b-fact .b-num.b-num-text { font-size:clamp(18px, 5vw, 24px); }
+    .b-desc { font-size:13px; line-height:1.4; margin-top:6px; }
+    .b-tag { font-size:9px; letter-spacing:0.14em; }
+    .bento-group { margin-bottom:28px; }
+    .bento-category { gap:10px; margin-bottom:14px; padding:0 2px; }
+    .bento-category-num { font-size:10px; }
+    .bento-category-label { font-size:15px; }
+    .industries { padding:64px 0 80px; }
+    .ind-tagline { margin-bottom:36px; }
+    .ind-tagline-a { font-size:clamp(34px, 10vw, 48px); letter-spacing:-0.03em; }
+    .ind-tagline-b { font-size:clamp(15px, 5vw, 18px); margin-top:10px; }
+
+    /* CONTACT */
+    .contact { padding:72px 0 64px; }
+    .contact-tagline { margin-bottom:40px; }
+    .contact-tagline-a { font-size:clamp(36px, 10vw, 52px); letter-spacing:-0.03em; }
+    .contact-tagline-b { font-size:clamp(16px, 5vw, 20px); margin-top:10px; }
+    .contact-statement { gap:24px; }
+    .contact-statement-q { font-size:clamp(22px, 6vw, 28px); }
+    .contact-statement-p { font-size:15px; }
+    .ledger-row { grid-template-columns:1fr; gap:4px; padding:16px 0; }
+    .ledger-row .lr-hint { padding-left:0; font-size:9.5px; }
+    .ledger-row .lr-value { font-size:18px; }
+    .ledger-row .lr-value.small { font-size:14.5px; }
+    .contact-hours { grid-template-columns:repeat(3, 1fr); gap:14px; margin-top:18px; }
+    .contact-hours-cell .ch-val { font-size:18px; }
+    .contact-hours-cell .ch-val .ch-unit { font-size:11.5px; }
+    .contact-hours-cell .ch-label { font-size:9.5px; }
+    .contact-residency { padding:28px 20px 24px; border-radius:16px; }
+    .has-corner::after { width:24px; height:24px; }
+    .residency-title { font-size:19px; }
+    .residency-sub { font-size:14px; margin-bottom:18px; }
+    .field input, .field textarea { font-size:16px !important; padding:18px 14px 10px !important; }
+    .field-label { left:14px; }
+    .residency-submit { padding:14px 20px; font-size:14px; }
+
+    /* FOOTER */
+    .footer-inner { padding:48px var(--gut) 0; }
+    .footer-grid {
+      grid-template-columns:1fr 1fr;
+      gap:36px;
+      padding-bottom:40px;
+    }
+    /* Brand spans full width on mobile */
+    .footer-brand {
+      grid-column:1 / -1;
+      margin-top:0;
+      flex-direction:row;
+      align-items:flex-start;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+    .footer-mark .logo-svg { width:100px; }
+    .footer-tagline { font-size:15px; max-width:32ch; }
+    .footer-legal { display:none; }
+    /* Nav columns side by side */
+    .footer-grid > div:not(.footer-brand) { padding-top:0; }
+    .footer-col-label { font-size:9px; margin-bottom:12px; }
+    .footer ul { gap:8px; }
+    .footer a { font-size:13px; }
+    .footer-contact { gap:12px; }
+    .footer-contact-val { font-size:13px; }
+    .footer-bot { padding:16px 0 22px; gap:8px; flex-direction:column; align-items:flex-start; }
+    .footer-bot-copy { font-size:10px; }
+
+    /* HEADER */
+    .header .logo-svg { width:88px; }
+    .header-cta { padding:7px 13px; font-size:12.5px; }
+    .page-scrim { height:96px; }
+  }
+
+  /* Very small screens — extra tightening */
+  @media (max-width: 420px) {
+    :root { --gut:16px; }
+    .hero h1 { font-size:clamp(32px, 11vw, 48px); }
+    .hero-content { padding:84px var(--gut) 24px; }
+    .audit-tagline-a, .method-tagline-a { font-size:clamp(34px, 11vw, 48px); }
+    .audit-tagline-b, .method-tagline-b { font-size:16px; }
+    .product-header { padding:0 16px; }
+    .product-body { padding:20px 16px 24px; }
+    .station, .station.s01, .station.s03 { padding:18px 18px; }
+    .station h3 { font-size:17px !important; }
+    .contact-residency { padding:24px 18px; }
+    .audit-card { padding:24px 20px; }
+  }
+
+  /* Nav dropdown */
+  .nav-dropdown { position:relative; }
+  .nav-dropdown-toggle { display:flex; align-items:center; gap:4px; cursor:pointer; }
+  .nav-caret { font-size:9px; opacity:.6; transition:transform .2s var(--ease); line-height:1; margin-top:1px; }
+  .nav-dropdown:hover .nav-caret { transform:rotate(180deg); }
+  /* Outer wrapper — fills gap between link and panel to prevent hover loss */
+  .nav-dropdown-menu {
+    position:absolute; top:100%; left:50%;
+    transform:translateX(-50%);
+    padding-top:12px;
+    opacity:0; visibility:hidden; pointer-events:none;
+    transition:opacity .2s var(--ease), visibility .2s;
+    z-index:200;
+    min-width:230px;
+  }
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown:focus-within .nav-dropdown-menu {
+    opacity:1; visibility:visible; pointer-events:auto;
+  }
+  /* Inner visible panel */
+  .nav-dropdown-menu-inner {
+    background:#0d0d10;
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:10px;
+    padding:6px 0;
+    box-shadow:0 16px 48px rgba(0,0,0,.4);
+  }
+  .header.scrolled .nav-dropdown-menu-inner {
+    background:#fff;
+    border-color:rgba(0,0,0,.1);
+    box-shadow:0 8px 32px rgba(0,0,0,.12);
+  }
+  .nav-dropdown-menu a {
+    display:block;
+    padding:10px 18px;
+    font-family:var(--body); font-size:13.5px; font-weight:500;
+    color:rgba(255,255,255,.65); opacity:1;
+    text-decoration:none;
+    letter-spacing:-0.005em;
+    transition:color .15s var(--ease), background .15s var(--ease);
+    white-space:nowrap;
+  }
+  .nav-dropdown-menu a:hover { color:#fff; background:rgba(255,255,255,.07); }
+  .header.scrolled .nav-dropdown-menu a { color:var(--ink-soft); }
+  .header.scrolled .nav-dropdown-menu a:hover { color:var(--ink); background:var(--warm); }
+  .nav-drop-divider {
+    height:1px; background:rgba(255,255,255,.1); margin:5px 0;
+  }
+  .header.scrolled .nav-drop-divider { background:var(--line-strong); }
+  @media (max-width: 720px) {
+    .nav-dropdown-menu { display:none; }
+    .nav-caret { display:none; }
+  }
+
+  /* ── Nav dropdown ── */
+  .nav-item { position:relative; }
+  .nav-item > a { display:flex; align-items:center; gap:5px; }
+  .nav-item > a::after {
+    content:"";
+    width:5px; height:5px;
+    border-right:1.5px solid currentColor;
+    border-bottom:1.5px solid currentColor;
+    transform:rotate(45deg) translateY(-2px);
+    opacity:.6;
+    transition:transform .2s var(--ease);
+  }
+  .nav-item:hover > a::after { transform:rotate(-135deg) translateY(-2px); }
+  .nav-drop {
+    position:absolute; top:100%; left:50%;
+    transform:translateX(-50%);
+    /* padding-top bridges the gap so hover isn't lost */
+    padding-top:12px;
+    opacity:0; visibility:hidden;
+    transition:opacity .2s var(--ease);
+    z-index:200;
+    pointer-events:none;
+  }
+  .nav-item:hover .nav-drop,
+  .nav-item:focus-within .nav-drop {
+    opacity:1; visibility:visible;
+    pointer-events:auto;
+  }
+  .nav-drop-inner {
+    background:#0d0d10;
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:10px;
+    padding:6px 0;
+    min-width:230px;
+    box-shadow:0 16px 48px rgba(0,0,0,.4);
+  }
+  .header.scrolled .nav-drop-inner {
+    background:#fff;
+    border-color:rgba(0,0,0,.1);
+    box-shadow:0 8px 32px rgba(0,0,0,.1);
+  }
+  @media (max-width: 720px) {
+    .nav-item > a::after { display:none; }
+    .nav-drop { display:none !important; }
+  }
+  .nav-drop a {
+    display:block;
+    padding:10px 20px;
+    font-family:var(--body); font-size:13.5px; font-weight:500;
+    color:rgba(255,255,255,.7); opacity:1;
+    text-decoration:none;
+    letter-spacing:-0.005em;
+    transition:color .15s var(--ease), background .15s var(--ease);
+    white-space:nowrap;
+  }
+  .nav-drop a:hover { color:#fff; background:rgba(255,255,255,.06); }
+  .header.scrolled .nav-drop a { color:var(--ink-soft); }
+  .header.scrolled .nav-drop a:hover { color:var(--ink); background:var(--warm); }
+  .nav-drop-divider {
+    height:1px; background:rgba(255,255,255,.08);
+    margin:6px 0;
+  }
+  .header.scrolled .nav-drop-divider { background:var(--line-strong); }
+
+  @media (max-width: 720px) {
+    /* Service chapters become accordion items on mobile */
+    .service-chapter {
+      display:block;
+      border-top:1px solid rgba(255,255,255,.1);
+    }
+    /* Context becomes accordion trigger */
+    .service-context {
+      display:block;
+      padding:0;
+      position:static;
+      border-right:none;
+      background:none;
+      justify-content:flex-start;
+      opacity:1 !important;
+    }
+    .svc-mob-trigger {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      width:100%;
+      padding:22px var(--gut);
+      background:none;
+      border:none;
+      cursor:pointer;
+      text-align:left;
+      gap:12px;
+    }
+    .solutions > .service-chapter:first-of-type { margin-top:32px; }
+    .svc-mob-trigger-inner {
+      display:flex;
+      align-items:baseline;
+      gap:14px;
+      flex:1;
+      min-width:0;
+    }
+    .svc-mob-num {
+      font-family:var(--mono); font-size:10px; font-weight:600;
+      letter-spacing:0.2em; color:rgba(255,255,255,.3);
+      flex:none;
+    }
+    .svc-mob-name {
+      font-family:var(--display); font-weight:500;
+      font-size:17px; letter-spacing:-0.018em;
+      color:#fff; line-height:1.2;
+    }
+    .svc-mob-icon {
+      width:22px; height:22px; flex:none;
+      display:flex; align-items:center; justify-content:center;
+      border:1.5px solid rgba(255,255,255,.2);
+      border-radius:50%;
+      position:relative;
+      transition:border-color .25s, transform .3s;
+    }
+    .svc-mob-icon::before,
+    .svc-mob-icon::after {
+      content:"";
+      position:absolute;
+      background:#fff;
+      border-radius:2px;
+      transition:transform .3s, opacity .2s;
+    }
+    .svc-mob-icon::before { width:10px; height:1.5px; }
+    .svc-mob-icon::after  { width:1.5px; height:10px; }
+    /* Open state */
+    .service-chapter.mob-open .svc-mob-icon { border-color:var(--orange); }
+    .service-chapter.mob-open .svc-mob-icon::after { transform:rotate(90deg); opacity:0; }
+    .service-chapter.mob-open .svc-mob-icon::before,
+    .service-chapter.mob-open .svc-mob-icon::after { background:var(--orange); }
+    /* Hide original context children, show only trigger */
+    .service-context .service-num,
+    .service-context .service-name,
+    .service-context .service-accent,
+    .service-context .service-desc,
+    .service-context .service-team,
+    .service-context .arrow-link { display:none; }
+    /* Features panel — collapsed by default */
+    .service-features {
+      display:block;
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .4s cubic-bezier(.4,0,.2,1);
+      padding:0;
+      border-left:none;
+    }
+    .service-chapter.mob-open .service-features {
+      max-height:3000px;
+    }
+    /* Feature cards inside */
+    .fc { margin:0; border-radius:0; border-top:1px solid rgba(255,255,255,.07); }
+    .fc-divider { padding:12px var(--gut) 8px; }
+  }
+
+  /* ══ Mobile hamburger + slide-in menu ══════════════════════════════════ */
+  .mob-menu-btn {
+    display:none;
+    flex-direction:column; justify-content:center; align-items:center;
+    gap:5px; width:36px; height:36px; flex-shrink:0;
+    background:none; border:none; cursor:pointer; padding:4px;
+    color:currentColor;
+  }
+  .mob-menu-btn span {
+    display:block; width:20px; height:1.5px;
+    background:currentColor; border-radius:2px;
+    transition:transform .3s ease, opacity .2s ease;
+  }
+  .mob-menu-btn.is-open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+  .mob-menu-btn.is-open span:nth-child(2){opacity:0;}
+  .mob-menu-btn.is-open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+
+  .mob-overlay {
+    display:none; position:fixed; inset:0;
+    background:rgba(0,0,0,.55); z-index:499;
+    opacity:0; transition:opacity .3s ease;
+    pointer-events:none;
+  }
+  .mob-overlay.is-open { opacity:1; pointer-events:auto; }
+
+  .mob-menu {
+    position:fixed; top:0; right:0; bottom:0;
+    width:min(300px, 82vw);
+    background:#0d0d10;
+    z-index:500;
+    transform:translateX(100%);
+    transition:transform .32s cubic-bezier(.4,0,.2,1);
+    overflow-y:auto;
+    padding:72px 24px 40px;
+  }
+  .mob-menu.is-open{transform:translateX(0);}
+
+  .mob-menu a {
+    display:block;
+    font-family:var(--display); font-weight:400;
+    font-size:18px; letter-spacing:-0.01em;
+    color:rgba(255,255,255,.85); text-decoration:none;
+    padding:14px 0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    transition:color .15s ease;
+  }
+  .mob-menu a:hover{color:#fff;}
+  .mob-menu .mob-section-label {
+    font-family:var(--mono); font-size:9px; font-weight:600;
+    letter-spacing:.2em; text-transform:uppercase;
+    color:rgba(255,255,255,.25);
+    padding:20px 0 8px; border-bottom:none;
+  }
+  .mob-menu .mob-sub {
+    font-size:14px; color:rgba(255,255,255,.45);
+    padding:10px 0 10px 12px; border-bottom:none;
+  }
+  .mob-menu .mob-sub:last-of-type{margin-bottom:8px;}
+  }    .header-inner {
+      display:flex; align-items:center;
+      justify-content:space-between; gap:12px;
+    }
+    .logo { flex:none; }
+    .header-cta {
+      flex:none;
+      padding:8px 14px !important;
+      font-size:12.5px !important;
+      white-space:nowrap;
+    }
+  }
+
+  /* ══ MOBILE HEADER & MENU ════════════════════════════════════════════════ */
+
+  /* Hamburger button — hidden on desktop */
+  .mob-menu-btn {
+    display:none;
+    flex-direction:column; justify-content:center; align-items:center;
+    gap:5px; width:36px; height:36px; flex-shrink:0;
+    background:none; border:none; cursor:pointer; padding:4px;
+    color:currentColor; line-height:0;
+  }
+  .mob-menu-btn span {
+    display:block; width:20px; height:1.5px;
+    background:currentColor; border-radius:2px;
+    transition:transform .3s ease, opacity .2s ease;
+  }
+  /* X state */
+  .mob-menu-btn.is-open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+  .mob-menu-btn.is-open span:nth-child(2){opacity:0; transform:scaleX(0);}
+  .mob-menu-btn.is-open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+
+  /* Overlay */
+  .mob-overlay {
+    display:none; position:fixed; inset:0;
+    background:rgba(0,0,0,.55); z-index:499;
+    opacity:0; transition:opacity .3s ease;
+    pointer-events:none;
+  }
+  .mob-overlay.is-open { opacity:1; pointer-events:auto; }
+
+  /* Slide-in panel */
+  .mob-menu {
+    position:fixed; top:0; right:0; bottom:0;
+    width:min(300px, 82vw);
+    background:#0d0d10; z-index:500;
+    transform:translateX(100%);
+    transition:transform .32s cubic-bezier(.4,0,.2,1);
+    overflow-y:auto;
+    padding:72px 24px 40px;
+  }
+  .mob-menu.is-open { transform:translateX(0); }
+
+  .mob-menu a {
+    display:block;
+    font-family:var(--display); font-weight:400;
+    font-size:18px; letter-spacing:-0.01em;
+    color:rgba(255,255,255,.85); text-decoration:none;
+    padding:14px 0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    transition:color .15s ease;
+  }
+  .mob-menu a:hover { color:#fff; }
+  .mob-menu .mob-section-label {
+    display:block;
+    font-family:var(--mono); font-size:9px; font-weight:600;
+    letter-spacing:.2em; text-transform:uppercase;
+    color:rgba(255,255,255,.25);
+    padding:20px 0 8px; border-bottom:none;
+  }
+  .mob-menu .mob-sub {
+    font-size:14px; color:rgba(255,255,255,.45);
+    padding:10px 0 10px 12px; border-bottom:none;
+  }
+  .mob-menu .mob-sub:last-of-type { margin-bottom:8px; }
+
+  /* ≤1080px: hide desktop nav, show hamburger, flex header */
+  @media (max-width:1080px) {
+    .nav { display:none !important; }
+    .nav-dropdown { display:none !important; }
+    .nav-drop { display:none !important; }
+    .mob-menu-btn { display:flex; }
+    .mob-overlay { display:block; }
+    .header-inner {
+      display:flex !important;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .logo { flex:none; }
+    .header-cta {
+      flex:none;
+      padding:8px 14px !important;
+      font-size:12.5px !important;
+      white-space:nowrap;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- LUCAS wordmark — defined once -->
+
+
+<!-- Sticky scrim — gradient backing under header over hero -->
+<div class="page-scrim" id="page-scrim" aria-hidden="true"></div>
+
+<!-- HEADER -->
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
+  <symbol id="lucas-mark" viewBox="0 0 500.61676 68.570709" preserveAspectRatio="xMidYMid meet">
+    <g
+    transform="matrix(1.9896013,0,0,1.9896013,-727.29754,-416.35915)">
+    <path
+    d="m 584.65003,209.37028 c 3.17869,-0.18949 7.79551,-0.0426 11.08728,-0.0404 l 21.15683,0.0181 c -1.49489,1.79613 -2.38357,3.03422 -3.56494,5.04663 -9.17288,0.48876 -18.7196,-0.15943 -27.91953,0.19116 -5.06383,0.19295 -6.46293,6.38514 -2.35475,8.70446 1.42171,0.8027 4.82435,0.63281 6.52988,0.62683 l 11.9875,-0.0418 c 2.18003,-0.007 6.22213,-0.13167 8.22655,0.29072 1.4838,0.30896 2.86871,0.97902 4.0319,1.95108 1.90375,1.57339 3.08734,3.85186 3.2798,6.31436 0.5419,6.17734 -2.91484,10.68108 -9.13918,11.21899 -4.77647,0.15565 -9.9853,0.0346 -14.79059,0.035 -5.87135,0.001 -12.07751,0.11841 -17.93202,-0.0732 1.09356,-0.97427 2.75918,-3.67624 3.839,-5.03544 l 18.54177,-0.0164 c 3.3104,0.002 6.60483,0.0275 9.92011,-0.0373 4.8115,-0.0945 6.10683,-7.47711 1.52416,-8.99817 -1.68647,-0.55964 -4.30773,-0.40576 -6.12989,-0.39733 l -11.58307,0.0435 c -4.3636,0.003 -9.25182,0.47095 -12.8141,-2.51795 -3.84298,-3.22392 -4.20529,-10.32116 -0.94456,-14.06384 1.94855,-2.23613 4.18711,-3.00614 7.04785,-3.21905 z"
+    style="fill:currentColor;stroke-width:0.443456" />
+    <path
+    d="m 509.26077,209.26815 0.0537,0.12821 c -0.98048,1.51258 -2.3614,3.80058 -3.44166,5.14586 -3.09133,-0.21517 -7.04518,-0.0821 -10.16356,-0.0493 l -11.67885,0.0232 c -4.11571,0.0176 -7.73254,0.31561 -10.77686,3.51518 -6.24608,6.56506 -3.26783,17.94679 5.65539,20.19201 1.47493,0.32683 3.07182,0.38137 4.5769,0.35742 8.22345,-0.13259 16.50277,0.13526 24.71779,0.0266 -1.05498,1.40354 -1.79068,2.99244 -2.94588,4.29842 -0.61108,0.69135 -0.89578,0.73436 -1.76407,0.76718 -4.23101,0.0944 -8.57865,0.0474 -12.81232,0.008 -7.51702,-0.17561 -14.3724,1.28559 -20.41227,-4.25584 -10.08507,-9.25271 -6.29397,-26.35317 7.18043,-29.70915 2.57249,-0.64066 6.6514,-0.39835 9.34628,-0.39671 l 14.13471,0.0241 c 2.54544,0.005 5.84741,0.0967 8.33032,-0.0757 z"
+    style="fill:currentColor;stroke-width:0.443456" />
+    <path
+    d="m 410.53731,209.3023 c 1.77426,0.009 3.54764,0.0482 5.32058,0.11898 l -0.003,0.23348 -0.0594,12.98523 c -0.005,7.54087 -0.7827,15.88671 9.94183,15.97274 1.92638,0.0155 3.92902,0.0129 5.85185,-0.039 2.85053,-0.0772 6.2443,0.28913 8.98751,-0.47272 1.28824,-0.34945 2.46118,-1.03148 3.40175,-1.97782 3.49178,-3.46648 2.64877,-9.18663 2.64655,-13.78003 l 0.0523,-13.01534 5.39286,0.0405 -0.003,4.9632 c -0.007,5.08675 0.0687,10.23878 -0.0146,15.32211 -0.0679,4.1197 -1.18891,7.52544 -4.26871,10.39371 -4.59287,4.27758 -9.46911,3.63412 -15.21408,3.64299 -2.90463,-0.003 -5.82523,0.007 -8.7281,-0.0355 -5.96315,-0.0869 -11.51255,-4.04255 -12.81853,-10.00969 -0.86917,-3.97292 -0.53259,-8.3312 -0.55698,-12.40346 -0.0239,-3.93318 -0.0705,-8.01144 0.0714,-11.93938 z"
+    style="fill:currentColor;stroke-width:0.443456" />
+    <path
+    d="m 540.09602,209.36607 c 1.38092,-0.0938 2.87226,-0.006 4.24742,0.11889 0.50909,1.09245 3.02925,4.67815 3.85141,5.89109 l 6.64741,9.91217 c 2.94987,4.36094 5.74319,8.83365 8.80348,13.12852 1.19778,1.68114 2.40132,3.66249 3.70108,5.23854 -2.22171,0 -4.49087,0.0266 -6.70726,-0.0652 -1.55432,-2.00885 -3.77736,-5.47224 -5.22524,-7.65316 l -7.14009,-10.67442 c -1.85852,-2.82477 -3.85185,-6.02785 -5.8239,-8.73755 l -0.82439,-1.0399 c -0.93657,1.96815 -2.39599,3.98281 -3.5982,5.82296 -2.43279,3.72433 -5.04785,7.30568 -7.53298,10.99745 l -4.9871,7.47179 c -0.67361,1.00709 -1.90908,3.08733 -2.72992,3.82037 -1.87936,0.14191 -4.2962,0.0705 -6.21725,0.0639 2.0266,-2.75119 4.72192,-7.07091 6.67623,-10.02342 L 533.924,217.80609 c 0.83503,-1.22323 5.33212,-8.18242 6.17202,-8.43998 z"
+    style="fill:currentColor;stroke-width:0.443456" />
+    <path
+    d="m 365.68867,209.27711 5.24324,0.0845 c -0.0655,9.47453 -0.13725,19.71241 0.0397,29.14294 7.85387,0.20267 15.75816,-0.0426 23.61722,0.0856 1.99998,0.0328 4.08822,0.0789 6.07712,-0.0519 -0.66874,0.83326 -1.46208,2.07449 -2.07671,2.98534 -0.61019,0.89268 -0.88425,1.31706 -1.67537,2.08158 -2.9849,0.20134 -7.17831,0.0936 -10.24086,0.098 l -21.00366,-0.0226 c -0.10443,-11.15468 -0.21592,-23.28963 0.0193,-34.40344 z"
+    style="fill:currentColor;stroke-width:0.443456" />
+  </g>
+  </symbol>
+</svg>
+
+<header class="header" id="header">
+  <div class="header-inner">
+    <a class="logo" href="#top" aria-label="LUCAS">
+      <svg class="logo-svg" aria-hidden="true"><use href="#lucas-mark"/></svg>
+    </a>
+    <nav class="nav">
+      <a href="#audit">Концепція</a>
+      <div class="nav-dropdown">
+        <a href="#solutions" class="nav-dropdown-toggle">Послуги <span class="nav-caret">▾</span></a>
+        <div class="nav-dropdown-menu">
+          <div class="nav-dropdown-menu-inner">
+            <a href="/lucas-website/audit/">Аудит та звітність</a>
+            <a href="/lucas-website/saf-t/">SAF-T Connector</a>
+            <a href="/lucas-website/odoo-migration/">Міграція на Odoo</a>
+            <a href="/lucas-website/transfer-pricing/">Трансфертне ціноутворення</a>
+            <a href="/lucas-website/other-services/">Інші послуги</a>
+          </div>
+        </div>
+      </div>
+      <a href="#industries">Галузі</a>
+      <a href="/lucas-website/blog/">Блог</a>
+      <a href="#contact">Контакти</a>
+    </nav>
+    <a class="header-cta" href="#contact">Обговорити проєкт</a>
+    <button class="mob-menu-btn" id="mob-menu-btn" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mob-overlay" id="mob-overlay"></div>
+<div class="mob-menu" id="mob-menu" aria-hidden="true">
+  <a href="https://lucasukraine.github.io/lucas-website/#audit">Концепція</a>
+  <span class="mob-section-label">Послуги</span>
+  <a class="mob-sub" href="https://lucasukraine.github.io/lucas-website/audit/">Аудит та звітність</a>
+  <a class="mob-sub" href="https://lucasukraine.github.io/lucas-website/saf-t/">SAF-T Connector</a>
+  <a class="mob-sub" href="https://lucasukraine.github.io/lucas-website/odoo-migration/">Міграція на Odoo</a>
+  <a class="mob-sub" href="https://lucasukraine.github.io/lucas-website/transfer-pricing/">Трансфертне ціноутворення</a>
+  <a class="mob-sub" href="https://lucasukraine.github.io/lucas-website/other-services/">Інші послуги</a>
+  <a href="https://lucasukraine.github.io/lucas-website/#industries">Галузі</a>
+  <a href="https://lucasukraine.github.io/lucas-website/blog/">Блог</a>
+  <a href="https://lucasukraine.github.io/lucas-website/#contact">Контакти</a>
+</div>
+<main id="top">
+
+  <!-- ============================================================
+       HERO — REBUILT, CINEMATIC
+       ============================================================ -->
+  <section class="hero">
+    <div class="hero-atmos" aria-hidden="true"></div>
+    <div class="hero-grid" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <div class="eyebrow hero-eyebrow ha d1">Audit-led finance & technology</div>
+
+      <h1 class="ha d2">
+        <span class="line">Аудиторська компанія</span>
+        <span class="line"><span class="underline">нового</span> типу.</span>
+      </h1>
+
+      <p class="hero-lead ha d4">
+        Поєднуємо аудит, фінансову експертизу та розробку для реалізації проєктів в сфері фінансів, обліку та податків.
+      </p>
+
+      <div class="hero-actions ha d5">
+        <a class="btn cta-orange" href="#contact">Обговорити проєкт <span class="arrow"></span></a>
+        <a class="btn ghost-dark" href="#solutions">Послуги та продукти</a>
+      </div>
+    </div>
+
+    <div class="hero-cards" aria-hidden="true">
+      <!-- LEFT: Audit dashboard -->
+      <div class="hero-card-wrap l">
+        <div class="hero-card has-corner corner-sm">
+          <div class="hc-head">
+            <div class="hc-title">Audit · Q3 <span class="cur-year"></span></div>
+            <div class="hc-status"><span class="dot dot-cyan"></span>live</div>
+          </div>
+          <div class="hc-rows">
+            <div class="hc-row">
+              <span class="hc-check ok">✓</span>
+              <span class="hc-label">Revenue cycle</span>
+              <span class="hc-meta">1,247</span>
+            </div>
+            <div class="hc-row">
+              <span class="hc-check ok">✓</span>
+              <span class="hc-label">Cost of sales</span>
+              <span class="hc-meta">832</span>
+            </div>
+            <div class="hc-row">
+              <span class="hc-check ok">✓</span>
+              <span class="hc-label">Inventory</span>
+              <span class="hc-meta">412</span>
+            </div>
+            <div class="hc-row dim">
+              <span class="hc-check pending">○</span>
+              <span class="hc-label">Receivables</span>
+              <span class="hc-meta">in review</span>
+            </div>
+          </div>
+          <div class="hc-foot">Reviewed · audit procedures completed</div>
+        </div>
+      </div>
+
+      <!-- CENTER: SAF-T Connector -->
+      <div class="hero-card-wrap c">
+        <div class="hero-card has-corner corner-sm corner-cyan">
+          <div class="hc-head">
+            <div class="hc-title">
+              <span class="dot dot-orange"></span>
+              SAF-T Connector
+            </div>
+            <div class="hc-badge">XML</div>
+          </div>
+          <div class="hc-code">
+            <span class="ln"><span class="tk">&lt;n1:AuditFile&gt;</span></span>
+            <span class="ln idt1"><span class="tk">&lt;Header&gt;</span></span>
+            <span class="ln idt2"><span class="tk">&lt;FiscalYear&gt;</span><em><span class="cur-year"></span></em><span class="tk">&lt;/FiscalYear&gt;</span></span>
+            <span class="ln idt2"><span class="tk">&lt;Company&gt;</span><em>...</em><span class="tk">&lt;/Company&gt;</span></span>
+            <span class="ln idt1"><span class="tk">&lt;/Header&gt;</span></span>
+            <span class="ln idt1"><span class="tk">&lt;Transactions&gt;</span><em>1,247,038</em><span class="tk">&lt;/Transactions&gt;</span></span>
+            <span class="ln"><span class="tk">&lt;/n1:AuditFile&gt;</span></span>
+          </div>
+          <div class="hc-foot hc-foot-row">
+            <span><span class="dot dot-green"></span>Validated</span>
+            <span class="hc-foot-meta">12.4 MB</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: TP Benchmark -->
+      <div class="hero-card-wrap r">
+        <div class="hero-card">
+          <div class="hc-head">
+            <div class="hc-title">
+              <span class="dot dot-cyan"></span>
+              TP Benchmark
+            </div>
+            <div class="hc-meta-tiny"><span class="cur-year"></span></div>
+          </div>
+          <div class="hc-tp">
+            <div class="hc-tp-axis"></div>
+            <div class="hc-tp-band"></div>
+            <div class="hc-tp-marker" style="left:14%"></div>
+            <div class="hc-tp-marker" style="left:32%"></div>
+            <div class="hc-tp-marker active" style="left:50%">
+              <div class="hc-tp-label">4.2%</div>
+            </div>
+            <div class="hc-tp-marker" style="left:68%"></div>
+            <div class="hc-tp-marker" style="left:86%"></div>
+          </div>
+          <div class="hc-tp-legend">
+            <span>P25</span>
+            <span>median</span>
+            <span>P75</span>
+          </div>
+          <div class="hc-foot">47 comparables · within range</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRINCIPLES -->
+  <section class="principles" id="audit">
+    <!-- Gradient bleed from hero — visual continuity -->
+    <div class="audit-bleed" aria-hidden="true"></div>
+
+    <div class="container">
+
+      <!-- Eyebrow + company description -->
+      <div class="audit-intro reveal">
+        <div class="eyebrow">Концепція</div>
+      </div>
+
+      <!-- Theatrical tagline — section's visual climax -->
+      <h2 class="audit-tagline reveal" data-d="1">
+        <span class="audit-tagline-a">Аудит як ядро<span class="op">.</span></span>
+        <span class="audit-tagline-b">Технології як спосіб масштабування.</span>
+      </h2>
+
+      <!-- Body text with styled bullets -->
+      <div class="audit-body reveal" data-d="2">
+        <p>Робота з LUCAS особливо корисна там, де фінансова експертиза і технології мають працювати разом:</p>
+        <ul class="audit-bullets">
+          <li><span>робота з фінансами потребує глибшого розуміння даних, систем, процесів і технологічних ризиків;</span></li>
+          <li><span>технологічний проєкт потребує розробників, які розуміють облік, фінанси, податки та контроль.</span></li>
+        </ul>
+      </div>
+
+      <!-- Bento cards — asymmetric, 01 featured tall left -->
+      <div class="audit-cards">
+
+        <article class="audit-card has-corner reveal" data-d="1">
+          <span class="audit-card-num" aria-hidden="true">01</span>
+          <div class="audit-card-label">Аудит з оглядом на технології</div>
+          <h3>Аудитор, що бачить систему за цифрами</h3>
+          <p>Сучасна звітність формується не в останній таблиці, а всередині облікових систем, інтеграцій, контрольних процедур і потоків даних. Ми маємо кваліфікацію, щоб бачити, як інформація виникає, трансформується і потрапляє до фінансової звітності.</p>
+          <p>Це допомагає глибше розуміти ризики, точніше працювати з даними та бачити, як технології, автоматизація й якість процесів можуть впливати на фінансовий результат.</p>
+        </article>
+
+        <article class="audit-card reveal" data-d="2">
+          <span class="audit-card-num" aria-hidden="true">02</span>
+          <div class="audit-card-label">Розробка з аудиторською логікою</div>
+          <h3>Рішення на основі аудиторського підходу</h3>
+          <p>Ми будуємо рішення для обліку, комплаєнсу та роботи з даними на основі перевірюваності, контрольованості та прозорості.</p>
+        </article>
+
+        <article class="audit-card reveal" data-d="3">
+          <span class="audit-card-num" aria-hidden="true">03</span>
+          <div class="audit-card-label">Єдиний фінансовий контекст</div>
+          <h3>Єдина логіка для бізнесу, обліку та IT</h3>
+          <p>Ми узгоджуємо бізнес-процеси, облікову методологію та IT-рішення в єдину систему вимог — без втрати змісту між фінансами та розробкою.</p>
+        </article>
+
+      </div><!-- /audit-cards -->
+
+      <!-- Особливості підходу — moved from Delivery -->
+      <div class="credentials reveal" data-d="4">
+        <div class="credentials-eyebrow">
+          <div class="eyebrow">Особливості підходу</div>
+          <span class="credentials-eyebrow-rule"></span>
+        </div>
+        <div class="cred">
+          <div class="cred-roman">I · Lead</div>
+          <h4>Усвідомлене керування</h4>
+          <p>Проєкти ведуть фахівці, які розуміють зміст задачі, бізнес-контекст та очікування керівництва.</p>
+        </div>
+        <div class="cred">
+          <div class="cred-roman">II · Logic</div>
+          <h4>Досвід Big 4</h4>
+          <p>Досвід складних аудиторських та консалтингових проєктів у різних індустріях формує наш стандарт.</p>
+        </div>
+        <div class="cred">
+          <div class="cred-roman">III · Build</div>
+          <h4>Застосування технологій</h4>
+          <p>Комбінація власних команд з обліку та розробки дає LUCAS технологічні спроможності, нетипові для ринку.</p>
+        </div>
+      </div><!-- /credentials -->
+    </div><!-- /container -->
+  </section>
+
+  <!-- SOLUTIONS — Service Chapters -->
+  <section class="solutions" id="solutions">
+    <div class="solutions-deco" aria-hidden="true"></div>
+
+    <div class="solutions-intro">
+      <div class="solutions-intro-header">
+        <div class="eyebrow solutions-eyebrow">Послуги та продукти</div>
+      </div>
+      <h2 class="solutions-title">Різні напрями<span class="op">.</span><br>Єдиний підхід<span class="op">.</span></h2>
+      <p class="solutions-intro-lead">Ми не обмежуємось окремими послугами — ми будуємо рішення навколо задач клієнта в обліку, оподаткуванні та цифровій трансформації фінансів.</p>
+
+      <nav class="solutions-index" aria-label="Перейти до послуги">
+        <a class="solutions-index-item" href="#svc-audit">
+          <span class="solutions-index-num">01</span>
+          <span class="solutions-index-name">Аудит та звітність</span>
+        </a>
+        <a class="solutions-index-item" href="#svc-saft">
+          <span class="solutions-index-num">02</span>
+          <span class="solutions-index-name">SAF-T Connector</span>
+        </a>
+        <a class="solutions-index-item" href="#svc-odoo">
+          <span class="solutions-index-num">03</span>
+          <span class="solutions-index-name">Міграція з 1C / BAS</span>
+        </a>
+        <a class="solutions-index-item" href="#svc-tp">
+          <span class="solutions-index-num">04</span>
+          <span class="solutions-index-name">Трансфертне ціноутворення</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Chapter 01: Audit & Reporting -->
+    <div class="service-chapter" id="svc-audit">
+      <div class="service-context">
+        <div class="service-num">// 01</div>
+        <h2 class="service-name">Аудит та звітність</h2>
+        <div class="service-accent"></div>
+        <p class="service-desc">Аудиторські послуги та послуги з підготовки звітності — згідно законодавчих вимог або за запитом власників, банків або інвесторів. Послуги надаються окремо та не поєднуються для одного клієнта.</p>
+        <div class="service-team">
+          <div class="service-team-label">Команда</div>
+          <p class="service-team-text">Аудиторську практику очолюють лідери з досвідом у Big 4: керівник аудиту, керівник контролю якості та керівник методології. Команда поєднує міжнародний підхід, методологічну дисципліну та досвід в більшості галузей.</p>
+        </div>
+        <a class="arrow-link on-dark" href="https://lucasukraine.github.io/lucas-website/audit/">Дізнатися більше</a>
+      </div>
+      <div class="service-features">
+
+        <!-- Audit block -->
+        <div class="fc-divider">
+          <span class="fc-divider-label">Аудит</span>
+          <span class="fc-divider-line"></span>
+        </div>
+
+        <div class="fc" data-n="01">
+          <div class="fc-label">Великі · Середні · ПСІ</div>
+          <div class="fc-title">Обов'язковий аудит фінансової звітності</div>
+          <p class="fc-body">Обов'язковий аудит фінансової звітності для ПСІ, великих і середніх підприємств — із розширеними вимогами до незалежності аудитора, якості завдання, документування процедур і форми аудиторського звіту.</p>
+        </div>
+
+        <div class="fc" data-n="02">
+          <div class="fc-label">Group Audit · Консолідація</div>
+          <div class="fc-title">Аудит групи та консолідованої звітності</div>
+          <p class="fc-body">Аудит консолідованої фінансової звітності холдингів — з перевіркою елімінацій, міжгрупових операцій і підготовкою group audit instructions для компонентних аудиторів.</p>
+        </div>
+
+        <div class="fc" data-n="03">
+          <div class="fc-label">МСЗО 2400 / МССП 4400</div>
+          <div class="fc-title">Огляд фінансової звітності, узгоджені процедури та листи/звіти аудитора для банків, інвесторів або партнерів.</div>
+          <p class="fc-body">Завдання з обмеженою впевненістю (review), погоджені процедури та підтверджувальні листи для банків, інвесторів або партнерів — там, де повний аудит не потрібен.</p>
+        </div>
+
+        <!-- Reporting block -->
+        <div class="fc-divider">
+          <span class="fc-divider-label">Звітність</span>
+          <span class="fc-divider-line"></span>
+        </div>
+
+        <div class="fc" data-n="04">
+          <div class="fc-label">IFRS Reporting</div>
+          <div class="fc-title">Підготовка повного пакету МСФЗ-звітності</div>
+          <p class="fc-body">Підготовка фінансової звітності відповідно до МСФЗ — для цілей залучення фінансування, вимог материнської компанії або внутрішнього управління. Надається клієнтам, яких ми не аудируємо.</p>
+        </div>
+
+        <div class="fc" data-n="05">
+          <div class="fc-label">Перехід на МСФЗ та трансформація</div>
+          <div class="fc-title">Перший звіт за МСФЗ та трансформація НП(С)БО</div>
+          <p class="fc-body">Перша МСФЗ-звітність (IFRS 1), методологія вибору облікової політики та трансформація наявної НП(С)БО-звітності у формат МСФЗ із розкриттями та примітками.</p>
+        </div>
+
+        <div class="fc" data-n="06">
+          <div class="fc-label">Групова звітність</div>
+          <div class="fc-title">Консолідаційний пакет для групової звітності</div>
+          <p class="fc-body">Підготовка пакету групової звітності відповідно до вимог материнської компанії — у визначених форматах, з елімінаційними коригуваннями і розкриттями міжгрупових операцій.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Chapter 02: SAF-T -->
+    <div class="service-chapter" id="svc-saft">
+      <div class="service-context">
+        <div class="service-num">// 02</div>
+        <h2 class="service-name">SAF-T Connector</h2>
+        <div class="service-accent"></div>
+        <p class="service-desc">Власна платформа для підготовки SAF-T UA XML-файлів — незалежна від ERP-систем, розрахована на великі обсяги транзакційних даних, з впровадженням під ключ силами LUCAS.</p>
+        <div class="service-team">
+          <div class="service-team-label">Команда</div>
+          <p class="service-team-text">Фінансову частину проєктів з SAF-T очолює керівник аудиторської практики (ex-EY), а розробку — архітектор складних технологічних рішень із багаторічним досвідом проєктування та реалізації масштабних систем в Україні та США.</p>
+        </div>
+        <a class="arrow-link on-dark" href="https://lucasukraine.github.io/lucas-website/saf-t/">Дізнатися більше</a>
+      </div>
+      <div class="service-features">
+
+        <!-- Рішення block -->
+        <div class="fc-divider">
+          <span class="fc-divider-label">Рішення</span>
+          <span class="fc-divider-line"></span>
+        </div>
+
+        <div class="fc" data-n="01">
+          <div class="fc-label">ERP-незалежність</div>
+          <div class="fc-title">Підключається до будь-яких джерел даних</div>
+          <p class="fc-body">На відміну від рішень, прив'язаних до однієї ERP, SAF-T Connector підключається до SAP, 1C/BAS, Odoo, Microsoft Dynamics, та будь-яких кастомних систем, і може працювати з кількома джерелами одночасно.</p>
+        </div>
+
+        <div class="fc" data-n="02">
+          <div class="fc-label">Продуктивність · Python</div>
+          <div class="fc-title">Швидко обробляє великі дані</div>
+          <p class="fc-body">Алгоритм написаний на Python і обробляє великі масиви транзакцій значно швидше за більшість рішень, вбудованих в облікові системи. Для компаній з big data — принципова перевага.</p>
+        </div>
+
+        <div class="fc" data-n="03">
+          <div class="fc-label">Валідація</div>
+          <div class="fc-title">Серія перевірок даних</div>
+          <p class="fc-body">Автоматична валідація XSD та додаткові шари перевірок. Опис кожної помилки зрозумілою мовою. Результат — XML-файл SAF-T UA, сформований відповідно до чинної структури та технічних вимог ДПС, із попередньою валідацією даних.</p>
+        </div>
+
+        <div class="fc" data-n="04">
+          <div class="fc-label">On-premise · Безпека</div>
+          <div class="fc-title">Дані залишаються в інфраструктурі клієнта</div>
+          <p class="fc-body">Система встановлюється на сервері клієнта. Ніяких хмарних завантажень і передачі даних третім сторонам. Рішення не потребує доступу в інтернет для роботи.</p>
+        </div>
+
+        <!-- Впровадження block -->
+        <div class="fc-divider">
+          <span class="fc-divider-label">Впровадження</span>
+          <span class="fc-divider-line"></span>
+        </div>
+
+        <div class="fc" data-n="05">
+          <div class="fc-label">Під ключ · 3–4 місяці</div>
+          <div class="fc-title">Впровадження не стає проєктом клієнта</div>
+          <p class="fc-body">Клієнт надає доступ до даних — далі LUCAS працює автономно, обговорюючи з клієнтом точкові питання. Типовий строк впровадження — 3–4 місяці, залежно від кількості джерел даних, якості облікової інформації та швидкості реагування клієнта на запити.</p>
+        </div>
+
+        <div class="fc" data-n="06">
+          <div class="fc-label">Єдина зона відповідальності</div>
+          <div class="fc-title">Один партнер, який відповідає за весь проєкт</div>
+          <p class="fc-body">Коли продукт постачає один підрядник, а впроваджує інший, відповідальність часто розмивається. LUCAS забезпечує єдину точку відповідальності за рішення, впровадження та практичний результат для клієнта.</p>
+        </div>
+
+        <div class="fc" data-n="07">
+          <div class="fc-label">Вартість · TCO</div>
+          <div class="fc-title">Повна вартість володіння — одна з найнижчих на ринку</div>
+          <p class="fc-body">LUCAS забезпечує повний цикл впровадження з конкурентною повною вартістю володіння. Ми маємо добре відпрацьований процес впровадження, тому проєкти проходять швидко, структуровано та з меншими витратами для клієнта.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Chapter 03: Odoo -->
+    <div class="service-chapter" id="svc-odoo">
+      <div class="service-context">
+        <div class="service-num">// 03</div>
+        <h2 class="service-name">Міграція обліку з 1C / BAS на Odoo</h2>
+        <div class="service-accent"></div>
+        <p class="service-desc">Перехід з російського ПЗ на сучасну ERP-платформу — з фокусом на облікову методологію, коректне перенесення даних і відповідність вимогам звітності з першого дня роботи.</p>
+        <div class="service-team">
+          <div class="service-team-label">Команда</div>
+          <p class="service-team-text">Наша команда з переходу на Odoo ERP має глибокий практичний досвід впровадження Odoo для компаній України, Європи та Північної Америки, з всебічним розумінням архітектури системи, модулів, інтеграцій та бізнес-процесів.</p>
+        </div>
+        <a class="arrow-link on-dark" href="https://lucasukraine.github.io/lucas-website/odoo-migration/">Дізнатися більше</a>
+      </div>
+      <div class="service-features">
+
+        <!-- Чому Odoo block -->
+        <div class="fc-divider">
+          <span class="fc-divider-label">Чому Odoo</span>
+          <span class="fc-divider-line"></span>
+        </div>
+
+        <div class="fc" data-n="01">
+          <div class="fc-label">Правовий контекст · 2026</div>
+          <div class="fc-title">1C/BAS стає фактором ризику</div>
+          <p class="fc-body">Для органів державної влади, держпідприємств та об’єктів критичної інфраструктури діють обмеження на використання визначених програмних продуктів (Постанова КМУ №1335). Для приватного — обмеження через санкційні списки РНБО. Законопроєкт №13505 передбачає штрафи до 2% річного обороту. Використання 1C/BAS може створювати додаткові питання з боку банків, міжнародних фінансових інституцій, донорів та інвесторів у межах комплаєнс- і кібербезпекової оцінки.</p>
+        </div>
+
+        <div class="fc" data-n="02">
+          <div class="fc-label">Odoo у світі · Топ 4</div>
+          <div class="fc-title">Мейнстрим глобального ринку ERP</div>
+          <p class="fc-body">Покриття Odoo — 175 країн, 15 млн користувачів, зростання вдвічі щороку. Toyota, Nokia, Nestlé, Airbus, Danone — серед клієнтів. Одна підписка охоплює 30+ модулів: бухгалтерію, CRM, склад, виробництво, HR, та інші.</p>
+        </div>
+
+        <div class="fc" data-n="03">
+          <div class="fc-label">TCO · Вартість володіння</div>
+          <div class="fc-title">На 70–80% нижча вартість ніж SAP або MS Dynamics</div>
+          <p class="fc-body">Прозора ліцензія, що включає усі додатки Odoo, без прихованих платежів. Тисячі готових конекторів і величезна спільнота розробників замість дорогої кастомної розробки і залежності від єдиного вендора.</p>
+        </div>
+
+        <!-- Впровадження з LUCAS block -->
+        <div class="fc-divider">
+          <span class="fc-divider-label">Впровадження з LUCAS</span>
+          <span class="fc-divider-line"></span>
+        </div>
+
+        <div class="fc" data-n="04">
+          <div class="fc-label">Finance-first · Методологія</div>
+          <div class="fc-title">Архітектура, що будується навколо обліку</div>
+          <p class="fc-body">Нам не треба пояснювати що таке амортизація, подвійний запис або перша подія. LUCAS будує архітектуру системи навколо облікової логіки — це робить Odoo простішим у використанні і зменшує ризики помилок після запуску.</p>
+        </div>
+
+        <div class="fc" data-n="05">
+          <div class="fc-label">Аудитор + розробник</div>
+          <div class="fc-title">Усуваємо розрив між бухгалтерами і програмістами</div>
+          <p class="fc-body">Непорозуміння між фінансистами і розробниками — головне джерело затримок і перевитрат у будь-якому ERP-проєкті. Наші власні тандеми розуміють один одного з півслова. Це зберігає 30–40% вартості впровадження.</p>
+        </div>
+
+        <div class="fc" data-n="06">
+          <div class="fc-label">2–6 місяців · 6 етапів</div>
+          <div class="fc-title">Структурований перехід без ризику розриву в обліку</div>
+          <p class="fc-body">Аналіз → Архітектура → Кастомізація → Міграція даних → Тестування → Запуск. Паралельний облік до підтвердження коректності. Навчання команди і перехід на підтримку включені.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Chapter 04: Transfer Pricing -->
+    <div class="service-chapter" id="svc-tp">
+      <div class="service-context">
+        <div class="service-num">// 04</div>
+        <h2 class="service-name">Трансфертне ціноутворення</h2>
+        <div class="service-accent"></div>
+        <p class="service-desc">Документація, аналіз і захист позиції по контрольованих операціях відповідно до ст. 39 ПКУ та настанов ОЕСР — для компаній з внутрішньогруповими операціями та трансакціями з пов'язаними особами.</p>
+        <div class="service-team">
+          <div class="service-team-label">Команда</div>
+          <p class="service-team-text">Практику очолює експерт, запрошений з податкових органів, який багато років відповідав за перевірку документації та звітності з ТЦУ, і володіє детальним розумінням підходів і критеріїв державного контролю.</p>
+        </div>
+        <a class="arrow-link on-dark" href="https://lucasukraine.github.io/lucas-website/transfer-pricing/">Дізнатися більше</a>
+      </div>
+      <div class="service-features">
+
+        <div class="fc-divider">
+          <span class="fc-divider-label">Документація та звітність</span>
+          <span class="fc-divider-line"></span>
+        </div>
+
+        <div class="fc" data-n="01">
+          <div class="fc-label">Ідентифікація · Ст. 39 ПКУ</div>
+          <div class="fc-title">Реєстр контрольованих операцій</div>
+          <p class="fc-body">Визначення кола пов'язаних осіб, ідентифікація контрольованих операцій і перевірка відповідності критеріям визнання операцій контрольованими згідно з актуальними вимогами ПКУ.</p>
+        </div>
+
+        <div class="fc" data-n="02">
+          <div class="fc-label">ОЕСР · МГК · Тристороння структура</div>
+          <div class="fc-title">Майстер-файл і локальний файл</div>
+          <p class="fc-body">Для учасників міжнародних груп компаній (МГК), що відповідають критеріям ПКУ: документація відповідно до тристоронньої структури ОЕСР, включаючи повідомлення про участь у МГК, майстер-файл і локальний файл.</p>
+        </div>
+
+        <div class="fc" data-n="03">
+          <div class="fc-label">Звітність · ДПС</div>
+          <div class="fc-title">Звіт про контрольовані операції</div>
+          <p class="fc-body">Підготовка та подача річного звіту КО до ДПС відповідно до форм і строків, встановлених ст. 39.4 ПКУ. Контроль повноти і коректності відображення всіх контрольованих операцій.</p>
+        </div>
+
+        <div class="fc-divider">
+          <span class="fc-divider-label">Аналіз та захист позиції</span>
+          <span class="fc-divider-line"></span>
+        </div>
+
+        <div class="fc" data-n="04">
+          <div class="fc-label">Принцип витягнутої руки</div>
+          <div class="fc-title">Порівняльний аналіз і ринковий діапазон</div>
+          <p class="fc-body">Пошук зіставних компаній у комерційних базах даних, статистичний аналіз ринкового діапазону (P25–P75) і документальне обґрунтування відповідності цін принципу «витягнутої руки» відповідно до ОЕСР.</p>
+        </div>
+
+        <div class="fc" data-n="05">
+          <div class="fc-label">TP політики · APA</div>
+          <div class="fc-title">Внутрішньогрупові політики та попереднє ціноутворення</div>
+          <p class="fc-body">Розробка TP-policies для групи: методологія ціноутворення, договірна база, розподіл функцій і ризиків. Супровід переговорів з ДПС щодо попереднього узгодження цін (APA).</p>
+        </div>
+
+        <div class="fc" data-n="06">
+          <div class="fc-label">Перевірки ДПС</div>
+          <div class="fc-title">Захист позиції під час податкових перевірок</div>
+          <p class="fc-body">Оцінка TP-ризиків до початку перевірки, підготовка аргументованих відповідей на запити ДПС, супровід під час перевірки та підготовка заперечень на акт у разі донарахувань.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Chapter 05: Інші послуги -->
+    <div class="service-chapter" id="svc-other">
+      <div class="service-context">
+        <div class="service-num">// 05</div>
+        <h2 class="service-name">Інші послуги</h2>
+        <div class="service-accent"></div>
+        <p class="service-desc">Повний спектр консультаційних та аналітичних послуг — від стратегічного планування і юридичного структурування до незалежної оцінки і фінансового моделювання.</p>
+        <a class="arrow-link on-dark" href="/lucas-website/other-services/">Дізнатися більше</a>
+      </div>
+      <div class="service-features">
+
+        <div class="fc-divider">
+          <span class="fc-divider-label">Послуги з фінансів та права</span>
+          <span class="fc-divider-line"></span>
+        </div>
+
+        <div class="fc" data-n="01">
+          <div class="fc-label">Стратегія</div>
+          <div class="fc-title">Розробка стратегій та бізнес-планів</div>
+          <p class="fc-body">Аналіз ринку, конкурентного середовища і можливостей зростання. Розробка стратегічних документів для залучення фінансування, партнерства або внутрішнього управління бізнесом.</p>
+        </div>
+
+        <div class="fc" data-n="02">
+          <div class="fc-label">Юридичні послуги</div>
+          <div class="fc-title">КІК, M&amp;A, структурування, реструктуризація</div>
+          <p class="fc-body">Регулювання контрольованих іноземних компаній, юридичний супровід злиттів та поглинань, структурування іноземних інвестицій, міжнародне холдингове структурування та реструктуризація бізнесу.</p>
+        </div>
+
+        <div class="fc" data-n="03">
+          <div class="fc-label">Due Diligence</div>
+          <div class="fc-title">Фінансова та юридична перевірка бізнесу</div>
+          <p class="fc-body">Комплексна перевірка для угод і залучення інвестицій — фінансова складова (якість активів, зобов'язань, грошових потоків, якість прибутку) і юридична (права власності, ліцензії, контракти, ризики).</p>
+        </div>
+
+        <div class="fc" data-n="04">
+          <div class="fc-label">Оцінка</div>
+          <div class="fc-title">Оцінка бізнесу та активів</div>
+          <p class="fc-body">Незалежна оцінка вартості компаній, часток у бізнесі, нематеріальних активів і майнових комплексів. Спеціалізуємось на великих та складних проєктах з нестандартною корпоративною або галузевою структурою.</p>
+        </div>
+
+        <div class="fc" data-n="05">
+          <div class="fc-label">Аналітика · Моделювання</div>
+          <div class="fc-title">Фінансова та ринкова аналітика</div>
+          <p class="fc-body">Аналіз фінансового стану, ринкового середовища та конкурентів. Фінансові прогнози, сценарне моделювання та бізнес-плани для прийняття стратегічних та інвестиційних рішень.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <section class="industries" id="industries">
+    <div class="container">
+
+      <div class="ind-intro reveal">
+        <div class="eyebrow">Галузеве покриття</div>
+      </div>
+
+      <h2 class="ind-tagline reveal" data-d="1">
+        <span class="ind-tagline-a">Клієнти та проєкти<span class="op">.</span></span>
+        <span class="ind-tagline-b">Світові лідери, національні бренди, складні консолідації.</span>
+      </h2>
+
+      <div class="bento reveal" data-d="2">
+
+        <!-- GROUP 01 · Світові лідери -->
+        <div class="bento-group">
+          <div class="bento-category">
+            <span class="bento-category-num">01</span>
+            <span class="bento-category-label">Світові лідери</span>
+            <span class="bento-category-rule"></span>
+          </div>
+          <div class="bento-row">
+            <article class="b-card b-fact b-cream">
+              <div class="b-num">Top 5</div>
+              <div class="b-desc">Український бізнес одного з п'яти найдорожчих брендів світу</div>
+              <div class="b-tag">Global FMCG</div>
+            </article>
+            <article class="b-card b-fact b-mint">
+              <div class="b-num">Top 10</div>
+              <div class="b-desc">Великий український банк, що входить в топ 10 банківських груп світу</div>
+              <div class="b-tag">Global Banking</div>
+            </article>
+            <article class="b-card b-text">
+              <span class="b-text-label">Global standards</span>
+              <p>Працюємо з українськими підрозділами глобальних груп, де результат має відповідати міжнародним стандартам, внутрішнім політикам і очікуванням материнських компаній.</p>
+            </article>
+          </div>
+        </div>
+
+        <!-- GROUP 02 · Національні лідери -->
+        <div class="bento-group">
+          <div class="bento-category">
+            <span class="bento-category-num">02</span>
+            <span class="bento-category-label">Національні лідери</span>
+            <span class="bento-category-rule"></span>
+          </div>
+          <div class="bento-row alt">
+            <article class="b-card b-text">
+              <span class="b-text-label">National scale</span>
+              <p>Наші клієнти — компанії, які задають масштаб, стандарти та динаміку розвитку українського бізнесу, формуючи національний ринок у своїх галузях.</p>
+            </article>
+            <article class="b-card b-fact b-blush">
+              <div class="b-num">2 / 2</div>
+              <div class="b-desc">Обидві найбільші медіагрупи України</div>
+              <div class="b-tag">Media</div>
+            </article>
+            <article class="b-card b-fact b-sky">
+              <div class="b-num">3 / 10</div>
+              <div class="b-desc">Три з десятки найбільших страхових компаній України</div>
+              <div class="b-tag">Insurance</div>
+            </article>
+          </div>
+        </div>
+
+        <!-- GROUP 03 · Охоплення індустрій -->
+        <div class="bento-group">
+          <div class="bento-category">
+            <span class="bento-category-num">03</span>
+            <span class="bento-category-label">Охоплення індустрій</span>
+            <span class="bento-category-rule"></span>
+          </div>
+          <div class="bento-row">
+            <article class="b-card b-fact b-cream">
+              <div class="b-num">Hard</div>
+              <div class="b-desc">Виробництво · агро · корисні копалини · будівництво · інфраструктура</div>
+              <div class="b-tag">Hard industries</div>
+            </article>
+            <article class="b-card b-fact b-sky">
+              <div class="b-num">Soft</div>
+              <div class="b-desc">Страхування · медіабізнес · банкінг та фінанси · рітейл та дистрибуція · IT</div>
+              <div class="b-tag">Soft industries</div>
+            </article>
+            <article class="b-card b-text">
+              <span class="b-text-label">Industries</span>
+              <p>Маємо клієнтів у більшості галузей — від агро, виробництва та видобутку до фінансів, медіа, IT та рітейлу.</p>
+            </article>
+          </div>
+        </div>
+
+        <!-- GROUP 04 · Складні проєкти -->
+        <div class="bento-group">
+          <div class="bento-category">
+            <span class="bento-category-num">04</span>
+            <span class="bento-category-label">Складні проєкти</span>
+            <span class="bento-category-rule"></span>
+          </div>
+          <div class="bento-row alt">
+            <article class="b-card b-text">
+              <span class="b-text-label">Complex environments</span>
+              <p>Працюємо там, де дані розподілені між системами та швидко змінюються, але мають бути перетворені на якісну й прозору звітність.</p>
+            </article>
+            <article class="b-card b-fact b-mint">
+              <div class="b-num">&gt;100</div>
+              <div class="b-desc">Більше 100 компаній в одній консолідованій звітності</div>
+              <div class="b-tag">Group reporting</div>
+            </article>
+            <article class="b-card b-fact b-cream">
+              <div class="b-num">3×<sub class="b-sub">ERP</sub></div>
+              <div class="b-desc">Інтеграція трьох джерел даних для єдиного SAF-T-файлу компанії</div>
+              <div class="b-tag">Multi-source</div>
+            </article>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FAQ — visible accordion, mirrors FAQPage JSON-LD schema
+       ============================================================ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="faq-intro">
+        <div class="eyebrow">Часті запитання</div>
+        <h2 class="faq-title">Що варто знати<span class="op">.</span></h2>
+      </div>
+      <div class="faq-list">
+
+        <!-- АУДИТ -->
+        <div class="faq-item">
+          <button class="faq-q" type="button">Які компанії в Україні зобов'язані проходити обов'язковий аудит у 2026?</button>
+          <div class="faq-a"><div class="faq-a-inner">Обов'язковий аудит проходять підприємства суспільного інтересу (ПСІ), великі та середні підприємства відповідно до Закону «Про аудит фінансової звітності». До ПСІ належать публічні акціонерні товариства, банки, страховики та інші категорії. Перевірка виконується за Міжнародними стандартами аудиту з видачею аудиторського звіту. <a href="/lucas-website/audit/">Детальніше про аудит →</a></div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">Чим відрізняється аудит від огляду фінансової звітності?</button>
+          <div class="faq-a"><div class="faq-a-inner">Аудит надає обґрунтовану впевненість і виконується за повним обсягом процедур МСА з аудиторським звітом за МСА 700. Огляд (review) за МСЗО 2400 надає обмежену впевненість, виконується швидше і коштує менше — підходить коли повний аудит не вимагається законом, але потрібне підтвердження для банку або інвестора.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">Чи може аудиторська компанія одночасно вести облік і робити аудит?</button>
+          <div class="faq-a"><div class="faq-a-inner">Ні. Це пряма заборона за Міжнародним кодексом етики та МСА. Аудитор не може перевіряти звітність, яку сам підготував — це порушує принцип незалежності. LUCAS надає або аудит, або підготовку звітності для одного клієнта, але не обидві послуги одночасно.</div></div>
+        </div>
+
+        <!-- SAF-T -->
+        <div class="faq-item">
+          <button class="faq-q" type="button">Що таке SAF-T і кого це стосується в Україні?</button>
+          <div class="faq-a"><div class="faq-a-inner">SAF-T (Standard Audit File for Tax) — стандартизований XML-файл для передачі детальних облікових даних до Державної податкової служби. В Україні запроваджується поетапно, починаючи з великих платників податків. Файл містить всі господарські операції, первинні документи та довідники — тобто повний облік у структурованому форматі. <a href="/lucas-website/saf-t/">Детальніше про SAF-T Connector →</a></div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">Чи можна подавати SAF-T напряму з 1С/BAS, SAP або Odoo?</button>
+          <div class="faq-a"><div class="faq-a-inner">Вбудовані модулі SAF-T в 1С/BAS або SAP працюють тільки з однією системою і мають обмежену швидкість обробки. Якщо дані розподілені між кількома системами — потрібне окреме рішення. SAF-T Connector від LUCAS підключається до SAP, 1С/BAS, Odoo, Microsoft Dynamics та будь-яких кастомних систем одночасно.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">Які штрафи передбачені за неподачу SAF-T?</button>
+          <div class="faq-a"><div class="faq-a-inner">Неподача або несвоєчасна подача SAF-T розглядається як порушення податкового законодавства зі штрафними санкціями відповідно до Податкового кодексу. Окрім прямих штрафів, компанія ризикує підвищеною увагою ДПС, частішими перевірками та затримками відшкодування ПДВ.</div></div>
+        </div>
+
+        <!-- ТЦУ -->
+        <div class="faq-item">
+          <button class="faq-q" type="button">Хто зобов'язаний готувати документацію з трансфертного ціноутворення?</button>
+          <div class="faq-a"><div class="faq-a-inner">Компанії, що здійснюють контрольовані операції з пов'язаними особами або нерезидентами з низькоподаткових юрисдикцій — за умови досягнення вартісних критеріїв ст. 39 ПКУ. Перевірити чи підпадаєте ви під ці вимоги — перший крок, і саме тут найчастіше трапляються помилки. <a href="/lucas-website/transfer-pricing/">Детальніше про ТЦ →</a></div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">Що буде, якщо не подати звіт про контрольовані операції?</button>
+          <div class="faq-a"><div class="faq-a-inner">Штраф за неподачу звіту про КО встановлюється у відсотках від суми незадекларованих операцій. Якщо ДПС виявить що ціни не відповідають принципу «витягнутої руки» — донараховує податок на прибуток плюс штраф плюс пеня. Якісна документація з benchmark-аналізом — основний інструмент захисту.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">Що таке Master File і коли він потрібен для ТЦ?</button>
+          <div class="faq-a"><div class="faq-a-inner">Майстер-файл — частина тристоронньої структури документації ОЕСР: опис глобального бізнесу групи, функцій учасників і ризиків. Готується для учасників міжнародних груп компаній (МГК) разом із повідомленням про участь у МГК і локальним файлом. Без нього документація МГК є неповною.</div></div>
+        </div>
+
+        <!-- 1C → Odoo -->
+        <div class="faq-item">
+          <button class="faq-q" type="button">Чи заборонено 1С/BAS в Україні у 2026 році?</button>
+          <div class="faq-a"><div class="faq-a-inner">Для органів державної влади, держпідприємств та об’єктів критичної інфраструктури діють обмеження (Постанова КМУ №1335). Для приватного сектору — обмеження через санкційні списки РНБО та ризик штрафів до 2% річного обороту за законопроєктом №13505. Використання 1C/BAS може створювати додаткові питання з боку банків та інвесторів. <a href="/lucas-website/odoo-migration/">Детальніше про перехід →</a></div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">Чим замінити 1С/BAS в Україні — реальні альтернативи 2026</button>
+          <div class="faq-a"><div class="faq-a-inner">Основні альтернативи: Odoo (4 місце у світі, TCO на 70–80% нижчий за SAP), SAP S/4HANA (для великих підприємств), Microsoft Dynamics 365 (для компаній у Microsoft-екосистемі). Для більшості українського середнього бізнесу Odoo є оптимальним вибором за функціональністю, вартістю та швидкістю впровадження.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">Скільки часу займає міграція з 1С на Odoo?</button>
+          <div class="faq-a"><div class="faq-a-inner">Від 2 до 6 місяців залежно від масштабу компанії та складності облікової структури. Малий бізнес — 2–3 місяці, середній з кількома юрособами — 4–6 місяців. Ключовий фактор швидкості: наявність у команді впровадження людей, які розуміють і облік, і технологію — без цього проєкт затягується і дорожчає.</div></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       BLOG STRIP — 2 featured articles, compact link row
+       ============================================================ -->
+  <section class="blog-strip">
+    <div class="container">
+      <div class="blog-strip-inner">
+
+        <a class="bstrip-card" href="/lucas-website/blog/zaborona-1c-2026/">
+          <div class="bstrip-left">
+            <span class="bstrip-cat">ERP та облік</span>
+            <h3 class="bstrip-title">Заборона 1С в Україні 2026: що робити бізнесу</h3>
+          </div>
+          <span class="bstrip-arrow">→</span>
+        </a>
+
+        <a class="bstrip-card" href="/lucas-website/blog/saf-t-ukraina-povny-gayd/">
+          <div class="bstrip-left">
+            <span class="bstrip-cat">Податковий облік</span>
+            <h3 class="bstrip-title">SAF-T в Україні: повний гайд для бухгалтера</h3>
+          </div>
+          <span class="bstrip-arrow">→</span>
+        </a>
+
+        <a class="bstrip-card" href="/lucas-website/blog/zvit-pro-kontrolovani-operatsii/">
+          <div class="bstrip-left">
+            <span class="bstrip-cat">Трансфертне ціноутворення</span>
+            <h3 class="bstrip-title">Хто зобов'язаний подавати звіт про контрольовані операції</h3>
+          </div>
+          <span class="bstrip-arrow">→</span>
+        </a>
+
+        <a class="bstrip-card" href="/lucas-website/blog/ifrs-1-pershyy-perehid-msfz/">
+          <div class="bstrip-left">
+            <span class="bstrip-cat">МСФЗ та звітність</span>
+            <h3 class="bstrip-title">IFRS 1: перший перехід на МСФЗ — покрокова інструкція</h3>
+          </div>
+          <span class="bstrip-arrow">→</span>
+        </a>
+
+        <a class="bstrip-more" href="/lucas-website/blog/">Усі матеріали →</a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT — Editorial closing spread
+       Statement+ledger | Form residency (no logo, signature corner)
+       ============================================================ -->
+  <section class="contact" id="contact">
+    <div class="container">
+
+      <div class="contact-intro reveal">
+        <div class="eyebrow cyan-dot">Контакти</div>
+      </div>
+
+      <h2 class="contact-tagline reveal" data-d="1">
+        <span class="contact-tagline-a">Початок розмови<span class="op">.</span></span>
+        <span class="contact-tagline-b">Найкращі проєкти починаються з гарного знайомства.</span>
+      </h2>
+
+      <div class="contact-spread">
+
+        <!-- LEFT: Statement + ledger + hours -->
+        <div class="contact-statement reveal" data-d="2">
+          <p class="contact-statement-q">
+            Якщо перед вами стоять завдання в сфері обліку, податків чи <em>цифрової трансформації фінансів</em> — напишіть нам.
+          </p>
+          <p class="contact-statement-p">
+            Команда LUCAS прочитає вашу задачу та зв'яжеться протягом одного робочого дня. Без формальних опитувальників — одразу по суті.
+          </p>
+
+          <div class="contact-ledger">
+            <div class="ledger-row">
+              <span class="lr-label">Телефон</span>
+              <a class="lr-value" href="tel:+380443447915">+380 44 344 7915</a>
+              <span class="lr-hint">Пн–Пт</span>
+            </div>
+            <div class="ledger-row">
+              <span class="lr-label">Email</span>
+              <button class="lr-value email-reveal" id="contact-email-reveal" type="button">Показати email</button>
+              <span class="lr-hint">24 / 7</span>
+            </div>
+            <div class="ledger-row">
+              <span class="lr-label">Офіс</span>
+              <span class="lr-value small">пл. Спортивна 1а, БЦ Гулівер<br>Вежа А, 17 поверх · м. Київ, 01601</span>
+              <span class="lr-hint">UA</span>
+            </div>
+          </div>
+
+          <div class="contact-hours">
+            <div class="contact-hours-cell">
+              <span class="ch-val">&lt; 24<span class="ch-unit">год</span></span>
+              <span class="ch-label">Time to reply</span>
+            </div>
+            <div class="contact-hours-cell">
+              <span class="ch-val">UTC<span class="ch-unit">+2</span></span>
+              <span class="ch-label">Working zone</span>
+            </div>
+            <div class="contact-hours-cell">
+              <span class="ch-val">UA · EN</span>
+              <span class="ch-label">Languages</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Form residency -->
+        <aside class="contact-residency has-corner reveal" data-d="3">
+          <div class="residency-head">
+            <span class="residency-title">Надіслати запит</span>
+            <span class="residency-meta">RES · #001</span>
+          </div>
+          <p class="residency-sub">Коротко опишіть задачу — повернемось до вас на наступний робочий день.</p>
+
+          <form class="residency-form" id="lucas-contact-form" novalidate>
+            <div class="field">
+              <input type="text" id="cf-name" name="name" placeholder=" " required autocomplete="name">
+              <label for="cf-name" class="field-label">Ім'я</label>
+            </div>
+            <div class="field">
+              <input type="email" id="cf-email" name="email" placeholder=" " required autocomplete="email">
+              <label for="cf-email" class="field-label">Email</label>
+            </div>
+            <div class="field">
+              <input type="tel" id="cf-phone" name="phone" placeholder=" " required autocomplete="tel">
+              <label for="cf-phone" class="field-label">Телефон</label>
+            </div>
+            <div class="field">
+              <textarea id="cf-message" name="message" placeholder=" " required rows="4"></textarea>
+              <label for="cf-message" class="field-label">Коротко про задачу</label>
+            </div>
+            <!-- Honeypot — прихована пастка для ботів, люди не бачать і не заповнюють -->
+            <div class="hp-field" aria-hidden="true">
+              <input type="text" name="website" tabindex="-1" autocomplete="off">
+            </div>
+            <button type="submit" class="residency-submit" id="lucas-submit">
+              Надіслати запит <span class="arrow"></span>
+            </button>
+            <div class="residency-foot">Без формальних опитувальників · одразу до справи</div>
+          </form>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+
+    <div class="footer-grid">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <a class="footer-mark" href="#top" aria-label="LUCAS">
+          <svg class="logo-svg" aria-hidden="true"><use href="#lucas-mark"/></svg>
+        </a>
+        <p class="footer-tagline">Аудит, технологія і досвід — в одній команді<span class="op">.</span></p>
+        <p class="footer-legal">ТОВ «Лукас Аудит»<br>Аудиторська та технологічна компанія</p>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <div class="footer-col-label">Послуги</div>
+        <ul>
+          <li><a href="/lucas-website/audit/">Аудит та звітність</a></li>
+          <li><a href="/lucas-website/saf-t/">SAF-T Connector</a></li>
+          <li><a href="/lucas-website/odoo-migration/">Міграція на Odoo</a></li>
+          <li><a href="/lucas-website/transfer-pricing/">Трансфертне ціноутворення</a></li>
+          <li><a href="/lucas-website/other-services/">Інші послуги</a></li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <div class="footer-col-label">Компанія</div>
+        <ul>
+          <li><a href="#audit">Аудит як ядро</a></li>
+          <li><a href="#industries">Галузі</a></li>
+          <li><a href="#faq">Питання</a></li>
+          <li><a href="/lucas-website/blog/">Блог</a></li>
+          <li><a href="/lucas-website/documents/">Документи</a></li>
+          <li><a href="#contact">Контакти</a></li>
+        </ul>
+      </div>
+
+      <!-- Contacts -->
+      <div class="footer-contact">
+        <div class="footer-col-label">Зв'язатись</div>
+        <div class="footer-contact-row">
+          <span class="footer-contact-lbl">Email</span>
+          <button class="footer-contact-val email-reveal" id="footer-email-reveal" type="button">Показати email</button>
+        </div>
+        <div class="footer-contact-row">
+          <span class="footer-contact-lbl">Телефон</span>
+          <a class="footer-contact-val" href="tel:+380443447915">+380 44 344 7915</a>
+        </div>
+        <div class="footer-contact-row">
+          <span class="footer-contact-lbl">Адреса</span>
+          <span class="footer-contact-val">м. Київ, пл. Спортивна 1а<br>БЦ Гулівер, Вежа А, 17 пов.</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bot">
+      <span class="footer-bot-copy">© <span id="footer-year"></span> LUCAS · ТОВ «Лукас Аудит» · All rights reserved</span>
+      <a class="footer-bot-cta" href="#contact">Обговорити проєкт →</a>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+  // Header transforms when scrolling past hero
+  (() => {
+    const header = document.getElementById('header');
+    const scrim  = document.getElementById('page-scrim');
+    const hero   = document.querySelector('.hero');
+    if (!header || !hero) return;
+    const onScroll = () => {
+      const heroBottom = hero.getBoundingClientRect().bottom;
+      const past = heroBottom <= 60;
+      header.classList.toggle('scrolled', past);
+      if (scrim) scrim.classList.toggle('light', past);
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+  })();
+
+  // ─── STABLE POSITION HELPER ───────────────────────────────────────────────
+  // getBoundingClientRect() is unreliable for sticky elements (returns stuck pos).
+  // Traversing the offsetParent chain always gives the NATURAL document position.
+  function stableTop(el) {
+    let top = 0, cur = el;
+    while (cur) { top += cur.offsetTop; cur = cur.offsetParent; }
+    return top;
+  }
+
+  // ─── CARD CONSTANTS (must match CSS #id { top:Xpx } rules) ───────────────
+  const CARD_IDS  = ['prod-audit', 'prod-saft', 'prod-odoo', 'prod-tp'];
+  // All cards share top:78px — simultaneous stick/unstick as a group.
+  const CARD_TOPS = { 'prod-audit':78, 'prod-saft':78, 'prod-odoo':78, 'prod-tp':78 };
+
+  // ─── MOBILE: clear inline top so media query override works ────────────
+  // Desktop: top is set via HTML inline style (authoritative, no JS needed).
+  // Mobile:  CSS has top:auto !important which beats inline style, but
+  //          we also clear it from JS to be safe with cross-browser quirks.
+  function isMobileLayout() { return window.matchMedia('(max-width: 1080px)').matches; }
+
+  function clearMobileTops() {
+    if (!isMobileLayout()) return;
+    CARD_IDS.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.style.removeProperty('top');
+    });
+  }
+  clearMobileTops();
+  window.addEventListener('resize', clearMobileTops);
+
+  // ─── ASIDE WRAPPER CALIBRATION ────────────────────────────────────────────
+  // Wrapper height controls when sticky aside stops.
+  // Target: aside stops exactly when card 4 has settled on card 3.
+  (() => {
+    const wrapper = document.querySelector('.aside-wrapper');
+    const aside   = document.querySelector('.solutions-aside');
+    const card4   = document.getElementById('prod-tp');
+    if (!wrapper || !aside || !card4) return;
+
+    function calibrate() {
+      // On mobile, sticky is disabled — let wrapper height be auto
+      if (isMobileLayout()) {
+        wrapper.style.removeProperty('height');
+        return;
+      }
+      // stableTop gives natural document position regardless of sticky state
+      const card4NatTop   = stableTop(card4);
+      const settleScrollY = card4NatTop - CARD_TOPS['prod-tp'];
+      const wrapperNatTop = stableTop(wrapper);
+      const asideH        = aside.offsetHeight || (window.innerHeight - 136);
+
+      // At scrollY = settleScrollY, aside (top:68px) is at docY = settleScrollY + 68.
+      // wrapper must end at (settleScrollY + 78 + asideH) to stop aside there.
+      const wrapperH = settleScrollY + 78 + asideH - wrapperNatTop;
+      wrapper.style.height = Math.max(wrapperH, asideH + 80) + 'px';
+    }
+
+    window.addEventListener('load',   calibrate);
+    window.addEventListener('resize', calibrate);
+    requestAnimationFrame(() => requestAnimationFrame(calibrate));
+  })();
+
+  // ─── PRODUCT HEADER CLICK — scroll so target card's body is visible ───────
+  // Logic: to show card N, scroll to just BEFORE card N+1 would stick.
+  // scrollTarget = card(N+1).naturalTop - card(N+1).stickyTop - 1
+  // At that scrollY: card N+1 hasn't reached its sticky point → card N is active.
+  //
+  // Precompute natural tops ONCE. stableTop() is used so sticky state doesn't matter.
+  const cardNatTops = {};
+  CARD_IDS.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) cardNatTops[id] = stableTop(el);
+  });
+
+  document.querySelectorAll('.product-header').forEach(header => {
+    header.addEventListener('click', e => {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+
+      const card   = header.closest('.product');
+      const cardId = card.id;
+      const idx    = CARD_IDS.indexOf(cardId);
+
+      let targetScrollY;
+
+      if (idx < CARD_IDS.length - 1) {
+        // Cards 1-3: scroll to just before NEXT card takes over
+        const nextId  = CARD_IDS[idx + 1];
+        // Scroll so next card's top is just below viewport → current card's body fully visible
+        targetScrollY = cardNatTops[nextId] - window.innerHeight;
+      } else {
+        // Card 4 (last): scroll to show its own body
+        targetScrollY = cardNatTops[cardId] - CARD_TOPS[cardId];
+      }
+
+      window.scrollTo({ top: Math.max(0, targetScrollY), behavior: 'smooth' });
+    });
+  });
+
+  // ─── SERVICE CHAPTERS — sync left context + right cards ─────────────────
+  // Observe the whole chapter so context (left) and cards (right) appear together.
+  // Context: immediate. Cards: gentle stagger starting at same moment.
+  (() => {
+    const cardDelays = [0, 80, 170, 255, 345]; // organic, not linear
+
+    document.querySelectorAll('.service-chapter').forEach(chapter => {
+      const context = chapter.querySelector('.service-context');
+      const cards   = Array.from(chapter.querySelectorAll('.fc'));
+
+      const io = new IntersectionObserver(entries => {
+        if (!entries[0].isIntersecting) return;
+        // Left panel — immediate
+        if (context) context.classList.add('is-visible');
+        // Right cards — staggered from same moment
+        cards.forEach((card, i) => {
+          setTimeout(() => card.classList.add('is-visible'), cardDelays[i] ?? i * 85);
+        });
+        io.disconnect();
+      }, { threshold: 0.05 });
+
+      io.observe(chapter);
+    });
+  })();
+
+  // Reveal on scroll
+  (() => {
+    const items = document.querySelectorAll('.reveal:not(.in)');
+    if (!items.length || !('IntersectionObserver' in window)) {
+      items.forEach(el => el.classList.add('in'));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.08 });
+    items.forEach(el => io.observe(el));
+  })();
+
+  // Solutions scroll-spy — highlight active product in sticky nav
+  (() => {
+    const navItems = document.querySelectorAll('.solutions-nav-item');
+    const products = document.querySelectorAll('.product[id]');
+    if (!navItems.length || !products.length || !('IntersectionObserver' in window)) return;
+
+    const navByTarget = new Map();
+    navItems.forEach(item => navByTarget.set(item.dataset.target, item));
+
+    const setActive = (id) => {
+      navItems.forEach(i => i.classList.remove('is-active'));
+      const active = navByTarget.get(id);
+      if (active) active.classList.add('is-active');
+    };
+
+    const io = new IntersectionObserver((entries) => {
+      const visible = entries.filter(e => e.isIntersecting);
+      if (!visible.length) return;
+      visible.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+      setActive(visible[0].target.id);
+    }, { rootMargin: '-30% 0px -55% 0px', threshold: 0 });
+    products.forEach(p => io.observe(p));
+  })();
+
+  // Smooth anchor scroll — generic (product-header clicks are handled above)
+  document.querySelectorAll('a[href^="#"]').forEach((a) => {
+    if (a.closest('.product-header')) return; // skip — handled by product-header JS
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href');
+      if (!id || id === '#') return;
+      const target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      const top = target.getBoundingClientRect().top + window.pageYOffset - 68;
+      window.scrollTo({ top, behavior: 'smooth' });
+    });
+  });
+  // ─── EMAIL REVEAL — address assembled only on user click ─────────────────
+  (() => {
+    const u = 'info', d = 'lucasua' + '.com';
+    const yr = document.getElementById('footer-year');
+    if (yr) yr.textContent = new Date().getFullYear();
+    document.querySelectorAll('.cur-year').forEach(el => el.textContent = new Date().getFullYear());
+
+    const setup = (btnId, isFooter) => {
+      const btn = document.getElementById(btnId);
+      if (!btn) return;
+      btn.addEventListener('click', () => {
+        const addr = u + '\u0040' + d;
+        const a = document.createElement('a');
+        a.href = 'mailto:' + addr;
+        a.textContent = addr;
+        a.className = isFooter ? 'footer-contact-val' : 'lr-value';
+        if (isFooter) a.style.color = 'rgba(255,255,255,.6)';
+        btn.replaceWith(a);
+      }, { once: true });
+    };
+    setup('contact-email-reveal', false);
+    setup('footer-email-reveal', true);
+  })();
+
+  // ─── CONTACT FORM — validation + honeypot + EmailJS (keys pending) ──────────
+  (() => {
+    const form   = document.getElementById('lucas-contact-form');
+    const btn    = document.getElementById('lucas-submit');
+    if (!form || !btn) return;
+
+    let submitted = false;
+
+    // Validation rules
+    const validators = {
+      name:    v => v.trim().length >= 2,
+      email:   v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()),
+      phone:   v => /^[\+]?[\d\s\-\(\)]{7,20}$/.test(v.trim()),
+      message: v => v.trim().length >= 5,
+    };
+
+    const errorMessages = {
+      name:    'Введіть ім\'я',
+      email:   'Введіть коректний email (наприклад: name@company.com)',
+      phone:   'Введіть коректний номер телефону',
+      message: 'Опишіть задачу коротко',
+    };
+
+    function validateField(input) {
+      const name = input.name;
+      const ok   = validators[name] ? validators[name](input.value) : input.value.trim().length > 0;
+      const wrap  = input.closest('.field');
+      let   err   = wrap && wrap.querySelector('.field-err-msg');
+
+      if (!ok) {
+        input.classList.add('field-error');
+        if (wrap && !err) {
+          err = document.createElement('span');
+          err.className = 'field-err-msg';
+          wrap.appendChild(err);
+        }
+        if (err) err.textContent = errorMessages[name] || 'Невірний формат';
+      } else {
+        input.classList.remove('field-error');
+        if (err) err.remove();
+      }
+      return ok;
+    }
+
+    // Validate on blur
+    form.querySelectorAll('input[name], textarea[name]').forEach(f => {
+      f.addEventListener('blur', () => { if (f.value) validateField(f); });
+      f.addEventListener('input', () => {
+        if (f.classList.contains('field-error')) validateField(f);
+      });
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Honeypot
+      if (form.querySelector('[name="website"]').value) return;
+      if (submitted) return;
+
+      // Validate all fields
+      const fields  = Array.from(form.querySelectorAll('input[name], textarea[name]'))
+                          .filter(f => f.name !== 'website');
+      const allOk   = fields.map(validateField).every(Boolean);
+      if (!allOk) {
+        const first = form.querySelector('.field-error');
+        if (first) first.scrollIntoView({ behavior:'smooth', block:'center' });
+        return;
+      }
+
+      submitted = true;
+      btn.disabled = true;
+      btn.innerHTML = 'Надсилається…';
+
+      try {
+        await emailjs.send('service_ocdfpq8', 'template_wz7w36q', {
+          from_name: form.querySelector('[name="name"]').value.trim(),
+          reply_to:  form.querySelector('[name="email"]').value.trim(),
+          phone:     form.querySelector('[name="phone"]').value.trim(),
+          message:   form.querySelector('[name="message"]').value.trim(),
+        });
+        btn.innerHTML        = '✓ Запит надіслано';
+        btn.style.background = 'var(--orange)';
+        btn.style.borderColor= 'var(--orange)';
+        btn.style.color      = '#fff';
+        form.reset();
+        form.querySelectorAll('.field-err-msg').forEach(e => e.remove());
+      } catch (err) {
+        btn.disabled  = false;
+        submitted     = false;
+        btn.innerHTML = 'Надіслати запит <span class="arrow"></span>';
+        const errMsg  = document.createElement('p');
+        errMsg.style.cssText = 'color:rgba(255,92,31,.9);font-size:13px;margin-top:10px;font-family:var(--mono)';
+        errMsg.textContent   = 'Помилка відправки. Спробуйте ще раз або напишіть на info@lucasua.com';
+        btn.parentNode.insertBefore(errMsg, btn.nextSibling);
+        setTimeout(() => errMsg.remove(), 6000);
+      }
+    });
+  })();
+
+  // ─── FAQ ACCORDION ──────────────────────────────────────────────────────
+  (() => {
+    document.querySelectorAll('.faq-item').forEach(item => {
+      const q = item.querySelector('.faq-q');
+      const a = item.querySelector('.faq-a');
+      if (!q || !a) return;
+      q.addEventListener('click', () => {
+        const isOpen = item.classList.contains('is-open');
+        document.querySelectorAll('.faq-item.is-open').forEach(other => {
+          other.classList.remove('is-open');
+          other.querySelector('.faq-a').style.maxHeight = '0';
+        });
+        if (!isOpen) {
+          item.classList.add('is-open');
+          a.style.maxHeight = a.scrollHeight + 'px';
+        }
+      });
+    });
+  })();
+
+
+  // ── Mobile service chapter accordion ────────────────────────────────────
+  (() => {
+    if (window.innerWidth > 720) return;
+    const chapters = document.querySelectorAll('.service-chapter');
+    chapters.forEach(chapter => {
+      const ctx  = chapter.querySelector('.service-context');
+      const num  = chapter.querySelector('.service-num');
+      const name = chapter.querySelector('.service-name');
+      if (!ctx || !name) return;
+
+      const trigger = document.createElement('button');
+      trigger.className = 'svc-mob-trigger';
+      trigger.setAttribute('aria-expanded', 'false');
+      trigger.innerHTML = `
+        <div class="svc-mob-trigger-inner">
+          <span class="svc-mob-num">${num ? num.textContent : ''}</span>
+          <span class="svc-mob-name">${name.textContent}</span>
+        </div>
+        <span class="svc-mob-icon" aria-hidden="true"></span>`;
+      ctx.insertBefore(trigger, ctx.firstChild);
+
+      trigger.addEventListener('click', () => {
+        const isOpen = chapter.classList.contains('mob-open');
+        chapter.classList.toggle('mob-open', !isOpen);
+        trigger.setAttribute('aria-expanded', String(!isOpen));
+      });
+    });
+  })();
+</script>
+<script>
+  (() => {
+    const btn = document.getElementById('mob-menu-btn');
+    const menu = document.getElementById('mob-menu');
+    const overlay = document.getElementById('mob-overlay');
+    if (!btn || !menu || !overlay) return;
+    const open = () => {
+      btn.classList.add('is-open');
+      menu.classList.add('is-open');
+      overlay.classList.add('is-open');
+      menu.setAttribute('aria-hidden','false');
+      btn.setAttribute('aria-expanded','true');
+      document.body.style.overflow = 'hidden';
+    };
+    const close = () => {
+      btn.classList.remove('is-open');
+      menu.classList.remove('is-open');
+      overlay.classList.remove('is-open');
+      menu.setAttribute('aria-hidden','true');
+      btn.setAttribute('aria-expanded','false');
+      document.body.style.overflow = '';
+    };
+    btn.addEventListener('click', () => menu.classList.contains('is-open') ? close() : open());
+    overlay.addEventListener('click', close);
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+  })();
+</script>
+</body>
+</html>
