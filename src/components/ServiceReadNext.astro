@@ -1,0 +1,29 @@
+---
+interface Props {
+  eyebrow: string;
+  category: string;
+  readingTime: string;
+  title: string;
+  excerpt: string;
+  href: string;
+  ariaLabel: string;
+}
+const { eyebrow, category, readingTime, title, excerpt, href, ariaLabel } = Astro.props;
+---
+
+<section class="sp-readnext">
+  <div class="sp-readnext-inner">
+    <div class="sp-readnext-eyebrow">{eyebrow}</div>
+    <a class="sp-readnext-card" href={href} aria-label={ariaLabel}>
+      <div>
+        <div class="sp-readnext-meta">
+          <span class="sp-readnext-cat">{category}</span>
+          <span class="sp-readnext-time">{readingTime}</span>
+        </div>
+        <div class="sp-readnext-title">{title}</div>
+        <p class="sp-readnext-excerpt">{excerpt}</p>
+      </div>
+      <div class="sp-readnext-cta">Читати</div>
+    </a>
+  </div>
+</section>

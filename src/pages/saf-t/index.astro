@@ -1,0 +1,154 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import ServiceHero from '../../components/ServiceHero.astro';
+import FaqAccordion from '../../components/FaqAccordion.astro';
+import ServiceCTA from '../../components/ServiceCTA.astro';
+import ServiceReadNext from '../../components/ServiceReadNext.astro';
+import { saftFaq } from '../../data/saftFaq';
+---
+
+<ServiceLayout
+  title="SAF-T Connector — підготовка SAF-T з будь-якої ERP | LUCAS"
+  description="SAF-T Connector — власна платформа LUCAS для підготовки SAF-T UA XML-файлів. Незалежна від ERP: SAP, 1С/BAS, Odoo, Microsoft Dynamics. Впровадження під ключ за 3-4 місяці. On-premise."
+>
+  <ServiceHero
+    eyebrow="Послуга 02"
+    title="SAF-T Connector"
+    lead="Зручна платформа для підготовки звітів SAF-T UA — незалежна від ERP-систем, з впровадженням під ключ силами LUCAS. Швидкий запуск з єдиним партнером, який відповідає за весь процес."
+    accent="cyan"
+  />
+
+  <section class="sp-statement">
+    <div class="sp-statement-inner">
+      <p>SAF-T Connector не залежить від вашої облікової системи.</p>
+      <div class="sp-statement-note">SAF-T Connector — окремий продукт, не вбудований в жодну ERP. Впроваджуємо самостійно: клієнт надає доступ до даних, далі LUCAS працює автономно — без створення внутрішніх проєктних команд з боку клієнта.</div>
+    </div>
+  </section>
+
+  <section class="sp-blocks">
+    <div class="sp-blocks-inner">
+
+      <div class="sp-block">
+        <div>
+          <div class="sp-block-label cyan">ERP-незалежність</div>
+          <h2 class="sp-block-h2">Підключається до будь-яких джерел даних</h2>
+        </div>
+        <div class="sp-block-body">
+          <p>На відміну від рішень, прив'язаних до однієї ERP, SAF-T Connector підключається до SAP, 1С/BAS, Odoo, Microsoft Dynamics та будь-яких кастомних систем. Рішення може працювати з кількома джерелами даних одночасно.</p>
+          <p>Конкуруючі рішення зазвичай вбудовані всередину конкретної облікової системи — і працюють лише з нею. SAF-T Connector — окремий продукт, який не залежить від того, де саме ви ведете облік.</p>
+          <ul class="sp-block-list cyan">
+            <li>SAP, 1С/BAS, Odoo, Microsoft Dynamics</li>
+            <li>Будь-які кастомні системи</li>
+            <li>Робота з кількома джерелами даних одночасно</li>
+            <li>Підключення через бази даних, API або файли експорту</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sp-block">
+        <div>
+          <div class="sp-block-label cyan">Продуктивність · Python</div>
+          <h2 class="sp-block-h2">Швидко обробляє великі дані</h2>
+        </div>
+        <div class="sp-block-body">
+          <p>Алгоритм SAF-T Connector написаний на Python і оптимізований для обробки великих масивів транзакційних даних. Для компаній з великими обсягами операцій це означає швидше формування SAF-T UA XML, менше навантаження на облікову систему та стабільнішу роботу з історичними періодами.</p>
+          <ul class="sp-block-list cyan">
+            <li>Оптимізований алгоритм на Python</li>
+            <li>Обробка без навантаження на ERP клієнта</li>
+            <li>Стабільна робота з великими історичними періодами</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sp-block">
+        <div>
+          <div class="sp-block-label cyan">Валідація</div>
+          <h2 class="sp-block-h2">Серія перевірок даних перед подачею</h2>
+        </div>
+        <div class="sp-block-body">
+          <p>Автоматична валідація XSD та додаткові шари перевірок виявляють помилки до подачі файлу. Опис кожної помилки формулюється зрозумілою мовою — без технічного жаргону для облікової команди.</p>
+          <p>Результат — XML-файл SAF-T UA, сформований відповідно до чинної структури та технічних вимог ДПС, із попередньою валідацією даних.</p>
+          <ul class="sp-block-list cyan">
+            <li>Автоматична валідація XSD</li>
+            <li>Додаткові шари перевірок даних</li>
+            <li>Опис кожної помилки зрозумілою мовою</li>
+            <li>XML-файл SAF-T UA за вимогами ДПС</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sp-block">
+        <div>
+          <div class="sp-block-label cyan">On-premise · Безпека</div>
+          <h2 class="sp-block-h2">Дані залишаються в інфраструктурі клієнта</h2>
+        </div>
+        <div class="sp-block-body">
+          <p>Система встановлюється на сервері клієнта. Працює без хмарного завантаження даних і передачі облікової інформації третім сторонам. Рішення не потребує доступу в інтернет.</p>
+          <ul class="sp-block-list cyan">
+            <li>Встановлення на сервері клієнта</li>
+            <li>Без хмарних завантажень даних</li>
+            <li>Не потребує доступу в інтернет для роботи</li>
+            <li>Ваші дані не виходять за межі вашої інфраструктури</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sp-block">
+        <div>
+          <div class="sp-block-label cyan">Turnkey · 3–4 місяці</div>
+          <h2 class="sp-block-h2">Впровадження не стає проєктом клієнта</h2>
+        </div>
+        <div class="sp-block-body">
+          <p>З боку клієнта достатньо доступу до даних та надання інформації за точковими питаннями. Основне проєктне навантаження бере на себе LUCAS. Типовий строк впровадження — 3–4 місяці, залежно від кількості джерел даних, якості облікової інформації та доступності команди клієнта.</p>
+          <ul class="sp-block-list cyan">
+            <li>Клієнт надає доступ до даних, і, за необхідності, пояснення облікової логіки.</li>
+            <li>LUCAS впроваджує автономно</li>
+            <li>Без внутрішніх проєктних команд клієнта</li>
+            <li>Готовий продукт за 3–4 місяці</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sp-block">
+        <div>
+          <div class="sp-block-label cyan">Єдина зона відповідальності</div>
+          <h2 class="sp-block-h2">Один партнер, який відповідає за весь результат</h2>
+        </div>
+        <div class="sp-block-body">
+          <p>Коли продукт постачає один підрядник, а впроваджує інший, відповідальність часто розмивається. LUCAS забезпечує єдину точку відповідальності за продукт, впровадження, методологію та підтримку.</p>
+          <ul class="sp-block-list cyan">
+            <li>Один партнер за продукт і впровадження</li>
+            <li>Чітка зона відповідальності</li>
+            <li>Конкурентна повна вартість володіння</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <FaqAccordion
+    eyebrow="Часті запитання"
+    title="Що варто знати"
+    items={saftFaq}
+  />
+
+  <ServiceCTA
+    title="Готові обговорити впровадження SAF-T"
+    titlePunct="?"
+    text="Розкажіть про вашу облікову систему — ми оцінимо обсяг робіт і запропонуємо умови впровадження під ключ."
+    href="/#contact"
+    linkText="Залишити запит"
+  />
+
+  <ServiceReadNext
+    eyebrow="Поглиблено про тему"
+    category="Податковий облік"
+    readingTime="15 хв читання"
+    title="SAF-T в Україні: повний гайд"
+    excerpt="Хто зобов'язаний подавати, структура SAF-T UA, XSD-валідація ДПС."
+    href="/blog/saf-t-ukraina-povny-gayd/"
+    ariaLabel="SAF-T в Україні 2026: повний гайд для бухгалтера"
+  />
+
+</ServiceLayout>

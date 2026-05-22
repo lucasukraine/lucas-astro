@@ -1,0 +1,29 @@
+---
+interface Props {
+  eyebrow: string;
+  title: string;
+  lead: string;
+  accent?: 'orange' | 'cyan';
+}
+const { eyebrow, title, lead, accent = 'orange' } = Astro.props;
+---
+
+<section class="sp-hero">
+  <div class="sp-hero-deco" aria-hidden="true"></div>
+  <div class="sp-hero-inner">
+    <nav class="sp-breadcrumb" aria-label="Хлібні крихти">
+      <a href="/">Головна</a>
+      <span>/</span>
+      <a href="/#solutions">Послуги</a>
+      <span>/</span>
+      <span class="sp-breadcrumb-current">{title}</span>
+    </nav>
+    <div class:list={['sp-eyebrow', { cyan: accent === 'cyan' }]}>{eyebrow}</div>
+    <h1 class="sp-h1">{title}</h1>
+    <p class="sp-lead">{lead}</p>
+    <div class="sp-hero-actions">
+      <a class="btn cta-orange" href="/#contact">Обговорити проєкт <span class="arrow"></span></a>
+      <a class="btn ghost-dark" href="/#solutions">Усі послуги</a>
+    </div>
+  </div>
+</section>
