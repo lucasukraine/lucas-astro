@@ -1,0 +1,21 @@
+---
+interface Props {
+  category: string;
+  readingTime: string;
+  cardTitle: string;
+  excerpt: string;
+  date: string;
+  href: string;
+}
+const { category, readingTime, cardTitle, excerpt, date, href } = Astro.props;
+---
+
+<a class="blog-card" href={href}>
+  <div class="blog-card-meta">
+    <span class="blog-card-cat">{category}</span>
+    <span>{readingTime}</span>
+  </div>
+  <h2 class="blog-card-h2">{cardTitle}</h2>
+  <p class="blog-card-excerpt">{excerpt}</p>
+  <div class="blog-card-foot">{date} · LUCAS</div>
+</a>

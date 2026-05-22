@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import { blogPosts } from '../../data/blogPosts';
+---
+
+<BaseLayout
+  title="Блог — експертні матеріали з аудиту, МСФЗ, SAF-T та ERP | LUCAS"
+  description="Гайди, аналітика та практичні відповіді на питання фінансових директорів і головних бухгалтерів. Аудит, МСФЗ, SAF-T, трансфертне ціноутворення, перехід на Odoo."
+>
+  <main>
+
+    <section class="blog-hero">
+      <div class="blog-hero-deco" aria-hidden="true"></div>
+      <div class="blog-hero-inner">
+        <div class="art-eyebrow">База знань</div>
+        <h1 class="blog-hero-h1">Експертні матеріали<span class="op">.</span></h1>
+        <p class="blog-hero-lead">Гайди, аналітика та практичні відповіді на питання, з якими стикаються фінансові директори і головні бухгалтери у 2026 році. Аудит, МСФЗ, SAF-T, трансфертне ціноутворення, перехід на Odoo.</p>
+      </div>
+    </section>
+
+    <section class="blog-list">
+      <div class="blog-list-inner">
+        <div class="blog-grid">
+          {blogPosts.map(post => (
+            <BlogCard
+              category={post.category}
+              readingTime={post.readingTime}
+              cardTitle={post.cardTitle}
+              excerpt={post.excerpt}
+              date={post.date}
+              href={post.href}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>

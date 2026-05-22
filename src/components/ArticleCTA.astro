@@ -12,6 +12,7 @@
 interface Props {
   eyebrow: string;
   title: string;
+  titlePunct?: string;
   text: string;
   href: string;           // href основної кнопки (сторінка послуги)
   linkText: string;       // текст основної кнопки
@@ -21,6 +22,7 @@ interface Props {
 const {
   eyebrow,
   title,
+  titlePunct,
   text,
   href,
   linkText,
@@ -31,7 +33,7 @@ const {
 <section class="art-cta">
   <div class="art-cta-inner">
     <div class="art-cta-eyebrow">{eyebrow}</div>
-    <h2>{title}</h2>
+    <h2>{title}{titlePunct && <span class="op">{titlePunct}</span>}</h2>
     <p>{text}</p>
     <div class="art-cta-actions">
       <a class="btn cta-orange" href={href}>
