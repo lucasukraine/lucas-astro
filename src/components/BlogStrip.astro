@@ -1,0 +1,54 @@
+---
+// BlogStrip.astro
+// Еталон: .blog-strip / .bstrip-card з index.html (головна сторінка).
+// Світлий компактний блок зі статтями — горизонтальні рядки з категорією,
+// заголовком і стрілкою. Використовується як "Читайте також" на сторінках.
+// Структурно відрізняється від BlogCard (grid-картки): тут список-стрічка.
+
+interface StripItem {
+  category: string;
+  title: string;
+  href: string;
+}
+
+interface Props {
+  eyebrow?: string;       // необов'язковий — в оригіналі блок без заголовка
+  title?: string;         // необов'язковий — для варіанту "Читайте також"
+  items: StripItem[];
+  moreHref?: string;      // посилання «Усі матеріали →», якщо потрібне
+  moreText?: string;      // текст посилання (default: «Усі матеріали →»)
+}
+
+const {
+  eyebrow,
+  title,
+  items,
+  moreHref,
+  moreText = 'Усі матеріали →',
+} = Astro.props;
+---
+
+<section class="blog-strip">
+  <div class="container">
+    <div class="blog-strip-inner">
+      {(eyebrow || title) && (
+        <div class="blog-strip-header">
+          {eyebrow && <div class="eyebrow">{eyebrow}</div>}
+          {title && <h2 class="blog-strip-title">{title}</h2>}
+        </div>
+      )}
+      {items.map((item) => (
+        <a class="bstrip-card" href={item.href}>
+          <div class="bstrip-left">
+            <span class="bstrip-cat">{item.category}</span>
+            <h3 class="bstrip-title">{item.title}</h3>
+          </div>
+          <span class="bstrip-arrow">→</span>
+        </a>
+      ))}
+      {moreHref && (
+        <a class="bstrip-more" href={moreHref}>{moreText}</a>
+      )}
+    </div>
+  </div>
+</section>

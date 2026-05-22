@@ -1,0 +1,134 @@
+---
+// Hero.astro
+// Еталон: index.html — секція .hero
+// Текст, класи, структура — без змін. URL root-relative.
+---
+
+<section class="hero">
+  <div aria-hidden="true" class="hero-atmos"></div>
+  <div aria-hidden="true" class="hero-grid"></div>
+
+  <div class="hero-content">
+    <div class="eyebrow hero-eyebrow ha d1">Audit-led finance &amp; technology</div>
+    <h1 class="ha d2">
+      <span class="line">Аудиторська компанія</span>
+      <span class="line"><span class="underline">нового</span> типу.</span>
+    </h1>
+    <p class="hero-lead ha d4">
+      Поєднуємо аудит, фінансову експертизу та розробку для реалізації проєктів
+      в сфері фінансів, обліку та податків.
+    </p>
+    <div class="hero-actions ha d5">
+      <a class="btn cta-orange" href="/#contact">
+        Обговорити проєкт <span class="arrow"></span>
+      </a>
+      <a class="btn ghost-dark" href="/#solutions">Послуги та продукти</a>
+    </div>
+  </div>
+
+  <div aria-hidden="true" class="hero-cards">
+    <!-- LEFT: Audit dashboard -->
+    <div class="hero-card-wrap l">
+      <div class="hero-card has-corner corner-sm">
+        <div class="hc-head">
+          <div class="hc-title">Audit · Q3 <span class="cur-year"></span></div>
+          <div class="hc-status"><span class="dot dot-cyan"></span> live</div>
+        </div>
+        <div class="hc-rows">
+          <div class="hc-row">
+            <span class="hc-check ok">✓</span>
+            <span class="hc-label">Revenue cycle</span>
+            <span class="hc-meta">1,247</span>
+          </div>
+          <div class="hc-row">
+            <span class="hc-check ok">✓</span>
+            <span class="hc-label">Cost of sales</span>
+            <span class="hc-meta">832</span>
+          </div>
+          <div class="hc-row">
+            <span class="hc-check ok">✓</span>
+            <span class="hc-label">Inventory</span>
+            <span class="hc-meta">412</span>
+          </div>
+          <div class="hc-row dim">
+            <span class="hc-check pending">○</span>
+            <span class="hc-label">Receivables</span>
+            <span class="hc-meta">in review</span>
+          </div>
+        </div>
+        <div class="hc-foot">Reviewed · audit procedures completed</div>
+      </div>
+    </div>
+
+    <!-- CENTER: SAF-T Connector -->
+    <div class="hero-card-wrap c">
+      <div class="hero-card has-corner corner-sm corner-cyan">
+        <div class="hc-head">
+          <div class="hc-title">
+            <span class="dot dot-orange"></span> SAF-T Connector
+          </div>
+          <div class="hc-badge">XML</div>
+        </div>
+        <div class="hc-code">
+          <span class="ln"><span class="tk">&lt;n1:AuditFile&gt;</span></span>
+          <span class="ln idt1"><span class="tk">&lt;Header&gt;</span></span>
+          <span class="ln idt2">
+            <span class="tk">&lt;FiscalYear&gt;</span>
+            <em><span class="cur-year"></span></em>
+            <span class="tk">&lt;/FiscalYear&gt;</span>
+          </span>
+          <span class="ln idt2">
+            <span class="tk">&lt;Company&gt;</span>
+            <em>...</em>
+            <span class="tk">&lt;/Company&gt;</span>
+          </span>
+          <span class="ln idt1"><span class="tk">&lt;/Header&gt;</span></span>
+          <span class="ln idt1">
+            <span class="tk">&lt;Transactions&gt;</span>
+            <em>1,247,038</em>
+            <span class="tk">&lt;/Transactions&gt;</span>
+          </span>
+          <span class="ln"><span class="tk">&lt;/n1:AuditFile&gt;</span></span>
+        </div>
+        <div class="hc-foot hc-foot-row">
+          <span><span class="dot dot-green"></span> Validated</span>
+          <span class="hc-foot-meta">12.4 MB</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: TP Benchmark -->
+    <div class="hero-card-wrap r">
+      <div class="hero-card">
+        <div class="hc-head">
+          <div class="hc-title">
+            <span class="dot dot-cyan"></span> TP Benchmark
+          </div>
+          <div class="hc-meta-tiny"><span class="cur-year"></span></div>
+        </div>
+        <div class="hc-tp">
+          <div class="hc-tp-axis"></div>
+          <div class="hc-tp-band"></div>
+          <div class="hc-tp-marker" style="left:14%"></div>
+          <div class="hc-tp-marker" style="left:32%"></div>
+          <div class="hc-tp-marker active" style="left:50%">
+            <div class="hc-tp-label">4.2%</div>
+          </div>
+          <div class="hc-tp-marker" style="left:68%"></div>
+          <div class="hc-tp-marker" style="left:86%"></div>
+        </div>
+        <div class="hc-tp-legend">
+          <span>P25</span><span>median</span><span>P75</span>
+        </div>
+        <div class="hc-foot">47 comparables · within range</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  // Поточний рік у hero-картках (Audit Q3, FiscalYear, TP Benchmark)
+  document.querySelectorAll('.cur-year').forEach(el => {
+    el.textContent = new Date().getFullYear();
+  });
+</script>

@@ -1,0 +1,42 @@
+---
+// BaseLayout.astro
+// Мінімальна обгортка. Підключає Header і global.css.
+// Решта стилів (page-specific) додається по мірі міграції сторінок.
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'LUCAS',
+  description = 'LUCAS — аудиторська компанія з цифровим ДНК.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <!-- Google Fonts: Onest (display) + Manrope (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600&family=Manrope:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Sticky gradient scrim під header над hero -->
+    <div class="page-scrim" id="page-scrim" aria-hidden="true"></div>
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+</html>

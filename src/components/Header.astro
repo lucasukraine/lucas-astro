@@ -1,0 +1,114 @@
+---
+// Header.astro
+// Еталон: other-services/index.html
+// URL-и конвертовані з https://lucasukraine.github.io/lucas-website/ → /
+---
+
+<!-- SVG sprite — логотип LUCAS. Розміщений тут, бо потрібен лише для Header -->
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+  <symbol id="lucas-mark" preserveAspectRatio="xMidYMid meet" viewBox="0 0 500.61676 68.570709">
+    <g transform="matrix(1.9896013,0,0,1.9896013,-727.29754,-416.35915)">
+      <path d="m 584.65003,209.37028 c 3.17869,-0.18949 7.79551,-0.0426 11.08728,-0.0404 l 21.15683,0.0181 c -1.49489,1.79613 -2.38357,3.03422 -3.56494,5.04663 -9.17288,0.48876 -18.7196,-0.15943 -27.91953,0.19116 -5.06383,0.19295 -6.46293,6.38514 -2.35475,8.70446 1.42171,0.8027 4.82435,0.63281 6.52988,0.62683 l 11.9875,-0.0418 c 2.18003,-0.007 6.22213,-0.13167 8.22655,0.29072 1.4838,0.30896 2.86871,0.97902 4.0319,1.95108 1.90375,1.57339 3.08734,3.85186 3.2798,6.31436 0.5419,6.17734 -2.91484,10.68108 -9.13918,11.21899 -4.77647,0.15565 -9.9853,0.0346 -14.79059,0.035 -5.87135,0.001 -12.07751,0.11841 -17.93202,-0.0732 1.09356,-0.97427 2.75918,-3.67624 3.839,-5.03544 l 18.54177,-0.0164 c 3.3104,0.002 6.60483,0.0275 9.92011,-0.0373 4.8115,-0.0945 6.10683,-7.47711 1.52416,-8.99817 -1.68647,-0.55964 -4.30773,-0.40576 -6.12989,-0.39733 l -11.58307,0.0435 c -4.3636,0.003 -9.25182,0.47095 -12.8141,-2.51795 -3.84298,-3.22392 -4.20529,-10.32116 -0.94456,-14.06384 1.94855,-2.23613 4.18711,-3.00614 7.04785,-3.21905 z" style="fill:currentColor;stroke-width:0.443456"></path>
+      <path d="m 509.26077,209.26815 0.0537,0.12821 c -0.98048,1.51258 -2.3614,3.80058 -3.44166,5.14586 -3.09133,-0.21517 -7.04518,-0.0821 -10.16356,-0.0493 l -11.67885,0.0232 c -4.11571,0.0176 -7.73254,0.31561 -10.77686,3.51518 -6.24608,6.56506 -3.26783,17.94679 5.65539,20.19201 1.47493,0.32683 3.07182,0.38137 4.5769,0.35742 8.22345,-0.13259 16.50277,0.13526 24.71779,0.0266 -1.05498,1.40354 -1.79068,2.99244 -2.94588,4.29842 -0.61108,0.69135 -0.89578,0.73436 -1.76407,0.76718 -4.23101,0.0944 -8.57865,0.0474 -12.81232,0.008 -7.51702,-0.17561 -14.3724,1.28559 -20.41227,-4.25584 -10.08507,-9.25271 -6.29397,-26.35317 7.18043,-29.70915 2.57249,-0.64066 6.6514,-0.39835 9.34628,-0.39671 l 14.13471,0.0241 c 2.54544,0.005 5.84741,0.0967 8.33032,-0.0757 z" style="fill:currentColor;stroke-width:0.443456"></path>
+      <path d="m 410.53731,209.3023 c 1.77426,0.009 3.54764,0.0482 5.32058,0.11898 l -0.003,0.23348 -0.0594,12.98523 c -0.005,7.54087 -0.7827,15.88671 9.94183,15.97274 1.92638,0.0155 3.92902,0.0129 5.85185,-0.039 2.85053,-0.0772 6.2443,0.28913 8.98751,-0.47272 1.28824,-0.34945 2.46118,-1.03148 3.40175,-1.97782 3.49178,-3.46648 2.64877,-9.18663 2.64655,-13.78003 l 0.0523,-13.01534 5.39286,0.0405 -0.003,4.9632 c -0.007,5.08675 0.0687,10.23878 -0.0146,15.32211 -0.0679,4.1197 -1.18891,7.52544 -4.26871,10.39371 -4.59287,4.27758 -9.46911,3.63412 -15.21408,3.64299 -2.90463,-0.003 -5.82523,0.007 -8.7281,-0.0355 -5.96315,-0.0869 -11.51255,-4.04255 -12.81853,-10.00969 -0.86917,-3.97292 -0.53259,-8.3312 -0.55698,-12.40346 -0.0239,-3.93318 -0.0705,-8.01144 0.0714,-11.93938 z" style="fill:currentColor;stroke-width:0.443456"></path>
+      <path d="m 540.09602,209.36607 c 1.38092,-0.0938 2.87226,-0.006 4.24742,0.11889 0.50909,1.09245 3.02925,4.67815 3.85141,5.89109 l 6.64741,9.91217 c 2.94987,4.36094 5.74319,8.83365 8.80348,13.12852 1.19778,1.68114 2.40132,3.66249 3.70108,5.23854 -2.22171,0 -4.49087,0.0266 -6.70726,-0.0652 -1.55432,-2.00885 -3.77736,-5.47224 -5.22524,-7.65316 l -7.14009,-10.67442 c -1.85852,-2.82477 -3.85185,-6.02785 -5.8239,-8.73755 l -0.82439,-1.0399 c -0.93657,1.96815 -2.39599,3.98281 -3.5982,5.82296 -2.43279,3.72433 -5.04785,7.30568 -7.53298,10.99745 l -4.9871,7.47179 c -0.67361,1.00709 -1.90908,3.08733 -2.72992,3.82037 -1.87936,0.14191 -4.2962,0.0705 -6.21725,0.0639 2.0266,-2.75119 4.72192,-7.07091 6.67623,-10.02342 L 533.924,217.80609 c 0.83503,-1.22323 5.33212,-8.18242 6.17202,-8.43998 z" style="fill:currentColor;stroke-width:0.443456"></path>
+      <path d="m 365.68867,209.27711 5.24324,0.0845 c -0.0655,9.47453 -0.13725,19.71241 0.0397,29.14294 7.85387,0.20267 15.75816,-0.0426 23.61722,0.0856 1.99998,0.0328 4.08822,0.0789 6.07712,-0.0519 -0.66874,0.83326 -1.46208,2.07449 -2.07671,2.98534 -0.61019,0.89268 -0.88425,1.31706 -1.67537,2.08158 -2.9849,0.20134 -7.17831,0.0936 -10.24086,0.098 l -21.00366,-0.0226 c -0.10443,-11.15468 -0.21592,-23.28963 0.0193,-34.40344 z" style="fill:currentColor;stroke-width:0.443456"></path>
+    </g>
+  </symbol>
+</svg>
+
+<header class="header" id="header">
+  <div class="header-inner">
+    <a aria-label="LUCAS" class="logo" href="/">
+      <svg aria-hidden="true" class="logo-svg"><use href="#lucas-mark"></use></svg>
+    </a>
+    <nav class="nav">
+      <a href="/#audit">Концепція</a>
+      <div class="nav-dropdown">
+        <a class="nav-dropdown-toggle" href="/#solutions">Послуги <span class="nav-caret">▾</span></a>
+        <div class="nav-dropdown-menu">
+          <div class="nav-dropdown-menu-inner">
+            <a href="/audit/">Аудит та звітність</a>
+            <a href="/saf-t/">SAF-T Connector</a>
+            <a href="/odoo-migration/">Міграція на Odoo</a>
+            <a href="/transfer-pricing/">Трансфертне ціноутворення</a>
+            <a href="/other-services/">Інші послуги</a>
+          </div>
+        </div>
+      </div>
+      <a href="/#industries">Галузі</a>
+      <a href="/blog/">Блог</a>
+      <a href="/#contact">Контакти</a>
+    </nav>
+    <a class="header-cta" href="/#contact">Обговорити проєкт</a>
+    <button aria-expanded="false" aria-label="Меню" class="mob-menu-btn" id="mob-menu-btn">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile menu panel — пов'язаний з header через JS -->
+<div aria-hidden="true" class="mob-menu" id="mob-menu">
+  <a href="/#audit">Концепція</a>
+  <span class="mob-section-label">Послуги</span>
+  <a class="mob-sub" href="/audit/">Аудит та звітність</a>
+  <a class="mob-sub" href="/saf-t/">SAF-T Connector</a>
+  <a class="mob-sub" href="/odoo-migration/">Міграція на Odoo</a>
+  <a class="mob-sub" href="/transfer-pricing/">Трансфертне ціноутворення</a>
+  <a class="mob-sub" href="/other-services/">Інші послуги</a>
+  <a href="/#industries">Галузі</a>
+  <a href="/blog/">Блог</a>
+  <a href="/#contact">Контакти</a>
+</div>
+
+<!-- Overlay для закриття мобільного меню кліком поза панеллю -->
+<div class="mob-overlay" id="mob-overlay"></div>
+
+<script is:inline>
+  // ── Scroll state: перемикає клас .scrolled на header ──────────────────────
+  (() => {
+    const header = document.getElementById('header');
+    if (!header) return;
+    const hero = document.querySelector('.hero')
+               || document.querySelector('.sp-hero')
+               || document.querySelector('.art-header')
+               || document.querySelector('main > section:first-child');
+    const onScroll = () => {
+      const threshold = hero ? hero.getBoundingClientRect().bottom : 80;
+      header.classList.toggle('scrolled', threshold <= 60);
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+  })();
+
+  // ── Mobile menu open / close ───────────────────────────────────────────────
+  (() => {
+    const btn     = document.getElementById('mob-menu-btn');
+    const menu    = document.getElementById('mob-menu');
+    const overlay = document.getElementById('mob-overlay');
+    if (!btn || !menu || !overlay) return;
+
+    const open = () => {
+      btn.classList.add('is-open');
+      menu.classList.add('is-open');
+      overlay.classList.add('is-open');
+      menu.setAttribute('aria-hidden', 'false');
+      btn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    };
+    const close = () => {
+      btn.classList.remove('is-open');
+      menu.classList.remove('is-open');
+      overlay.classList.remove('is-open');
+      menu.setAttribute('aria-hidden', 'true');
+      btn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    };
+
+    btn.addEventListener('click', () => menu.classList.contains('is-open') ? close() : open());
+    overlay.addEventListener('click', close);
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+  })();
+</script>

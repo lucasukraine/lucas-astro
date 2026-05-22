@@ -1,17 +1,28 @@
 ---
-
+// src/pages/index.astro
+// Головна сторінка. Секції додаються поступово.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import FaqAccordion from '../components/FaqAccordion.astro';
+import BlogStrip from '../components/BlogStrip.astro';
+import { homeFaq } from '../data/homeFaq';
+import { blogPosts } from '../data/blogPosts';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout
+  title="LUCAS — Аудиторська компанія нового типу"
+  description="Поєднуємо аудит, фінансову експертизу та розробку для реалізації проєктів в сфері фінансів, обліку та податків."
+>
+  <main id="top">
+    <Hero />
+    <FaqAccordion
+      eyebrow="Часті запитання"
+      title="Що варто знати"
+      items={homeFaq}
+    />
+    <BlogStrip
+      items={blogPosts}
+      moreHref="/blog/"
+    />
+  </main>
+</BaseLayout>

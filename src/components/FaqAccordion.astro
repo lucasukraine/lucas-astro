@@ -1,0 +1,84 @@
+---
+// FaqAccordion.astro
+// Еталон: .faq з index.html (темна версія, background: var(--dark-section))
+// Відрізняється від FAQ сторінок послуг кольором фону і текстів.
+// answer підтримує HTML (посилання всередині відповідей).
+
+interface FaqItem {
+  question: string;
+  answer: string; // підтримує HTML (<a href="...">...</a> тощо)
+}
+
+interface Props {
+  eyebrow?: string;
+  title: string;
+  titlePunct?: string; // символ у <span class="op">, за замовчуванням «.»
+  items: FaqItem[];
+}
+
+const {
+  eyebrow = 'Часті запитання',
+  title,
+  titlePunct = '.',
+  items,
+} = Astro.props;
+---
+
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="faq-intro">
+      {eyebrow && <div class="eyebrow">{eyebrow}</div>}
+      <h2 class="faq-title">{title}<span class="op">{titlePunct}</span></h2>
+    </div>
+    <div class="faq-list">
+      {items.map((item) => (
+        <div class="faq-item">
+          <button class="faq-q" type="button">{item.question}</button>
+          <div class="faq-a">
+            <div class="faq-a-inner" set:html={item.answer} />
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  // FAQ accordion — ініціалізуємо кожен .faq незалежно.
+  // Запускається один раз після повного завантаження DOM,
+  // тому безпечно при кількох <FaqAccordion /> на одній сторінці.
+  (() => {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initAllFaqs);
+    } else {
+      initAllFaqs();
+    }
+
+    function initAllFaqs() {
+      // Запобігаємо повторній ініціалізації при кількох компонентах
+      if (window.__faqInit) return;
+      window.__faqInit = true;
+
+      document.querySelectorAll('.faq').forEach(faqBlock => {
+        const items = faqBlock.querySelectorAll('.faq-item');
+        items.forEach(item => {
+          const q = item.querySelector('.faq-q');
+          const a = item.querySelector('.faq-a');
+          if (!q || !a) return;
+          q.addEventListener('click', () => {
+            const isOpen = item.classList.contains('is-open');
+            // Закриваємо лише items у цьому ж .faq-блоці
+            faqBlock.querySelectorAll('.faq-item.is-open').forEach(other => {
+              other.classList.remove('is-open');
+              other.querySelector('.faq-a').style.maxHeight = '0';
+            });
+            if (!isOpen) {
+              item.classList.add('is-open');
+              a.style.maxHeight = a.scrollHeight + 'px';
+            }
+          });
+        });
+      });
+    }
+  })();
+</script>

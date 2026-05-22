@@ -1,0 +1,29 @@
+---
+// ArticleRelated.astro
+// Тонка обгортка над BlogStrip для блоку "Читайте також" у статтях.
+// Старий .art-related (темний grid) не переноситься — уніфікуємо через BlogStrip.
+
+import BlogStrip from './BlogStrip.astro';
+
+interface RelatedItem {
+  category: string;
+  title: string;
+  href: string;
+}
+
+interface Props {
+  title?: string;
+  items: RelatedItem[];
+}
+
+const {
+  title = 'Матеріали по темі',
+  items,
+} = Astro.props;
+---
+
+<BlogStrip
+  eyebrow="Читайте також"
+  title={title}
+  items={items}
+/>

@@ -1,0 +1,43 @@
+---
+// ArticleCTA.astro
+// Еталон: .art-cta зі статей блогу (zvit, ifrs, saft, 1c).
+// Темний блок — bridge між статтею і сторінкою послуги.
+// Структура однакова у всіх 4 статтях, відрізняються лише тексти і href.
+//
+// Примітка про кнопки:
+// В оригіналі вторинна кнопка має клас "btn btn-ghost-dark" (один складений клас),
+// але CSS-правило — ".btn.ghost-dark" (два окремих класи). Правило не застосовувалось.
+// У компоненті використовуємо "btn ghost-dark" — відповідає наявному CSS у global.css.
+
+interface Props {
+  eyebrow: string;
+  title: string;
+  text: string;
+  href: string;           // href основної кнопки (сторінка послуги)
+  linkText: string;       // текст основної кнопки
+  contactHref?: string;   // href вторинної кнопки (default: «/#contact»)
+}
+
+const {
+  eyebrow,
+  title,
+  text,
+  href,
+  linkText,
+  contactHref = '/#contact',
+} = Astro.props;
+---
+
+<section class="art-cta">
+  <div class="art-cta-inner">
+    <div class="art-cta-eyebrow">{eyebrow}</div>
+    <h2>{title}</h2>
+    <p>{text}</p>
+    <div class="art-cta-actions">
+      <a class="btn cta-orange" href={href}>
+        {linkText} <span class="arrow"></span>
+      </a>
+      <a class="btn ghost-dark" href={contactHref}>Обговорити проєкт</a>
+    </div>
+  </div>
+</section>

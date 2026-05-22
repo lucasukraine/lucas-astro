@@ -1,0 +1,103 @@
+---
+// Footer.astro
+// Еталон: other-services/index.html
+// URL-и конвертовані з /lucas-website/* → /*
+// SVG логотип рендериться через #lucas-mark, визначений у Header.astro
+---
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <a aria-label="LUCAS" class="footer-mark" href="#top">
+          <svg aria-hidden="true" class="logo-svg"><use href="#lucas-mark"></use></svg>
+        </a>
+        <p class="footer-tagline">
+          Аудит, технологія і досвід — в одній команді<span class="op">.</span>
+        </p>
+        <p class="footer-legal">
+          ТОВ «Лукас Аудит»<br />
+          Аудиторська та технологічна компанія
+        </p>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <div class="footer-col-label">Послуги</div>
+        <ul>
+          <li><a href="/audit/">Аудит та звітність</a></li>
+          <li><a href="/saf-t/">SAF-T Connector</a></li>
+          <li><a href="/odoo-migration/">Міграція на Odoo</a></li>
+          <li><a href="/transfer-pricing/">Трансфертне ціноутворення</a></li>
+          <li><a href="/other-services/">Інші послуги</a></li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <div class="footer-col-label">Компанія</div>
+        <ul>
+          <li><a href="/#audit">Аудит як ядро</a></li>
+          <li><a href="/#industries">Галузі</a></li>
+          <li><a href="/#faq">Питання</a></li>
+          <li><a href="/blog/">Блог</a></li>
+          <li><a href="/documents/">Документи</a></li>
+          <li><a href="/#contact">Контакти</a></li>
+        </ul>
+      </div>
+
+      <!-- Contacts -->
+      <div class="footer-contact">
+        <div class="footer-col-label">Зв'язатись</div>
+        <div class="footer-contact-row">
+          <span class="footer-contact-lbl">Email</span>
+          <button class="footer-contact-val email-reveal" id="footer-email-reveal" type="button">
+            Показати email
+          </button>
+        </div>
+        <div class="footer-contact-row">
+          <span class="footer-contact-lbl">Телефон</span>
+          <a class="footer-contact-val" href="tel:+380443447915">+380 44 344 7915</a>
+        </div>
+        <div class="footer-contact-row">
+          <span class="footer-contact-lbl">Адреса</span>
+          <span class="footer-contact-val">
+            м. Київ, пл. Спортивна 1а<br />
+            БЦ Гулівер, Вежа А, 17 пов.
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bot">
+      <span class="footer-bot-copy">
+        © <span id="footer-year"></span> LUCAS · ТОВ «Лукас Аудит» · All rights reserved
+      </span>
+      <a class="footer-bot-cta" href="/#contact">Обговорити проєкт →</a>
+    </div>
+  </div>
+</footer>
+
+<script is:inline>
+  (() => {
+    // Поточний рік у copyright рядку
+    const yr = document.getElementById('footer-year');
+    if (yr) yr.textContent = new Date().getFullYear();
+
+    // Email reveal — обфускація від спам-парсерів
+    const btn = document.getElementById('footer-email-reveal');
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      const u = 'info', d = 'lucasua' + '.com';
+      const a = document.createElement('a');
+      a.href = 'mailto:' + u + '\u0040' + d;
+      a.textContent = u + '\u0040' + d;
+      a.className = 'footer-contact-val';
+      a.style.color = 'rgba(255,255,255,.6)';
+      btn.replaceWith(a);
+    }, { once: true });
+  })();
+</script>
