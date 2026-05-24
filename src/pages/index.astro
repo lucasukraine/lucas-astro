@@ -3,6 +3,7 @@
 // Головна сторінка. Секції додаються поступово.
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
+import Industries from '../components/Industries.astro';
 import FaqAccordion from '../components/FaqAccordion.astro';
 import BlogStrip from '../components/BlogStrip.astro';
 import { homeFaq } from '../data/homeFaq';
@@ -15,6 +16,7 @@ import { blogPosts } from '../data/blogPosts';
 >
   <main id="top">
     <Hero />
+    <Industries />
     <FaqAccordion
       eyebrow="Часті запитання"
       title="Що варто знати"
