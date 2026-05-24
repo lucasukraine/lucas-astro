@@ -1,0 +1,239 @@
+---
+// Contact.astro
+// Секція Контакти — statement + ledger + форма з floating labels.
+// Джерело: old-html/index.html <section class="contact" id="contact">
+// EmailJS підвантажується динамічно тільки якщо форма присутня на сторінці.
+---
+
+<section class="contact" id="contact">
+  <div class="container">
+
+    <div class="contact-intro reveal">
+      <div class="eyebrow cyan-dot">Контакти</div>
+    </div>
+
+    <h2 class="contact-tagline reveal" data-d="1">
+      <span class="contact-tagline-a">Початок розмови<span class="op">.</span></span>
+      <span class="contact-tagline-b">Найкращі проєкти починаються з гарного знайомства.</span>
+    </h2>
+
+    <div class="contact-spread">
+
+      <!-- LEFT: Statement + ledger + hours -->
+      <div class="contact-statement reveal" data-d="2">
+        <p class="contact-statement-q">
+          Якщо перед вами стоять завдання в сфері обліку, податків чи <em>цифрової трансформації фінансів</em> — напишіть нам.
+        </p>
+        <p class="contact-statement-p">
+          Команда LUCAS прочитає вашу задачу та зв'яжеться протягом одного робочого дня. Без формальних опитувальників — одразу по суті.
+        </p>
+
+        <div class="contact-ledger">
+          <div class="ledger-row">
+            <span class="lr-label">Телефон</span>
+            <a class="lr-value" href="tel:+380443447915">+380 44 344 7915</a>
+            <span class="lr-hint">Пн–Пт</span>
+          </div>
+          <div class="ledger-row">
+            <span class="lr-label">Email</span>
+            <button class="lr-value email-reveal" id="contact-email-reveal" type="button">Показати email</button>
+            <span class="lr-hint">24 / 7</span>
+          </div>
+          <div class="ledger-row">
+            <span class="lr-label">Офіс</span>
+            <span class="lr-value small">пл. Спортивна 1а, БЦ Гулівер<br>Вежа А, 17 поверх · м. Київ, 01601</span>
+            <span class="lr-hint">UA</span>
+          </div>
+        </div>
+
+        <div class="contact-hours">
+          <div class="contact-hours-cell">
+            <span class="ch-val">&lt; 24<span class="ch-unit">год</span></span>
+            <span class="ch-label">Time to reply</span>
+          </div>
+          <div class="contact-hours-cell">
+            <span class="ch-val">UTC<span class="ch-unit">+2</span></span>
+            <span class="ch-label">Working zone</span>
+          </div>
+          <div class="contact-hours-cell">
+            <span class="ch-val">UA · EN</span>
+            <span class="ch-label">Languages</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Form residency -->
+      <aside class="contact-residency has-corner reveal" data-d="3">
+        <div class="residency-head">
+          <span class="residency-title">Надіслати запит</span>
+          <span class="residency-meta">RES · #001</span>
+        </div>
+        <p class="residency-sub">Коротко опишіть задачу — повернемось до вас на наступний робочий день.</p>
+
+        <form class="residency-form" id="lucas-contact-form" novalidate>
+          <div class="field">
+            <input type="text" id="cf-name" name="name" placeholder=" " required autocomplete="name">
+            <label for="cf-name" class="field-label">Ім'я</label>
+          </div>
+          <div class="field">
+            <input type="email" id="cf-email" name="email" placeholder=" " required autocomplete="email">
+            <label for="cf-email" class="field-label">Email</label>
+          </div>
+          <div class="field">
+            <input type="tel" id="cf-phone" name="phone" placeholder=" " required autocomplete="tel">
+            <label for="cf-phone" class="field-label">Телефон</label>
+          </div>
+          <div class="field">
+            <textarea id="cf-message" name="message" placeholder=" " required rows="4"></textarea>
+            <label for="cf-message" class="field-label">Коротко про задачу</label>
+          </div>
+          <!-- Honeypot — прихована пастка для ботів, люди не бачать і не заповнюють -->
+          <div class="hp-field" aria-hidden="true">
+            <input type="text" name="website" tabindex="-1" autocomplete="off">
+          </div>
+          <button type="submit" class="residency-submit" id="lucas-submit">
+            Надіслати запит <span class="arrow"></span>
+          </button>
+          <div class="residency-foot">Без формальних опитувальників · одразу до справи</div>
+        </form>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+(function () {
+  var form = document.getElementById('lucas-contact-form');
+  if (!form) return;
+
+  // ─── Динамічне завантаження EmailJS ──────────────────────────
+  var ejsLoaded = false;
+  var ejsScript = document.createElement('script');
+  ejsScript.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
+  ejsScript.onload = function () {
+    if (window.emailjs) {
+      window.emailjs.init({ publicKey: 'iY16Y2CF5ffzdZCbh' });
+      ejsLoaded = true;
+    }
+  };
+  ejsScript.onerror = function () {
+    console.warn('[Contact] EmailJS не вдалось завантажити.');
+  };
+  document.head.appendChild(ejsScript);
+
+  // ─── Email reveal ─────────────────────────────────────────────
+  var revealBtn = document.getElementById('contact-email-reveal');
+  if (revealBtn) {
+    revealBtn.addEventListener('click', function () {
+      var addr = 'info' + '@' + 'lucasua.com';
+      var a = document.createElement('a');
+      a.href = 'mailto:' + addr;
+      a.textContent = addr;
+      a.className = 'lr-value';
+      revealBtn.replaceWith(a);
+    }, { once: true });
+  }
+
+  // ─── Validation ───────────────────────────────────────────────
+  var validators = {
+    name:    function (v) { return v.trim().length >= 2; },
+    email:   function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()); },
+    phone:   function (v) { return /^[\+]?[\d\s\-\(\)]{7,20}$/.test(v.trim()); },
+    message: function (v) { return v.trim().length >= 5; },
+  };
+  var errorMessages = {
+    name:    "Введіть ім’я",
+    email:   'Введіть коректний email (наприклад: name@company.com)',
+    phone:   'Введіть коректний номер телефону',
+    message: 'Опишіть задачу коротко',
+  };
+
+  function validateField(input) {
+    var name = input.name;
+    var ok   = validators[name] ? validators[name](input.value) : input.value.trim().length > 0;
+    var wrap = input.closest('.field');
+    var err  = wrap && wrap.querySelector('.field-err-msg');
+
+    if (!ok) {
+      input.classList.add('field-error');
+      if (wrap && !err) {
+        err = document.createElement('span');
+        err.className = 'field-err-msg';
+        wrap.appendChild(err);
+      }
+      if (err) err.textContent = errorMessages[name] || 'Невірний формат';
+    } else {
+      input.classList.remove('field-error');
+      if (err) err.remove();
+    }
+    return ok;
+  }
+
+  form.querySelectorAll('input[name], textarea[name]').forEach(function (f) {
+    f.addEventListener('blur', function () { if (f.value) validateField(f); });
+    f.addEventListener('input', function () {
+      if (f.classList.contains('field-error')) validateField(f);
+    });
+  });
+
+  // ─── Submit ───────────────────────────────────────────────────
+  var btn = document.getElementById('lucas-submit');
+  var submitted = false;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    // Honeypot
+    if (form.querySelector('[name="website"]').value) return;
+    if (submitted) return;
+
+    // Validate all fields
+    var fields = Array.from(form.querySelectorAll('input[name], textarea[name]'))
+                      .filter(function (f) { return f.name !== 'website'; });
+    var allOk  = fields.map(validateField).every(Boolean);
+    if (!allOk) {
+      var first = form.querySelector('.field-error');
+      if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+
+    // EmailJS guard
+    if (!window.emailjs || !ejsLoaded) {
+      var noEjs = document.createElement('p');
+      noEjs.style.cssText = 'color:rgba(255,92,31,.9);font-size:13px;margin-top:10px;font-family:var(--mono)';
+      noEjs.textContent = 'Сервіс відправки ще завантажується. Спробуйте ще раз або напишіть на info@lucasua.com';
+      btn.parentNode.insertBefore(noEjs, btn.nextSibling);
+      setTimeout(function () { noEjs.remove(); }, 6000);
+      return;
+    }
+
+    submitted = true;
+    btn.disabled = true;
+    btn.innerHTML = 'Надсилається…';
+
+    window.emailjs.send('service_ocdfpq8', 'template_wz7w36q', {
+      from_name: form.querySelector('[name="name"]').value.trim(),
+      reply_to:  form.querySelector('[name="email"]').value.trim(),
+      phone:     form.querySelector('[name="phone"]').value.trim(),
+      message:   form.querySelector('[name="message"]').value.trim(),
+    }).then(function () {
+      btn.innerHTML        = '✓ Запит надіслано';
+      btn.style.background = 'var(--orange)';
+      btn.style.borderColor= 'var(--orange)';
+      btn.style.color      = '#fff';
+      form.reset();
+      form.querySelectorAll('.field-err-msg').forEach(function (el) { el.remove(); });
+    }).catch(function () {
+      btn.disabled  = false;
+      submitted     = false;
+      btn.innerHTML = 'Надіслати запит <span class="arrow"></span>';
+      var errMsg = document.createElement('p');
+      errMsg.style.cssText = 'color:rgba(255,92,31,.9);font-size:13px;margin-top:10px;font-family:var(--mono)';
+      errMsg.textContent   = 'Помилка відправки. Спробуйте ще раз або напишіть на info@lucasua.com';
+      btn.parentNode.insertBefore(errMsg, btn.nextSibling);
+      setTimeout(function () { errMsg.remove(); }, 6000);
+    });
+  });
+})();
+</script>

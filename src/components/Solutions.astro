@@ -1,0 +1,396 @@
+---
+// Solutions.astro
+// Послуги та продукти — 5 service chapters із sticky sidebar.
+// Джерело: old-html/index.html <section class="solutions" id="solutions">
+// JS: IntersectionObserver для is-visible на контексті та fc-картках;
+//     mobile accordion (< 720px) з svc-mob-trigger.
+---
+
+<section class="solutions" id="solutions">
+  <div class="solutions-deco" aria-hidden="true"></div>
+
+  <div class="solutions-intro">
+    <div class="solutions-intro-header">
+      <div class="eyebrow solutions-eyebrow">Послуги та продукти</div>
+    </div>
+    <h2 class="solutions-title">Різні напрями<span class="op">.</span><br>Єдиний підхід<span class="op">.</span></h2>
+    <p class="solutions-intro-lead">Ми не обмежуємось окремими послугами — ми будуємо рішення навколо задач клієнта в обліку, оподаткуванні та цифровій трансформації фінансів.</p>
+
+    <nav class="solutions-index" aria-label="Перейти до послуги">
+      <a class="solutions-index-item" href="#svc-audit">
+        <span class="solutions-index-num">01</span>
+        <span class="solutions-index-name">Аудит та звітність</span>
+      </a>
+      <a class="solutions-index-item" href="#svc-saft">
+        <span class="solutions-index-num">02</span>
+        <span class="solutions-index-name">SAF-T Connector</span>
+      </a>
+      <a class="solutions-index-item" href="#svc-odoo">
+        <span class="solutions-index-num">03</span>
+        <span class="solutions-index-name">Міграція з 1C / BAS</span>
+      </a>
+      <a class="solutions-index-item" href="#svc-tp">
+        <span class="solutions-index-num">04</span>
+        <span class="solutions-index-name">Трансфертне ціноутворення</span>
+      </a>
+    </nav>
+  </div>
+
+  <!-- Chapter 01: Audit & Reporting -->
+  <div class="service-chapter" id="svc-audit">
+    <div class="service-context">
+      <div class="service-num">// 01</div>
+      <h2 class="service-name">Аудит та звітність</h2>
+      <div class="service-accent"></div>
+      <p class="service-desc">Аудиторські послуги та послуги з підготовки звітності — згідно законодавчих вимог або за запитом власників, банків або інвесторів. Послуги надаються окремо та не поєднуються для одного клієнта.</p>
+      <div class="service-team">
+        <div class="service-team-label">Команда</div>
+        <p class="service-team-text">Аудиторську практику очолюють лідери з досвідом у Big 4: керівник аудиту, керівник контролю якості та керівник методології. Команда поєднує міжнародний підхід, методологічну дисципліну та досвід в більшості галузей.</p>
+      </div>
+      <a class="arrow-link on-dark" href="/audit/">Дізнатися більше</a>
+    </div>
+    <div class="service-features">
+
+      <div class="fc-divider">
+        <span class="fc-divider-label">Аудит</span>
+        <span class="fc-divider-line"></span>
+      </div>
+
+      <div class="fc" data-n="01">
+        <div class="fc-label">Великі · Середні · ПСІ</div>
+        <div class="fc-title">Обов'язковий аудит фінансової звітності</div>
+        <p class="fc-body">Обов'язковий аудит фінансової звітності для ПСІ, великих і середніх підприємств — із розширеними вимогами до незалежності аудитора, якості завдання, документування процедур і форми аудиторського звіту.</p>
+      </div>
+
+      <div class="fc" data-n="02">
+        <div class="fc-label">Group Audit · Консолідація</div>
+        <div class="fc-title">Аудит групи та консолідованої звітності</div>
+        <p class="fc-body">Аудит консолідованої фінансової звітності холдингів — з перевіркою елімінацій, міжгрупових операцій і підготовкою group audit instructions для компонентних аудиторів.</p>
+      </div>
+
+      <div class="fc" data-n="03">
+        <div class="fc-label">МСЗО 2400 / МССП 4400</div>
+        <div class="fc-title">Огляд фінансової звітності, узгоджені процедури та листи/звіти аудитора для банків, інвесторів або партнерів.</div>
+        <p class="fc-body">Завдання з обмеженою впевненістю (review), погоджені процедури та підтверджувальні листи для банків, інвесторів або партнерів — там, де повний аудит не потрібен.</p>
+      </div>
+
+      <div class="fc-divider">
+        <span class="fc-divider-label">Звітність</span>
+        <span class="fc-divider-line"></span>
+      </div>
+
+      <div class="fc" data-n="04">
+        <div class="fc-label">IFRS Reporting</div>
+        <div class="fc-title">Підготовка повного пакету МСФЗ-звітності</div>
+        <p class="fc-body">Підготовка фінансової звітності відповідно до МСФЗ — для цілей залучення фінансування, вимог материнської компанії або внутрішнього управління. Надається клієнтам, яких ми не аудируємо.</p>
+      </div>
+
+      <div class="fc" data-n="05">
+        <div class="fc-label">Перехід на МСФЗ та трансформація</div>
+        <div class="fc-title">Перший звіт за МСФЗ та трансформація НП(С)БО</div>
+        <p class="fc-body">Перша МСФЗ-звітність (IFRS 1), методологія вибору облікової політики та трансформація наявної НП(С)БО-звітності у формат МСФЗ із розкриттями та примітками.</p>
+      </div>
+
+      <div class="fc" data-n="06">
+        <div class="fc-label">Групова звітність</div>
+        <div class="fc-title">Консолідаційний пакет для групової звітності</div>
+        <p class="fc-body">Підготовка пакету групової звітності відповідно до вимог материнської компанії — у визначених форматах, з елімінаційними коригуваннями і розкриттями міжгрупових операцій.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Chapter 02: SAF-T -->
+  <div class="service-chapter" id="svc-saft">
+    <div class="service-context">
+      <div class="service-num">// 02</div>
+      <h2 class="service-name">SAF-T Connector</h2>
+      <div class="service-accent"></div>
+      <p class="service-desc">Власна платформа для підготовки SAF-T UA XML-файлів — незалежна від ERP-систем, розрахована на великі обсяги транзакційних даних, з впровадженням під ключ силами LUCAS.</p>
+      <div class="service-team">
+        <div class="service-team-label">Команда</div>
+        <p class="service-team-text">Фінансову частину проєктів з SAF-T очолює керівник аудиторської практики (ex-EY), а розробку — архітектор складних технологічних рішень із багаторічним досвідом проєктування та реалізації масштабних систем в Україні та США.</p>
+      </div>
+      <a class="arrow-link on-dark" href="/saf-t/">Дізнатися більше</a>
+    </div>
+    <div class="service-features">
+
+      <div class="fc-divider">
+        <span class="fc-divider-label">Рішення</span>
+        <span class="fc-divider-line"></span>
+      </div>
+
+      <div class="fc" data-n="01">
+        <div class="fc-label">ERP-незалежність</div>
+        <div class="fc-title">Підключається до будь-яких джерел даних</div>
+        <p class="fc-body">На відміну від рішень, прив'язаних до однієї ERP, SAF-T Connector підключається до SAP, 1C/BAS, Odoo, Microsoft Dynamics, та будь-яких кастомних систем, і може працювати з кількома джерелами одночасно.</p>
+      </div>
+
+      <div class="fc" data-n="02">
+        <div class="fc-label">Продуктивність · Python</div>
+        <div class="fc-title">Швидко обробляє великі дані</div>
+        <p class="fc-body">Алгоритм написаний на Python і обробляє великі масиви транзакцій значно швидше за більшість рішень, вбудованих в облікові системи. Для компаній з big data — принципова перевага.</p>
+      </div>
+
+      <div class="fc" data-n="03">
+        <div class="fc-label">Валідація</div>
+        <div class="fc-title">Серія перевірок даних</div>
+        <p class="fc-body">Автоматична валідація XSD та додаткові шари перевірок. Опис кожної помилки зрозумілою мовою. Результат — XML-файл SAF-T UA, сформований відповідно до чинної структури та технічних вимог ДПС, із попередньою валідацією даних.</p>
+      </div>
+
+      <div class="fc" data-n="04">
+        <div class="fc-label">On-premise · Безпека</div>
+        <div class="fc-title">Дані залишаються в інфраструктурі клієнта</div>
+        <p class="fc-body">Система встановлюється на сервері клієнта. Ніяких хмарних завантажень і передачі даних третім сторонам. Рішення не потребує доступу в інтернет для роботи.</p>
+      </div>
+
+      <div class="fc-divider">
+        <span class="fc-divider-label">Впровадження</span>
+        <span class="fc-divider-line"></span>
+      </div>
+
+      <div class="fc" data-n="05">
+        <div class="fc-label">Під ключ · 3–4 місяці</div>
+        <div class="fc-title">Впровадження не стає проєктом клієнта</div>
+        <p class="fc-body">Клієнт надає доступ до даних — далі LUCAS працює автономно, обговорюючи з клієнтом точкові питання. Типовий строк впровадження — 3–4 місяці, залежно від кількості джерел даних, якості облікової інформації та швидкості реагування клієнта на запити.</p>
+      </div>
+
+      <div class="fc" data-n="06">
+        <div class="fc-label">Єдина зона відповідальності</div>
+        <div class="fc-title">Один партнер, який відповідає за весь проєкт</div>
+        <p class="fc-body">Коли продукт постачає один підрядник, а впроваджує інший, відповідальність часто розмивається. LUCAS забезпечує єдину точку відповідальності за рішення, впровадження та практичний результат для клієнта.</p>
+      </div>
+
+      <div class="fc" data-n="07">
+        <div class="fc-label">Вартість · TCO</div>
+        <div class="fc-title">Повна вартість володіння — одна з найнижчих на ринку</div>
+        <p class="fc-body">LUCAS забезпечує повний цикл впровадження з конкурентною повною вартістю володіння. Ми маємо добре відпрацьований процес впровадження, тому проєкти проходять швидко, структуровано та з меншими витратами для клієнта.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Chapter 03: Odoo -->
+  <div class="service-chapter" id="svc-odoo">
+    <div class="service-context">
+      <div class="service-num">// 03</div>
+      <h2 class="service-name">Міграція обліку з 1C / BAS на Odoo</h2>
+      <div class="service-accent"></div>
+      <p class="service-desc">Перехід з російського ПЗ на сучасну ERP-платформу — з фокусом на облікову методологію, коректне перенесення даних і відповідність вимогам звітності з першого дня роботи.</p>
+      <div class="service-team">
+        <div class="service-team-label">Команда</div>
+        <p class="service-team-text">Наша команда з переходу на Odoo ERP має глибокий практичний досвід впровадження Odoo для компаній України, Європи та Північної Америки, з всебічним розумінням архітектури системи, модулів, інтеграцій та бізнес-процесів.</p>
+      </div>
+      <a class="arrow-link on-dark" href="/odoo-migration/">Дізнатися більше</a>
+    </div>
+    <div class="service-features">
+
+      <div class="fc-divider">
+        <span class="fc-divider-label">Чому Odoo</span>
+        <span class="fc-divider-line"></span>
+      </div>
+
+      <div class="fc" data-n="01">
+        <div class="fc-label">Правовий контекст · 2026</div>
+        <div class="fc-title">1C/BAS стає фактором ризику</div>
+        <p class="fc-body">Для органів державної влади, держпідприємств та об'єктів критичної інфраструктури діють обмеження на використання визначених програмних продуктів (Постанова КМУ №1335). Для приватного — обмеження через санкційні списки РНБО. Законопроєкт №13505 передбачає штрафи до 2% річного обороту. Використання 1C/BAS може створювати додаткові питання з боку банків, міжнародних фінансових інституцій, донорів та інвесторів у межах комплаєнс- і кібербезпекової оцінки.</p>
+      </div>
+
+      <div class="fc" data-n="02">
+        <div class="fc-label">Odoo у світі · Топ 4</div>
+        <div class="fc-title">Мейнстрим глобального ринку ERP</div>
+        <p class="fc-body">Покриття Odoo — 175 країн, 15 млн користувачів, зростання вдвічі щороку. Toyota, Nokia, Nestlé, Airbus, Danone — серед клієнтів. Одна підписка охоплює 30+ модулів: бухгалтерію, CRM, склад, виробництво, HR, та інші.</p>
+      </div>
+
+      <div class="fc" data-n="03">
+        <div class="fc-label">TCO · Вартість володіння</div>
+        <div class="fc-title">На 70–80% нижча вартість ніж SAP або MS Dynamics</div>
+        <p class="fc-body">Прозора ліцензія, що включає усі додатки Odoo, без прихованих платежів. Тисячі готових конекторів і величезна спільнота розробників замість дорогої кастомної розробки і залежності від єдиного вендора.</p>
+      </div>
+
+      <div class="fc-divider">
+        <span class="fc-divider-label">Впровадження з LUCAS</span>
+        <span class="fc-divider-line"></span>
+      </div>
+
+      <div class="fc" data-n="04">
+        <div class="fc-label">Finance-first · Методологія</div>
+        <div class="fc-title">Архітектура, що будується навколо обліку</div>
+        <p class="fc-body">Нам не треба пояснювати що таке амортизація, подвійний запис або перша подія. LUCAS будує архітектуру системи навколо облікової логіки — це робить Odoo простішим у використанні і зменшує ризики помилок після запуску.</p>
+      </div>
+
+      <div class="fc" data-n="05">
+        <div class="fc-label">Аудитор + розробник</div>
+        <div class="fc-title">Усуваємо розрив між бухгалтерами і програмістами</div>
+        <p class="fc-body">Непорозуміння між фінансистами і розробниками — головне джерело затримок і перевитрат у будь-якому ERP-проєкті. Наші власні тандеми розуміють один одного з півслова. Це зберігає 30–40% вартості впровадження.</p>
+      </div>
+
+      <div class="fc" data-n="06">
+        <div class="fc-label">2–6 місяців · 6 етапів</div>
+        <div class="fc-title">Структурований перехід без ризику розриву в обліку</div>
+        <p class="fc-body">Аналіз → Архітектура → Кастомізація → Міграція даних → Тестування → Запуск. Паралельний облік до підтвердження коректності. Навчання команди і перехід на підтримку включені.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Chapter 04: Transfer Pricing -->
+  <div class="service-chapter" id="svc-tp">
+    <div class="service-context">
+      <div class="service-num">// 04</div>
+      <h2 class="service-name">Трансфертне ціноутворення</h2>
+      <div class="service-accent"></div>
+      <p class="service-desc">Документація, аналіз і захист позиції по контрольованих операціях відповідно до ст. 39 ПКУ та настанов ОЕСР — для компаній з внутрішньогруповими операціями та трансакціями з пов'язаними особами.</p>
+      <div class="service-team">
+        <div class="service-team-label">Команда</div>
+        <p class="service-team-text">Практику очолює експерт, запрошений з податкових органів, який багато років відповідав за перевірку документації та звітності з ТЦУ, і володіє детальним розумінням підходів і критеріїв державного контролю.</p>
+      </div>
+      <a class="arrow-link on-dark" href="/transfer-pricing/">Дізнатися більше</a>
+    </div>
+    <div class="service-features">
+
+      <div class="fc-divider">
+        <span class="fc-divider-label">Документація та звітність</span>
+        <span class="fc-divider-line"></span>
+      </div>
+
+      <div class="fc" data-n="01">
+        <div class="fc-label">Ідентифікація · Ст. 39 ПКУ</div>
+        <div class="fc-title">Реєстр контрольованих операцій</div>
+        <p class="fc-body">Визначення кола пов'язаних осіб, ідентифікація контрольованих операцій і перевірка відповідності критеріям визнання операцій контрольованими згідно з актуальними вимогами ПКУ.</p>
+      </div>
+
+      <div class="fc" data-n="02">
+        <div class="fc-label">ОЕСР · МГК · Тристороння структура</div>
+        <div class="fc-title">Майстер-файл і локальний файл</div>
+        <p class="fc-body">Для учасників міжнародних груп компаній (МГК), що відповідають критеріям ПКУ: документація відповідно до тристоронньої структури ОЕСР, включаючи повідомлення про участь у МГК, майстер-файл і локальний файл.</p>
+      </div>
+
+      <div class="fc" data-n="03">
+        <div class="fc-label">Звітність · ДПС</div>
+        <div class="fc-title">Звіт про контрольовані операції</div>
+        <p class="fc-body">Підготовка та подача річного звіту КО до ДПС відповідно до форм і строків, встановлених ст. 39.4 ПКУ. Контроль повноти і коректності відображення всіх контрольованих операцій.</p>
+      </div>
+
+      <div class="fc-divider">
+        <span class="fc-divider-label">Аналіз та захист позиції</span>
+        <span class="fc-divider-line"></span>
+      </div>
+
+      <div class="fc" data-n="04">
+        <div class="fc-label">Принцип витягнутої руки</div>
+        <div class="fc-title">Порівняльний аналіз і ринковий діапазон</div>
+        <p class="fc-body">Пошук зіставних компаній у комерційних базах даних, статистичний аналіз ринкового діапазону (P25–P75) і документальне обґрунтування відповідності цін принципу «витягнутої руки» відповідно до ОЕСР.</p>
+      </div>
+
+      <div class="fc" data-n="05">
+        <div class="fc-label">TP політики · APA</div>
+        <div class="fc-title">Внутрішньогрупові політики та попереднє ціноутворення</div>
+        <p class="fc-body">Розробка TP-policies для групи: методологія ціноутворення, договірна база, розподіл функцій і ризиків. Супровід переговорів з ДПС щодо попереднього узгодження цін (APA).</p>
+      </div>
+
+      <div class="fc" data-n="06">
+        <div class="fc-label">Перевірки ДПС</div>
+        <div class="fc-title">Захист позиції під час податкових перевірок</div>
+        <p class="fc-body">Оцінка TP-ризиків до початку перевірки, підготовка аргументованих відповідей на запити ДПС, супровід під час перевірки та підготовка заперечень на акт у разі донарахувань.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Chapter 05: Інші послуги -->
+  <div class="service-chapter" id="svc-other">
+    <div class="service-context">
+      <div class="service-num">// 05</div>
+      <h2 class="service-name">Інші послуги</h2>
+      <div class="service-accent"></div>
+      <p class="service-desc">Повний спектр консультаційних та аналітичних послуг — від стратегічного планування і юридичного структурування до незалежної оцінки і фінансового моделювання.</p>
+      <a class="arrow-link on-dark" href="/other-services/">Дізнатися більше</a>
+    </div>
+    <div class="service-features">
+
+      <div class="fc-divider">
+        <span class="fc-divider-label">Послуги з фінансів та права</span>
+        <span class="fc-divider-line"></span>
+      </div>
+
+      <div class="fc" data-n="01">
+        <div class="fc-label">Стратегія</div>
+        <div class="fc-title">Розробка стратегій та бізнес-планів</div>
+        <p class="fc-body">Аналіз ринку, конкурентного середовища і можливостей зростання. Розробка стратегічних документів для залучення фінансування, партнерства або внутрішнього управління бізнесом.</p>
+      </div>
+
+      <div class="fc" data-n="02">
+        <div class="fc-label">Юридичні послуги</div>
+        <div class="fc-title">КІК, M&amp;A, структурування, реструктуризація</div>
+        <p class="fc-body">Регулювання контрольованих іноземних компаній, юридичний супровід злиттів та поглинань, структурування іноземних інвестицій, міжнародне холдингове структурування та реструктуризація бізнесу.</p>
+      </div>
+
+      <div class="fc" data-n="03">
+        <div class="fc-label">Due Diligence</div>
+        <div class="fc-title">Фінансова та юридична перевірка бізнесу</div>
+        <p class="fc-body">Комплексна перевірка для угод і залучення інвестицій — фінансова складова (якість активів, зобов'язань, грошових потоків, якість прибутку) і юридична (права власності, ліцензії, контракти, ризики).</p>
+      </div>
+
+      <div class="fc" data-n="04">
+        <div class="fc-label">Оцінка</div>
+        <div class="fc-title">Оцінка бізнесу та активів</div>
+        <p class="fc-body">Незалежна оцінка вартості компаній, часток у бізнесі, нематеріальних активів і майнових комплексів. Спеціалізуємось на великих та складних проєктах з нестандартною корпоративною або галузевою структурою.</p>
+      </div>
+
+      <div class="fc" data-n="05">
+        <div class="fc-label">Аналітика · Моделювання</div>
+        <div class="fc-title">Фінансова та ринкова аналітика</div>
+        <p class="fc-body">Аналіз фінансового стану, ринкового середовища та конкурентів. Фінансові прогнози, сценарне моделювання та бізнес-плани для прийняття стратегічних та інвестиційних рішень.</p>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<script>
+  // Service chapters — context (left) fades in, fc cards stagger in
+  (() => {
+    const cardDelays = [0, 80, 170, 255, 345];
+    document.querySelectorAll('.service-chapter').forEach(chapter => {
+      const context = chapter.querySelector('.service-context');
+      const cards   = Array.from(chapter.querySelectorAll('.fc'));
+      const io = new IntersectionObserver(entries => {
+        if (!entries[0].isIntersecting) return;
+        if (context) context.classList.add('is-visible');
+        cards.forEach((card, i) => {
+          setTimeout(() => card.classList.add('is-visible'), cardDelays[i] ?? i * 85);
+        });
+        io.disconnect();
+      }, { threshold: 0.05 });
+      io.observe(chapter);
+    });
+  })();
+
+  // Mobile accordion — inject trigger button for each chapter at < 720px
+  (() => {
+    if (window.innerWidth > 720) return;
+    document.querySelectorAll('.service-chapter').forEach(chapter => {
+      const ctx  = chapter.querySelector('.service-context');
+      const num  = chapter.querySelector('.service-num');
+      const name = chapter.querySelector('.service-name');
+      if (!ctx || !name) return;
+      const trigger = document.createElement('button');
+      trigger.className = 'svc-mob-trigger';
+      trigger.setAttribute('aria-expanded', 'false');
+      trigger.innerHTML = `
+        <div class="svc-mob-trigger-inner">
+          <span class="svc-mob-num">${num ? num.textContent : ''}</span>
+          <span class="svc-mob-name">${name.textContent}</span>
+        </div>
+        <span class="svc-mob-icon" aria-hidden="true"></span>`;
+      ctx.insertBefore(trigger, ctx.firstChild);
+      trigger.addEventListener('click', () => {
+        const isOpen = chapter.classList.contains('mob-open');
+        chapter.classList.toggle('mob-open', !isOpen);
+        trigger.setAttribute('aria-expanded', String(!isOpen));
+      });
+    });
+  })();
+</script>
