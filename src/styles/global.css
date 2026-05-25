@@ -1100,7 +1100,7 @@ a.footer-contact-val:hover { color: #fff; }
 
 .faq-intro .eyebrow {
   justify-content: center;
-  color: rgba(255,255,255,.45);
+  color: rgba(255,255,255,.62);
 }
 
 .faq-title {
@@ -1547,7 +1547,7 @@ a.footer-contact-val:hover { color: #fff; }
   letter-spacing: 0.14em; text-transform: uppercase;
 }
 .sp-readnext-cat { color: var(--orange); font-weight: 600; }
-.sp-readnext-time { color: rgba(255,255,255,.35); }
+.sp-readnext-time { color: rgba(255,255,255,.60); }
 .sp-readnext-title {
   font-family: var(--display); font-weight: 500;
   font-size: clamp(19px, 1.8vw, 26px);
@@ -1556,7 +1556,7 @@ a.footer-contact-val:hover { color: #fff; }
 }
 .sp-readnext-excerpt {
   font-family: var(--body); font-size: 13.5px;
-  line-height: 1.6; color: rgba(255,255,255,.45);
+  line-height: 1.6; color: rgba(255,255,255,.60);
 }
 .sp-readnext-cta {
   flex: none; display: inline-flex; align-items: center; gap: 8px;
@@ -2019,7 +2019,7 @@ a.footer-contact-val:hover { color: #fff; }
   margin: 0 auto 32px;
   text-align: center;
 }
-.solutions-eyebrow { color: rgba(255,255,255,.45); }
+.solutions-eyebrow { color: rgba(255,255,255,.62); }
 .solutions-eyebrow::before { background: var(--cyan); }
 .solutions-title {
   font-family: var(--display);
@@ -2835,7 +2835,7 @@ a.footer-contact-val:hover { color: #fff; }
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(10,10,10,.38);
+  color: rgba(10,10,10,.65);
   padding-top: 14px;
   border-top: 1px solid rgba(10,10,10,.10);
   margin-top: auto;
