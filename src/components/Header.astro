@@ -48,7 +48,7 @@
 </header>
 
 <!-- Mobile menu panel — пов'язаний з header через JS -->
-<div aria-hidden="true" class="mob-menu" id="mob-menu">
+<div inert class="mob-menu" id="mob-menu">
   <a href="/#audit">Концепція</a>
   <span class="mob-section-label">Послуги</span>
   <a class="mob-sub" href="/audit/">Аудит та звітність</a>
@@ -103,7 +103,7 @@
       btn.classList.add('is-open');
       menu.classList.add('is-open');
       overlay.classList.add('is-open');
-      menu.setAttribute('aria-hidden', 'false');
+      menu.removeAttribute('inert');
       btn.setAttribute('aria-expanded', 'true');
       document.body.style.overflow = 'hidden';
     };
@@ -111,7 +111,7 @@
       btn.classList.remove('is-open');
       menu.classList.remove('is-open');
       overlay.classList.remove('is-open');
-      menu.setAttribute('aria-hidden', 'true');
+      menu.setAttribute('inert', '');
       btn.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
     };
