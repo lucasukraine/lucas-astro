@@ -2,6 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import ArticleCTA from '../../../components/ArticleCTA.astro';
 import ArticleRelated from '../../../components/ArticleRelated.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
@@ -14,9 +15,9 @@ import ArticleRelated from '../../../components/ArticleRelated.astro';
       <div class="art-header-deco" aria-hidden="true"></div>
       <div class="art-header-inner">
         <nav class="art-breadcrumb" aria-label="Хлібні крихти">
-          <a href="/">Головна</a>
+          <a href={base + '/'}>Головна</a>
           <span>/</span>
-          <a href="/blog/">Блог</a>
+          <a href={base + '/blog/'}>Блог</a>
           <span>/</span>
           <span style="color:rgba(255,255,255,.7)">IFRS 1: перший перехід на МСФЗ</span>
         </nav>
@@ -235,7 +236,7 @@ import ArticleRelated from '../../../components/ArticleRelated.astro';
 
             <p>Залежно від масштабу і складності бізнесу, повний проєкт займає від 3 до 12 місяців. Для груп з кількома юридичними особами та складною операційною структурою — від 9 до 18 місяців.</p>
 
-            <p>Принципово важливо: <strong>підготовку МСФЗ-звітності і її аудит виконують різні компанії</strong>. <a href="/audit/">LUCAS</a> надає обидві послуги, але не одному клієнту одночасно — згідно з вимогами незалежності аудитора.</p>
+            <p>Принципово важливо: <strong>підготовку МСФЗ-звітності і її аудит виконують різні компанії</strong>. <a href={base + '/audit/'}>LUCAS</a> надає обидві послуги, але не одному клієнту одночасно — згідно з вимогами незалежності аудитора.</p>
 
             <h2 id="faq">Часті запитання</h2>
 
@@ -276,15 +277,15 @@ import ArticleRelated from '../../../components/ArticleRelated.astro';
       title="Потрібна підготовка МСФЗ-звітності"
       titlePunct="?"
       text="Підготовка повного пакету МСФЗ, IFRS 1 conversion, трансформація НП(С)БО — для клієнтів, аудит яких LUCAS не виконує."
-      href="/audit/"
+      href={base + '/audit/'}
       linkText="Перейти до послуги"
     />
 
     <ArticleRelated
       items={[
-        { category: "ERP та облік", title: "Заборона 1С в Україні 2026: що робити бізнесу", href: "/blog/zaborona-1c-2026/" },
-        { category: "Податковий облік", title: "SAF-T в Україні: повний гайд для бухгалтера", href: "/blog/saf-t-ukraina-povny-gayd/" },
-        { category: "Трансфертне ціноутворення", title: "Хто зобов'язаний подавати звіт про контрольовані операції", href: "/blog/zvit-pro-kontrolovani-operatsii/" },
+        { category: "ERP та облік", title: "Заборона 1С в Україні 2026: що робити бізнесу", href: `${base}/blog/zaborona-1c-2026/` },
+        { category: "Податковий облік", title: "SAF-T в Україні: повний гайд для бухгалтера", href: `${base}/blog/saf-t-ukraina-povny-gayd/` },
+        { category: "Трансфертне ціноутворення", title: "Хто зобов'язаний подавати звіт про контрольовані операції", href: `${base}/blog/zvit-pro-kontrolovani-operatsii/` },
       ]}
     />
 

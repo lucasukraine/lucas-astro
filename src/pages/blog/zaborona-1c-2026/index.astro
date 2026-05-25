@@ -2,6 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import ArticleCTA from '../../../components/ArticleCTA.astro';
 import ArticleRelated from '../../../components/ArticleRelated.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
@@ -14,9 +15,9 @@ import ArticleRelated from '../../../components/ArticleRelated.astro';
       <div class="art-header-deco" aria-hidden="true"></div>
       <div class="art-header-inner">
         <nav class="art-breadcrumb" aria-label="Хлібні крихти">
-          <a href="/">Головна</a>
+          <a href={base + '/'}>Головна</a>
           <span>/</span>
-          <a href="/blog/">Блог</a>
+          <a href={base + '/blog/'}>Блог</a>
           <span>/</span>
           <span style="color:rgba(255,255,255,.7)">Заборона 1С в Україні 2026</span>
         </nav>
@@ -131,7 +132,7 @@ import ArticleRelated from '../../../components/ArticleRelated.astro';
             <h3>Odoo</h3>
             <p>Найшвидше зростаюча ERP у світі — 4 місце у глобальному рейтингу за 2025 рік, 175 країн, 15 млн користувачів. Серед клієнтів — Toyota, Nokia, Nestlé, Airbus. Прозора ліцензія до €17.90 на користувача, понад 30 модулів в одній підписці. <strong>Повна вартість володіння на 70–80% нижча за SAP та MS Dynamics.</strong></p>
 
-            <p>Для більшості українських компаній малого та середнього бізнесу, а також для багатьох великих компаній, Odoo стає оптимальним вибором за співвідношенням вартості та функціональності. <a href="/odoo-migration/">LUCAS спеціалізується на міграції з 1С/BAS на Odoo</a> з методологічним контролем аудиторської команди.</p>
+            <p>Для більшості українських компаній малого та середнього бізнесу, а також для багатьох великих компаній, Odoo стає оптимальним вибором за співвідношенням вартості та функціональності. <a href={base + '/odoo-migration/'}>LUCAS спеціалізується на міграції з 1С/BAS на Odoo</a> з методологічним контролем аудиторської команди.</p>
 
             <h2 id="migration">Покроковий план переходу: 6 етапів</h2>
 
@@ -204,15 +205,15 @@ import ArticleRelated from '../../../components/ArticleRelated.astro';
       title="Потрібна допомога з міграцією з 1С"
       titlePunct="?"
       text="Розкажіть про вашу поточну систему — оцінимо обсяг переходу і запропонуємо план."
-      href="/odoo-migration/"
+      href={base + '/odoo-migration/'}
       linkText="Перейти до послуги"
     />
 
     <ArticleRelated
       items={[
-        { category: "Податковий облік", title: "SAF-T в Україні: повний гайд для бухгалтера", href: "/blog/saf-t-ukraina-povny-gayd/" },
-        { category: "Трансфертне ціноутворення", title: "Хто зобов'язаний подавати звіт про контрольовані операції", href: "/blog/zvit-pro-kontrolovani-operatsii/" },
-        { category: "МСФЗ та звітність", title: "IFRS 1: перший перехід на МСФЗ — покрокова інструкція", href: "/blog/ifrs-1-pershyy-perehid-msfz/" },
+        { category: "Податковий облік", title: "SAF-T в Україні: повний гайд для бухгалтера", href: `${base}/blog/saf-t-ukraina-povny-gayd/` },
+        { category: "Трансфертне ціноутворення", title: "Хто зобов'язаний подавати звіт про контрольовані операції", href: `${base}/blog/zvit-pro-kontrolovani-operatsii/` },
+        { category: "МСФЗ та звітність", title: "IFRS 1: перший перехід на МСФЗ — покрокова інструкція", href: `${base}/blog/ifrs-1-pershyy-perehid-msfz/` },
       ]}
     />
 

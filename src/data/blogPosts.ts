@@ -2,6 +2,8 @@
 // Статті з blog/index та blog-strip головної сторінки.
 // URL-и конвертовані з /lucas-website/blog/* → /blog/*
 
+const base = import.meta.env.BASE_URL;
+
 export const blogPosts = [
   {
     category: "ERP та облік",
@@ -10,7 +12,7 @@ export const blogPosts = [
     readingTime: "12 хв читання",
     excerpt: "Постанова КМУ №1335, санкційні списки РНБО, законопроєкт №13505 зі штрафами до 2% річного обороту — використання 1С/BAS/BAF в Україні стає не лише репутаційним, а й прямим фінансовим ризиком.",
     date: "15 січня 2026",
-    href: "/blog/zaborona-1c-2026/",
+    href: `${base}/blog/zaborona-1c-2026/`,
   },
   {
     category: "Податковий облік",
@@ -19,7 +21,7 @@ export const blogPosts = [
     readingTime: "15 хв читання",
     excerpt: "Standard Audit File for Tax (SAF-T) — формат стандартизованої передачі облікових даних у Державну податкову службу. У 2026 році вимога подавати SAF-T поширюється на дедалі ширше коло платників.",
     date: "8 лютого 2026",
-    href: "/blog/saf-t-ukraina-povny-gayd/",
+    href: `${base}/blog/saf-t-ukraina-povny-gayd/`,
   },
   {
     category: "Трансфертне ціноутворення",
@@ -28,7 +30,7 @@ export const blogPosts = [
     readingTime: "14 хв читання",
     excerpt: "Звіт про контрольовані операції — одна з найскладніших ділянок податкової звітності. Помилка у визначенні кола повʼязаних осіб або пропуск операції коштує мільйони у вигляді донарахувань.",
     date: "12 березня 2026",
-    href: "/blog/zvit-pro-kontrolovani-operatsii/",
+    href: `${base}/blog/zvit-pro-kontrolovani-operatsii/`,
   },
   {
     category: "МСФЗ та звітність",
@@ -37,6 +39,6 @@ export const blogPosts = [
     readingTime: "13 хв читання",
     excerpt: "Перша звітність за МСФЗ — це окремий стандарт МСФЗ 1, який встановлює методологію всього процесу: від визначення дати переходу до облікової політики, обовʼязкових винятків і добровільних звільнень.",
     date: "5 квітня 2026",
-    href: "/blog/ifrs-1-pershyy-perehid-msfz/",
+    href: `${base}/blog/ifrs-1-pershyy-perehid-msfz/`,
   },
 ];

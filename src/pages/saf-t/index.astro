@@ -5,6 +5,7 @@ import FaqAccordion from '../../components/FaqAccordion.astro';
 import ServiceCTA from '../../components/ServiceCTA.astro';
 import ServiceReadNext from '../../components/ServiceReadNext.astro';
 import { saftFaq } from '../../data/saftFaq';
+const base = import.meta.env.BASE_URL;
 ---
 
 <ServiceLayout
@@ -137,7 +138,7 @@ import { saftFaq } from '../../data/saftFaq';
     title="Готові обговорити впровадження SAF-T"
     titlePunct="?"
     text="Розкажіть про вашу облікову систему — ми оцінимо обсяг робіт і запропонуємо умови впровадження під ключ."
-    href="/#contact"
+    href={base + '/#contact'}
     linkText="Залишити запит"
   />
 
@@ -147,7 +148,7 @@ import { saftFaq } from '../../data/saftFaq';
     readingTime="15 хв читання"
     title="SAF-T в Україні: повний гайд"
     excerpt="Хто зобов'язаний подавати, структура SAF-T UA, XSD-валідація ДПС."
-    href="/blog/saf-t-ukraina-povny-gayd/"
+    href={base + '/blog/saf-t-ukraina-povny-gayd/'}
     ariaLabel="SAF-T в Україні 2026: повний гайд для бухгалтера"
   />
 

@@ -3,6 +3,7 @@
 // Еталон: other-services/index.html
 // URL-и конвертовані з /lucas-website/* → /*
 // SVG логотип рендериться через #lucas-mark, визначений у Header.astro
+const base = import.meta.env.BASE_URL;
 ---
 
 <footer class="footer">
@@ -27,11 +28,11 @@
       <div>
         <div class="footer-col-label">Послуги</div>
         <ul>
-          <li><a href="/audit/">Аудит та звітність</a></li>
-          <li><a href="/saf-t/">SAF-T Connector</a></li>
-          <li><a href="/odoo-migration/">Міграція на Odoo</a></li>
-          <li><a href="/transfer-pricing/">Трансфертне ціноутворення</a></li>
-          <li><a href="/other-services/">Інші послуги</a></li>
+          <li><a href={base + '/audit/'}>Аудит та звітність</a></li>
+          <li><a href={base + '/saf-t/'}>SAF-T Connector</a></li>
+          <li><a href={base + '/odoo-migration/'}>Міграція на Odoo</a></li>
+          <li><a href={base + '/transfer-pricing/'}>Трансфертне ціноутворення</a></li>
+          <li><a href={base + '/other-services/'}>Інші послуги</a></li>
         </ul>
       </div>
 
@@ -39,12 +40,12 @@
       <div>
         <div class="footer-col-label">Компанія</div>
         <ul>
-          <li><a href="/#audit">Аудит як ядро</a></li>
-          <li><a href="/#industries">Галузі</a></li>
-          <li><a href="/#faq">Питання</a></li>
-          <li><a href="/blog/">Блог</a></li>
-          <li><a href="/documents/">Документи</a></li>
-          <li><a href="/#contact">Контакти</a></li>
+          <li><a href={base + '/#audit'}>Аудит як ядро</a></li>
+          <li><a href={base + '/#industries'}>Галузі</a></li>
+          <li><a href={base + '/#faq'}>Питання</a></li>
+          <li><a href={base + '/blog/'}>Блог</a></li>
+          <li><a href={base + '/documents/'}>Документи</a></li>
+          <li><a href={base + '/#contact'}>Контакти</a></li>
         </ul>
       </div>
 
@@ -76,7 +77,7 @@
       <span class="footer-bot-copy">
         © <span id="footer-year"></span> LUCAS · ТОВ «Лукас Аудит» · All rights reserved
       </span>
-      <a class="footer-bot-cta" href="/#contact">Обговорити проєкт →</a>
+      <a class="footer-bot-cta" href={base + '/#contact'}>Обговорити проєкт →</a>
     </div>
   </div>
 </footer>

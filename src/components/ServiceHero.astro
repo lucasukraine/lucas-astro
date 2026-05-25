@@ -6,15 +6,16 @@ interface Props {
   accent?: 'orange' | 'cyan';
 }
 const { eyebrow, title, lead, accent = 'orange' } = Astro.props;
+const base = import.meta.env.BASE_URL;
 ---
 
 <section class="sp-hero">
   <div class="sp-hero-deco" aria-hidden="true"></div>
   <div class="sp-hero-inner">
     <nav class="sp-breadcrumb" aria-label="Хлібні крихти">
-      <a href="/">Головна</a>
+      <a href={base + '/'}>Головна</a>
       <span>/</span>
-      <a href="/#solutions">Послуги</a>
+      <a href={base + '/#solutions'}>Послуги</a>
       <span>/</span>
       <span class="sp-breadcrumb-current">{title}</span>
     </nav>
@@ -22,8 +23,8 @@ const { eyebrow, title, lead, accent = 'orange' } = Astro.props;
     <h1 class="sp-h1">{title}</h1>
     <p class="sp-lead">{lead}</p>
     <div class="sp-hero-actions">
-      <a class="btn cta-orange" href="/#contact">Обговорити проєкт <span class="arrow"></span></a>
-      <a class="btn ghost-dark" href="/#solutions">Усі послуги</a>
+      <a class="btn cta-orange" href={base + '/#contact'}>Обговорити проєкт <span class="arrow"></span></a>
+      <a class="btn ghost-dark" href={base + '/#solutions'}>Усі послуги</a>
     </div>
   </div>
 </section>

@@ -2,6 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import ArticleCTA from '../../../components/ArticleCTA.astro';
 import ArticleRelated from '../../../components/ArticleRelated.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
@@ -14,9 +15,9 @@ import ArticleRelated from '../../../components/ArticleRelated.astro';
       <div class="art-header-deco" aria-hidden="true"></div>
       <div class="art-header-inner">
         <nav class="art-breadcrumb" aria-label="Хлібні крихти">
-          <a href="/">Головна</a>
+          <a href={base + '/'}>Головна</a>
           <span>/</span>
-          <a href="/blog/">Блог</a>
+          <a href={base + '/blog/'}>Блог</a>
           <span>/</span>
           <span style="color:rgba(255,255,255,.7)">SAF-T в Україні</span>
         </nav>
@@ -175,7 +176,7 @@ import ArticleRelated from '../../../components/ArticleRelated.astro';
             <h3>Окремі ERP-незалежні платформи</h3>
             <p>Спеціалізовані рішення, що підключаються до будь-яких джерел даних. <strong>Перевага:</strong> працюють з SAP, 1С/BAS, Odoo, Microsoft Dynamics, кастомними системами та навіть з декількома джерелами одночасно. Швидко обробляють великі обсяги даних.</p>
 
-            <p><a href="/saf-t/">SAF-T Connector від LUCAS</a> належить саме до цієї категорії. Це власне рішення на Python з впровадженням під ключ силами LUCAS за 3-4 місяці. Працює on-premise — дані не покидають інфраструктуру клієнта.</p>
+            <p><a href={base + '/saf-t/'}>SAF-T Connector від LUCAS</a> належить саме до цієї категорії. Це власне рішення на Python з впровадженням під ключ силами LUCAS за 3-4 місяці. Працює on-premise — дані не покидають інфраструктуру клієнта.</p>
 
             <h3>Аутсорсинг підготовки</h3>
             <p>Деякі компанії передають підготовку SAF-T на аутсорс. Це робочий варіант для разової подачі або тестових файлів, але економічно невиправданий для регулярної подачі — операційна вартість швидко перевищує інвестицію у власне рішення.</p>
@@ -234,15 +235,15 @@ import ArticleRelated from '../../../components/ArticleRelated.astro';
       title="Готові обговорити впровадження SAF-T"
       titlePunct="?"
       text="SAF-T Connector — впровадження під ключ за 3-4 місяці. Працює з будь-якими ERP-системами."
-      href="/saf-t/"
+      href={base + '/saf-t/'}
       linkText="Перейти до послуги"
     />
 
     <ArticleRelated
       items={[
-        { category: "ERP та облік", title: "Заборона 1С в Україні 2026: що робити бізнесу", href: "/blog/zaborona-1c-2026/" },
-        { category: "Трансфертне ціноутворення", title: "Хто зобов'язаний подавати звіт про контрольовані операції", href: "/blog/zvit-pro-kontrolovani-operatsii/" },
-        { category: "МСФЗ та звітність", title: "IFRS 1: перший перехід на МСФЗ — покрокова інструкція", href: "/blog/ifrs-1-pershyy-perehid-msfz/" },
+        { category: "ERP та облік", title: "Заборона 1С в Україні 2026: що робити бізнесу", href: `${base}/blog/zaborona-1c-2026/` },
+        { category: "Трансфертне ціноутворення", title: "Хто зобов'язаний подавати звіт про контрольовані операції", href: `${base}/blog/zvit-pro-kontrolovani-operatsii/` },
+        { category: "МСФЗ та звітність", title: "IFRS 1: перший перехід на МСФЗ — покрокова інструкція", href: `${base}/blog/ifrs-1-pershyy-perehid-msfz/` },
       ]}
     />
 

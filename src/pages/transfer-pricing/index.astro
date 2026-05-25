@@ -5,6 +5,7 @@ import FaqAccordion from '../../components/FaqAccordion.astro';
 import ServiceCTA from '../../components/ServiceCTA.astro';
 import ServiceReadNext from '../../components/ServiceReadNext.astro';
 import { transferPricingFaq } from '../../data/transferPricingFaq';
+const base = import.meta.env.BASE_URL;
 ---
 
 <ServiceLayout
@@ -140,7 +141,7 @@ import { transferPricingFaq } from '../../data/transferPricingFaq';
     title="Потрібна ТЦ-документація, звіт або захист позиції"
     titlePunct="?"
     text="Розкажіть про ваші контрольовані операції — ми оцінимо обсяг документації та запропонуємо умови."
-    href="/#contact"
+    href={base + '/#contact'}
     linkText="Залишити запит"
   />
 
@@ -150,7 +151,7 @@ import { transferPricingFaq } from '../../data/transferPricingFaq';
     readingTime="14 хв читання"
     title="Хто подає звіт про контрольовані операції"
     excerpt="Критерії пов'язаності, вартісні пороги, ст. 39 ПКУ."
-    href="/blog/zvit-pro-kontrolovani-operatsii/"
+    href={base + '/blog/zvit-pro-kontrolovani-operatsii/'}
     ariaLabel="Хто зобов'язаний подавати звіт про контрольовані операції"
   />
 

@@ -11,6 +11,7 @@ import BlogStrip from '../components/BlogStrip.astro';
 import Contact from '../components/Contact.astro';
 import { homeFaq } from '../data/homeFaq';
 import { blogPosts } from '../data/blogPosts';
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
@@ -30,7 +31,7 @@ import { blogPosts } from '../data/blogPosts';
     />
     <BlogStrip
       items={blogPosts}
-      moreHref="/blog/"
+      moreHref={base + '/blog/'}
     />
   </main>
 </BaseLayout>

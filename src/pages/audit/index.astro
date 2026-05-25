@@ -5,6 +5,7 @@ import FaqAccordion from '../../components/FaqAccordion.astro';
 import ServiceCTA from '../../components/ServiceCTA.astro';
 import ServiceReadNext from '../../components/ServiceReadNext.astro';
 import { auditFaq } from '../../data/auditFaq';
+const base = import.meta.env.BASE_URL;
 ---
 
 <ServiceLayout
@@ -140,7 +141,7 @@ import { auditFaq } from '../../data/auditFaq';
     title="Потрібен аудит або підготовка звітності"
     titlePunct="?"
     text="Розкажіть нам про задачу — ми уточнимо обсяг, строки та запропонуємо вам умови співпраці."
-    href="/#contact"
+    href={base + '/#contact'}
     linkText="Залишити запит"
   />
 
@@ -150,7 +151,7 @@ import { auditFaq } from '../../data/auditFaq';
     readingTime="13 хв читання"
     title="IFRS 1: перший перехід на МСФЗ"
     excerpt="Дата переходу, opening balance sheet, обов'язкові винятки і добровільні звільнення. Покрокова інструкція трансформації НП(С)БО у МСФЗ з фокусом на типові помилки та практичні нюанси."
-    href="/blog/ifrs-1-pershyy-perehid-msfz/"
+    href={base + '/blog/ifrs-1-pershyy-perehid-msfz/'}
     ariaLabel="Перший перехід на МСФЗ: покрокова інструкція IFRS 1"
   />
 

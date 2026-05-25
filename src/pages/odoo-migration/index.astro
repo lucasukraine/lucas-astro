@@ -5,6 +5,7 @@ import FaqAccordion from '../../components/FaqAccordion.astro';
 import ServiceCTA from '../../components/ServiceCTA.astro';
 import ServiceReadNext from '../../components/ServiceReadNext.astro';
 import { odooMigrationFaq } from '../../data/odooMigrationFaq';
+const base = import.meta.env.BASE_URL;
 ---
 
 <ServiceLayout
@@ -141,7 +142,7 @@ import { odooMigrationFaq } from '../../data/odooMigrationFaq';
     title="Час планувати перехід з 1С"
     titlePunct="?"
     text="Замовте Discovery в LUCAS — ми вивчимо ваші бізнес-процеси, оцінимо обсяг міграції, її вартість і терміни."
-    href="/#contact"
+    href={base + '/#contact'}
     linkText="Залишити запит"
   />
 
@@ -151,7 +152,7 @@ import { odooMigrationFaq } from '../../data/odooMigrationFaq';
     readingTime="12 хв читання"
     title="Заборона 1С в Україні 2026"
     excerpt="КМУ №1335, санкційні списки РНБО, законопроєкт №13505. Правовий контекст і план переходу."
-    href="/blog/zaborona-1c-2026/"
+    href={base + '/blog/zaborona-1c-2026/'}
     ariaLabel="Заборона 1С в Україні 2026: що робити бізнесу"
   />
 

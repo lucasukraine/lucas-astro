@@ -4,6 +4,7 @@
 // Джерело: old-html/index.html <section class="solutions" id="solutions">
 // JS: IntersectionObserver для is-visible на контексті та fc-картках;
 //     mobile accordion (< 720px) з svc-mob-trigger.
+const base = import.meta.env.BASE_URL;
 ---
 
 <section class="solutions" id="solutions">
@@ -47,7 +48,7 @@
         <div class="service-team-label">Команда</div>
         <p class="service-team-text">Аудиторську практику очолюють лідери з досвідом у Big 4: керівник аудиту, керівник контролю якості та керівник методології. Команда поєднує міжнародний підхід, методологічну дисципліну та досвід в більшості галузей.</p>
       </div>
-      <a class="arrow-link on-dark" href="/audit/">Дізнатися більше</a>
+      <a class="arrow-link on-dark" href={base + '/audit/'}>Дізнатися більше</a>
     </div>
     <div class="service-features">
 
@@ -111,7 +112,7 @@
         <div class="service-team-label">Команда</div>
         <p class="service-team-text">Фінансову частину проєктів з SAF-T очолює керівник аудиторської практики (ex-EY), а розробку — архітектор складних технологічних рішень із багаторічним досвідом проєктування та реалізації масштабних систем в Україні та США.</p>
       </div>
-      <a class="arrow-link on-dark" href="/saf-t/">Дізнатися більше</a>
+      <a class="arrow-link on-dark" href={base + '/saf-t/'}>Дізнатися більше</a>
     </div>
     <div class="service-features">
 
@@ -181,7 +182,7 @@
         <div class="service-team-label">Команда</div>
         <p class="service-team-text">Наша команда з переходу на Odoo ERP має глибокий практичний досвід впровадження Odoo для компаній України, Європи та Північної Америки, з всебічним розумінням архітектури системи, модулів, інтеграцій та бізнес-процесів.</p>
       </div>
-      <a class="arrow-link on-dark" href="/odoo-migration/">Дізнатися більше</a>
+      <a class="arrow-link on-dark" href={base + '/odoo-migration/'}>Дізнатися більше</a>
     </div>
     <div class="service-features">
 
@@ -245,7 +246,7 @@
         <div class="service-team-label">Команда</div>
         <p class="service-team-text">Практику очолює експерт, запрошений з податкових органів, який багато років відповідав за перевірку документації та звітності з ТЦУ, і володіє детальним розумінням підходів і критеріїв державного контролю.</p>
       </div>
-      <a class="arrow-link on-dark" href="/transfer-pricing/">Дізнатися більше</a>
+      <a class="arrow-link on-dark" href={base + '/transfer-pricing/'}>Дізнатися більше</a>
     </div>
     <div class="service-features">
 
@@ -305,7 +306,7 @@
       <h2 class="service-name">Інші послуги</h2>
       <div class="service-accent"></div>
       <p class="service-desc">Повний спектр консультаційних та аналітичних послуг — від стратегічного планування і юридичного структурування до незалежної оцінки і фінансового моделювання.</p>
-      <a class="arrow-link on-dark" href="/other-services/">Дізнатися більше</a>
+      <a class="arrow-link on-dark" href={base + '/other-services/'}>Дізнатися більше</a>
     </div>
     <div class="service-features">
 

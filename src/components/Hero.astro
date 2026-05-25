@@ -2,6 +2,7 @@
 // Hero.astro
 // Еталон: index.html — секція .hero
 // Текст, класи, структура — без змін. URL root-relative.
+const base = import.meta.env.BASE_URL;
 ---
 
 <section class="hero">
@@ -19,10 +20,10 @@
       в сфері фінансів, обліку та податків.
     </p>
     <div class="hero-actions ha d5">
-      <a class="btn cta-orange" href="/#contact">
+      <a class="btn cta-orange" href={base + '/#contact'}>
         Обговорити проєкт <span class="arrow"></span>
       </a>
-      <a class="btn ghost-dark" href="/#solutions">Послуги та продукти</a>
+      <a class="btn ghost-dark" href={base + '/#solutions'}>Послуги та продукти</a>
     </div>
   </div>
 
