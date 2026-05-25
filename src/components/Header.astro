@@ -24,9 +24,9 @@ const base = import.meta.env.BASE_URL;
       <svg aria-hidden="true" class="logo-svg"><use href="#lucas-mark"></use></svg>
     </a>
     <nav class="nav">
-      <a href={base + '/#audit'}>Концепція</a>
+      <a href={base + '/#concept'}>Концепція</a>
       <div class="nav-dropdown">
-        <a class="nav-dropdown-toggle" href={base + '/#solutions'}>Послуги <span class="nav-caret">▾</span></a>
+        <a class="nav-dropdown-toggle" href={base + '/#services'}>Послуги <span class="nav-caret">▾</span></a>
         <div class="nav-dropdown-menu">
           <div class="nav-dropdown-menu-inner">
             <a href={base + '/audit/'}>Аудит та звітність</a>
@@ -50,7 +50,7 @@ const base = import.meta.env.BASE_URL;
 
 <!-- Mobile menu panel — пов'язаний з header через JS -->
 <div inert class="mob-menu" id="mob-menu">
-  <a href={base + '/#audit'}>Концепція</a>
+  <a href={base + '/#concept'}>Концепція</a>
   <span class="mob-section-label">Послуги</span>
   <a class="mob-sub" href={base + '/audit/'}>Аудит та звітність</a>
   <a class="mob-sub" href={base + '/saf-t/'}>SAF-T Connector</a>
