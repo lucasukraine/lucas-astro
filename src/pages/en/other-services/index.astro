@@ -1,0 +1,136 @@
+---
+import ServiceLayout from '../../../layouts/ServiceLayout.astro';
+import ServiceHero from '../../../components/ServiceHero.astro';
+import FaqAccordion from '../../../components/FaqAccordion.astro';
+import ServiceCTA from '../../../components/ServiceCTA.astro';
+import { otherServicesFaq } from '../../../data/en/otherServicesFaq';
+const base = import.meta.env.BASE_URL;
+---
+
+<ServiceLayout
+  lang="en"
+  title="Other Services — strategy, legal, DD, business valuation | LUCAS"
+  description="Strategy and business plan development, legal services (CFC, M&A), Due Diligence, business and asset valuation, financial analytics and modelling. LUCAS, Kyiv."
+>
+  <ServiceHero
+    lang="en"
+    eyebrow="Service 05"
+    title="Other Services"
+    lead="Full range of consulting and analytical services — strategic planning, legal structuring, Due Diligence, independent valuation and financial modelling."
+  />
+
+  <section class="sp-statement">
+    <div class="sp-statement-inner">
+      <p>Complex projects require a team that combines financial and legal expertise.</p>
+    </div>
+  </section>
+
+  <section class="sp-blocks">
+    <div class="sp-blocks-inner">
+
+      <div class="sp-block">
+        <div>
+          <div class="sp-block-label">Strategy</div>
+          <h2 class="sp-block-h2">Strategy and Business Plan Development</h2>
+        </div>
+        <div class="sp-block-body">
+          <p>A strategic document is not a statement of intentions, but an evidence-based foundation for decisions. We analyze the market, competitive environment and growth opportunities, and form a clear strategy with measurable goals and a financial model.</p>
+          <p>Business plans developed by LUCAS are used for attracting bank financing, negotiations with strategic partners, and internal management. We are responsible for the quality of the analytical basis of each document.</p>
+          <ul class="sp-block-list">
+            <li>Strategic market and competitive environment analysis</li>
+            <li>Corporate strategy and roadmap development</li>
+            <li>Business plans for financing and partner attraction</li>
+            <li>Financial model and scenario analysis</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sp-block">
+        <div>
+          <div class="sp-block-label">Legal Services</div>
+          <h2 class="sp-block-h2">CFC, M&amp;A, International Structuring</h2>
+        </div>
+        <div class="sp-block-body">
+          <p>LUCAS legal services cover the full range of corporate and international law — from business structuring to interest protection in transactions. Our team specializes in CFCs, cross-border investments, and restructuring of complex corporate structures.</p>
+          <p>Special focus on international holding structuring: jurisdiction selection, risk minimization, compliance with OECD requirements and Ukrainian legislation.</p>
+          <ul class="sp-block-list">
+            <li>Controlled Foreign Company (CFC) regulation</li>
+            <li>Legal support for mergers and acquisitions (M&amp;A)</li>
+            <li>Foreign investment structuring</li>
+            <li>International holding structuring</li>
+            <li>Business restructuring</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sp-block">
+        <div>
+          <div class="sp-block-label">Due Diligence</div>
+          <h2 class="sp-block-h2">Financial and Legal Business Review</h2>
+        </div>
+        <div class="sp-block-body">
+          <p>Due Diligence from LUCAS is a comprehensive review for transactions and investment attraction. The financial component covers asset quality, liabilities, cash flows, and earnings quality. The legal component covers ownership rights, licenses, contracts, litigation risks, and regulatory compliance.</p>
+          <p>We prepare DD reports for buyers, investors, and lenders — structured, specific, and focused on risks that actually affect the transaction price and terms.</p>
+          <ul class="sp-block-list">
+            <li>Financial Due Diligence (earnings quality, assets, liabilities)</li>
+            <li>Legal Due Diligence (ownership, contracts, risks)</li>
+            <li>DD reports for M&amp;A transactions and investment attraction</li>
+            <li>Regulatory and tax risk assessment</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sp-block">
+        <div>
+          <div class="sp-block-label">Valuation</div>
+          <h2 class="sp-block-h2">Business and Asset Valuation</h2>
+        </div>
+        <div class="sp-block-body">
+          <p>Independent valuation of company value, business stakes, intangible assets, and property complexes. We apply all valuation methods — income, market, and cost — depending on the object's specifics and valuation purpose.</p>
+          <p>We specialize in large and complex projects with non-standard corporate or industry structure, where standard approaches give an incomplete picture of value.</p>
+          <ul class="sp-block-list">
+            <li>Valuation of companies and businesses as a whole</li>
+            <li>Valuation of stakes in authorized capital</li>
+            <li>Valuation of intangible assets and intellectual property</li>
+            <li>Valuation of property complexes</li>
+            <li>Independent valuation for M&amp;A, litigation, reporting purposes</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sp-block">
+        <div>
+          <div class="sp-block-label">Analytics · Modelling</div>
+          <h2 class="sp-block-h2">Financial and Market Analytics, Financial Models</h2>
+        </div>
+        <div class="sp-block-body">
+          <p>Analysis of a company's financial position, market environment, and competitive positioning. We build financial models of varying complexity — from simple forecasts to full LBO and DCF models for transactions.</p>
+          <p>Financial forecasts and scenario modelling are used for strategic decision-making, investor and bank negotiations, and capital investment efficiency assessment.</p>
+          <ul class="sp-block-list">
+            <li>Financial position analysis and business diagnostics</li>
+            <li>Market analytics and competitive analysis</li>
+            <li>Financial forecasts and scenario modelling</li>
+            <li>DCF, LBO and other financial models</li>
+            <li>Analytics for investment and lending attraction</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <FaqAccordion
+    eyebrow="FAQ"
+    title="What you should know"
+    items={otherServicesFaq}
+  />
+
+  <ServiceCTA
+    title="Discuss a project"
+    titlePunct="?"
+    text="Tell us about your request — we will find the optimal solution and team."
+    href={base + '/en/#contact'}
+    linkText="Submit a request"
+  />
+
+</ServiceLayout>

@@ -1,7 +1,51 @@
 ---
-// Concept.astro
-// Концепція — «Аудит як ядро». Audit cards + credentials.
-// Джерело: old-html/index.html <section class="principles" id="audit">
+const { lang = 'uk' } = Astro.props;
+
+const t = {
+  eyebrow: lang === 'en' ? 'Concept' : 'Концепція',
+  taglineA: lang === 'en' ? 'Audit as core.' : 'Аудит як ядро.',
+  taglineB: lang === 'en' ? 'Technology as a way to scale.' : 'Технології як спосіб масштабування.',
+  bodyIntro: lang === 'en'
+    ? 'Working with LUCAS is especially valuable where financial expertise and technology must work together:'
+    : 'Робота з LUCAS особливо корисна там, де фінансова експертиза і технології мають працювати разом:',
+  bullet1: lang === 'en'
+    ? 'finance work requires deeper understanding of data, systems, processes and technology risks;'
+    : 'робота з фінансами потребує глибшого розуміння даних, систем, процесів і технологічних ризиків;',
+  bullet2: lang === 'en'
+    ? 'technology projects need developers who understand accounting, finance, tax and control.'
+    : 'технологічний проєкт потребує розробників, які розуміють облік, фінанси, податки та контроль.',
+  card1label: lang === 'en' ? 'Audit with technology perspective' : 'Аудит з оглядом на технології',
+  card1h3: lang === 'en' ? 'An auditor who sees the system behind the numbers' : 'Аудитор, що бачить систему за цифрами',
+  card1p1: lang === 'en'
+    ? 'Modern financial statements are not formed in the last spreadsheet, but inside accounting systems, integrations, control procedures and data flows. We have the qualification to see how information originates, transforms, and arrives in the financial statements.'
+    : 'Сучасна звітність формується не в останній таблиці, а всередині облікових систем, інтеграцій, контрольних процедур і потоків даних. Ми маємо кваліфікацію, щоб бачити, як інформація виникає, трансформується і потрапляє до фінансової звітності.',
+  card1p2: lang === 'en'
+    ? 'This helps understand risks more deeply, work more precisely with data, and see how technology, automation and process quality can affect financial results.'
+    : 'Це допомагає глибше розуміти ризики, точніше працювати з даними та бачити, як технології, автоматизація й якість процесів можуть впливати на фінансовий результат.',
+  card2label: lang === 'en' ? 'Development with audit logic' : 'Розробка з аудиторською логікою',
+  card2h3: lang === 'en' ? 'Solutions built on an audit approach' : 'Рішення на основі аудиторського підходу',
+  card2p: lang === 'en'
+    ? 'We build solutions for accounting, compliance and data work based on verifiability, controllability and transparency.'
+    : 'Ми будуємо рішення для обліку, комплаєнсу та роботи з даними на основі перевірюваності, контрольованості та прозорості.',
+  card3label: lang === 'en' ? 'Single financial context' : 'Єдиний фінансовий контекст',
+  card3h3: lang === 'en' ? 'One logic for business, accounting and IT' : 'Єдина логіка для бізнесу, обліку та IT',
+  card3p: lang === 'en'
+    ? 'We align business processes, accounting methodology and IT solutions into a unified system of requirements — without losing meaning between finance and development.'
+    : 'Ми узгоджуємо бізнес-процеси, облікову методологію та IT-рішення в єдину систему вимог — без втрати змісту між фінансами та розробкою.',
+  credEyebrow: lang === 'en' ? 'Our approach' : 'Особливості підходу',
+  cred1h4: lang === 'en' ? 'Conscious leadership' : 'Усвідомлене керування',
+  cred1p: lang === 'en'
+    ? 'Projects are led by specialists who understand the task, business context and management expectations.'
+    : 'Проєкти ведуть фахівці, які розуміють зміст задачі, бізнес-контекст та очікування керівництва.',
+  cred2h4: lang === 'en' ? 'Big 4 experience' : 'Досвід Big 4',
+  cred2p: lang === 'en'
+    ? 'Experience in complex audit and consulting projects across industries sets our standard.'
+    : 'Досвід складних аудиторських та консалтингових проєктів у різних індустріях формує наш стандарт.',
+  cred3h4: lang === 'en' ? 'Technology application' : 'Застосування технологій',
+  cred3p: lang === 'en'
+    ? 'The combination of our own accounting and development teams gives LUCAS technological capabilities unusual for the market.'
+    : 'Комбінація власних команд з обліку та розробки дає LUCAS технологічні спроможності, нетипові для ринку.',
+};
 ---
 
 <section class="principles" id="concept">
@@ -12,21 +56,21 @@
 
     <!-- Eyebrow + company description -->
     <div class="audit-intro reveal">
-      <div class="eyebrow">Концепція</div>
+      <div class="eyebrow">{t.eyebrow}</div>
     </div>
 
     <!-- Theatrical tagline — section's visual climax -->
     <h2 class="audit-tagline reveal" data-d="1">
-      <span class="audit-tagline-a">Аудит як ядро<span class="op">.</span></span>
-      <span class="audit-tagline-b">Технології як спосіб масштабування.</span>
+      <span class="audit-tagline-a">{lang === 'en' ? t.taglineA : <Fragment>Аудит як ядро<span class="op">.</span></Fragment>}</span>
+      <span class="audit-tagline-b">{t.taglineB}</span>
     </h2>
 
     <!-- Body text with styled bullets -->
     <div class="audit-body reveal" data-d="2">
-      <p>Робота з LUCAS особливо корисна там, де фінансова експертиза і технології мають працювати разом:</p>
+      <p>{t.bodyIntro}</p>
       <ul class="audit-bullets">
-        <li><span>робота з фінансами потребує глибшого розуміння даних, систем, процесів і технологічних ризиків;</span></li>
-        <li><span>технологічний проєкт потребує розробників, які розуміють облік, фінанси, податки та контроль.</span></li>
+        <li><span>{t.bullet1}</span></li>
+        <li><span>{t.bullet2}</span></li>
       </ul>
     </div>
 
@@ -35,24 +79,24 @@
 
       <article class="audit-card has-corner reveal" data-d="1">
         <span class="audit-card-num" aria-hidden="true">01</span>
-        <div class="audit-card-label">Аудит з оглядом на технології</div>
-        <h3>Аудитор, що бачить систему за цифрами</h3>
-        <p>Сучасна звітність формується не в останній таблиці, а всередині облікових систем, інтеграцій, контрольних процедур і потоків даних. Ми маємо кваліфікацію, щоб бачити, як інформація виникає, трансформується і потрапляє до фінансової звітності.</p>
-        <p>Це допомагає глибше розуміти ризики, точніше працювати з даними та бачити, як технології, автоматизація й якість процесів можуть впливати на фінансовий результат.</p>
+        <div class="audit-card-label">{t.card1label}</div>
+        <h3>{t.card1h3}</h3>
+        <p>{t.card1p1}</p>
+        <p>{t.card1p2}</p>
       </article>
 
       <article class="audit-card reveal" data-d="2">
         <span class="audit-card-num" aria-hidden="true">02</span>
-        <div class="audit-card-label">Розробка з аудиторською логікою</div>
-        <h3>Рішення на основі аудиторського підходу</h3>
-        <p>Ми будуємо рішення для обліку, комплаєнсу та роботи з даними на основі перевірюваності, контрольованості та прозорості.</p>
+        <div class="audit-card-label">{t.card2label}</div>
+        <h3>{t.card2h3}</h3>
+        <p>{t.card2p}</p>
       </article>
 
       <article class="audit-card reveal" data-d="3">
         <span class="audit-card-num" aria-hidden="true">03</span>
-        <div class="audit-card-label">Єдиний фінансовий контекст</div>
-        <h3>Єдина логіка для бізнесу, обліку та IT</h3>
-        <p>Ми узгоджуємо бізнес-процеси, облікову методологію та IT-рішення в єдину систему вимог — без втрати змісту між фінансами та розробкою.</p>
+        <div class="audit-card-label">{t.card3label}</div>
+        <h3>{t.card3h3}</h3>
+        <p>{t.card3p}</p>
       </article>
 
     </div><!-- /audit-cards -->
@@ -60,23 +104,23 @@
     <!-- Особливості підходу -->
     <div class="credentials reveal" data-d="4">
       <div class="credentials-eyebrow">
-        <div class="eyebrow">Особливості підходу</div>
+        <div class="eyebrow">{t.credEyebrow}</div>
         <span class="credentials-eyebrow-rule"></span>
       </div>
       <div class="cred">
         <div class="cred-roman">I · Lead</div>
-        <h4>Усвідомлене керування</h4>
-        <p>Проєкти ведуть фахівці, які розуміють зміст задачі, бізнес-контекст та очікування керівництва.</p>
+        <h4>{t.cred1h4}</h4>
+        <p>{t.cred1p}</p>
       </div>
       <div class="cred">
         <div class="cred-roman">II · Logic</div>
-        <h4>Досвід Big 4</h4>
-        <p>Досвід складних аудиторських та консалтингових проєктів у різних індустріях формує наш стандарт.</p>
+        <h4>{t.cred2h4}</h4>
+        <p>{t.cred2p}</p>
       </div>
       <div class="cred">
         <div class="cred-roman">III · Build</div>
-        <h4>Застосування технологій</h4>
-        <p>Комбінація власних команд з обліку та розробки дає LUCAS технологічні спроможності, нетипові для ринку.</p>
+        <h4>{t.cred3h4}</h4>
+        <p>{t.cred3p}</p>
       </div>
     </div><!-- /credentials -->
 

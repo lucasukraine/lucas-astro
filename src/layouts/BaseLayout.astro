@@ -9,22 +9,45 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
+  lang?: 'uk' | 'en';
 }
 
 const {
   title = 'LUCAS',
   description = 'LUCAS — аудиторська компанія з цифровим ДНК.',
+  lang = 'uk',
 } = Astro.props;
 const base = import.meta.env.BASE_URL;
+
+const site = (Astro.site?.toString() ?? '').replace(/\/$/, '');
+const pathname = Astro.url.pathname;
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+let ukUrl: string;
+let enUrl: string;
+if (lang === 'en') {
+  const rel = pathname.slice(basePath.length);
+  const uaRel = rel.replace(/^\/en/, '') || '/';
+  ukUrl = site + basePath + uaRel;
+  enUrl = site + pathname;
+} else {
+  const rel = pathname.slice(basePath.length) || '/';
+  ukUrl = site + pathname;
+  enUrl = site + basePath + '/en' + rel;
+}
 ---
 
 <!doctype html>
-<html lang="uk">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <title>{title}</title>
+    <link rel="canonical" href={lang === 'en' ? enUrl : ukUrl} />
+    <link rel="alternate" hreflang="uk" href={ukUrl} />
+    <link rel="alternate" hreflang="en" href={enUrl} />
+    <link rel="alternate" hreflang="x-default" href={ukUrl} />
     <link rel="icon" type="image/svg+xml" href={base + '/favicon.svg'} />
     <link rel="icon" type="image/x-icon" href={base + '/favicon.ico'} />
     <link rel="apple-touch-icon" href={base + '/apple-touch-icon.png'} />
@@ -35,8 +58,8 @@ const base = import.meta.env.BASE_URL;
   <body>
     <!-- Sticky gradient scrim під header над hero -->
     <div class="page-scrim" id="page-scrim" aria-hidden="true"></div>
-    <Header />
+    <Header lang={lang} />
     <slot />
-    <Footer />
+    <Footer lang={lang} />
   </body>
 </html>

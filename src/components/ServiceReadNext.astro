@@ -7,8 +7,9 @@ interface Props {
   excerpt: string;
   href: string;
   ariaLabel: string;
+  readLabel?: string;
 }
-const { eyebrow, category, readingTime, title, excerpt, href, ariaLabel } = Astro.props;
+const { eyebrow, category, readingTime, title, excerpt, href, ariaLabel, readLabel = 'Читати' } = Astro.props;
 ---
 
 <section class="sp-readnext">
@@ -23,7 +24,7 @@ const { eyebrow, category, readingTime, title, excerpt, href, ariaLabel } = Astr
         <div class="sp-readnext-title">{title}</div>
         <p class="sp-readnext-excerpt">{excerpt}</p>
       </div>
-      <div class="sp-readnext-cta">Читати</div>
+      <div class="sp-readnext-cta">{readLabel}</div>
     </a>
   </div>
 </section>

@@ -1,0 +1,161 @@
+---
+import ServiceLayout from '../../../layouts/ServiceLayout.astro';
+import ServiceHero from '../../../components/ServiceHero.astro';
+import FaqAccordion from '../../../components/FaqAccordion.astro';
+import ServiceCTA from '../../../components/ServiceCTA.astro';
+import ServiceReadNext from '../../../components/ServiceReadNext.astro';
+import { transferPricingFaq } from '../../../data/en/transferPricingFaq';
+const base = import.meta.env.BASE_URL;
+---
+
+<ServiceLayout
+  lang="en"
+  title="Transfer Pricing — TP documentation and controlled transactions report | LUCAS"
+  description="Transfer pricing: documentation, benchmark analysis and position defense on controlled transactions under Article 39 of the Tax Code of Ukraine and OECD guidelines. CO register, master file, controlled transactions report."
+>
+  <ServiceHero
+    lang="en"
+    eyebrow="Service 04"
+    title="Transfer Pricing"
+    lead="Documentation, analysis, and position defense on controlled transactions in accordance with Article 39 of the Tax Code of Ukraine and OECD guidelines — for companies with intragroup transactions, related party transactions, and other transactions that may be recognized as controlled under the Tax Code."
+  />
+
+  <section class="sp-statement">
+    <div class="sp-statement-inner">
+      <p>Documentation quality is determined by the strength of functional analysis, correctness of method selection, and evidentiary value of benchmark analysis.</p>
+      <div class="sp-statement-note">Transfer pricing in Ukraine is regulated by Article 39 of the Tax Code and is based on the arm's length principle in accordance with OECD/BEPS guidelines. Non-compliance may result in additional assessments and penalties following an STS audit.</div>
+    </div>
+  </section>
+
+  <section class="sp-blocks">
+    <div class="sp-blocks-inner">
+
+      <div class="sp-block">
+        <div>
+          <div class="sp-block-label">Identification · Art. 39 Tax Code</div>
+          <h2 class="sp-block-h2">Controlled Transactions Register</h2>
+        </div>
+        <div class="sp-block-body">
+          <p>The first step is identifying the circle of related parties, identifying controlled transactions, and verifying compliance with the criteria for recognizing transactions as controlled under the current requirements of the Tax Code of Ukraine.</p>
+          <p>LUCAS prepares the controlled transactions register — the basis for subsequent documentation and reporting.</p>
+          <ul class="sp-block-list">
+            <li>Identification of related parties</li>
+            <li>Identification of controlled transactions</li>
+            <li>Verification of criteria for recognizing transactions as controlled</li>
+            <li>Preparation of controlled transactions register</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sp-block">
+        <div>
+          <div class="sp-block-label">OECD · MNE Group · Three-tier structure</div>
+          <h2 class="sp-block-h2">Master File and Local File</h2>
+        </div>
+        <div class="sp-block-body">
+          <p>For participants of multinational enterprise (MNE) groups that meet Tax Code criteria, documentation is prepared in accordance with the OECD three-tier structure. It includes the MNE group participation notification, master file (description of the group's global business), and local file.</p>
+          <p>The local file contains functional analysis, risk analysis, and TP analysis of controlled transactions with justification of the chosen pricing method.</p>
+          <ul class="sp-block-list">
+            <li>MNE group participation notification</li>
+            <li>Master file — description of group's global business</li>
+            <li>Local file — functional analysis and TP analysis</li>
+            <li>Justification of transfer pricing method</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sp-block">
+        <div>
+          <div class="sp-block-label">Reporting · STS</div>
+          <h2 class="sp-block-h2">Controlled Transactions Report</h2>
+        </div>
+        <div class="sp-block-body">
+          <p>Preparation and filing of the annual controlled transactions report with the State Tax Service in accordance with the forms and deadlines established by Article 39.4 of the Tax Code. LUCAS helps verify the completeness and accuracy of controlled transaction disclosure based on information provided by the client and analysis results.</p>
+          <ul class="sp-block-list">
+            <li>Preparation of annual controlled transactions report</li>
+            <li>Filing the report with the STS within established deadlines</li>
+            <li>Control of transaction disclosure completeness</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sp-block">
+        <div>
+          <div class="sp-block-label">Benchmark · Arm's Length Principle</div>
+          <h2 class="sp-block-h2">Comparative Analysis and Market Range</h2>
+        </div>
+        <div class="sp-block-body">
+          <p>Benchmark analysis is one of the key elements of TP documentation. LUCAS searches for comparable companies in commercial databases, performs statistical analysis of the market range (P25–P75), and documents the justification of controlled transaction terms' compliance with the arm's length principle under the Tax Code and OECD guidelines.</p>
+          <p>Quality benchmark analysis significantly strengthens the evidentiary value of documentation during an audit.</p>
+          <ul class="sp-block-list">
+            <li>Search for comparable companies in commercial databases</li>
+            <li>Statistical analysis of market range (P25–P75)</li>
+            <li>Arm's length principle justification</li>
+            <li>Documentation of analysis methodology</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sp-block">
+        <div>
+          <div class="sp-block-label">TP Policies · APA</div>
+          <h2 class="sp-block-h2">Intragroup Policies and Advance Pricing Agreements</h2>
+        </div>
+        <div class="sp-block-body">
+          <p>A proactive TP policy is typically cheaper and more effective than reacting to an STS request or audit. LUCAS develops TP policies for the group: pricing methodology, contractual framework, allocation of functions and risks among group participants.</p>
+          <p>For large taxpayers seeking greater certainty on regular controlled transactions, we support the advance pricing agreement procedure with the STS.</p>
+          <ul class="sp-block-list">
+            <li>TP policy development for group companies</li>
+            <li>Pricing methodology and contractual framework</li>
+            <li>Allocation of functions and risks among participants</li>
+            <li>APA negotiation support</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sp-block">
+        <div>
+          <div class="sp-block-label">Tax Defense · STS Audits</div>
+          <h2 class="sp-block-h2">Position Defense During Tax Audits</h2>
+        </div>
+        <div class="sp-block-body">
+          <p>LUCAS supports the client at key stages of interaction with the STS on transfer pricing: TP risk assessment before an audit begins, preparation of substantiated responses to requests, support during the audit.</p>
+          <p>In case of additional assessments — preparation of the economic and methodological position for objections to the audit report.</p>
+          <ul class="sp-block-list">
+            <li>TP risk assessment before audit commencement</li>
+            <li>Substantiated responses to STS requests</li>
+            <li>Support during tax audit</li>
+            <li>Objections to audit report in case of additional assessments</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <FaqAccordion
+    eyebrow="FAQ"
+    title="What you should know"
+    items={transferPricingFaq}
+  />
+
+  <ServiceCTA
+    title="Need TP documentation, report or position defense"
+    titlePunct="?"
+    text="Tell us about your controlled transactions — we will assess the documentation scope and propose terms."
+    href={base + '/en/#contact'}
+    linkText="Submit a request"
+  />
+
+  <ServiceReadNext
+    eyebrow="Deep dive into the topic"
+    category="Transfer Pricing"
+    readingTime="14 min read"
+    title="Who files the controlled transactions report"
+    excerpt="Related party criteria, value thresholds, Article 39 of the Tax Code."
+    href={base + '/blog/zvit-pro-kontrolovani-operatsii/'}
+    ariaLabel="Who is required to file the controlled transactions report"
+    readLabel="Read"
+  />
+
+</ServiceLayout>

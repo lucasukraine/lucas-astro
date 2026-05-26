@@ -1,0 +1,162 @@
+---
+import ServiceLayout from '../../../layouts/ServiceLayout.astro';
+import ServiceHero from '../../../components/ServiceHero.astro';
+import FaqAccordion from '../../../components/FaqAccordion.astro';
+import ServiceCTA from '../../../components/ServiceCTA.astro';
+import ServiceReadNext from '../../../components/ServiceReadNext.astro';
+import { odooMigrationFaq } from '../../../data/en/odooMigrationFaq';
+const base = import.meta.env.BASE_URL;
+---
+
+<ServiceLayout
+  lang="en"
+  title="Migration from 1C / BAS to Odoo — ERP transition under auditor control | LUCAS"
+  description="Migration from 1C/BAS to Odoo under methodological control of the LUCAS audit team. 1C ban 2026, auditor+developer tandem, up to 40% implementation cost savings."
+>
+  <ServiceHero
+    lang="en"
+    eyebrow="Service 03"
+    title="Migration from 1C / BAS to Odoo"
+    lead="Transition from Russian software to a modern ERP platform — with focus on accounting methodology, correct data migration, and compliance with reporting requirements from day one."
+  />
+
+  <section class="sp-statement">
+    <div class="sp-statement-inner">
+      <p>Transition from 1C/BAS to Odoo without losing accounting logic</p>
+      <div class="sp-statement-note">Our "auditor + developer" tandems eliminate misunderstandings between finance teams and programmers — and save up to 40% of implementation cost compared to a standard ERP project.</div>
+    </div>
+  </section>
+
+  <section class="sp-blocks">
+    <div class="sp-blocks-inner">
+
+      <div class="sp-block">
+        <div>
+          <div class="sp-block-label">Legal Context · 2026</div>
+          <h2 class="sp-block-h2">1C/BAS creates increasing legal and compliance risks</h2>
+        </div>
+        <div class="sp-block-body">
+          <p>Restrictions on the use of defined software products apply to government bodies, state institutions, state enterprises, and certain critical infrastructure facilities under Cabinet Resolution №1335 and lists of authorized bodies. For the private sector — restrictions through NSDC sanctions lists.</p>
+          <p>Draft law №13505 provides for tightened restrictions on the use of software products associated with the aggressor state, including financial penalties of up to 2% of annual turnover for violations. The status of the draft law and effective date should be verified at the time of decision-making.</p>
+          <ul class="sp-block-list">
+            <li>Public sector — restrictions on defined products (Cabinet Resolution №1335)</li>
+            <li>Private sector — restrictions through NSDC sanctions lists</li>
+            <li>Draft law №13505 — fines up to 2% of annual turnover</li>
+            <li>Banks increasingly flag companies on 1C as higher risk</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sp-block">
+        <div>
+          <div class="sp-block-label">Odoo globally · #4 ERP</div>
+          <h2 class="sp-block-h2">Global ERP market mainstream</h2>
+        </div>
+        <div class="sp-block-body">
+          <p>Odoo is one of the world's most widely used open-source ERP/CRM platforms, growing faster than the market. According to Odoo public data, the platform is used by millions of users in many countries: 175 countries, 15 million users. Clients include Toyota, Nokia, Nestlé, Airbus, Decathlon, Danone.</p>
+          <p>One subscription covers 30+ modules: accounting, CRM and sales, warehouse and logistics, manufacturing, projects, HR management.</p>
+          <ul class="sp-block-list">
+            <li>One of the world's most widely used open-source ERP platforms</li>
+            <li>175 countries, 15 million users</li>
+            <li>30+ modules in one subscription</li>
+            <li>Modern interface and mobile apps</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sp-block">
+        <div>
+          <div class="sp-block-label">TCO · Total Cost of Ownership</div>
+          <h2 class="sp-block-h2">70–80% lower cost than SAP or MS Dynamics</h2>
+        </div>
+        <div class="sp-block-body">
+          <p>Odoo has a transparent licensing model. Compared to large enterprise ERPs, total cost of ownership is typically significantly lower, but actual results depend on the scale and complexity of processes.</p>
+          <p>With Odoo you are not locked into vendor dependency — the solution is not tied to a single vendor. Thousands of ready-made connectors and a huge developer community allow automating new processes without expensive custom development.</p>
+          <ul class="sp-block-list">
+            <li>Transparent licensing model</li>
+            <li>Lower total cost of ownership</li>
+            <li>No vendor lock-in</li>
+            <li>Thousands of ready-made connectors and customizations</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sp-block">
+        <div>
+          <div class="sp-block-label">Finance-first · Methodology</div>
+          <h2 class="sp-block-h2">Benefits of implementation with LUCAS</h2>
+        </div>
+        <div class="sp-block-body">
+          <p>We don't need to be explained what depreciation is, how double-entry works, or what the "first event" principle means. LUCAS builds system architecture around accounting logic — this makes Odoo easier to use and reduces error risks after go-live.</p>
+          <p>The project starts not with a technical specification, but with an analysis of accounting methodology: how accounting is maintained, what controls are required, what reporting is generated.</p>
+          <ul class="sp-block-list">
+            <li>Finance-first discovery — accounting methodology analysis</li>
+            <li>Chart of accounts and analytics configuration</li>
+            <li>Responsibility centers and control procedures</li>
+            <li>Process and control adaptation to your needs</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sp-block">
+        <div>
+          <div class="sp-block-label">Auditor + Developer</div>
+          <h2 class="sp-block-h2">Fast implementation saves budgets</h2>
+        </div>
+        <div class="sp-block-body">
+          <p>Misunderstandings between finance teams and developers are the main source of delays and cost overruns in any ERP project. Every hour of developer work costs money, including time spent understanding requirements and business logic.</p>
+          <p>Our own "auditor + developer" working tandems understand each other perfectly. This saves 30–40% of implementation cost.</p>
+          <ul class="sp-block-list">
+            <li>In-house "auditor + developer" tandems</li>
+            <li>Less time lost on requirement alignment</li>
+            <li>30–40% implementation cost savings</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sp-block">
+        <div>
+          <div class="sp-block-label">2–6 months · 6 stages</div>
+          <h2 class="sp-block-h2">Structured transition without accounting continuity risk</h2>
+        </div>
+        <div class="sp-block-body">
+          <p>Depending on scope, the process takes 2 to 6 months and goes through six stages: business process analysis, accounting data architecture development, customization to business requirements, data migration from 1C, testing, go-live.</p>
+          <p>Parallel accounting can be maintained until results are confirmed — without risk of data loss or accounting gaps. Team training and transition to support are included in the standard process.</p>
+          <ul class="sp-block-list">
+            <li>Process and accounting logic analysis</li>
+            <li>Data architecture and Odoo configuration</li>
+            <li>Data migration, testing and go-live</li>
+            <li>Parallel accounting during the control period</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <FaqAccordion
+    eyebrow="FAQ"
+    title="What you should know"
+    items={odooMigrationFaq}
+  />
+
+  <ServiceCTA
+    title="Time to plan the migration from 1C"
+    titlePunct="?"
+    text="Order a Discovery from LUCAS — we will study your business processes, assess the migration scope, cost and timeline."
+    href={base + '/en/#contact'}
+    linkText="Submit a request"
+  />
+
+  <ServiceReadNext
+    eyebrow="Deep dive into the topic"
+    category="ERP & Accounting"
+    readingTime="12 min read"
+    title="1C ban in Ukraine 2026"
+    excerpt="Cabinet Resolution №1335, NSDC sanctions lists, draft law №13505. Legal context and transition plan."
+    href={base + '/blog/zaborona-1c-2026/'}
+    ariaLabel="1C ban in Ukraine 2026: what businesses should do"
+    readLabel="Read"
+  />
+
+</ServiceLayout>

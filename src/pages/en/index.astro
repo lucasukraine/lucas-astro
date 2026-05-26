@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Concept from '../../components/Concept.astro';
+import Solutions from '../../components/Solutions.astro';
+import Industries from '../../components/Industries.astro';
+import FaqAccordion from '../../components/FaqAccordion.astro';
+import Contact from '../../components/Contact.astro';
+import { homeFaq } from '../../data/en/homeFaq';
+---
+
+<BaseLayout
+  lang="en"
+  title="LUCAS — Audit-led Finance & Technology Company"
+  description="We combine audit expertise, financial knowledge and technology to deliver projects in finance, accounting and tax."
+>
+  <main id="top">
+    <Hero lang="en" />
+    <Concept lang="en" />
+    <Solutions lang="en" />
+    <Industries lang="en" />
+    <Contact lang="en" />
+    <FaqAccordion
+      eyebrow="FAQ"
+      title="What you should know"
+      items={homeFaq}
+    />
+  </main>
+</BaseLayout>

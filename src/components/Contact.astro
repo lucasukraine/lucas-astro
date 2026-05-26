@@ -1,20 +1,47 @@
 ---
-// Contact.astro
-// Секція Контакти — statement + ledger + форма з floating labels.
-// Джерело: old-html/index.html <section class="contact" id="contact">
-// EmailJS підвантажується динамічно тільки якщо форма присутня на сторінці.
+const { lang = 'uk' } = Astro.props;
+
+const t = {
+  eyebrow:    lang === 'en' ? 'Contacts'          : 'Контакти',
+  taglineA:   lang === 'en' ? 'Starting the conversation.' : 'Початок розмови.',
+  taglineB:   lang === 'en' ? 'The best projects begin with a good introduction.' : 'Найкращі проєкти починаються з гарного знайомства.',
+  stmtQ:      lang === 'en'
+    ? 'If you face challenges in accounting, tax or digital finance transformation — write to us.'
+    : 'Якщо перед вами стоять завдання в сфері обліку, податків чи цифрової трансформації фінансів — напишіть нам.',
+  stmtQEmEn:  lang === 'en' ? 'accounting, tax or digital finance transformation' : '',
+  stmtQEmUk:  lang === 'en' ? '' : 'цифрової трансформації фінансів',
+  stmtP:      lang === 'en'
+    ? 'The LUCAS team will read your request and get back to you within one business day. No bureaucratic questionnaires — straight to the point.'
+    : 'Команда LUCAS прочитає вашу задачу та зв\'яжеться протягом одного робочого дня. Без формальних опитувальників — одразу по суті.',
+  phone:      lang === 'en' ? 'Phone'   : 'Телефон',
+  phoneDays:  lang === 'en' ? 'Mon–Fri' : 'Пн–Пт',
+  email:      'Email',
+  office:     lang === 'en' ? 'Office'  : 'Офіс',
+  officeVal:  lang === 'en'
+    ? 'Sportyvna Square 1a, BC Gulliver, Tower A, 17th floor · Kyiv, 01601'
+    : 'пл. Спортивна 1а, БЦ Гулівер, Вежа А, 17 поверх · м. Київ, 01601',
+  showEmail:  lang === 'en' ? 'Show email'  : 'Показати email',
+  formTitle:  lang === 'en' ? 'Send a request' : 'Надіслати запит',
+  formSub:    lang === 'en' ? 'Briefly describe your task — we will get back to you the next business day.' : 'Коротко опишіть задачу — повернемось до вас на наступний робочий день.',
+  fieldName:  lang === 'en' ? 'Name'          : "Ім'я",
+  fieldEmail: 'Email',
+  fieldPhone: lang === 'en' ? 'Phone'         : 'Телефон',
+  fieldMsg:   lang === 'en' ? 'Brief about the task' : 'Коротко про задачу',
+  submit:     lang === 'en' ? 'Send request'  : 'Надіслати запит',
+  foot:       lang === 'en' ? 'No bureaucracy · straight to the point' : 'Без формальних опитувальників · одразу до справи',
+};
 ---
 
 <section class="contact" id="contact">
   <div class="container">
 
     <div class="contact-intro reveal">
-      <div class="eyebrow cyan-dot">Контакти</div>
+      <div class="eyebrow cyan-dot">{t.eyebrow}</div>
     </div>
 
     <h2 class="contact-tagline reveal" data-d="1">
-      <span class="contact-tagline-a">Початок розмови<span class="op">.</span></span>
-      <span class="contact-tagline-b">Найкращі проєкти починаються з гарного знайомства.</span>
+      <span class="contact-tagline-a">{lang === 'en' ? t.taglineA : <Fragment>Початок розмови<span class="op">.</span></Fragment>}</span>
+      <span class="contact-tagline-b">{t.taglineB}</span>
     </h2>
 
     <div class="contact-spread">
@@ -22,26 +49,32 @@
       <!-- LEFT: Statement + ledger + hours -->
       <div class="contact-statement reveal" data-d="2">
         <p class="contact-statement-q">
-          Якщо перед вами стоять завдання в сфері обліку, податків чи <em>цифрової трансформації фінансів</em> — напишіть нам.
+          {lang === 'en'
+            ? <Fragment>If you face challenges in <em>accounting, tax or digital finance transformation</em> — write to us.</Fragment>
+            : <Fragment>Якщо перед вами стоять завдання в сфері обліку, податків чи <em>цифрової трансформації фінансів</em> — напишіть нам.</Fragment>
+          }
         </p>
-        <p class="contact-statement-p">
-          Команда LUCAS прочитає вашу задачу та зв'яжеться протягом одного робочого дня. Без формальних опитувальників — одразу по суті.
-        </p>
+        <p class="contact-statement-p">{t.stmtP}</p>
 
         <div class="contact-ledger">
           <div class="ledger-row">
-            <span class="lr-label">Телефон</span>
+            <span class="lr-label">{t.phone}</span>
             <a class="lr-value" href="tel:+380443447915">+380 44 344 7915</a>
-            <span class="lr-hint">Пн–Пт</span>
+            <span class="lr-hint">{t.phoneDays}</span>
           </div>
           <div class="ledger-row">
-            <span class="lr-label">Email</span>
-            <button class="lr-value email-reveal" id="contact-email-reveal" type="button">Показати email</button>
+            <span class="lr-label">{t.email}</span>
+            <button class="lr-value email-reveal" id="contact-email-reveal" type="button">{t.showEmail}</button>
             <span class="lr-hint">24 / 7</span>
           </div>
           <div class="ledger-row">
-            <span class="lr-label">Офіс</span>
-            <span class="lr-value small">пл. Спортивна 1а, БЦ Гулівер<br>Вежа А, 17 поверх · м. Київ, 01601</span>
+            <span class="lr-label">{t.office}</span>
+            <span class="lr-value small">
+              {lang === 'en'
+                ? <Fragment>Sportyvna Square 1a, BC Gulliver<br />Tower A, 17th floor · Kyiv, 01601</Fragment>
+                : <Fragment>пл. Спортивна 1а, БЦ Гулівер<br />Вежа А, 17 поверх · м. Київ, 01601</Fragment>
+              }
+            </span>
             <span class="lr-hint">UA</span>
           </div>
         </div>
@@ -65,36 +98,36 @@
       <!-- RIGHT: Form residency -->
       <aside class="contact-residency has-corner reveal" data-d="3">
         <div class="residency-head">
-          <span class="residency-title">Надіслати запит</span>
+          <span class="residency-title">{t.formTitle}</span>
           <span class="residency-meta">RES · #001</span>
         </div>
-        <p class="residency-sub">Коротко опишіть задачу — повернемось до вас на наступний робочий день.</p>
+        <p class="residency-sub">{t.formSub}</p>
 
         <form class="residency-form" id="lucas-contact-form" novalidate>
           <div class="field">
             <input type="text" id="cf-name" name="name" placeholder=" " required autocomplete="name">
-            <label for="cf-name" class="field-label">Ім'я</label>
+            <label for="cf-name" class="field-label">{t.fieldName}</label>
           </div>
           <div class="field">
             <input type="email" id="cf-email" name="email" placeholder=" " required autocomplete="email">
-            <label for="cf-email" class="field-label">Email</label>
+            <label for="cf-email" class="field-label">{t.fieldEmail}</label>
           </div>
           <div class="field">
             <input type="tel" id="cf-phone" name="phone" placeholder=" " required autocomplete="tel">
-            <label for="cf-phone" class="field-label">Телефон</label>
+            <label for="cf-phone" class="field-label">{t.fieldPhone}</label>
           </div>
           <div class="field">
             <textarea id="cf-message" name="message" placeholder=" " required rows="4"></textarea>
-            <label for="cf-message" class="field-label">Коротко про задачу</label>
+            <label for="cf-message" class="field-label">{t.fieldMsg}</label>
           </div>
           <!-- Honeypot — прихована пастка для ботів, люди не бачать і не заповнюють -->
           <div class="hp-field">
             <input type="text" name="website" tabindex="-1" autocomplete="off">
           </div>
           <button type="submit" class="residency-submit" id="lucas-submit">
-            Надіслати запит <span class="arrow"></span>
+            {t.submit} <span class="arrow"></span>
           </button>
-          <div class="residency-foot">Без формальних опитувальників · одразу до справи</div>
+          <div class="residency-foot">{t.foot}</div>
         </form>
       </aside>
 
@@ -142,8 +175,14 @@
     phone:   function (v) { return /^[\+]?[\d\s\-\(\)]{7,20}$/.test(v.trim()); },
     message: function (v) { return v.trim().length >= 5; },
   };
-  var errorMessages = {
-    name:    "Введіть ім’я",
+  var isEn = document.documentElement.lang === 'en';
+  var errorMessages = isEn ? {
+    name:    'Enter your name',
+    email:   'Enter a valid email (e.g. name@company.com)',
+    phone:   'Enter a valid phone number',
+    message: 'Please describe your task briefly',
+  } : {
+    name:    "Введіть ім'я",
     email:   'Введіть коректний email (наприклад: name@company.com)',
     phone:   'Введіть коректний номер телефону',
     message: 'Опишіть задачу коротко',
@@ -202,7 +241,9 @@
     if (!window.emailjs || !ejsLoaded) {
       var noEjs = document.createElement('p');
       noEjs.style.cssText = 'color:rgba(255,92,31,.9);font-size:13px;margin-top:10px;font-family:var(--mono)';
-      noEjs.textContent = 'Сервіс відправки ще завантажується. Спробуйте ще раз або напишіть на info@lucasua.com';
+      noEjs.textContent = isEn
+        ? 'The sending service is still loading. Please try again or write to info@lucasua.com'
+        : 'Сервіс відправки ще завантажується. Спробуйте ще раз або напишіть на info@lucasua.com';
       btn.parentNode.insertBefore(noEjs, btn.nextSibling);
       setTimeout(function () { noEjs.remove(); }, 6000);
       return;
@@ -210,7 +251,7 @@
 
     submitted = true;
     btn.disabled = true;
-    btn.innerHTML = 'Надсилається…';
+    btn.innerHTML = isEn ? 'Sending…' : 'Надсилається…';
 
     window.emailjs.send('service_ocdfpq8', 'template_wz7w36q', {
       from_name: form.querySelector('[name="name"]').value.trim(),
@@ -218,7 +259,7 @@
       phone:     form.querySelector('[name="phone"]').value.trim(),
       message:   form.querySelector('[name="message"]').value.trim(),
     }).then(function () {
-      btn.innerHTML        = '✓ Запит надіслано';
+      btn.innerHTML        = isEn ? '✓ Request sent' : '✓ Запит надіслано';
       btn.style.background = 'var(--orange)';
       btn.style.borderColor= 'var(--orange)';
       btn.style.color      = '#fff';
@@ -227,10 +268,12 @@
     }).catch(function () {
       btn.disabled  = false;
       submitted     = false;
-      btn.innerHTML = 'Надіслати запит <span class="arrow"></span>';
+      btn.innerHTML = (isEn ? 'Send request' : 'Надіслати запит') + ' <span class="arrow"></span>';
       var errMsg = document.createElement('p');
       errMsg.style.cssText = 'color:rgba(255,92,31,.9);font-size:13px;margin-top:10px;font-family:var(--mono)';
-      errMsg.textContent   = 'Помилка відправки. Спробуйте ще раз або напишіть на info@lucasua.com';
+      errMsg.textContent   = isEn
+        ? 'Send error. Please try again or write to info@lucasua.com'
+        : 'Помилка відправки. Спробуйте ще раз або напишіть на info@lucasua.com';
       btn.parentNode.insertBefore(errMsg, btn.nextSibling);
       setTimeout(function () { errMsg.remove(); }, 6000);
     });

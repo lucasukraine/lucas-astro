@@ -1,0 +1,161 @@
+---
+import ServiceLayout from '../../../layouts/ServiceLayout.astro';
+import ServiceHero from '../../../components/ServiceHero.astro';
+import FaqAccordion from '../../../components/FaqAccordion.astro';
+import ServiceCTA from '../../../components/ServiceCTA.astro';
+import ServiceReadNext from '../../../components/ServiceReadNext.astro';
+import { auditFaq } from '../../../data/en/auditFaq';
+const base = import.meta.env.BASE_URL;
+---
+
+<ServiceLayout
+  lang="en"
+  title="Financial Statement Audit and IFRS Reporting — LUCAS"
+  description="Independent financial statement audit under International Standards on Auditing and IFRS reporting preparation. Mandatory audit, group audit, assurance, IFRS conversion. Kyiv."
+>
+  <ServiceHero
+    lang="en"
+    eyebrow="Service 01"
+    title="Audit & Reporting"
+    lead="Independent financial statement audit under International Standards on Auditing and IFRS reporting preparation. Services are provided separately and are not combined for the same client."
+  />
+
+  <section class="sp-statement">
+    <div class="sp-statement-inner">
+      <p>Financial statement audit trusted by banks, investors and owners</p>
+      <div class="sp-statement-note">LUCAS conducts mandatory and voluntary financial statement audits for Ukrainian companies, business groups and international structures — with focus on quality, independence and practical value of the auditor's report.</div>
+    </div>
+  </section>
+
+  <section class="sp-blocks">
+    <div class="sp-blocks-inner">
+
+      <div class="sp-block">
+        <div>
+          <div class="sp-block-label">Mandatory Audit · ISA</div>
+          <h2 class="sp-block-h2">Audit for Large, Medium Companies and PIEs</h2>
+        </div>
+        <div class="sp-block-body">
+          <p>Mandatory audit is conducted for enterprises defined by Ukrainian legislation: including public interest entities, large and medium-sized enterprises, and certain special categories of companies. The audit is performed under International Standards on Auditing with an auditor's report issued in accordance with applicable ISA requirements.</p>
+          <p>The LUCAS auditor's report is not a formality for the regulator — it is an instrument of trust for owners, banks, investors, and counterparties. We are responsible for audit quality in accordance with Ukrainian law, International Standards on Auditing, and the terms of the specific engagement.</p>
+          <ul class="sp-block-list">
+            <li>Audit for public interest entities (PIEs)</li>
+            <li>Audit of large and medium-sized enterprises</li>
+            <li>Evaluation of internal control elements within the financial statement audit</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sp-block">
+        <div>
+          <div class="sp-block-label">Group Audit · Consolidation</div>
+          <h2 class="sp-block-h2">Audit of Consolidated and Combined Financial Statements</h2>
+        </div>
+        <div class="sp-block-body">
+          <p>Auditing the consolidated financial statements of holdings and groups of companies requires coordinating the work of component auditors, reviewing elimination adjustments and intergroup transactions. In relevant engagements, LUCAS can act as group auditor: preparing instructions for component auditors, coordinating their work, and forming the auditor's report on consolidated financial statements in accordance with applicable ISA requirements.</p>
+          <p>We work with groups where the parent company requires reporting in a specified format — we help prepare financial statements and audit procedures to comply with both local requirements and group requirements within the agreed engagement.</p>
+          <ul class="sp-block-list">
+            <li>Audit of consolidated financial statements</li>
+            <li>Group instructions for component auditors</li>
+            <li>Review of eliminations and intergroup transactions</li>
+            <li>Coordination with parent company auditors</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sp-block">
+        <div>
+          <div class="sp-block-label">Non-Audit Engagements · ISRE 2400 / ISRS 4400</div>
+          <h2 class="sp-block-h2">Review, Agreed-Upon Procedures and Comfort Letters</h2>
+        </div>
+        <div class="sp-block-body">
+          <p>Not every situation requires a full audit. A review of financial statements under ISRE 2400, agreed-upon procedures under ISRS 4400, and auditor letters/reports may be appropriate for banks, investors, M&amp;A, or specific management purposes. The level of assurance and form of report depend on the type of engagement.</p>
+          <p>These services are in demand when attracting financing, verifying specific indicators for banks or investors, due diligence, and transaction preparation.</p>
+          <ul class="sp-block-list">
+            <li>Review of financial statements under ISRE 2400</li>
+            <li>Agreed-upon procedures under ISRS 4400</li>
+            <li>Auditor letters/reports for banks, investors or other users</li>
+            <li>Audit for M&amp;A and due diligence purposes</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sp-block">
+        <div>
+          <div class="sp-block-label">IFRS Reporting</div>
+          <h2 class="sp-block-h2">IFRS Financial Statement Package Preparation</h2>
+        </div>
+        <div class="sp-block-body">
+          <p>Preparation of financial statements under International Financial Reporting Standards — for financing purposes, parent company requirements, or internal management. Includes the full package: statement of financial position, statement of profit or loss, statement of cash flows, statement of changes in equity, and notes.</p>
+          <p><strong>This service is provided to clients whose audit LUCAS does not perform</strong> — in accordance with independence requirements.</p>
+          <ul class="sp-block-list">
+            <li>Full IFRS financial statement package</li>
+            <li>Disclosures and notes to financial statements</li>
+            <li>Reporting for parent company</li>
+            <li>Reporting for financing purposes</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sp-block">
+        <div>
+          <div class="sp-block-label">IFRS 1 · First-time Adoption</div>
+          <h2 class="sp-block-h2">First IFRS Report and National Standards Transformation</h2>
+        </div>
+        <div class="sp-block-body">
+          <p>First-time adoption of IFRS is governed by a dedicated standard — IFRS 1. It defines how to prepare the first set of financial statements under international standards: selecting accounting policies, retrospective application, exceptions and exemptions.</p>
+          <p>LUCAS can help your organization fully transition to IFRS or perform a transformation of existing financial statements prepared under national standards into IFRS format — with documentation of all adjustments and methodology.</p>
+          <ul class="sp-block-list">
+            <li>Preparation of first IFRS financial statements under IFRS 1</li>
+            <li>Selection and documentation of accounting policies</li>
+            <li>National standards → IFRS transformation</li>
+            <li>Documentation of transformation adjustments</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sp-block">
+        <div>
+          <div class="sp-block-label">Consolidation Package</div>
+          <h2 class="sp-block-h2">Consolidation Package for Group Reporting</h2>
+        </div>
+        <div class="sp-block-body">
+          <p>Participants of international and national groups often prepare a reporting package for the parent company in specified formats and timelines. For clients whose audit LUCAS does not perform, we prepare a consolidation package with elimination adjustments, intergroup transaction disclosures, and intergroup balance reconciliation.</p>
+          <ul class="sp-block-list">
+            <li>Reporting package in parent company format</li>
+            <li>Elimination adjustments</li>
+            <li>Intergroup transaction disclosures</li>
+            <li>Intergroup balance reconciliation</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <FaqAccordion
+    eyebrow="FAQ"
+    title="What you should know"
+    items={auditFaq}
+  />
+
+  <ServiceCTA
+    title="Need an audit or financial statement preparation"
+    titlePunct="?"
+    text="Tell us about your task — we will clarify the scope, timeline and propose terms of engagement."
+    href={base + '/en/#contact'}
+    linkText="Submit a request"
+  />
+
+  <ServiceReadNext
+    eyebrow="Deep dive into the topic"
+    category="IFRS & Reporting"
+    readingTime="13 min read"
+    title="IFRS 1: First-time Adoption of IFRS"
+    excerpt="Transition date, opening balance sheet, mandatory exceptions and voluntary exemptions. Step-by-step guide to transforming national standards to IFRS with focus on typical mistakes and practical nuances."
+    href={base + '/blog/ifrs-1-pershyy-perehid-msfz/'}
+    ariaLabel="First-time Adoption of IFRS: Step-by-Step Guide to IFRS 1"
+    readLabel="Read"
+  />
+
+</ServiceLayout>

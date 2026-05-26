@@ -3,7 +3,33 @@
 // Еталон: other-services/index.html
 // URL-и конвертовані з /lucas-website/* → /*
 // SVG логотип рендериться через #lucas-mark, визначений у Header.astro
+const { lang = 'uk' } = Astro.props;
 const base = import.meta.env.BASE_URL;
+const p = lang === 'en' ? '/en' : '';
+
+const t = {
+  tagline:     lang === 'en' ? 'Audit, technology and expertise — one team.' : 'Аудит, технологія і досвід — в одній команді',
+  legalName:   lang === 'en' ? 'LLC "Lucas Audit"'                           : 'ТОВ «Лукас Аудит»',
+  legalDesc:   lang === 'en' ? 'Audit & Technology Company'                  : 'Аудиторська та технологічна компанія',
+  services:    lang === 'en' ? 'Services'                                    : 'Послуги',
+  audit:       lang === 'en' ? 'Audit & Reporting'                           : 'Аудит та звітність',
+  saft:        lang === 'en' ? 'SAF-T Connector'                             : 'SAF-T Connector',
+  odoo:        lang === 'en' ? 'Migration to Odoo'                           : 'Міграція на Odoo',
+  tp:          lang === 'en' ? 'Transfer Pricing'                            : 'Трансфертне ціноутворення',
+  other:       lang === 'en' ? 'Other Services'                              : 'Інші послуги',
+  company:     lang === 'en' ? 'Company'                                     : 'Компанія',
+  concept:     lang === 'en' ? 'Audit as Core'                               : 'Аудит як ядро',
+  industries:  lang === 'en' ? 'Industries'                                  : 'Галузі',
+  faq:         lang === 'en' ? 'FAQ'                                         : 'Питання',
+  blog:        'Блог',
+  documents:   lang === 'en' ? 'Documents'                                   : 'Документи',
+  contacts:    lang === 'en' ? 'Contacts'                                    : 'Контакти',
+  connect:     lang === 'en' ? 'Connect'                                     : "Зв'язатись",
+  phone:       lang === 'en' ? 'Phone'                                       : 'Телефон',
+  address:     lang === 'en' ? 'Address'                                     : 'Адреса',
+  showEmail:   lang === 'en' ? 'Show email'                                  : 'Показати email',
+  cta:         lang === 'en' ? 'Discuss a project →'                         : 'Обговорити проєкт →',
+};
 ---
 
 <footer class="footer">
@@ -16,57 +42,60 @@ const base = import.meta.env.BASE_URL;
           <svg aria-hidden="true" class="logo-svg"><use href="#lucas-mark"></use></svg>
         </a>
         <p class="footer-tagline">
-          Аудит, технологія і досвід — в одній команді<span class="op">.</span>
+          {t.tagline}{lang === 'uk' && <span class="op">.</span>}
         </p>
         <p class="footer-legal">
-          ТОВ «Лукас Аудит»<br />
-          Аудиторська та технологічна компанія
+          {t.legalName}<br />
+          {t.legalDesc}
         </p>
       </div>
 
       <!-- Services -->
       <div>
-        <div class="footer-col-label">Послуги</div>
+        <div class="footer-col-label">{t.services}</div>
         <ul>
-          <li><a href={base + '/audit/'}>Аудит та звітність</a></li>
-          <li><a href={base + '/saf-t/'}>SAF-T Connector</a></li>
-          <li><a href={base + '/odoo-migration/'}>Міграція на Odoo</a></li>
-          <li><a href={base + '/transfer-pricing/'}>Трансфертне ціноутворення</a></li>
-          <li><a href={base + '/other-services/'}>Інші послуги</a></li>
+          <li><a href={base + p + '/audit/'}>{t.audit}</a></li>
+          <li><a href={base + p + '/saf-t/'}>{t.saft}</a></li>
+          <li><a href={base + p + '/odoo-migration/'}>{t.odoo}</a></li>
+          <li><a href={base + p + '/transfer-pricing/'}>{t.tp}</a></li>
+          <li><a href={base + p + '/other-services/'}>{t.other}</a></li>
         </ul>
       </div>
 
       <!-- Company -->
       <div>
-        <div class="footer-col-label">Компанія</div>
+        <div class="footer-col-label">{t.company}</div>
         <ul>
-          <li><a href={base + '/#concept'}>Аудит як ядро</a></li>
-          <li><a href={base + '/#industries'}>Галузі</a></li>
-          <li><a href={base + '/#faq'}>Питання</a></li>
-          <li><a href={base + '/blog/'}>Блог</a></li>
-          <li><a href={base + '/documents/'}>Документи</a></li>
-          <li><a href={base + '/#contact'}>Контакти</a></li>
+          <li><a href={base + p + '/#concept'}>{t.concept}</a></li>
+          <li><a href={base + p + '/#industries'}>{t.industries}</a></li>
+          <li><a href={base + p + '/#faq'}>{t.faq}</a></li>
+          {lang === 'uk' && <li><a href={base + '/blog/'}>{t.blog}</a></li>}
+          <li><a href={base + p + '/documents/'}>{t.documents}</a></li>
+          <li><a href={base + p + '/#contact'}>{t.contacts}</a></li>
         </ul>
       </div>
 
       <!-- Contacts -->
       <div class="footer-contact">
-        <div class="footer-col-label">Зв'язатись</div>
+        <div class="footer-col-label">{t.connect}</div>
         <div class="footer-contact-row">
           <span class="footer-contact-lbl">Email</span>
           <button class="footer-contact-val email-reveal" id="footer-email-reveal" type="button">
-            Показати email
+            {t.showEmail}
           </button>
         </div>
         <div class="footer-contact-row">
-          <span class="footer-contact-lbl">Телефон</span>
+          <span class="footer-contact-lbl">{t.phone}</span>
           <a class="footer-contact-val" href="tel:+380443447915">+380 44 344 7915</a>
         </div>
         <div class="footer-contact-row">
-          <span class="footer-contact-lbl">Адреса</span>
+          <span class="footer-contact-lbl">{t.address}</span>
           <span class="footer-contact-val">
-            м. Київ, пл. Спортивна 1а<br />
-            БЦ Гулівер, Вежа А, 17 пов.
+            {lang === 'en' ? (
+              <>Kyiv, 1a Sportyvna Sq.<br />Gulliver BC, Tower A, 17th fl.</>
+            ) : (
+              <>м. Київ, пл. Спортивна 1а<br />БЦ Гулівер, Вежа А, 17 пов.</>
+            )}
           </span>
         </div>
       </div>
@@ -77,7 +106,7 @@ const base = import.meta.env.BASE_URL;
       <span class="footer-bot-copy">
         © <span id="footer-year"></span> LUCAS · ТОВ «Лукас Аудит» · All rights reserved
       </span>
-      <a class="footer-bot-cta" href={base + '/#contact'}>Обговорити проєкт →</a>
+      <a class="footer-bot-cta" href={base + p + '/#contact'}>{t.cta}</a>
     </div>
   </div>
 </footer>

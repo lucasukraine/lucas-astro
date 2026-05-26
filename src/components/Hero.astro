@@ -1,8 +1,18 @@
 ---
-// Hero.astro
-// Еталон: index.html — секція .hero
-// Текст, класи, структура — без змін. URL root-relative.
+const { lang = 'uk' } = Astro.props;
 const base = import.meta.env.BASE_URL;
+const p = lang === 'en' ? '/en' : '';
+
+const t = {
+  line1:    lang === 'en' ? 'A new kind of'          : 'Аудиторська компанія',
+  line2word: lang === 'en' ? 'audit'                  : 'нового',
+  line2end:  lang === 'en' ? 'company.'               : 'типу.',
+  lead:      lang === 'en'
+    ? 'We combine audit expertise, financial knowledge and technology to deliver projects in finance, accounting and tax.'
+    : 'Поєднуємо аудит, фінансову експертизу та розробку для реалізації проєктів в сфері фінансів, обліку та податків.',
+  cta1: lang === 'en' ? 'Discuss a project'    : 'Обговорити проєкт',
+  cta2: lang === 'en' ? 'Services & products'  : 'Послуги та продукти',
+};
 ---
 
 <section class="hero">
@@ -12,18 +22,15 @@ const base = import.meta.env.BASE_URL;
   <div class="hero-content">
     <div class="eyebrow hero-eyebrow ha d1">Audit-led finance &amp; technology</div>
     <h1 class="ha d2">
-      <span class="line">Аудиторська компанія</span>
-      <span class="line"><span class="underline">нового</span> типу.</span>
+      <span class="line">{t.line1}</span>
+      <span class="line"><span class="underline">{t.line2word}</span> {t.line2end}</span>
     </h1>
-    <p class="hero-lead ha d4">
-      Поєднуємо аудит, фінансову експертизу та розробку для реалізації проєктів
-      в сфері фінансів, обліку та податків.
-    </p>
+    <p class="hero-lead ha d4">{t.lead}</p>
     <div class="hero-actions ha d5">
-      <a class="btn cta-orange" href={base + '/#contact'}>
-        Обговорити проєкт <span class="arrow"></span>
+      <a class="btn cta-orange" href={base + p + '/#contact'}>
+        {t.cta1} <span class="arrow"></span>
       </a>
-      <a class="btn ghost-dark" href={base + '/#services'}>Послуги та продукти</a>
+      <a class="btn ghost-dark" href={base + p + '/#services'}>{t.cta2}</a>
     </div>
   </div>
 

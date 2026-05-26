@@ -1,115 +1,135 @@
 ---
-// Industries.astro
-// Галузеве покриття — 4 bento-групи з фактами.
-// Джерело: old-html/index.html <section class="industries" id="industries">
+const { lang = 'uk' } = Astro.props;
+
+const t = {
+  eyebrow:   lang === 'en' ? 'Industry coverage'      : 'Галузеве покриття',
+  taglineA:  lang === 'en' ? 'Clients and projects.'  : 'Клієнти та проєкти.',
+  taglineB:  lang === 'en' ? 'Global leaders, national brands, complex consolidations.' : 'Світові лідери, національні бренди, складні консолідації.',
+  g1label:   lang === 'en' ? 'Global leaders'   : 'Світові лідери',
+  g1fact1:   lang === 'en' ? 'Ukrainian business of one of the five most valuable brands in the world' : 'Український бізнес одного з п\'яти найдорожчих брендів світу',
+  g1fact2:   lang === 'en' ? 'A major Ukrainian bank, part of a top 10 global banking group' : 'Великий український банк, що входить в топ 10 банківських груп світу',
+  g1text:    lang === 'en' ? 'We work with Ukrainian subsidiaries of global groups where results must meet international standards, internal policies and parent company expectations.' : 'Працюємо з українськими підрозділами глобальних груп, де результат має відповідати міжнародним стандартам, внутрішнім політикам і очікуванням материнських компаній.',
+  g2label:   lang === 'en' ? 'National leaders'  : 'Національні лідери',
+  g2text:    lang === 'en' ? 'Our clients are companies that set the scale, standards and development pace of Ukrainian business, shaping the national market in their industries.' : 'Наші клієнти — компанії, які задають масштаб, стандарти та динаміку розвитку українського бізнесу, формуючи національний ринок у своїх галузях.',
+  g2fact1:   lang === 'en' ? 'Both of Ukraine\'s largest media groups'          : 'Обидві найбільші медіагрупи України',
+  g2fact2:   lang === 'en' ? 'Three of Ukraine\'s top ten insurance companies'  : 'Три з десятки найбільших страхових компаній України',
+  g3label:   lang === 'en' ? 'Industry coverage'  : 'Охоплення індустрій',
+  g3hard:    lang === 'en' ? 'Manufacturing · agro · mining · construction · infrastructure' : 'Виробництво · агро · корисні копалини · будівництво · інфраструктура',
+  g3soft:    lang === 'en' ? 'Insurance · media · banking & finance · retail & distribution · IT' : 'Страхування · медіабізнес · банкінг та фінанси · рітейл та дистрибуція · IT',
+  g3text:    lang === 'en' ? 'We have clients across most industries — from agro, manufacturing and mining to finance, media, IT and retail.' : 'Маємо клієнтів у більшості галузей — від агро, виробництва та видобутку до фінансів, медіа, IT та рітейлу.',
+  g4label:   lang === 'en' ? 'Complex projects'   : 'Складні проєкти',
+  g4text:    lang === 'en' ? 'We work where data is distributed across systems and changes rapidly, but must be turned into high-quality, transparent reporting.' : 'Працюємо там, де дані розподілені між системами та швидко змінюються, але мають бути перетворені на якісну й прозору звітність.',
+  g4fact1:   lang === 'en' ? 'Over 100 companies in a single consolidated financial statement' : 'Більше 100 компаній в одній консолідованій звітності',
+  g4fact2:   lang === 'en' ? 'Integration of three data sources for a single SAF-T file' : 'Інтеграція трьох джерел даних для єдиного SAF-T-файлу компанії',
+};
 ---
 
 <section class="industries" id="industries">
   <div class="container">
     <div class="ind-intro reveal">
-      <div class="eyebrow">Галузеве покриття</div>
+      <div class="eyebrow">{t.eyebrow}</div>
     </div>
     <h2 class="ind-tagline reveal" data-d="1">
-      <span class="ind-tagline-a">Клієнти та проєкти<span class="op">.</span></span>
-      <span class="ind-tagline-b">Світові лідери, національні бренди, складні консолідації.</span>
+      <span class="ind-tagline-a">{lang === 'en' ? t.taglineA : <Fragment>Клієнти та проєкти<span class="op">.</span></Fragment>}</span>
+      <span class="ind-tagline-b">{t.taglineB}</span>
     </h2>
     <div class="bento reveal" data-d="2">
 
-      <!-- GROUP 01 · Світові лідери -->
+      <!-- GROUP 01 · Global leaders -->
       <div class="bento-group">
         <div class="bento-category">
           <span class="bento-category-num">01</span>
-          <span class="bento-category-label">Світові лідери</span>
+          <span class="bento-category-label">{t.g1label}</span>
           <span class="bento-category-rule"></span>
         </div>
         <div class="bento-row">
           <article class="b-card b-fact b-cream">
             <div class="b-num">Top 5</div>
-            <div class="b-desc">Український бізнес одного з п'яти найдорожчих брендів світу</div>
+            <div class="b-desc">{t.g1fact1}</div>
             <div class="b-tag">Global FMCG</div>
           </article>
           <article class="b-card b-fact b-mint">
             <div class="b-num">Top 10</div>
-            <div class="b-desc">Великий український банк, що входить в топ 10 банківських груп світу</div>
+            <div class="b-desc">{t.g1fact2}</div>
             <div class="b-tag">Global Banking</div>
           </article>
           <article class="b-card b-text">
             <span class="b-text-label">Global standards</span>
-            <p>Працюємо з українськими підрозділами глобальних груп, де результат має відповідати міжнародним стандартам, внутрішнім політикам і очікуванням материнських компаній.</p>
+            <p>{t.g1text}</p>
           </article>
         </div>
       </div>
 
-      <!-- GROUP 02 · Національні лідери -->
+      <!-- GROUP 02 · National leaders -->
       <div class="bento-group">
         <div class="bento-category">
           <span class="bento-category-num">02</span>
-          <span class="bento-category-label">Національні лідери</span>
+          <span class="bento-category-label">{t.g2label}</span>
           <span class="bento-category-rule"></span>
         </div>
         <div class="bento-row alt">
           <article class="b-card b-text">
             <span class="b-text-label">National scale</span>
-            <p>Наші клієнти — компанії, які задають масштаб, стандарти та динаміку розвитку українського бізнесу, формуючи національний ринок у своїх галузях.</p>
+            <p>{t.g2text}</p>
           </article>
           <article class="b-card b-fact b-blush">
             <div class="b-num">2 / 2</div>
-            <div class="b-desc">Обидві найбільші медіагрупи України</div>
+            <div class="b-desc">{t.g2fact1}</div>
             <div class="b-tag">Media</div>
           </article>
           <article class="b-card b-fact b-sky">
             <div class="b-num">3 / 10</div>
-            <div class="b-desc">Три з десятки найбільших страхових компаній України</div>
+            <div class="b-desc">{t.g2fact2}</div>
             <div class="b-tag">Insurance</div>
           </article>
         </div>
       </div>
 
-      <!-- GROUP 03 · Охоплення індустрій -->
+      <!-- GROUP 03 · Industry coverage -->
       <div class="bento-group">
         <div class="bento-category">
           <span class="bento-category-num">03</span>
-          <span class="bento-category-label">Охоплення індустрій</span>
+          <span class="bento-category-label">{t.g3label}</span>
           <span class="bento-category-rule"></span>
         </div>
         <div class="bento-row">
           <article class="b-card b-fact b-cream">
             <div class="b-num">Hard</div>
-            <div class="b-desc">Виробництво · агро · корисні копалини · будівництво · інфраструктура</div>
+            <div class="b-desc">{t.g3hard}</div>
             <div class="b-tag">Hard industries</div>
           </article>
           <article class="b-card b-fact b-sky">
             <div class="b-num">Soft</div>
-            <div class="b-desc">Страхування · медіабізнес · банкінг та фінанси · рітейл та дистрибуція · IT</div>
+            <div class="b-desc">{t.g3soft}</div>
             <div class="b-tag">Soft industries</div>
           </article>
           <article class="b-card b-text">
             <span class="b-text-label">Industries</span>
-            <p>Маємо клієнтів у більшості галузей — від агро, виробництва та видобутку до фінансів, медіа, IT та рітейлу.</p>
+            <p>{t.g3text}</p>
           </article>
         </div>
       </div>
 
-      <!-- GROUP 04 · Складні проєкти -->
+      <!-- GROUP 04 · Complex projects -->
       <div class="bento-group">
         <div class="bento-category">
           <span class="bento-category-num">04</span>
-          <span class="bento-category-label">Складні проєкти</span>
+          <span class="bento-category-label">{t.g4label}</span>
           <span class="bento-category-rule"></span>
         </div>
         <div class="bento-row alt">
           <article class="b-card b-text">
             <span class="b-text-label">Complex environments</span>
-            <p>Працюємо там, де дані розподілені між системами та швидко змінюються, але мають бути перетворені на якісну й прозору звітність.</p>
+            <p>{t.g4text}</p>
           </article>
           <article class="b-card b-fact b-mint">
             <div class="b-num">&gt;100</div>
-            <div class="b-desc">Більше 100 компаній в одній консолідованій звітності</div>
+            <div class="b-desc">{t.g4fact1}</div>
             <div class="b-tag">Group reporting</div>
           </article>
           <article class="b-card b-fact b-cream">
             <div class="b-num">3×<sub class="b-sub">ERP</sub></div>
-            <div class="b-desc">Інтеграція трьох джерел даних для єдиного SAF-T-файлу компанії</div>
+            <div class="b-desc">{t.g4fact2}</div>
             <div class="b-tag">Multi-source</div>
           </article>
         </div>

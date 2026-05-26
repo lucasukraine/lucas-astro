@@ -1,0 +1,158 @@
+---
+import ServiceLayout from '../../../layouts/ServiceLayout.astro';
+import ServiceHero from '../../../components/ServiceHero.astro';
+import FaqAccordion from '../../../components/FaqAccordion.astro';
+import ServiceCTA from '../../../components/ServiceCTA.astro';
+import ServiceReadNext from '../../../components/ServiceReadNext.astro';
+import { saftFaq } from '../../../data/en/saftFaq';
+const base = import.meta.env.BASE_URL;
+---
+
+<ServiceLayout
+  lang="en"
+  title="SAF-T Connector — SAF-T preparation from any ERP | LUCAS"
+  description="SAF-T Connector — LUCAS proprietary platform for SAF-T UA XML file preparation. ERP-independent: SAP, 1C/BAS, Odoo, Microsoft Dynamics. Turnkey implementation in 3-4 months. On-premise."
+>
+  <ServiceHero
+    lang="en"
+    eyebrow="Service 02"
+    title="SAF-T Connector"
+    lead="A convenient platform for preparing SAF-T UA reports — independent of ERP systems, with turnkey implementation by LUCAS. Fast launch with a single partner responsible for the entire process."
+    accent="cyan"
+  />
+
+  <section class="sp-statement">
+    <div class="sp-statement-inner">
+      <p>SAF-T Connector is independent of your accounting system.</p>
+      <div class="sp-statement-note">SAF-T Connector is a standalone product, not built into any ERP. We implement it independently: the client provides data access, and then LUCAS works autonomously — without creating internal project teams on the client's side.</div>
+    </div>
+  </section>
+
+  <section class="sp-blocks">
+    <div class="sp-blocks-inner">
+
+      <div class="sp-block">
+        <div>
+          <div class="sp-block-label cyan">ERP Independence</div>
+          <h2 class="sp-block-h2">Connects to any data source</h2>
+        </div>
+        <div class="sp-block-body">
+          <p>Unlike solutions tied to a single ERP, SAF-T Connector connects to SAP, 1C/BAS, Odoo, Microsoft Dynamics, and any custom systems. The solution can work with multiple data sources simultaneously.</p>
+          <p>Competing solutions are typically built inside a specific accounting system — and only work with it. SAF-T Connector is a standalone product that does not depend on where you keep your accounting records.</p>
+          <ul class="sp-block-list cyan">
+            <li>SAP, 1C/BAS, Odoo, Microsoft Dynamics</li>
+            <li>Any custom systems</li>
+            <li>Works with multiple data sources simultaneously</li>
+            <li>Connects via databases, APIs, or export files</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sp-block">
+        <div>
+          <div class="sp-block-label cyan">Performance · Python</div>
+          <h2 class="sp-block-h2">Fast processing of large data volumes</h2>
+        </div>
+        <div class="sp-block-body">
+          <p>The SAF-T Connector algorithm is written in Python and optimized for processing large arrays of transactional data. For companies with high transaction volumes this means faster SAF-T UA XML generation, less load on the accounting system, and more stable processing of historical periods.</p>
+          <ul class="sp-block-list cyan">
+            <li>Optimized Python algorithm</li>
+            <li>Processing without load on the client's ERP</li>
+            <li>Stable processing of large historical periods</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sp-block">
+        <div>
+          <div class="sp-block-label cyan">Validation</div>
+          <h2 class="sp-block-h2">Series of data checks before submission</h2>
+        </div>
+        <div class="sp-block-body">
+          <p>Automatic XSD validation and additional check layers detect errors before the file is submitted. Each error description is formulated in plain language — without technical jargon for the accounting team.</p>
+          <p>The result is a SAF-T UA XML file generated in accordance with the current structure and STS technical requirements, with preliminary data validation.</p>
+          <ul class="sp-block-list cyan">
+            <li>Automatic XSD validation</li>
+            <li>Additional data check layers</li>
+            <li>Each error described in plain language</li>
+            <li>SAF-T UA XML file per STS requirements</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sp-block">
+        <div>
+          <div class="sp-block-label cyan">On-premise · Security</div>
+          <h2 class="sp-block-h2">Data stays within client infrastructure</h2>
+        </div>
+        <div class="sp-block-body">
+          <p>The system is installed on the client's server. Works without cloud data upload and without transferring accounting information to third parties. The solution does not require internet access.</p>
+          <ul class="sp-block-list cyan">
+            <li>Installed on client's server</li>
+            <li>No cloud data uploads</li>
+            <li>Does not require internet access to operate</li>
+            <li>Your data does not leave your infrastructure</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sp-block">
+        <div>
+          <div class="sp-block-label cyan">Turnkey · 3–4 months</div>
+          <h2 class="sp-block-h2">Implementation doesn't become the client's project</h2>
+        </div>
+        <div class="sp-block-body">
+          <p>From the client's side, data access and responses to specific questions are sufficient. LUCAS takes on the main project load. Typical implementation timeline — 3–4 months, depending on the number of data sources, quality of accounting information, and client team availability.</p>
+          <ul class="sp-block-list cyan">
+            <li>Client provides data access and, if needed, accounting logic explanations.</li>
+            <li>LUCAS implements autonomously</li>
+            <li>No internal client project teams required</li>
+            <li>Ready product in 3–4 months</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sp-block">
+        <div>
+          <div class="sp-block-label cyan">Single accountability zone</div>
+          <h2 class="sp-block-h2">One partner responsible for the entire result</h2>
+        </div>
+        <div class="sp-block-body">
+          <p>When one vendor supplies the product and another implements it, responsibility often gets diluted. LUCAS provides a single point of accountability for the product, implementation, methodology, and support.</p>
+          <ul class="sp-block-list cyan">
+            <li>One partner for product and implementation</li>
+            <li>Clear accountability zone</li>
+            <li>Competitive total cost of ownership</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <FaqAccordion
+    eyebrow="FAQ"
+    title="What you should know"
+    items={saftFaq}
+  />
+
+  <ServiceCTA
+    title="Ready to discuss SAF-T implementation"
+    titlePunct="?"
+    text="Tell us about your accounting system — we will assess the scope of work and propose turnkey implementation terms."
+    href={base + '/en/#contact'}
+    linkText="Submit a request"
+  />
+
+  <ServiceReadNext
+    eyebrow="Deep dive into the topic"
+    category="Tax Accounting"
+    readingTime="15 min read"
+    title="SAF-T in Ukraine: complete guide"
+    excerpt="Who is required to submit, SAF-T UA structure, STS XSD validation."
+    href={base + '/blog/saf-t-ukraina-povny-gayd/'}
+    ariaLabel="SAF-T in Ukraine 2026: complete guide for accountants"
+    readLabel="Read"
+  />
+
+</ServiceLayout>

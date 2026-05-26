@@ -6,12 +6,13 @@ import BaseLayout from './BaseLayout.astro';
 interface Props {
   title: string;
   description?: string;
+  lang?: 'uk' | 'en';
 }
 
-const { title, description } = Astro.props;
+const { title, description, lang = 'uk' } = Astro.props;
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} lang={lang}>
   <main>
     <slot />
   </main>
