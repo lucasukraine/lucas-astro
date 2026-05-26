@@ -3,32 +3,32 @@ const { lang = 'uk' } = Astro.props;
 
 const t = {
   eyebrow: lang === 'en' ? 'Concept' : 'Концепція',
-  taglineA: lang === 'en' ? 'Audit as core.' : 'Аудит як ядро.',
-  taglineB: lang === 'en' ? 'Technology as a way to scale.' : 'Технології як спосіб масштабування.',
+  taglineA: lang === 'en' ? 'Accounting at the core' : 'Аудит як основа',
+  taglineB: lang === 'en' ? 'Technology where it matters.' : 'Технології - для перетворення вимог на рішення.',
   bodyIntro: lang === 'en'
-    ? 'Working with LUCAS is especially valuable where financial expertise and technology must work together:'
-    : 'Робота з LUCAS особливо корисна там, де фінансова експертиза і технології мають працювати разом:',
+    ? 'We work best where accounting judgement, tax requirements and system logic must align.'
+    : 'Ми працюємо з задачами, де фінансова логіка, регуляторні вимоги та IT-рішення мають бути узгоджені між собою.',
   bullet1: lang === 'en'
     ? 'finance work requires deeper understanding of data, systems, processes and technology risks;'
     : 'робота з фінансами потребує глибшого розуміння даних, систем, процесів і технологічних ризиків;',
   bullet2: lang === 'en'
     ? 'technology projects need developers who understand accounting, finance, tax and control.'
     : 'технологічний проєкт потребує розробників, які розуміють облік, фінанси, податки та контроль.',
-  card1label: lang === 'en' ? 'Audit with technology perspective' : 'Аудит з оглядом на технології',
+  card1label: lang === 'en' ? 'Audit with technology perspective' : 'Аудит із розумінням систем',
   card1h3: lang === 'en' ? 'An auditor who sees the system behind the numbers' : 'Аудитор, що бачить систему за цифрами',
   card1p1: lang === 'en'
-    ? 'Modern financial statements are not formed in the last spreadsheet, but inside accounting systems, integrations, control procedures and data flows. We have the qualification to see how information originates, transforms, and arrives in the financial statements.'
+    ? 'Financial statements are not prepared in the final spreadsheet. They are produced by accounting systems, integrations, controls and data flows.'
     : 'Сучасна звітність формується не в останній таблиці, а всередині облікових систем, інтеграцій, контрольних процедур і потоків даних. Ми маємо кваліфікацію, щоб бачити, як інформація виникає, трансформується і потрапляє до фінансової звітності.',
   card1p2: lang === 'en'
-    ? 'This helps understand risks more deeply, work more precisely with data, and see how technology, automation and process quality can affect financial results.'
+    ? 'Our team is trained to understand how information originates, changes and flows into the financial statements.'
     : 'Це допомагає глибше розуміти ризики, точніше працювати з даними та бачити, як технології, автоматизація й якість процесів можуть впливати на фінансовий результат.',
-  card2label: lang === 'en' ? 'Development with audit logic' : 'Розробка з аудиторською логікою',
+  card2label: lang === 'en' ? 'Development aligned with accounting' : 'Розробка з аудиторською логікою',
   card2h3: lang === 'en' ? 'Solutions built on an audit approach' : 'Рішення на основі аудиторського підходу',
   card2p: lang === 'en'
     ? 'We build solutions for accounting, compliance and data work based on verifiability, controllability and transparency.'
     : 'Ми будуємо рішення для обліку, комплаєнсу та роботи з даними на основі перевірюваності, контрольованості та прозорості.',
   card3label: lang === 'en' ? 'Single financial context' : 'Єдиний фінансовий контекст',
-  card3h3: lang === 'en' ? 'One logic for business, accounting and IT' : 'Єдина логіка для бізнесу, обліку та IT',
+  card3h3: lang === 'en' ? 'A shared language for finance and technology teams' : 'Бізнес, облік та IT — в єдиній системі вимог',
   card3p: lang === 'en'
     ? 'We align business processes, accounting methodology and IT solutions into a unified system of requirements — without losing meaning between finance and development.'
     : 'Ми узгоджуємо бізнес-процеси, облікову методологію та IT-рішення в єдину систему вимог — без втрати змісту між фінансами та розробкою.',
@@ -41,7 +41,7 @@ const t = {
   cred2p: lang === 'en'
     ? 'Experience in complex audit and consulting projects across industries sets our standard.'
     : 'Досвід складних аудиторських та консалтингових проєктів у різних індустріях формує наш стандарт.',
-  cred3h4: lang === 'en' ? 'Technology application' : 'Застосування технологій',
+  cred3h4: lang === 'en' ? 'Technology application' : 'Технологічна спроможність',
   cred3p: lang === 'en'
     ? 'The combination of our own accounting and development teams gives LUCAS technological capabilities unusual for the market.'
     : 'Комбінація власних команд з обліку та розробки дає LUCAS технологічні спроможності, нетипові для ринку.',
@@ -61,17 +61,19 @@ const t = {
 
     <!-- Theatrical tagline — section's visual climax -->
     <h2 class="audit-tagline reveal" data-d="1">
-      <span class="audit-tagline-a">{lang === 'en' ? t.taglineA : <Fragment>Аудит як ядро<span class="op">.</span></Fragment>}</span>
+      <span class="audit-tagline-a">{t.taglineA}<span class="op">.</span></span>
       <span class="audit-tagline-b">{t.taglineB}</span>
     </h2>
 
     <!-- Body text with styled bullets -->
     <div class="audit-body reveal" data-d="2">
       <p>{t.bodyIntro}</p>
-      <ul class="audit-bullets">
-        <li><span>{t.bullet1}</span></li>
-        <li><span>{t.bullet2}</span></li>
-      </ul>
+      {lang === 'en' && (
+        <ul class="audit-bullets">
+          <li><span>{t.bullet1}</span></li>
+          <li><span>{t.bullet2}</span></li>
+        </ul>
+      )}
     </div>
 
     <!-- Bento cards — asymmetric, 01 featured tall left -->

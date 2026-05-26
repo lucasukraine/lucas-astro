@@ -9,12 +9,12 @@ const base = import.meta.env.BASE_URL;
 const p = lang === 'en' ? '/en' : '';
 
 const t = {
-  eyebrow: lang === 'en' ? 'Services & products'   : 'Послуги та продукти',
-  title1:  lang === 'en' ? 'Different directions.'  : 'Різні напрями.',
-  title2:  lang === 'en' ? 'One approach.'           : 'Єдиний підхід.',
+  eyebrow: lang === 'en' ? 'Services & solutions'     : 'Послуги та продукти',
+  title1:  lang === 'en' ? 'Multiple capabilities'    : 'Різні компетенції',
+  title2:  lang === 'en' ? 'One integrated approach'  : 'Єдиний підхід',
   lead:    lang === 'en'
     ? "We don't limit ourselves to individual services — we build solutions around the client's tasks in accounting, taxation and digital finance transformation."
-    : 'Ми не обмежуємось окремими послугами — ми будуємо рішення навколо задач клієнта в обліку, оподаткуванні та цифровій трансформації фінансів.',
+    : 'Ми не обмежуємось переліком типових послуг. Ми збираємо потрібну комбінацію експертизи під конкретну задачу клієнта.',
   navLabel: lang === 'en' ? 'Jump to service' : 'Перейти до послуги',
 
   nav: [
@@ -28,23 +28,23 @@ const t = {
     num: '// 01',
     name: lang === 'en' ? 'Audit & Reporting' : 'Аудит та звітність',
     desc: lang === 'en'
-      ? 'Audit services and reporting preparation services — as required by law or at the request of owners, banks or investors. Services are provided separately and are not combined for the same client.'
+      ? 'Financial statement audits, IFRS reporting and accounting advisory services for companies, owners, banks and investors. Audit and non-audit services are provided separately, in line with independence requirements.'
       : 'Аудиторські послуги та послуги з підготовки звітності — згідно законодавчих вимог або за запитом власників, банків або інвесторів. Послуги надаються окремо та не поєднуються для одного клієнта.',
     teamLabel: lang === 'en' ? 'Team' : 'Команда',
     teamText: lang === 'en'
-      ? 'The audit practice is led by partners with Big 4 experience: audit leader, quality control leader, and methodology leader. The team combines an international approach, methodological discipline and cross-industry expertise.'
-      : 'Аудиторську практику очолюють лідери з досвідом у Big 4: керівник аудиту, керівник контролю якості та керівник методології. Команда поєднує міжнародний підхід, методологічну дисципліну та досвід в більшості галузей.',
+      ? 'The practice is led by partners and senior professionals with Big 4 backgrounds, including audit, quality management and methodology leadership.'
+      : 'За аудит, контроль якості і методологію в LUCAS відповідають фахівці з багаторічним досвідом Big 4. Команда поєднує міжнародний досвід, сильну методологічну базу та розуміння галузевої специфіки більшості клієнтів.',
     link: lang === 'en' ? 'Learn more' : 'Дізнатися більше',
     div1: lang === 'en' ? 'Audit' : 'Аудит',
     fc: [
-      { label: lang === 'en' ? 'Large · Medium · PIE'     : 'Великі · Середні · ПСІ',
+      { label: lang === 'en' ? 'Large companies · Mid-market · Public-interest' : 'Великі · Середні · ПСІ',
         title: lang === 'en' ? 'Mandatory financial statement audit' : "Обов'язковий аудит фінансової звітності",
         body:  lang === 'en' ? "Mandatory financial statement audit for PIEs, large and medium-sized enterprises — with enhanced requirements for auditor independence, engagement quality, procedure documentation and auditor's report format." : "Обов'язковий аудит фінансової звітності для ПСІ, великих і середніх підприємств — із розширеними вимогами до незалежності аудитора, якості завдання, документування процедур і форми аудиторського звіту." },
       { label: 'Group Audit · Consolidation',
         title: lang === 'en' ? 'Group and consolidated financial statement audit' : 'Аудит групи та консолідованої звітності',
         body:  lang === 'en' ? 'Audit of consolidated financial statements of holdings — with review of eliminations, intergroup transactions, and preparation of group audit instructions for component auditors.' : 'Аудит консолідованої фінансової звітності холдингів — з перевіркою елімінацій, міжгрупових операцій і підготовкою group audit instructions для компонентних аудиторів.' },
       { label: 'ISRE 2400 / ISRS 4400',
-        title: lang === 'en' ? 'Review, agreed-upon procedures and auditor letters/reports for banks, investors or partners.' : 'Огляд фінансової звітності, узгоджені процедури та листи/звіти аудитора для банків, інвесторів або партнерів.',
+        title: lang === 'en' ? 'Limited assurance, agreed-upon procedures and comfort-type reporting for banks, investors and partners.' : 'Огляд фінансової звітності, узгоджені процедури та листи/звіти аудитора для банків, інвесторів або партнерів.',
         body:  lang === 'en' ? 'Limited assurance engagements (review), agreed-upon procedures and confirmatory letters for banks, investors or partners — where a full audit is not required.' : 'Завдання з обмеженою впевненістю (review), погоджені процедури та підтверджувальні листи для банків, інвесторів або партнерів — там, де повний аудит не потрібен.' },
     ],
     div2: lang === 'en' ? 'Reporting' : 'Звітність',
@@ -65,8 +65,8 @@ const t = {
     num: '// 02',
     name: 'SAF-T Connector',
     desc: lang === 'en'
-      ? 'Proprietary platform for SAF-T UA XML file preparation — ERP-independent, designed for large transaction data volumes, with turnkey implementation by LUCAS.'
-      : 'Власна платформа для підготовки SAF-T UA XML-файлів — незалежна від ERP-систем, розрахована на великі обсяги транзакційних даних, з впровадженням під ключ силами LUCAS.',
+      ? 'A proprietary, ERP-independent platform for extracting, mapping, validating and generating SAF-T UA XML files at scale.'
+      : 'Власна платформа для автоматизації звітності SAF-T UA — незалежна від ERP-систем, розрахована на великі обсяги транзакційних даних, з впровадженням під ключ силами LUCAS.',
     teamLabel: lang === 'en' ? 'Team' : 'Команда',
     teamText: lang === 'en'
       ? 'The financial side of SAF-T projects is led by the audit practice leader (ex-EY), and development by an architect of complex technology solutions with many years of experience designing and delivering large-scale systems in Ukraine and the US.'
@@ -79,10 +79,10 @@ const t = {
         body:  lang === 'en' ? 'Unlike solutions tied to one ERP, SAF-T Connector connects to SAP, 1C/BAS, Odoo, Microsoft Dynamics, and any custom systems, and can work with multiple sources simultaneously.' : "На відміну від рішень, прив'язаних до однієї ERP, SAF-T Connector підключається до SAP, 1C/BAS, Odoo, Microsoft Dynamics, та будь-яких кастомних систем, і може працювати з кількома джерелами одночасно." },
       { label: lang === 'en' ? 'Performance · Python' : 'Продуктивність · Python',
         title: lang === 'en' ? 'Fast processing of large data' : 'Швидко обробляє великі дані',
-        body:  lang === 'en' ? 'The algorithm is written in Python and processes large transaction arrays significantly faster than most solutions built into accounting systems. A key advantage for companies with big data.' : 'Алгоритм написаний на Python і обробляє великі масиви транзакцій значно швидше за більшість рішень, вбудованих в облікові системи. Для компаній з big data — принципова перевага.' },
+        body:  lang === 'en' ? 'The algorithm is written in Python and processes high-volume transaction data significantly faster than most solutions built into accounting systems. A key advantage for companies with big data.' : 'Алгоритм написаний на Python і обробляє великі обсяги транзакційних даних значно швидше за більшість рішень, вбудованих в облікові системи. Для компаній з big data — принципова перевага.' },
       { label: lang === 'en' ? 'Validation' : 'Валідація',
         title: lang === 'en' ? 'Series of data checks' : 'Серія перевірок даних',
-        body:  lang === 'en' ? 'Automatic XSD validation and additional check layers. Each error described in plain language. Result — SAF-T UA XML file generated per current STS structure and technical requirements, with preliminary data validation.' : 'Автоматична валідація XSD та додаткові шари перевірок. Опис кожної помилки зрозумілою мовою. Результат — XML-файл SAF-T UA, сформований відповідно до чинної структури та технічних вимог ДПС, із попередньою валідацією даних.' },
+        body:  lang === 'en' ? 'Automatic XSD validation and additional check layers. Each error is explained in plain language. Result — SAF-T UA XML file generated per current STS structure and technical requirements, with preliminary data validation.' : 'Автоматична валідація XSD та додаткові шари перевірок. Опис кожної помилки зрозумілою мовою. Результат — XML-файл SAF-T UA, сформований відповідно до чинної структури та технічних вимог ДПС, із попередньою валідацією даних.' },
       { label: lang === 'en' ? 'On-premise · Security' : 'On-premise · Безпека',
         title: lang === 'en' ? 'Data stays within client infrastructure' : 'Дані залишаються в інфраструктурі клієнта',
         body:  lang === 'en' ? 'System installed on client server. No cloud uploads or third-party data transfers. The solution does not require internet access to operate.' : "Система встановлюється на сервері клієнта. Ніяких хмарних завантажень і передачі даних третім сторонам. Рішення не потребує доступу в інтернет для роботи." },
@@ -90,14 +90,14 @@ const t = {
     div2: lang === 'en' ? 'Implementation' : 'Впровадження',
     fc2: [
       { label: lang === 'en' ? 'Turnkey · 3–4 months' : 'Під ключ · 3–4 місяці',
-        title: lang === 'en' ? "Implementation doesn't become the client's project" : 'Впровадження не стає проєктом клієнта',
+        title: lang === 'en' ? 'Fully-managed implementation, not another internal project.' : 'Впровадження не стає проєктом клієнта',
         body:  lang === 'en' ? "Client provides data access — then LUCAS works autonomously, discussing specific questions with the client. Typical implementation timeline — 3–4 months, depending on data sources, data quality, and client responsiveness." : "Клієнт надає доступ до даних — далі LUCAS працює автономно, обговорюючи з клієнтом точкові питання. Типовий строк впровадження — 3–4 місяці, залежно від кількості джерел даних, якості облікової інформації та швидкості реагування клієнта на запити." },
-      { label: lang === 'en' ? 'Single accountability zone' : 'Єдина зона відповідальності',
+      { label: lang === 'en' ? 'Single point of accountability' : 'Єдина зона відповідальності',
         title: lang === 'en' ? 'One partner responsible for the entire project' : 'Один партнер, який відповідає за весь проєкт',
         body:  lang === 'en' ? 'When one vendor supplies the product and another implements it, responsibility often gets diluted. LUCAS provides a single accountability point for the solution, implementation and practical result.' : 'Коли продукт постачає один підрядник, а впроваджує інший, відповідальність часто розмивається. LUCAS забезпечує єдину точку відповідальності за рішення, впровадження та практичний результат для клієнта.' },
       { label: lang === 'en' ? 'Cost · TCO' : 'Вартість · TCO',
         title: lang === 'en' ? 'Total cost of ownership — among the lowest on the market' : 'Повна вартість володіння — одна з найнижчих на ринку',
-        body:  lang === 'en' ? 'LUCAS provides the full implementation cycle with competitive total cost of ownership. Our well-practiced implementation process means projects move quickly, structuredly and at lower cost for clients.' : 'LUCAS забезпечує повний цикл впровадження з конкурентною повною вартістю володіння. Ми маємо добре відпрацьований процес впровадження, тому проєкти проходять швидко, структуровано та з меншими витратами для клієнта.' },
+        body:  lang === 'en' ? 'LUCAS provides the full implementation cycle with competitive total cost of ownership. Our well-practiced implementation process means work moves faster, with a clear structure and lower total cost.' : 'LUCAS забезпечує повний цикл впровадження з конкурентною повною вартістю володіння. Ми маємо добре відпрацьований процес впровадження, тому проєкти проходять швидко, структуровано та з меншими витратами для клієнта.' },
     ],
   },
 
@@ -128,10 +128,10 @@ const t = {
     fc2: [
       { label: lang === 'en' ? 'Finance-first · Methodology' : 'Finance-first · Методологія',
         title: lang === 'en' ? 'Architecture built around accounting' : 'Архітектура, що будується навколо обліку',
-        body:  lang === 'en' ? "We don't need to be explained what depreciation is, double-entry, or the first-event principle. LUCAS builds system architecture around accounting logic — making Odoo easier to use and reducing error risks after go-live." : 'Нам не треба пояснювати що таке амортизація, подвійний запис або перша подія. LUCAS будує архітектуру системи навколо облікової логіки — це робить Odoo простішим у використанні і зменшує ризики помилок після запуску.' },
+        body:  lang === 'en' ? 'Our teams understands local accounting and reporting requirements — so system design starts from the right accounting assumptions.' : 'Нам не треба пояснювати що таке амортизація, подвійний запис або перша подія. LUCAS будує архітектуру системи навколо облікової логіки — це робить Odoo простішим у використанні і зменшує ризики помилок після запуску.' },
       { label: lang === 'en' ? 'Auditor + developer' : 'Аудитор + розробник',
         title: lang === 'en' ? 'We eliminate the gap between accountants and developers' : 'Усуваємо розрив між бухгалтерами і програмістами',
-        body:  lang === 'en' ? 'Misunderstandings between finance teams and developers are the main source of delays and overruns in any ERP project. Our own tandems understand each other perfectly. This saves 30–40% of implementation cost.' : 'Непорозуміння між фінансистами і розробниками — головне джерело затримок і перевитрат у будь-якому ERP-проєкті. Наші власні тандеми розуміють один одного з півслова. Це зберігає 30–40% вартості впровадження.' },
+        body:  lang === 'en' ? 'Misunderstandings between finance teams and developers are the main source of delays and overruns in any ERP project. Our accountants and developers work as one implementation team. This saves 30–40% of implementation cost.' : 'Непорозуміння між фінансистами і розробниками — головне джерело затримок і перевитрат у будь-якому ERP-проєкті. Наші власні тандеми аудитор+розробник розуміють один одного з півслова. Це зберігає до 30–40% вартості впровадження.' },
       { label: lang === 'en' ? '2–6 months · 6 stages' : '2–6 місяців · 6 етапів',
         title: lang === 'en' ? 'Structured transition without accounting gap risk' : 'Структурований перехід без ризику розриву в обліку',
         body:  lang === 'en' ? 'Analysis → Architecture → Customisation → Data migration → Testing → Go-live. Parallel accounting until correctness confirmed. Team training and support transition included.' : 'Аналіз → Архітектура → Кастомізація → Міграція даних → Тестування → Запуск. Паралельний облік до підтвердження коректності. Навчання команди і перехід на підтримку включені.' },
@@ -142,11 +142,11 @@ const t = {
     num: '// 04',
     name: lang === 'en' ? 'Transfer Pricing' : 'Трансфертне ціноутворення',
     desc: lang === 'en'
-      ? "Documentation, analysis and position defense on controlled transactions under Article 39 of the Tax Code of Ukraine and OECD guidelines — for companies with intragroup transactions and related-party transactions."
-      : "Документація, аналіз і захист позиції по контрольованих операціях відповідно до ст. 39 ПКУ та настанов ОЕСР — для компаній з внутрішньогруповими операціями та трансакціями з пов'язаними особами.",
+      ? 'Transfer pricing documentation, benchmarking and audit defence support for controlled transactions under Ukrainian tax rules and OECD guidance.'
+      : "Документація, аналіз і захист позиції щодо контрольованих операцій відповідно до ст. 39 ПКУ та настанов ОЕСР — для компаній з внутрішньогруповими операціями та трансакціями з пов'язаними особами.",
     teamLabel: lang === 'en' ? 'Team' : 'Команда',
     teamText: lang === 'en'
-      ? 'The practice is led by an expert recruited from the tax authorities, who spent many years responsible for reviewing TP documentation and reporting, with detailed understanding of state control approaches and criteria.'
+      ? 'The practice is led by a former tax authority expert with many years of experience assessing transfer pricing documentation and reports.'
       : 'Практику очолює експерт, запрошений з податкових органів, який багато років відповідав за перевірку документації та звітності з ТЦУ, і володіє детальним розумінням підходів і критеріїв державного контролю.',
     link: lang === 'en' ? 'Learn more' : 'Дізнатися більше',
     div1: lang === 'en' ? 'Documentation & reporting' : 'Документація та звітність',
@@ -159,19 +159,19 @@ const t = {
         body:  lang === 'en' ? 'For MNE group participants meeting Tax Code criteria: documentation under OECD three-tier structure, including MNE group participation notification, master file and local file.' : 'Для учасників міжнародних груп компаній (МГК), що відповідають критеріям ПКУ: документація відповідно до тристоронньої структури ОЕСР, включаючи повідомлення про участь у МГК, майстер-файл і локальний файл.' },
       { label: lang === 'en' ? 'Reporting · STS' : 'Звітність · ДПС',
         title: lang === 'en' ? 'Controlled transactions report' : 'Звіт про контрольовані операції',
-        body:  lang === 'en' ? 'Preparation and filing of the annual controlled transactions report with the STS in accordance with forms and deadlines under Article 39.4 of the Tax Code. Control of completeness and accuracy of all controlled transaction disclosures.' : 'Підготовка та подача річного звіту КО до ДПС відповідно до форм і строків, встановлених ст. 39.4 ПКУ. Контроль повноти і коректності відображення всіх контрольованих операцій.' },
+        body:  lang === 'en' ? 'Preparation and filing of the annual controlled transactions report with the STS in accordance with forms and deadlines under Article 39.4 of the Tax Code. Control of completeness and accuracy of all controlled transaction disclosures.' : 'Підготовка та подання річного звіту про контрольовані операції до ДПС відповідно до форм і строків, встановлених ст. 39.4 ПКУ. Контроль повноти і коректності відображення всіх контрольованих операцій.' },
     ],
     div2: lang === 'en' ? 'Analysis & position defense' : 'Аналіз та захист позиції',
     fc2: [
       { label: lang === 'en' ? "Arm's length principle" : 'Принцип витягнутої руки',
         title: lang === 'en' ? 'Benchmark analysis and market range' : 'Порівняльний аналіз і ринковий діапазон',
         body:  lang === 'en' ? "Search for comparable companies in commercial databases, statistical analysis of market range (P25–P75) and documented justification of controlled transaction terms' compliance with the arm's length principle per OECD." : "Пошук зіставних компаній у комерційних базах даних, статистичний аналіз ринкового діапазону (P25–P75) і документальне обґрунтування відповідності цін принципу «витягнутої руки» відповідно до ОЕСР." },
-      { label: lang === 'en' ? 'TP policies · APA' : 'TP політики · APA',
+      { label: lang === 'en' ? 'TP policies · APA' : 'Політики · APA',
         title: lang === 'en' ? 'Intragroup policies and advance pricing' : 'Внутрішньогрупові політики та попереднє ціноутворення',
-        body:  lang === 'en' ? 'TP policy development for the group: pricing methodology, contractual framework, function and risk allocation. Support for APA negotiations with the STS.' : 'Розробка TP-policies для групи: методологія ціноутворення, договірна база, розподіл функцій і ризиків. Супровід переговорів з ДПС щодо попереднього узгодження цін (APA).' },
+        body:  lang === 'en' ? 'TP policy development for the group: pricing methodology, contractual framework, function and risk allocation. Support for APA negotiations with the STS.' : 'Розробка політик трансфертного ціноутворення для групи: методологія ціноутворення, договірна база, розподіл функцій і ризиків. Супровід переговорів з ДПС щодо попереднього узгодження цін (APA).' },
       { label: lang === 'en' ? 'STS audits' : 'Перевірки ДПС',
         title: lang === 'en' ? 'Position defense during tax audits' : 'Захист позиції під час податкових перевірок',
-        body:  lang === 'en' ? 'TP risk assessment before audit commencement, preparation of substantiated responses to STS requests, audit support and objections to audit report in case of additional assessments.' : 'Оцінка TP-ризиків до початку перевірки, підготовка аргументованих відповідей на запити ДПС, супровід під час перевірки та підготовка заперечень на акт у разі донарахувань.' },
+        body:  lang === 'en' ? 'TP risk assessment before audit commencement, preparation of substantiated responses to STS requests, audit support and objections to audit report in case of additional assessments.' : 'Оцінка ризиків трансфертного ціноутворення до початку перевірки, підготовка аргументованих відповідей на запити ДПС, супровід під час перевірки та підготовка заперечень на акт у разі донарахувань.' },
     ],
   },
 
@@ -186,12 +186,12 @@ const t = {
     fc: [
       { label: lang === 'en' ? 'Strategy' : 'Стратегія',
         title: lang === 'en' ? 'Strategy and business plan development' : 'Розробка стратегій та бізнес-планів',
-        body:  lang === 'en' ? 'Market, competitive environment and growth opportunity analysis. Strategic documents for financing attraction, partnerships or internal business management.' : 'Аналіз ринку, конкурентного середовища і можливостей зростання. Розробка стратегічних документів для залучення фінансування, партнерства або внутрішнього управління бізнесом.' },
+        body:  lang === 'en' ? 'Market, competitive environment and growth opportunity analysis. Strategic documents for raising finance, partnerships or internal business management.' : 'Аналіз ринку, конкурентного середовища і можливостей зростання. Розробка стратегічних документів для залучення фінансування, партнерства або внутрішнього управління бізнесом.' },
       { label: lang === 'en' ? 'Legal services' : 'Юридичні послуги',
         title: lang === 'en' ? 'CFC, M&A, structuring, restructuring' : 'КІК, M&A, структурування, реструктуризація',
         body:  lang === 'en' ? 'CFC regulation, M&A legal support, foreign investment structuring, international holding structuring and business restructuring.' : 'Регулювання контрольованих іноземних компаній, юридичний супровід злиттів та поглинань, структурування іноземних інвестицій, міжнародне холдингове структурування та реструктуризація бізнесу.' },
       { label: 'Due Diligence',
-        title: lang === 'en' ? 'Financial and legal business review' : 'Фінансова та юридична перевірка бізнесу',
+        title: lang === 'en' ? 'Integrated financial and legal due diligence' : 'Комплексний фінансовий і юридичний due diligence',
         body:  lang === 'en' ? 'Comprehensive review for transactions and investment attraction — financial component (asset quality, liabilities, cash flows, earnings quality) and legal (ownership, licences, contracts, risks).' : "Комплексна перевірка для угод і залучення інвестицій — фінансова складова (якість активів, зобов'язань, грошових потоків, якість прибутку) і юридична (права власності, ліцензії, контракти, ризики)." },
       { label: lang === 'en' ? 'Valuation' : 'Оцінка',
         title: lang === 'en' ? 'Business and asset valuation' : 'Оцінка бізнесу та активів',
@@ -211,7 +211,7 @@ const t = {
     <div class="solutions-intro-header">
       <div class="eyebrow solutions-eyebrow">{t.eyebrow}</div>
     </div>
-    <h2 class="solutions-title">{t.title1}<span class="op">.</span><br>{t.title2}<span class="op">.</span></h2>
+    <h2 class="solutions-title">{t.title1}<span class="op">.</span><br />{t.title2}<span class="op">.</span></h2>
     <p class="solutions-intro-lead">{t.lead}</p>
 
     <nav class="solutions-index" aria-label={t.navLabel}>

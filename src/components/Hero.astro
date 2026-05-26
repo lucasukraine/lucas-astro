@@ -4,14 +4,15 @@ const base = import.meta.env.BASE_URL;
 const p = lang === 'en' ? '/en' : '';
 
 const t = {
-  line1:    lang === 'en' ? 'A new kind of'          : 'Аудиторська компанія',
-  line2word: lang === 'en' ? 'audit'                  : 'нового',
-  line2end:  lang === 'en' ? 'company.'               : 'типу.',
+  eyebrow:   lang === 'en' ? 'Assurance and technology firm'  : 'Фінанси · Облік · Технології',
+  line1:     lang === 'en' ? 'Accounting, tax and data'       : 'Аудит, податки,',
+  line2word: lang === 'en' ? 'solved'                         : 'технологічні',
+  line2end:  lang === 'en' ? 'together.'                      : 'рішення.',
   lead:      lang === 'en'
-    ? 'We combine audit expertise, financial knowledge and technology to deliver projects in finance, accounting and tax.'
+    ? 'We help companies solve complex challenges with one team combining audit judgement, regulatory expertise and technology execution.'
     : 'Поєднуємо аудит, фінансову експертизу та розробку для реалізації проєктів в сфері фінансів, обліку та податків.',
   cta1: lang === 'en' ? 'Discuss a project'    : 'Обговорити проєкт',
-  cta2: lang === 'en' ? 'Services & products'  : 'Послуги та продукти',
+  cta2: lang === 'en' ? 'Services & solutions' : 'Послуги та продукти',
 };
 ---
 
@@ -20,7 +21,7 @@ const t = {
   <div aria-hidden="true" class="hero-grid"></div>
 
   <div class="hero-content">
-    <div class="eyebrow hero-eyebrow ha d1">Audit-led finance &amp; technology</div>
+    <div class="eyebrow hero-eyebrow ha d1">{t.eyebrow}</div>
     <h1 class="ha d2">
       <span class="line">{t.line1}</span>
       <span class="line"><span class="underline">{t.line2word}</span> {t.line2end}</span>

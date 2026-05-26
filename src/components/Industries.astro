@@ -3,7 +3,7 @@ const { lang = 'uk' } = Astro.props;
 
 const t = {
   eyebrow:   lang === 'en' ? 'Industry coverage'      : 'Галузеве покриття',
-  taglineA:  lang === 'en' ? 'Clients and projects.'  : 'Клієнти та проєкти.',
+  taglineA:  lang === 'en' ? 'Clients and projects'   : 'Клієнти та проєкти',
   taglineB:  lang === 'en' ? 'Global leaders, national brands, complex consolidations.' : 'Світові лідери, національні бренди, складні консолідації.',
   g1label:   lang === 'en' ? 'Global leaders'   : 'Світові лідери',
   g1fact1:   lang === 'en' ? 'Ukrainian business of one of the five most valuable brands in the world' : 'Український бізнес одного з п\'яти найдорожчих брендів світу',
@@ -11,10 +11,10 @@ const t = {
   g1text:    lang === 'en' ? 'We work with Ukrainian subsidiaries of global groups where results must meet international standards, internal policies and parent company expectations.' : 'Працюємо з українськими підрозділами глобальних груп, де результат має відповідати міжнародним стандартам, внутрішнім політикам і очікуванням материнських компаній.',
   g2label:   lang === 'en' ? 'National leaders'  : 'Національні лідери',
   g2text:    lang === 'en' ? 'Our clients are companies that set the scale, standards and development pace of Ukrainian business, shaping the national market in their industries.' : 'Наші клієнти — компанії, які задають масштаб, стандарти та динаміку розвитку українського бізнесу, формуючи національний ринок у своїх галузях.',
-  g2fact1:   lang === 'en' ? 'Both of Ukraine\'s largest media groups'          : 'Обидві найбільші медіагрупи України',
+  g2fact1:   lang === 'en' ? 'Both of Ukraine\'s two largest media groups'      : 'Обидві найбільші медіагрупи України',
   g2fact2:   lang === 'en' ? 'Three of Ukraine\'s top ten insurance companies'  : 'Три з десятки найбільших страхових компаній України',
   g3label:   lang === 'en' ? 'Industry coverage'  : 'Охоплення індустрій',
-  g3hard:    lang === 'en' ? 'Manufacturing · agro · mining · construction · infrastructure' : 'Виробництво · агро · корисні копалини · будівництво · інфраструктура',
+  g3hard:    lang === 'en' ? 'Manufacturing · agro · mining · construction · infrastructure' : 'Виробництво · агро · видобувна галузь · будівництво · інфраструктура',
   g3soft:    lang === 'en' ? 'Insurance · media · banking & finance · retail & distribution · IT' : 'Страхування · медіабізнес · банкінг та фінанси · рітейл та дистрибуція · IT',
   g3text:    lang === 'en' ? 'We have clients across most industries — from agro, manufacturing and mining to finance, media, IT and retail.' : 'Маємо клієнтів у більшості галузей — від агро, виробництва та видобутку до фінансів, медіа, IT та рітейлу.',
   g4label:   lang === 'en' ? 'Complex projects'   : 'Складні проєкти',
@@ -30,7 +30,7 @@ const t = {
       <div class="eyebrow">{t.eyebrow}</div>
     </div>
     <h2 class="ind-tagline reveal" data-d="1">
-      <span class="ind-tagline-a">{lang === 'en' ? t.taglineA : <Fragment>Клієнти та проєкти<span class="op">.</span></Fragment>}</span>
+      <span class="ind-tagline-a">{t.taglineA}<span class="op">.</span></span>
       <span class="ind-tagline-b">{t.taglineB}</span>
     </h2>
     <div class="bento reveal" data-d="2">
