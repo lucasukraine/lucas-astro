@@ -62,9 +62,9 @@ export const blogPosts = [
     href: `${base}/blog/discovery-1c-odoo/`,
   },
   {
-    category: "Податковий облік",
+    category: "Е-аудит та SAF-T",
     title: "SAF-T в Україні: повний гайд для бухгалтера",
-    cardTitle: "SAF-T в Україні",
+    cardTitle: "SAF-T в Україні: структура, вимоги і підготовка",
     readingTime: "15 хв читання",
     excerpt: "Standard Audit File for Tax (SAF-T) — формат стандартизованої передачі облікових даних у Державну податкову службу. У 2026 році вимога подавати SAF-T поширюється на дедалі ширше коло платників.",
     date: "8 лютого 2026",
@@ -218,7 +218,7 @@ export const blogPosts = [
   {
     category: "Е-аудит та SAF-T",
     title: "Як підготувати компанію до SAF-T UA: readiness assessment і план впровадження",
-    cardTitle: "Readiness assessment для SAF-T UA",
+    cardTitle: "Оцінка готовності компанії до SAF-T UA",
     readingTime: "13 хв читання",
     excerpt: "Readiness assessment виявляє реальні проблеми у ваших даних до першого запиту ДПС: неповні довідники, відсутні коди класифікаторів, дані в кількох системах. Покроковий план підготовки за 3–4 місяці.",
     date: "28 травня 2026",
