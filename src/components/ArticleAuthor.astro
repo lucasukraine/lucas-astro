@@ -1,10 +1,31 @@
-<section class="art-author-card">
-  <div class="art-author-inner">
-    <div class="art-author-avatar">LA</div>
-    <div class="art-author-body">
-      <div class="art-author-name">LUCAS Audit Team</div>
-      <div class="art-author-role">Аудиторсько-методологічна команда</div>
-      <p class="art-author-bio">Стаття підготовлена і перевірена аудиторсько-методологічною командою LUCAS — аудиторської та технологічної компанії з понад 15-річним досвідом у фінансовому аудиті, МСФЗ-звітності та цифровій трансформації обліку.</p>
+---
+const { compact = false } = Astro.props;
+
+const author = {
+  initials: 'LA',
+  name: 'LUCAS Audit Team',
+  role: 'Аудиторсько-методологічна команда',
+  bio: 'Стаття підготовлена і перевірена аудиторсько-методологічною командою LUCAS — аудиторської та технологічної компанії з понад 15-річним досвідом у фінансовому аудиті, МСФЗ-звітності та цифровій трансформації обліку.',
+};
+---
+
+{compact ? (
+  <div class="art-meta-author">
+    <div class="art-meta-author-avatar">{author.initials}</div>
+    <div class="art-meta-author-info">
+      <span class="art-meta-name">{author.name}</span>
+      <span class="art-meta-role">{author.role}</span>
     </div>
   </div>
-</section>
+) : (
+  <section class="art-author-card">
+    <div class="art-author-inner">
+      <div class="art-author-avatar">{author.initials}</div>
+      <div class="art-author-body">
+        <div class="art-author-name">{author.name}</div>
+        <div class="art-author-role">{author.role}</div>
+        <p class="art-author-bio">{author.bio}</p>
+      </div>
+    </div>
+  </section>
+)}
