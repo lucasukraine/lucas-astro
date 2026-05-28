@@ -54,6 +54,7 @@ if (lang === 'en') {
     <!-- Preload critical font subsets (cyrillic = UA content, latin = fallback) -->
     <link rel="preload" href={base + '/fonts/onest/onest-cyrillic.woff2'} as="font" type="font/woff2" crossorigin />
     <link rel="preload" href={base + '/fonts/manrope/manrope-cyrillic.woff2'} as="font" type="font/woff2" crossorigin />
+    <slot name="head" />
   </head>
   <body>
     <!-- Sticky gradient scrim під header над hero -->

@@ -13,6 +13,9 @@ const { title, description, lang = 'uk' } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description} lang={lang}>
+  <Fragment slot="head">
+    <slot name="head" />
+  </Fragment>
   <main>
     <slot />
   </main>
