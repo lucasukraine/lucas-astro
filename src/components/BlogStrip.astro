@@ -9,6 +9,8 @@ interface StripItem {
   category: string;
   title: string;
   href: string;
+  date?: string;
+  readingTime?: string;
 }
 
 interface Props {
@@ -41,7 +43,14 @@ const {
         <a class="bstrip-card" href={item.href}>
           <div class="bstrip-left">
             <span class="bstrip-cat">{item.category}</span>
-            <h3 class="bstrip-title">{item.title}</h3>
+            <div class="bstrip-content">
+              <h3 class="bstrip-title">{item.title}</h3>
+              {(item.date || item.readingTime) && (
+                <span class="bstrip-meta">
+                  {[item.date, item.readingTime].filter(Boolean).join(' · ')}
+                </span>
+              )}
+            </div>
           </div>
           <span class="bstrip-arrow">→</span>
         </a>

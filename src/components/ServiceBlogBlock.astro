@@ -39,7 +39,10 @@ const posts = getPostsByService(service, limit);
           <a class="bstrip-card" href={post.href}>
             <div class="bstrip-left">
               <span class="bstrip-cat">{post.category}</span>
-              <h3 class="bstrip-title">{post.cardTitle}</h3>
+              <div class="bstrip-content">
+                <h3 class="bstrip-title">{post.cardTitle}</h3>
+                <span class="bstrip-meta">{post.date} · {post.readingTime}</span>
+              </div>
             </div>
             <span class="bstrip-arrow">→</span>
           </a>

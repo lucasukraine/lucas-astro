@@ -1375,12 +1375,20 @@ a.footer-contact-val:hover { color: #fff; }
   width: 220px;
 }
 
+.bstrip-content { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+
 .bstrip-title {
   font-family: var(--display); font-weight: 400;
   font-size: clamp(15px, 1.3vw, 18px);
   letter-spacing: -0.012em; line-height: 1.3;
   color: var(--ink); margin: 0;
   transition: color .2s var(--ease);
+}
+
+.bstrip-meta {
+  font-family: var(--mono); font-size: 9px; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--ink-mute);
 }
 
 .bstrip-arrow {
