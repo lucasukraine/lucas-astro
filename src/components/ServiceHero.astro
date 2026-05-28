@@ -3,9 +3,10 @@ interface Props {
   eyebrow: string;
   title: string;
   lead: string;
+  breadcrumb?: string;
   accent?: 'orange' | 'cyan';
 }
-const { eyebrow, title, lead, accent = 'orange' } = Astro.props;
+const { eyebrow, title, lead, breadcrumb, accent = 'orange' } = Astro.props;
 const base = import.meta.env.BASE_URL;
 ---
 
@@ -17,7 +18,7 @@ const base = import.meta.env.BASE_URL;
       <span>/</span>
       <a href={base + '/#services'}>Послуги</a>
       <span>/</span>
-      <span class="sp-breadcrumb-current">{title}</span>
+      <span class="sp-breadcrumb-current">{breadcrumb ?? title}</span>
     </nav>
     <div class:list={['sp-eyebrow', { cyan: accent === 'cyan' }]}>{eyebrow}</div>
     <h1 class="sp-h1">{title}</h1>
