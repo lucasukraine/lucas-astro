@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import ArticleCTA from '../../../components/ArticleCTA.astro';
+import ArticleAuthor from '../../../components/ArticleAuthor.astro';
 import ArticleRelated from '../../../components/ArticleRelated.astro';
 const base = import.meta.env.BASE_URL;
 ---
@@ -415,16 +416,7 @@ const base = import.meta.env.BASE_URL;
         </div>
       </section>
 
-      <section class="art-author-card">
-        <div class="art-author-inner">
-          <div class="art-author-avatar">OK</div>
-          <div class="art-author-body">
-            <div class="art-author-name">LUCAS Audit Team</div>
-            <div class="art-author-role">Аудиторсько-методологічна команда</div>
-            <p class="art-author-bio">Стаття підготовлена і перевірена аудиторсько-методологічною командою LUCAS — аудиторської та технологічної компанії з понад 15-річним досвідом у фінансовому аудиті, МСФЗ-звітності та цифровій трансформації обліку.</p>
-          </div>
-        </div>
-      </section>
+    <ArticleAuthor />
 
     </article>
 
