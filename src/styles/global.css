@@ -1346,7 +1346,7 @@ a.footer-contact-val:hover { color: #fff; }
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-bottom: 8px;
+  margin-bottom: 32px;
 }
 
 .blog-strip-title {
