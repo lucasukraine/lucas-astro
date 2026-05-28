@@ -1,7 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BlogCard from '../../components/BlogCard.astro';
-import { blogPosts } from '../../data/blogPosts';
+import { getAllPosts } from '../../lib/blog';
+const posts = getAllPosts();
 ---
 
 <BaseLayout
@@ -22,7 +23,7 @@ import { blogPosts } from '../../data/blogPosts';
     <section class="blog-list">
       <div class="blog-list-inner">
         <div class="blog-grid">
-          {blogPosts.map(post => (
+          {posts.map(post => (
             <BlogCard
               category={post.category}
               readingTime={post.readingTime}

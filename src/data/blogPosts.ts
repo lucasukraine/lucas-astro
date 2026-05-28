@@ -1,6 +1,7 @@
 // src/data/blogPosts.ts
-// Статті з blog/index та blog-strip головної сторінки.
-// URL-и конвертовані з /lucas-website/blog/* → /blog/*
+// Єдине джерело даних про статті блогу.
+// isoDate — для сортування; date — для відображення.
+// service — масив кластерів для автоматичного виводу на сторінках послуг.
 
 const base = import.meta.env.BASE_URL;
 
@@ -12,6 +13,8 @@ export const blogPosts = [
     readingTime: "12 хв читання",
     excerpt: "Постанова КМУ №1335, санкційні списки РНБО, законопроєкт №13505 зі штрафами до 2% річного обороту — використання 1С/BAS/BAF в Україні стає не лише репутаційним, а й прямим фінансовим ризиком.",
     date: "15 січня 2026",
+    isoDate: "2026-01-15",
+    service: ["odoo"],
     href: `${base}/blog/zaborona-1c-2026/`,
   },
   {
@@ -21,6 +24,8 @@ export const blogPosts = [
     readingTime: "13 хв читання",
     excerpt: "Огляд та порівняння альтернатив 1С/BAS для українського бізнесу: Odoo, SAP, Microsoft Dynamics, локальні ERP та кастомні рішення. Як обрати систему для бухгалтерії, податків і управлінського обліку.",
     date: "28 травня 2026",
+    isoDate: "2026-05-28",
+    service: ["odoo"],
     href: `${base}/blog/alternatyvy-1c-2026/`,
   },
   {
@@ -30,6 +35,8 @@ export const blogPosts = [
     readingTime: "14 хв читання",
     excerpt: "Огляд Odoo ERP: модулі, бухгалтерія, ПДВ, інтеграції, переваги і обмеження. Що потрібно для коректної роботи з українською бухгалтерією і як Odoo може замінити 1С/BAS.",
     date: "28 травня 2026",
+    isoDate: "2026-05-28",
+    service: ["odoo"],
     href: `${base}/blog/odoo-erp-ukraina/`,
   },
   {
@@ -39,6 +46,8 @@ export const blogPosts = [
     readingTime: "15 хв читання",
     excerpt: "Як перейти з 1С/BAS на Odoo без втрати бухгалтерської логіки: типові проблеми, непорозуміння між IT і бухгалтерами, чеклист підготовки і роль аудиторів у проєкті міграції.",
     date: "28 травня 2026",
+    isoDate: "2026-05-28",
+    service: ["odoo"],
     href: `${base}/blog/mihratsiya-z-1c-na-odoo/`,
   },
   {
@@ -48,6 +57,8 @@ export const blogPosts = [
     readingTime: "12 хв читання",
     excerpt: "Навіщо потрібен Discovery перед міграцією з 1С/BAS на Odoo: що аналізується, що отримує клієнт, чому Discovery економить бюджет і як виглядає процес за 3–5 робочих днів.",
     date: "28 травня 2026",
+    isoDate: "2026-05-28",
+    service: ["odoo"],
     href: `${base}/blog/discovery-1c-odoo/`,
   },
   {
@@ -57,6 +68,8 @@ export const blogPosts = [
     readingTime: "15 хв читання",
     excerpt: "Standard Audit File for Tax (SAF-T) — формат стандартизованої передачі облікових даних у Державну податкову службу. У 2026 році вимога подавати SAF-T поширюється на дедалі ширше коло платників.",
     date: "8 лютого 2026",
+    isoDate: "2026-02-08",
+    service: ["saft"],
     href: `${base}/blog/saf-t-ukraina-povny-gayd/`,
   },
   {
@@ -66,6 +79,8 @@ export const blogPosts = [
     readingTime: "14 хв читання",
     excerpt: "Звіт про контрольовані операції — одна з найскладніших ділянок податкової звітності. Помилка у визначенні кола повʼязаних осіб або пропуск операції коштує мільйони у вигляді донарахувань.",
     date: "12 березня 2026",
+    isoDate: "2026-03-12",
+    service: ["transfer-pricing"],
     href: `${base}/blog/zvit-pro-kontrolovani-operatsii/`,
   },
   {
@@ -75,6 +90,8 @@ export const blogPosts = [
     readingTime: "13 хв читання",
     excerpt: "Перша звітність за МСФЗ — це окремий стандарт МСФЗ 1, який встановлює методологію всього процесу: від визначення дати переходу до облікової політики, обовʼязкових винятків і добровільних звільнень.",
     date: "5 квітня 2026",
+    isoDate: "2026-04-05",
+    service: ["audit", "ifrs"],
     href: `${base}/blog/ifrs-1-pershyy-perehid-msfz/`,
   },
   {
@@ -84,6 +101,8 @@ export const blogPosts = [
     readingTime: "13 хв читання",
     excerpt: "Як саме відбувається аудиторська перевірка: які МСА застосовуються, що перевіряє аудитор у запасах, дебіторці та виручці, і що означають різні типи аудиторського висновку.",
     date: "20 лютого 2026",
+    isoDate: "2026-02-20",
+    service: ["audit"],
     href: `${base}/blog/audyt-finansovoi-zvitnosti-ukraina/`,
   },
   {
@@ -93,6 +112,8 @@ export const blogPosts = [
     readingTime: "15 хв читання",
     excerpt: "Хто зобов'язаний складати звітність за МСФЗ, як відбувається перший перехід за МСФЗ 1, строки подання у форматі XBRL та таблиця ключових відмінностей П(С)БО від МСФЗ.",
     date: "17 березня 2026",
+    isoDate: "2026-03-17",
+    service: ["audit", "ifrs"],
     href: `${base}/blog/finansova-zvitnist-msfz-ukraina/`,
   },
   {
@@ -102,6 +123,8 @@ export const blogPosts = [
     readingTime: "14 хв читання",
     excerpt: "Критерії обов'язкового аудиту для великих і середніх підприємств, таблиця категорій з пороговими значеннями в євро, строки публікації висновку та відповідальність за порушення.",
     date: "14 квітня 2026",
+    isoDate: "2026-04-14",
+    service: ["audit"],
     href: `${base}/blog/obovyazkovyi-audyt-ukraina-2025/`,
   },
   {
@@ -111,6 +134,8 @@ export const blogPosts = [
     readingTime: "14 хв читання",
     excerpt: "Практичний чеклист документів для аудиту, типові помилки які виявляють аудитори та як організувати взаємодію з аудиторською командою. Погляд аудитора зсередини.",
     date: "12 травня 2026",
+    isoDate: "2026-05-12",
+    service: ["audit"],
     href: `${base}/blog/pidhotovka-do-audytu/`,
   },
   {
@@ -120,6 +145,8 @@ export const blogPosts = [
     readingTime: "11 хв читання",
     excerpt: "Основна категорія зобов'язаних — великі платники податків. SAF-T UA подається на запит ДПС у межах документальної перевірки, а не автоматично. Пояснення без зайвого ускладнення.",
     date: "28 травня 2026",
+    isoDate: "2026-05-28",
+    service: ["saft"],
     href: `${base}/blog/saf-t-hto-podaye-2026/`,
   },
   {
@@ -129,6 +156,8 @@ export const blogPosts = [
     readingTime: "12 хв читання",
     excerpt: "SAF-T UA можна сформувати з будь-якої ERP — але підходи суттєво відрізняються. Розбираємо SAP, BAS, Odoo і мультисистемне середовище: де слабкі місця і коли потрібен ERP-незалежний Connector.",
     date: "28 травня 2026",
+    isoDate: "2026-05-28",
+    service: ["saft"],
     href: `${base}/blog/saf-t-sap-bas-odoo-erp/`,
   },
   {
@@ -138,6 +167,8 @@ export const blogPosts = [
     readingTime: "11 хв читання",
     excerpt: "Два рівні валідації SAF-T UA: XSD-схема і бізнес-правила ДПС. Топ типових помилок у довідниках, проводках і первинних документах — і як їх виправити системно, а не вручну.",
     date: "28 травня 2026",
+    isoDate: "2026-05-28",
+    service: ["saft"],
     href: `${base}/blog/saf-t-validatsiya-xsd-pomylky/`,
   },
   {
@@ -147,6 +178,8 @@ export const blogPosts = [
     readingTime: "13 хв читання",
     excerpt: "Readiness assessment виявляє реальні проблеми у ваших даних до першого запиту ДПС: неповні довідники, відсутні коди класифікаторів, дані в кількох системах. Покроковий план підготовки за 3–4 місяці.",
     date: "28 травня 2026",
+    isoDate: "2026-05-28",
+    service: ["saft"],
     href: `${base}/blog/saf-t-readiness-assessment/`,
   },
 ];

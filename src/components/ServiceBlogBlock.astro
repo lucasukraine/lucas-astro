@@ -1,0 +1,64 @@
+---
+// ServiceBlogBlock.astro
+// Тематичний блок статей на сторінках послуг.
+// Бере статті автоматично за service-кластером, сортує від найновіших.
+// Не рендерується, якщо статей немає.
+
+import { getPostsByService } from '../lib/blog';
+
+interface Props {
+  service: string;
+  title: string;
+  subtitle?: string;
+  limit?: number;
+  moreHref?: string;
+  moreText?: string;
+}
+
+const {
+  service,
+  title,
+  subtitle,
+  limit = 8,
+  moreHref,
+  moreText = 'Усі матеріали →',
+} = Astro.props;
+
+const posts = getPostsByService(service, limit);
+---
+
+{posts.length > 0 && (
+  <section class="blog-strip">
+    <div class="container">
+      <div class="blog-strip-inner">
+        <div class="blog-strip-header">
+          <h2 class="blog-strip-title">{title}</h2>
+          {subtitle && <p class="sbb-subtitle">{subtitle}</p>}
+        </div>
+        {posts.map(post => (
+          <a class="bstrip-card" href={post.href}>
+            <div class="bstrip-left">
+              <span class="bstrip-cat">{post.category}</span>
+              <h3 class="bstrip-title">{post.cardTitle}</h3>
+            </div>
+            <span class="bstrip-arrow">→</span>
+          </a>
+        ))}
+        {moreHref && (
+          <a class="bstrip-more" href={moreHref}>{moreText}</a>
+        )}
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+  .sbb-subtitle {
+    font-family: var(--body);
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin: 6px 0 0;
+    max-width: 720px;
+  }
+</style>
