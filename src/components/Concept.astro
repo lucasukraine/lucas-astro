@@ -7,7 +7,7 @@ const t = {
   taglineB: lang === 'en' ? 'Technology where it matters.' : 'Технології - для перетворення вимог на рішення.',
   bodyIntro: lang === 'en'
     ? 'We work best where accounting judgement, tax requirements and system logic must align.'
-    : 'Ми працюємо з задачами, де фінансова логіка, регуляторні вимоги та IT-рішення мають бути узгоджені між собою.',
+    : 'Від аудиту фінансової звітності до впровадження складних регуляторних і цифрових рішень — ми поєднуємо фінансову експертизу, податкову методологію та технології, щоб фінансові, податкові та цифрові задачі працювали як єдина система.',
   bullet1: lang === 'en'
     ? 'finance work requires deeper understanding of data, systems, processes and technology risks;'
     : 'робота з фінансами потребує глибшого розуміння даних, систем, процесів і технологічних ризиків;',
@@ -67,7 +67,7 @@ const t = {
 
     <!-- Body text with styled bullets -->
     <div class="audit-body reveal" data-d="2">
-      <p>{t.bodyIntro}</p>
+      <p style={lang !== 'en' ? 'text-align: center' : undefined}>{t.bodyIntro}</p>
       {lang === 'en' && (
         <ul class="audit-bullets">
           <li><span>{t.bullet1}</span></li>
