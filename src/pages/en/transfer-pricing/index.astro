@@ -3,7 +3,6 @@ import ServiceLayout from '../../../layouts/ServiceLayout.astro';
 import ServiceHero from '../../../components/ServiceHero.astro';
 import FaqAccordion from '../../../components/FaqAccordion.astro';
 import ServiceCTA from '../../../components/ServiceCTA.astro';
-import ServiceReadNext from '../../../components/ServiceReadNext.astro';
 import { transferPricingFaq } from '../../../data/en/transferPricingFaq';
 const base = import.meta.env.BASE_URL;
 ---
@@ -147,15 +146,5 @@ const base = import.meta.env.BASE_URL;
     linkText="Submit a request"
   />
 
-  <ServiceReadNext
-    eyebrow="Deep dive into the topic"
-    category="Transfer Pricing"
-    readingTime="14 min read"
-    title="Who files the controlled transactions report"
-    excerpt="Related party criteria, value thresholds, Article 39 of the Tax Code."
-    href={base + '/blog/zvit-pro-kontrolovani-operatsii/'}
-    ariaLabel="Who is required to file the controlled transactions report"
-    readLabel="Read"
-  />
 
 </ServiceLayout>

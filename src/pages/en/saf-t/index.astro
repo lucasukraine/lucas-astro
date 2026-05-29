@@ -3,7 +3,6 @@ import ServiceLayout from '../../../layouts/ServiceLayout.astro';
 import ServiceHero from '../../../components/ServiceHero.astro';
 import FaqAccordion from '../../../components/FaqAccordion.astro';
 import ServiceCTA from '../../../components/ServiceCTA.astro';
-import ServiceReadNext from '../../../components/ServiceReadNext.astro';
 import { saftFaq } from '../../../data/en/saftFaq';
 const base = import.meta.env.BASE_URL;
 ---
@@ -144,15 +143,5 @@ const base = import.meta.env.BASE_URL;
     linkText="Submit a request"
   />
 
-  <ServiceReadNext
-    eyebrow="Deep dive into the topic"
-    category="Tax Accounting"
-    readingTime="15 min read"
-    title="SAF-T in Ukraine: complete guide"
-    excerpt="Who is required to submit, SAF-T UA structure, STS XSD validation."
-    href={base + '/blog/saf-t-ukraina-povny-gayd/'}
-    ariaLabel="SAF-T in Ukraine 2026: complete guide for accountants"
-    readLabel="Read"
-  />
 
 </ServiceLayout>
