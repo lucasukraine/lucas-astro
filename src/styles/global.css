@@ -1589,7 +1589,23 @@ a.footer-contact-val:hover { color: #fff; }
   letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--orange); margin-bottom: 16px;
 }
-.sp-block-label.cyan { color: var(--cyan); }
+.sp-block-label.cyan {
+  color: rgba(255, 255, 255, .82);
+  background: #2E2E2E;
+  padding: 4px 10px 4px 8px;
+  border-radius: 100px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.sp-block-label.cyan::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--cyan);
+  border-radius: 50%;
+  flex: none;
+}
 .sp-block-h2 {
   font-family: var(--display); font-weight: 500;
   font-size: clamp(26px, 2.6vw, 38px);
