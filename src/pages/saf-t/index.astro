@@ -1,6 +1,7 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import ServiceHero from '../../components/ServiceHero.astro';
+import ServiceAeo from '../../components/ServiceAeo.astro';
 import FaqAccordion from '../../components/FaqAccordion.astro';
 import ServiceCTA from '../../components/ServiceCTA.astro';
 import ServiceBlogBlock from '../../components/ServiceBlogBlock.astro';
@@ -19,30 +20,22 @@ const base = import.meta.env.BASE_URL;
     accent="cyan"
   />
 
+  <ServiceAeo
+    title="Коротко про SAF-T Connector від LUCAS"
+    lead="SAF-T Connector — ERP-незалежне рішення для підготовки XML-файлів SAF-T UA з будь-якої облікової системи: SAP, BAS/1C, Odoo, Microsoft Dynamics, кастомних ERP або кількох джерел даних одночасно. Встановлюється on-premise, включає XSD-валідацію та логічні перевірки, впроваджується під ключ командою LUCAS. Підходить для великих платників податків, які зобов'язані або очікують необхідність подавати SAF-T UA на запит ДПС."
+    rows={[
+      { label: 'Що таке',          value: 'SAF-T Connector — власний продукт LUCAS для підготовки XML-файлів SAF-T UA' },
+      { label: 'Що робить',        value: 'Витягує облікові дані з ERP, формує XML-файл SAF-T UA, виконує XSD-валідацію та логічні перевірки даних' },
+      { label: 'Для кого',         value: 'Великі платники податків, компанії з SAP, BAS/1C, Odoo, Microsoft Dynamics або кількома джерелами даних' },
+      { label: 'Чим відрізняється',value: 'ERP-незалежне on-premise рішення, власна розробка LUCAS, єдина зона відповідальності за продукт і впровадження' },
+      { label: 'Результат',        value: 'XML-файл SAF-T UA, готовий до подання на запит ДПС' },
+    ]}
+  />
+
   <section class="sp-statement">
     <div class="sp-statement-inner">
       <p>SAF-T Connector не залежить від вашої ERP або облікової системи.</p>
       <div class="sp-statement-note">SAF-T Connector — окремий продукт, не вбудований у жодну ERP-систему. Впроваджуємо самостійно: клієнт надає доступ до даних, далі LUCAS працює автономно — без створення великої внутрішньої проєктної команди з боку клієнта.</div>
-    </div>
-  </section>
-
-  <section class="sp-statement">
-    <div class="sp-statement-inner">
-      <h2>Коротко: як впровадити SAF-T UA</h2>
-      <div class="sp-statement-note">
-        <p>Для підготовки SAF-T UA компанії потрібне рішення, яке може витягнути облікові дані з ERP або кількох джерел, зіставити їх зі структурою SAF-T UA, сформувати XML-файл, перевірити його за XSD-схемою та дати можливість виправити помилки до подання в ДПС.</p>
-        <p>Таке рішення має покривати:</p>
-        <ul class="sp-block-list cyan">
-          <li>підключення до SAP, BAS/1C, Odoo, Microsoft Dynamics, кастомних ERP або файлів експорту;</li>
-          <li>мапінг плану рахунків, контрагентів, товарів, податків і первинних документів;</li>
-          <li>формування XML-файлу SAF-T UA у потрібній структурі;</li>
-          <li>XSD-валідацію та логічні перевірки даних;</li>
-          <li>роботу з великими обсягами транзакцій;</li>
-          <li>можливість об'єднати дані з кількох систем;</li>
-          <li>безпечне розгортання в інфраструктурі компанії.</li>
-        </ul>
-        <p>SAF-T Connector від LUCAS — ERP-незалежне on-premise рішення, яке закриває ці задачі та впроваджується під ключ командою LUCAS.</p>
-      </div>
     </div>
   </section>
 

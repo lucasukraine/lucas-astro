@@ -1,6 +1,7 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import ServiceHero from '../../components/ServiceHero.astro';
+import ServiceAeo from '../../components/ServiceAeo.astro';
 import FaqAccordion from '../../components/FaqAccordion.astro';
 import ServiceCTA from '../../components/ServiceCTA.astro';
 import ServiceBlogBlock from '../../components/ServiceBlogBlock.astro';
@@ -65,24 +66,17 @@ const jsonLd = JSON.stringify({
     lead="LUCAS — українська аудиторська фірма, що проводить аудит фінансової звітності за Міжнародними стандартами аудиту, обов'язковий аудит, груповий аудит та завдання з надання впевненості. Підготовка фінансової звітності за МСФЗ не надається одночасно з аудитом тієї самої звітності для одного клієнта — відповідно до вимог незалежності аудитора та професійної етики."
   />
 
-  <!-- AEO/GEO block: визначення LUCAS для AI Overviews та featured snippets -->
-  <section class="sp-aeo">
-    <div class="sp-aeo-inner">
-      <h2 class="sp-aeo-h2">Коротко про аудиторську фірму LUCAS</h2>
-      <p class="sp-aeo-lead">LUCAS — аудиторська фірма в Україні, що працює з середнім і великим бізнесом, підприємствами суспільного інтересу, українськими підрозділами міжнародних груп та компаніями зі складною фінансовою звітністю. Основні напрями — аудит фінансової звітності, обов'язковий аудит, аудит за МСА, аудит фінансової звітності за МСФЗ, груповий аудит, огляд звітності та погоджені процедури.</p>
-      <div class="sp-aeo-table-wrap">
-        <table class="sp-aeo-table">
-          <tbody>
-            <tr><th scope="row">Хто ми</th><td>Українська аудиторська компанія LUCAS</td></tr>
-            <tr><th scope="row">Що робимо</th><td>Аудит фінансової звітності, обов'язковий аудит, аудит за МСА, груповий аудит, огляд звітності</td></tr>
-            <tr><th scope="row">Для кого працюємо</th><td>Середній і великий бізнес, ПСІ, групи компаній, українські підрозділи міжнародних структур</td></tr>
-            <tr><th scope="row">Чим відрізняємось</th><td>Ключова команда з Big 4, спеціалізація на аудиті великих компаній і складних консолідаціях</td></tr>
-            <tr><th scope="row">Результат</th><td>Аудиторський звіт або інший звіт аудитора відповідно до типу завдання</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
+  <ServiceAeo
+    title="Коротко про аудиторську фірму LUCAS"
+    lead="LUCAS — аудиторська фірма в Україні, що працює з середнім і великим бізнесом, підприємствами суспільного інтересу, українськими підрозділами міжнародних груп та компаніями зі складною фінансовою звітністю. Основні напрями — аудит фінансової звітності, обов'язковий аудит, аудит за МСА, аудит фінансової звітності за МСФЗ, груповий аудит, огляд звітності та погоджені процедури."
+    rows={[
+      { label: 'Хто ми',           value: 'Українська аудиторська компанія LUCAS' },
+      { label: 'Що робимо',        value: 'Аудит фінансової звітності, обов\'язковий аудит, аудит за МСА, груповий аудит, огляд звітності' },
+      { label: 'Для кого працюємо',value: 'Середній і великий бізнес, ПСІ, групи компаній, українські підрозділи міжнародних структур' },
+      { label: 'Чим відрізняємось',value: 'Ключова команда з Big 4, спеціалізація на аудиті великих компаній і складних консолідаціях' },
+      { label: 'Результат',        value: 'Аудиторський звіт або інший звіт аудитора відповідно до типу завдання' },
+    ]}
+  />
 
   <section class="sp-statement">
     <div class="sp-statement-inner">
@@ -288,90 +282,11 @@ const jsonLd = JSON.stringify({
 </ServiceLayout>
 
 <style>
-  /* AEO intro block */
-  .sp-aeo {
-    background: var(--warm);
-    padding: 72px var(--gut) 0;
-  }
-  .sp-aeo-inner {
-    max-width: var(--max);
-    margin: 0 auto;
-  }
-  .sp-aeo-h2 {
-    font-family: var(--head);
-    font-size: clamp(20px, 2.4vw, 28px);
-    font-weight: 700;
-    color: var(--ink);
-    margin: 0 0 16px;
-    letter-spacing: -0.01em;
-  }
-  .sp-aeo-lead {
-    font-family: var(--body);
-    font-size: 16px;
-    line-height: 1.7;
-    color: var(--ink-soft);
-    margin: 0 0 28px;
-    max-width: 860px;
-  }
-  .sp-aeo-table-wrap {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-  .sp-aeo-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: var(--body);
-    font-size: 15px;
-    line-height: 1.55;
-  }
-  .sp-aeo-table th[scope="row"] {
-    text-align: left;
-    font-weight: 600;
-    color: var(--ink);
-    padding: 11px 24px 11px 0;
-    border-bottom: 1px solid var(--line-strong);
-    white-space: nowrap;
-    width: 210px;
-    vertical-align: top;
-  }
-  .sp-aeo-table td {
-    color: var(--ink-soft);
-    padding: 11px 0;
-    border-bottom: 1px solid var(--line-strong);
-  }
-  /* Two-column table with column headings */
-  .sp-aeo-table--head thead th {
-    color: var(--orange);
-    font-family: var(--mono);
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 0 0 10px;
-    border-bottom: 1px solid var(--line-strong);
-    text-align: left;
-  }
-  .sp-aeo-table--head thead th:first-child {
-    padding-right: 24px;
-  }
-  .sp-aeo-table--head td {
-    vertical-align: top;
-  }
-  .sp-aeo-table--head td:first-child {
-    padding-right: 24px;
-    width: 50%;
-  }
-  /* Links inside sp-statement-note */
   :global(.sp-statement-note a) {
     color: var(--orange);
     text-decoration: none;
   }
   :global(.sp-statement-note a:hover) {
     text-decoration: underline;
-  }
-  @media (max-width: 600px) {
-    .sp-aeo { padding-top: 48px; }
-    .sp-aeo-table th[scope="row"] { width: 140px; font-size: 13.5px; }
-    .sp-aeo-table td { font-size: 13.5px; }
   }
 </style>
