@@ -1552,7 +1552,7 @@ a.footer-contact-val:hover { color: #fff; }
 .sp-aeo { background: var(--warm); padding: 72px var(--gut) 0; }
 .sp-aeo-inner { max-width: var(--max); margin: 0 auto; }
 .sp-aeo-h2 {
-  font-family: var(--head);
+  font-family: var(--display);
   font-size: clamp(20px, 2.4vw, 28px);
   font-weight: 700;
   color: var(--ink);
