@@ -9,7 +9,7 @@ const p = lang === 'en' ? '/en' : '';
 
 const t = {
   tagline:     lang === 'en' ? 'Audit, technology and expertise — one team.' : 'Аудит, технологія і досвід — в одній команді',
-  legalName:   lang === 'en' ? 'LLC "Lucas Audit"'                           : 'ТОВ «Лукас Аудит»',
+  legalName:   lang === 'en' ? 'Lucas Audit LLC'                             : 'ТОВ «Лукас Аудит»',
   legalDesc:   lang === 'en' ? 'Audit & Technology Company'                  : 'Аудиторська та технологічна компанія',
   services:    lang === 'en' ? 'Services'                                    : 'Послуги',
   audit:       lang === 'en' ? 'Audit & Reporting'                           : 'Аудит та звітність',
@@ -104,7 +104,7 @@ const t = {
 
     <div class="footer-bot">
       <span class="footer-bot-copy">
-        © <span id="footer-year"></span> LUCAS · ТОВ «Лукас Аудит» · All rights reserved
+        © <span id="footer-year"></span> LUCAS · {t.legalName} · All rights reserved
       </span>
       <a class="footer-bot-cta" href={base + p + '/#contact'}>{t.cta}</a>
     </div>
