@@ -6,7 +6,7 @@ const t = {
   taglineA: lang === 'en' ? 'Accounting at the core' : 'Аудит як основа',
   taglineB: lang === 'en' ? 'Technology where it matters.' : 'Технології - для перетворення вимог на рішення.',
   bodyIntro: lang === 'en'
-    ? 'We work best where accounting judgement, tax requirements and system logic must align.'
+    ? 'From financial statement audit to the delivery of complex regulatory and digital solutions — we combine financial expertise, tax methodology and technology so that financial, tax and digital challenges work as a unified system.'
     : 'Від аудиту фінансової звітності до впровадження складних регуляторних і цифрових рішень — ми поєднуємо фінансову експертизу, податкову методологію та технології, щоб фінансові, податкові та цифрові задачі працювали як єдина система.',
   bullet1: lang === 'en'
     ? 'finance work requires deeper understanding of data, systems, processes and technology risks;'
@@ -67,13 +67,7 @@ const t = {
 
     <!-- Body text with styled bullets -->
     <div class="audit-body reveal" data-d="2">
-      <p style={lang !== 'en' ? 'text-align: center' : undefined}>{t.bodyIntro}</p>
-      {lang === 'en' && (
-        <ul class="audit-bullets">
-          <li><span>{t.bullet1}</span></li>
-          <li><span>{t.bullet2}</span></li>
-        </ul>
-      )}
+      <p style="text-align: center">{t.bodyIntro}</p>
     </div>
 
     <!-- Bento cards — asymmetric, 01 featured tall left -->
