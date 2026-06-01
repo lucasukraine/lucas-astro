@@ -1,6 +1,7 @@
 ---
 import ServiceLayout from '../../../layouts/ServiceLayout.astro';
 import ServiceHero from '../../../components/ServiceHero.astro';
+import ServiceAeo from '../../../components/ServiceAeo.astro';
 import FaqAccordion from '../../../components/FaqAccordion.astro';
 import ServiceCTA from '../../../components/ServiceCTA.astro';
 import { saftFaq } from '../../../data/en/saftFaq';
@@ -18,6 +19,18 @@ const base = import.meta.env.BASE_URL;
     title="SAF-T Connector"
     lead="A convenient platform for preparing SAF-T UA reports — independent of ERP systems, with turnkey implementation by LUCAS. Fast launch with a single partner responsible for the entire process."
     accent="cyan"
+  />
+
+  <ServiceAeo
+    title="About SAF-T Connector by LUCAS"
+    lead="SAF-T Connector is an ERP-independent solution for preparing SAF-T UA XML files from any accounting system: SAP, BAS/1C, Odoo, Microsoft Dynamics, custom ERPs or multiple data sources simultaneously. Installed on-premise, includes XSD validation and logical data checks, deployed end-to-end by the LUCAS team. Suitable for companies with large transactional data volumes, multiple accounting systems or planning migration to a new ERP."
+    rows={[
+      { label: 'What it is',        value: 'SAF-T Connector — LUCAS proprietary product for preparing SAF-T UA XML files' },
+      { label: 'What it does',      value: 'Extracts accounting data from ERP, generates the SAF-T UA XML file, performs XSD validation and logical data checks' },
+      { label: 'For whom',          value: 'Large taxpayers, companies with SAP, BAS/1C, Odoo, Microsoft Dynamics or multiple data sources' },
+      { label: 'What sets it apart',value: 'ERP-independent on-premise solution, fast processing of large data volumes, end-to-end implementation, competitive cost' },
+      { label: 'Result',            value: 'SAF-T UA XML file ready for submission upon DPS request' },
+    ]}
   />
 
   <section class="sp-statement">

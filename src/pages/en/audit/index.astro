@@ -1,6 +1,7 @@
 ---
 import ServiceLayout from '../../../layouts/ServiceLayout.astro';
 import ServiceHero from '../../../components/ServiceHero.astro';
+import ServiceAeo from '../../../components/ServiceAeo.astro';
 import FaqAccordion from '../../../components/FaqAccordion.astro';
 import ServiceCTA from '../../../components/ServiceCTA.astro';
 import { auditFaq } from '../../../data/en/auditFaq';
@@ -17,6 +18,19 @@ const base = import.meta.env.BASE_URL;
     eyebrow="Service 01"
     title="Audit & Reporting"
     lead="Independent financial statement audit under International Standards on Auditing and IFRS reporting preparation. Services are provided separately and are not combined for the same client."
+  />
+
+  <ServiceAeo
+    title="About LUCAS Audit Firm"
+    lead="LUCAS is an audit firm in Ukraine working with medium and large businesses, public interest entities, Ukrainian subsidiaries of international groups, and companies where audit requires expertise in IFRS, consolidation, group reporting requirements and complex accounting data structures. Core services — financial statement audit, mandatory audit, ISA-based audit, IFRS financial statement audit, group audit, review engagements and agreed-upon procedures."
+    rows={[
+      { label: 'Who we are',      value: 'LUCAS — Ukrainian audit company' },
+      { label: 'What we do',      value: 'Financial statement audit, mandatory audit, ISA-based audit, group audit, review engagements' },
+      { label: 'Who we work with',value: 'Large enterprises, medium enterprises, PIEs, groups of companies, Ukrainian subsidiaries of foreign companies' },
+      { label: 'What sets us apart', value: 'Core team from Big 4, specialisation in auditing large companies and complex consolidations' },
+      { label: 'Result',          value: "Auditor's report or other auditor's report depending on the engagement type" },
+      { label: 'Registration',    value: "Register of Auditors and Audit Entities — Section 'Audit entities authorised to conduct mandatory audit of financial statements of public interest entities'" },
+    ]}
   />
 
   <section class="sp-statement">
