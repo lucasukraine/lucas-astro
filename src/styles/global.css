@@ -2549,31 +2549,32 @@ a.footer-contact-val:hover { color: #fff; }
     align-items: center;
     justify-content: space-between;
     padding: 16px var(--gut);
-    margin-top: 4px;
-    border-top: 1px solid rgba(255,255,255,.12);
-    color: rgba(255,255,255,.6);
+    border-bottom: 1px solid rgba(255,255,255,.1);
+    background: rgba(255,255,255,.04);
+    color: rgba(255,255,255,.88);
     font-family: var(--body);
-    font-size: 14px;
+    font-size: 14.5px;
     font-weight: 500;
     letter-spacing: 0.01em;
     text-decoration: none;
-    min-height: 48px;
-    transition: color .2s;
+    min-height: 52px;
+    transition: color .2s, background .2s;
   }
   .svc-mob-page-link::after {
     content: '→';
     flex: none;
-    font-size: 17px;
+    font-size: 18px;
     color: var(--cyan);
     transition: transform .2s;
   }
   .svc-mob-page-link:hover,
   .svc-mob-page-link:focus-visible {
     color: #fff;
+    background: rgba(255,255,255,.07);
   }
   .svc-mob-page-link:hover::after,
   .svc-mob-page-link:focus-visible::after {
-    transform: translateX(4px);
+    transform: translateX(5px);
   }
   .svc-mob-page-link:focus-visible {
     outline: 2px solid var(--cyan);
