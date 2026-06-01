@@ -2,6 +2,6 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://lucasukraine.github.io',
-  base: '/lucas-astro',
+  site: 'https://www.lucasua.com',
+  base: '/',
 });
