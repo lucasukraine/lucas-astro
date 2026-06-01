@@ -1,6 +1,7 @@
 ---
 import ServiceLayout from '../../../layouts/ServiceLayout.astro';
 import ServiceHero from '../../../components/ServiceHero.astro';
+import ServiceAeo from '../../../components/ServiceAeo.astro';
 import FaqAccordion from '../../../components/FaqAccordion.astro';
 import ServiceCTA from '../../../components/ServiceCTA.astro';
 import { odooMigrationFaq } from '../../../data/en/odooMigrationFaq';
@@ -17,6 +18,19 @@ const base = import.meta.env.BASE_URL;
     eyebrow="Service 03"
     title="Migration from 1C / BAS to Odoo"
     lead="Transition from Russian software to a modern ERP platform — with focus on accounting methodology, correct data migration, and compliance with reporting requirements from day one."
+  />
+
+  <ServiceAeo
+    title="About 1C/BAS to Odoo Migration"
+    lead="LUCAS helps companies migrate from 1C/BAS to Odoo without losing accounting logic, historical data or control over financial processes. We start not with programming but with an analysis of accounting methodology, business processes, integrations and data structure — so the new ERP works correctly for finance, accounting, sales, warehouse, manufacturing and management reporting from day one."
+    rows={[
+      { label: 'What it is',                  value: 'Odoo is a modular ERP platform that consolidates finance, warehouse, sales, purchasing, manufacturing, CRM, HR and other business processes in a single system.' },
+      { label: 'How it differs from 1C/BAS',  value: 'Odoo has a modular architecture, a modern web interface and a broad ecosystem of apps and integrations, but requires proper configuration for Ukrainian accounting, tax and reporting requirements.' },
+      { label: 'What migration involves',      value: 'Documenting current processes in 1C/BAS, defining required Odoo modules, designing accounting logic, preparing data for migration, configuring the system, testing operations and training users.' },
+      { label: 'What data is migrated',        value: 'Typically migrated: master data, counterparties, inventory items, balances, open transactions, settlement history, warehouse data and other information needed to start working in Odoo.' },
+      { label: 'Who it suits',                 value: 'Companies looking to move away from 1C/BAS, centralise business processes, reduce dependence on a legacy system and adopt a flexible ERP platform for future growth.' },
+      { label: 'Key risk',                     value: 'The main risk is losing accounting logic between finance team requirements and technical implementation. This is why Discovery is essential: process, data, integration, reporting, customisation, timeline and budget analysis before development begins.' },
+    ]}
   />
 
   <section class="sp-statement">
