@@ -3,7 +3,7 @@
 // Еталон: other-services/index.html
 // URL-и конвертовані з https://lucasukraine.github.io/lucas-website/ → /
 const { lang = 'uk' } = Astro.props;
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const t = {
   concept:    lang === 'en' ? 'Concept'              : 'Концепція',
@@ -24,14 +24,13 @@ const t = {
 const p = lang === 'en' ? '/en' : '';
 
 const pathname = Astro.url.pathname;
-const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
 let switcherHref: string;
 if (lang === 'uk') {
-  const rel = pathname.slice(basePath.length) || '/';
-  switcherHref = basePath + '/en' + rel;
+  const rel = pathname.slice(base.length) || '/';
+  switcherHref = base + '/en' + rel;
 } else {
-  const rel = pathname.slice(basePath.length);
-  switcherHref = basePath + (rel.replace(/^\/en/, '') || '/');
+  const rel = pathname.slice(base.length);
+  switcherHref = base + (rel.replace(/^\/en/, '') || '/');
 }
 ---
 

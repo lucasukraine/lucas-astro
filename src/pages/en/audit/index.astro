@@ -5,7 +5,7 @@ import ServiceAeo from '../../../components/ServiceAeo.astro';
 import FaqAccordion from '../../../components/FaqAccordion.astro';
 import ServiceCTA from '../../../components/ServiceCTA.astro';
 import { auditFaq } from '../../../data/en/auditFaq';
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <ServiceLayout

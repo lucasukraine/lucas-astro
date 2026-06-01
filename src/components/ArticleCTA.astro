@@ -9,7 +9,7 @@
 // але CSS-правило — ".btn.ghost-dark" (два окремих класи). Правило не застосовувалось.
 // У компоненті використовуємо "btn ghost-dark" — відповідає наявному CSS у global.css.
 
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 interface Props {
   eyebrow: string;

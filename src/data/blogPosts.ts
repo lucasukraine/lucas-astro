@@ -3,7 +3,7 @@
 // isoDate — для сортування; date — для відображення.
 // service — масив кластерів для автоматичного виводу на сторінках послуг.
 
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 export const blogPosts = [
   {

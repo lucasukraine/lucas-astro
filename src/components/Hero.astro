@@ -1,6 +1,6 @@
 ---
 const { lang = 'uk' } = Astro.props;
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const p = lang === 'en' ? '/en' : '';
 
 const t = {

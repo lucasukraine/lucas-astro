@@ -6,7 +6,7 @@ import FaqAccordion from '../../components/FaqAccordion.astro';
 import ServiceCTA from '../../components/ServiceCTA.astro';
 import ServiceBlogBlock from '../../components/ServiceBlogBlock.astro';
 import { auditFaq } from '../../data/auditFaq';
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const jsonLd = JSON.stringify({
   "@context": "https://schema.org",

@@ -7,7 +7,7 @@ interface Props {
   accent?: 'orange' | 'cyan';
 }
 const { eyebrow, title, lead, breadcrumb, accent = 'orange' } = Astro.props;
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <section class="sp-hero">

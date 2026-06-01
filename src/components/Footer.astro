@@ -4,7 +4,7 @@
 // URL-и конвертовані з /lucas-website/* → /*
 // SVG логотип рендериться через #lucas-mark, визначений у Header.astro
 const { lang = 'uk' } = Astro.props;
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const p = lang === 'en' ? '/en' : '';
 
 const t = {

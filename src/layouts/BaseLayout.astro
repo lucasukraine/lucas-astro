@@ -17,23 +17,22 @@ const {
   description = 'LUCAS — аудиторська компанія з цифровим ДНК.',
   lang = 'uk',
 } = Astro.props;
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const site = (Astro.site?.toString() ?? '').replace(/\/$/, '');
 const pathname = Astro.url.pathname;
-const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 let ukUrl: string;
 let enUrl: string;
 if (lang === 'en') {
-  const rel = pathname.slice(basePath.length);
+  const rel = pathname.slice(base.length);
   const uaRel = rel.replace(/^\/en/, '') || '/';
-  ukUrl = site + basePath + uaRel;
+  ukUrl = site + base + uaRel;
   enUrl = site + pathname;
 } else {
-  const rel = pathname.slice(basePath.length) || '/';
+  const rel = pathname.slice(base.length) || '/';
   ukUrl = site + pathname;
-  enUrl = site + basePath + '/en' + rel;
+  enUrl = site + base + '/en' + rel;
 }
 ---
 

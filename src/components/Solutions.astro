@@ -5,7 +5,7 @@
 // JS: IntersectionObserver для is-visible на контексті та fc-картках;
 //     mobile accordion (< 720px) з svc-mob-trigger.
 const { lang = 'uk' } = Astro.props;
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const p = lang === 'en' ? '/en' : '';
 
 const t = {

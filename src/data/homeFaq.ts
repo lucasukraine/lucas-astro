@@ -3,7 +3,7 @@
 // Тексти і структура — без змін.
 // URL-и конвертовані з /lucas-website/* → /*
 
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 export const homeFaq = [
   // ── Аудит ──────────────────────────────────────────────────
