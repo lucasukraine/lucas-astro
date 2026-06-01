@@ -1,6 +1,7 @@
 ---
 import ServiceLayout from '../../../layouts/ServiceLayout.astro';
 import ServiceHero from '../../../components/ServiceHero.astro';
+import ServiceAeo from '../../../components/ServiceAeo.astro';
 import FaqAccordion from '../../../components/FaqAccordion.astro';
 import ServiceCTA from '../../../components/ServiceCTA.astro';
 import { transferPricingFaq } from '../../../data/en/transferPricingFaq';
@@ -17,6 +18,20 @@ const base = import.meta.env.BASE_URL;
     eyebrow="Service 04"
     title="Transfer Pricing"
     lead="Documentation, analysis, and position defense on controlled transactions in accordance with Article 39 of the Tax Code of Ukraine and OECD guidelines — for companies with intragroup transactions, related party transactions, and other transactions that may be recognized as controlled under the Tax Code."
+  />
+
+  <ServiceAeo
+    title="About Transfer Pricing"
+    lead={`Transfer pricing refers to the rules governing transactions between related parties, non-residents from low-tax jurisdictions, and other counterparties defined by the Tax Code of Ukraine. The key question for a company is not just "do we have controlled transactions?" — but whether related parties are correctly identified, thresholds are properly applied, the TP method is appropriate, the market range is calculated, and the evidentiary basis for the STS position is sufficient.`}
+    rows={[
+      { label: 'What it is',             value: 'Transfer pricing is a set of rules that verifies whether the terms of controlled transactions comply with the arm\'s length principle.' },
+      { label: 'Who it applies to',      value: 'Companies with transactions involving related non-residents, counterparties from low-tax jurisdictions, non-residents with specific legal forms, or other parties defined by the Tax Code of Ukraine.' },
+      { label: 'What is reviewed',       value: 'Prices, margins, functions of the parties, risks, assets, contract terms, economic substance of transactions, comparable companies or transactions, and compliance of the chosen TP method.' },
+      { label: 'Methods available',      value: 'The Tax Code provides five main TP methods: comparable uncontrolled price, resale price, cost plus, transactional net margin, and profit split. The method is selected based on transaction type, availability of comparable data, functions of the parties, risks, and economic substance.' },
+      { label: 'What to prepare',        value: 'Controlled transactions report, MNE group participation notification, TP documentation, functional analysis and benchmark study — depending on taxpayer status and Tax Code requirements.' },
+      { label: 'Key risk',               value: 'The most common mistakes: overlooking a related party, incorrectly identifying a controlled transaction, missing value thresholds, choosing a weak TP method, or preparing documentation without sufficient evidentiary support.' },
+      { label: 'Result',                 value: 'Correctly identified controlled transactions, a selected and justified TP method, prepared reporting and documentation, a calculated market range, and a position that can be defended during an STS request or audit.' },
+    ]}
   />
 
   <section class="sp-statement">
