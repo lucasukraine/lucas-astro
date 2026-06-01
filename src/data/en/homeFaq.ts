@@ -3,8 +3,8 @@ const base = import.meta.env.BASE_URL;
 export const homeFaq = [
   // Audit
   {
-    question: "Which companies in Ukraine are required to undergo mandatory audit in 2026?",
-    answer: `Mandatory audit applies to public interest entities (PIEs), large and medium-sized enterprises under the Law of Ukraine "On Audit of Financial Statements." PIEs include public joint-stock companies, banks, insurers, and other categories. The audit is performed under International Standards on Auditing with an auditor's report issued accordingly. <a href="${base}/en/audit/">Learn more about audit →</a>`,
+    question: "Which companies in Ukraine are required to undergo statutory audit in 2026?",
+    answer: `Statutory audit applies to public interest entities (PIEs), large and medium-sized enterprises under the Law of Ukraine "On Audit of Financial Statements." PIEs include public joint-stock companies, banks, insurers, and other categories. The audit is performed under International Standards on Auditing with an auditor's report issued accordingly. <a href="${base}/en/audit/">Learn more about audit →</a>`,
   },
   {
     question: "What is the difference between an audit and a review of financial statements?",
