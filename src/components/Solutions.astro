@@ -35,6 +35,7 @@ const t = {
       ? 'The practice is led by partners and senior professionals with Big 4 backgrounds, including audit, quality management and methodology leadership.'
       : 'За аудит, контроль якості і методологію в LUCAS відповідають фахівці з багаторічним досвідом Big 4. Команда поєднує міжнародний досвід, сильну методологічну базу та розуміння галузевої специфіки більшості клієнтів.',
     link: lang === 'en' ? 'Learn more' : 'Дізнатися більше',
+    mobLink: lang === 'en' ? 'Go to Audit page' : 'Перейти на сторінку аудиту',
     div1: lang === 'en' ? 'Audit' : 'Аудит',
     fc: [
       { label: lang === 'en' ? 'Large companies · Mid-market · Public-interest' : 'Великі · Середні · ПСІ',
@@ -72,6 +73,7 @@ const t = {
       ? 'The financial side of SAF-T projects is led by the audit practice leader (ex-EY), and development by an architect of complex technology solutions with many years of experience designing and delivering large-scale systems in Ukraine and the US.'
       : 'Фінансову частину проєктів з SAF-T очолює керівник аудиторської практики (ex-EY), а розробку — архітектор складних технологічних рішень із багаторічним досвідом проєктування та реалізації масштабних систем в Україні та США.',
     link: lang === 'en' ? 'Learn more' : 'Дізнатися більше',
+    mobLink: lang === 'en' ? 'Go to SAF-T Connector page' : 'Перейти на сторінку SAF-T Connector',
     div1: lang === 'en' ? 'Solution' : 'Рішення',
     fc: [
       { label: lang === 'en' ? 'ERP independence' : 'ERP-незалежність',
@@ -112,6 +114,7 @@ const t = {
       ? 'Our Odoo ERP migration team has deep practical experience implementing Odoo for companies in Ukraine, Europe and North America, with comprehensive understanding of system architecture, modules, integrations and business processes.'
       : 'Наша команда з переходу на Odoo ERP має глибокий практичний досвід впровадження Odoo для компаній України, Європи та Північної Америки, зі всебічним розумінням архітектури системи, модулів, інтеграцій та бізнес-процесів.',
     link: lang === 'en' ? 'Learn more' : 'Дізнатися більше',
+    mobLink: lang === 'en' ? 'Go to Odoo migration page' : 'Перейти на сторінку міграції на Odoo',
     div1: lang === 'en' ? 'Why Odoo' : 'Чому Odoo',
     fc: [
       { label: lang === 'en' ? 'Legal context · 2026' : 'Правовий контекст · 2026',
@@ -149,6 +152,7 @@ const t = {
       ? 'The practice is led by a former tax authority expert with many years of experience assessing transfer pricing documentation and reports.'
       : 'Практику очолює експерт, запрошений з податкових органів, який багато років відповідав за перевірку документації та звітності з ТЦУ, і володіє детальним розумінням підходів і критеріїв державного контролю.',
     link: lang === 'en' ? 'Learn more' : 'Дізнатися більше',
+    mobLink: lang === 'en' ? 'Go to Transfer Pricing page' : 'Перейти на сторінку ТЦУ',
     div1: lang === 'en' ? 'Documentation & reporting' : 'Документація та звітність',
     fc: [
       { label: lang === 'en' ? 'Identification · Art. 39 Tax Code' : 'Ідентифікація · Ст. 39 ПКУ',
@@ -182,6 +186,7 @@ const t = {
       ? 'Full range of consulting and analytical services — from strategic planning and legal structuring to independent valuation and financial modelling.'
       : 'Повний спектр консультаційних та аналітичних послуг — від стратегічного планування і юридичного структурування до незалежної оцінки і фінансового моделювання.',
     link: lang === 'en' ? 'Learn more' : 'Дізнатися більше',
+    mobLink: lang === 'en' ? 'Go to Other Services' : 'Перейти до інших послуг',
     div1: lang === 'en' ? 'Finance & legal services' : 'Послуги з фінансів та права',
     fc: [
       { label: lang === 'en' ? 'Strategy' : 'Стратегія',
@@ -265,6 +270,8 @@ const t = {
         </div>
       ))}
 
+      <a class="svc-mob-page-link" href={base + p + '/audit/'}>{t.ch1.mobLink}</a>
+
     </div>
   </div>
 
@@ -308,6 +315,8 @@ const t = {
           <p class="fc-body">{fc.body}</p>
         </div>
       ))}
+
+      <a class="svc-mob-page-link" href={base + p + '/saf-t/'}>{t.ch2.mobLink}</a>
 
     </div>
   </div>
@@ -353,6 +362,8 @@ const t = {
         </div>
       ))}
 
+      <a class="svc-mob-page-link" href={base + p + '/odoo-migration/'}>{t.ch3.mobLink}</a>
+
     </div>
   </div>
 
@@ -397,6 +408,8 @@ const t = {
         </div>
       ))}
 
+      <a class="svc-mob-page-link" href={base + p + '/transfer-pricing/'}>{t.ch4.mobLink}</a>
+
     </div>
   </div>
 
@@ -423,6 +436,8 @@ const t = {
           <p class="fc-body">{fc.body}</p>
         </div>
       ))}
+
+      <a class="svc-mob-page-link" href={base + p + '/other-services/'}>{t.ch5.mobLink}</a>
 
     </div>
   </div>

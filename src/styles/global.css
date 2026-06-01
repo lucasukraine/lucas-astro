@@ -2159,6 +2159,9 @@ a.footer-contact-val:hover { color: #fff; }
 .arrow-link.on-dark { color: rgba(255,255,255,.86); }
 .arrow-link.on-dark:hover { color: var(--cyan); }
 
+/* Mobile-only service page link — visible only inside mobile accordion */
+.svc-mob-page-link { display: none; }
+
 /* ============================================================
    HOME SOLUTIONS — .solutions, .service-chapter, .fc, .fc-divider
    ============================================================ */
@@ -2541,6 +2544,41 @@ a.footer-contact-val:hover { color: #fff; }
   .service-chapter.mob-open .service-features { max-height: 3000px; }
   .fc { margin: 0; border-radius: 0; border-top: 1px solid rgba(255,255,255,.07); }
   .fc-divider { padding: 12px var(--gut) 8px; }
+  .svc-mob-page-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px var(--gut);
+    margin-top: 4px;
+    border-top: 1px solid rgba(255,255,255,.12);
+    color: rgba(255,255,255,.6);
+    font-family: var(--body);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    min-height: 48px;
+    transition: color .2s;
+  }
+  .svc-mob-page-link::after {
+    content: '→';
+    flex: none;
+    font-size: 17px;
+    color: var(--cyan);
+    transition: transform .2s;
+  }
+  .svc-mob-page-link:hover,
+  .svc-mob-page-link:focus-visible {
+    color: #fff;
+  }
+  .svc-mob-page-link:hover::after,
+  .svc-mob-page-link:focus-visible::after {
+    transform: translateX(4px);
+  }
+  .svc-mob-page-link:focus-visible {
+    outline: 2px solid var(--cyan);
+    outline-offset: -2px;
+  }
 }
 
 /* ============================================================
