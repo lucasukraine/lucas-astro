@@ -8,7 +8,7 @@ export const auditFaq = [
     answer: 'The cost depends on the company scale, complexity of operations, and timing. For a medium-sized enterprise — from several hundred thousand hryvnias. Key factors: number of legal entities, presence of foreign operations, state of internal controls. An exact estimate can be provided after an initial discussion.',
   },
   {
-    question: 'How to choose an audit firm — what to look for?',
+    question: 'How to choose an accounting firm — what to look for?',
     answer: "Evaluate the firm's inclusion in the relevant section of the Register of Auditors and Audit Entities, experience in your industry, team composition, quality management system, and independence from your consultants.",
   },
   {

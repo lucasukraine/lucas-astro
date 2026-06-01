@@ -11,7 +11,7 @@ export const homeFaq = [
     answer: "An audit provides reasonable assurance and is performed under the full scope of ISA procedures with an auditor's report under ISA 700. A review under ISRE 2400 provides limited assurance, is performed faster and costs less — suitable when a full audit is not legally required but confirmation is needed for a bank or investor.",
   },
   {
-    question: "Can an audit firm simultaneously maintain accounting records and conduct an audit?",
+    question: "Can an accounting firm simultaneously maintain accounting records and conduct an audit?",
     answer: "No. This is a direct prohibition under the International Code of Ethics and ISA. An auditor cannot examine financial statements that they themselves prepared — this violates the independence principle. LUCAS provides either audit or financial statement preparation for a single client, but not both services simultaneously.",
   },
   // SAF-T
