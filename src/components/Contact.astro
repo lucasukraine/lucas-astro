@@ -46,8 +46,8 @@ const t = {
 
     <div class="contact-spread">
 
-      <!-- LEFT: Statement + ledger + hours -->
-      <div class="contact-statement reveal" data-d="2">
+      <!-- INTRO TEXT: desktop — left col top; mobile — first (before form) -->
+      <div class="contact-intro-text reveal" data-d="2">
         <p class="contact-statement-q">
           {lang === 'en'
             ? <Fragment>If you face challenges in <em>accounting, tax or digital finance transformation</em> — write to us.</Fragment>
@@ -55,7 +55,46 @@ const t = {
           }
         </p>
         <p class="contact-statement-p">{t.stmtP}</p>
+      </div>
 
+      <!-- FORM: desktop — right col (spans both rows); mobile — second -->
+      <aside class="contact-residency has-corner reveal" data-d="3">
+        <div class="residency-head">
+          <span class="residency-title">{t.formTitle}</span>
+          <span class="residency-meta">RES · #001</span>
+        </div>
+        <p class="residency-sub">{t.formSub}</p>
+
+        <form class="residency-form" id="lucas-contact-form" novalidate>
+          <div class="field">
+            <input type="text" id="cf-name" name="name" placeholder=" " required autocomplete="name">
+            <label for="cf-name" class="field-label">{t.fieldName}</label>
+          </div>
+          <div class="field">
+            <input type="email" id="cf-email" name="email" placeholder=" " required autocomplete="email">
+            <label for="cf-email" class="field-label">{t.fieldEmail}</label>
+          </div>
+          <div class="field">
+            <input type="tel" id="cf-phone" name="phone" placeholder=" " required autocomplete="tel">
+            <label for="cf-phone" class="field-label">{t.fieldPhone}</label>
+          </div>
+          <div class="field">
+            <textarea id="cf-message" name="message" placeholder=" " required rows="4"></textarea>
+            <label for="cf-message" class="field-label">{t.fieldMsg}</label>
+          </div>
+          <!-- Honeypot — прихована пастка для ботів, люди не бачать і не заповнюють -->
+          <div class="hp-field">
+            <input type="text" name="website" tabindex="-1" autocomplete="off">
+          </div>
+          <button type="submit" class="residency-submit" id="lucas-submit">
+            {t.submit} <span class="arrow"></span>
+          </button>
+          <div class="residency-foot">{t.foot}</div>
+        </form>
+      </aside>
+
+      <!-- DETAILS: desktop — left col bottom; mobile — third (after form) -->
+      <div class="contact-statement reveal" data-d="2">
         <div class="contact-ledger">
           <div class="ledger-row">
             <span class="lr-label">{t.phone}</span>
@@ -94,42 +133,6 @@ const t = {
           </div>
         </div>
       </div>
-
-      <!-- RIGHT: Form residency -->
-      <aside class="contact-residency has-corner reveal" data-d="3">
-        <div class="residency-head">
-          <span class="residency-title">{t.formTitle}</span>
-          <span class="residency-meta">RES · #001</span>
-        </div>
-        <p class="residency-sub">{t.formSub}</p>
-
-        <form class="residency-form" id="lucas-contact-form" novalidate>
-          <div class="field">
-            <input type="text" id="cf-name" name="name" placeholder=" " required autocomplete="name">
-            <label for="cf-name" class="field-label">{t.fieldName}</label>
-          </div>
-          <div class="field">
-            <input type="email" id="cf-email" name="email" placeholder=" " required autocomplete="email">
-            <label for="cf-email" class="field-label">{t.fieldEmail}</label>
-          </div>
-          <div class="field">
-            <input type="tel" id="cf-phone" name="phone" placeholder=" " required autocomplete="tel">
-            <label for="cf-phone" class="field-label">{t.fieldPhone}</label>
-          </div>
-          <div class="field">
-            <textarea id="cf-message" name="message" placeholder=" " required rows="4"></textarea>
-            <label for="cf-message" class="field-label">{t.fieldMsg}</label>
-          </div>
-          <!-- Honeypot — прихована пастка для ботів, люди не бачать і не заповнюють -->
-          <div class="hp-field">
-            <input type="text" name="website" tabindex="-1" autocomplete="off">
-          </div>
-          <button type="submit" class="residency-submit" id="lucas-submit">
-            {t.submit} <span class="arrow"></span>
-          </button>
-          <div class="residency-foot">{t.foot}</div>
-        </form>
-      </aside>
 
     </div>
   </div>
