@@ -1124,18 +1124,31 @@ a.footer-contact-val:hover { color: #fff; }
 }
 
 @media (max-width: 720px) {
-  .hero { min-height: 88vh; }
-  .hero-content { padding: 88px var(--gut) 28px; }
+  .hero { min-height: 100vh; min-height: 100svh; }
+  /* Symmetric-ish padding lets justify-content:center work correctly */
+  .hero-content { padding: 72px var(--gut) 40px; }
   .hero h1 {
     margin-top: 22px;
-    font-size: clamp(36px, 11vw, 56px);
+    font-size: clamp(42px, 11vw, 52px);
     letter-spacing: -0.03em;
-    line-height: 1.02;
-    max-width: 14ch;
+    line-height: 0.98;
+    max-width: 360px;
   }
-  .hero-lead { margin-top: 24px; font-size: 16px; }
-  .hero-actions { margin-top: 32px; margin-bottom: 0; width: 100%; }
-  .hero-actions .btn { flex: 1; justify-content: center; padding: 14px 18px; }
+  .hero-lead {
+    margin-top: 20px;
+    font-size: clamp(17px, 4.5vw, 20px);
+    line-height: 1.45;
+    max-width: 360px;
+  }
+  .hero-actions {
+    margin-top: 26px;
+    margin-bottom: 0;
+    display: flex;
+    width: 100%;
+    max-width: 360px;
+    gap: 12px;
+  }
+  .hero-actions .btn { flex: 1; justify-content: center; height: 64px; padding: 0 20px; }
   .hero::after { height: 120px; }
 }
 
