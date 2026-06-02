@@ -6,6 +6,7 @@ const { lang = 'uk' } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const t = {
+  home:       lang === 'en' ? 'Main'                 : 'Головна',
   concept:    lang === 'en' ? 'Concept'              : 'Концепція',
   services:   lang === 'en' ? 'Services'             : 'Послуги',
   audit:      lang === 'en' ? 'Audit & Reporting'    : 'Аудит та звітність',
@@ -53,6 +54,7 @@ if (lang === 'uk') {
       <svg aria-hidden="true" class="logo-svg"><use href="#lucas-mark"></use></svg>
     </a>
     <nav class="nav">
+      <a href={base + p + '/'}>{t.home}</a>
       <a href={base + p + '/#concept'}>{t.concept}</a>
       <div class="nav-dropdown">
         <a class="nav-dropdown-toggle" href={base + p + '/#services'}>{t.services} <span class="nav-caret">▾</span></a>
@@ -82,6 +84,7 @@ if (lang === 'uk') {
 
 <!-- Mobile menu panel — пов'язаний з header через JS -->
 <div inert class="mob-menu" id="mob-menu">
+  <a href={base + p + '/'}>{t.home}</a>
   <a href={base + p + '/#concept'}>{t.concept}</a>
   <span class="mob-section-label">{t.services}</span>
   <a class="mob-sub" href={base + p + '/audit/'}>{t.audit}</a>
