@@ -3159,29 +3159,15 @@ a.footer-contact-val:hover { color: #fff; }
   position: relative; z-index: 1;
   display: grid;
   grid-template-columns: 5fr 4fr;
-  grid-template-areas:
-    "intro   form"
-    "details form";
-  column-gap: 80px;
-  row-gap: 32px;
+  gap: 80px;
   align-items: start;
   max-width: 1180px;
   margin: 0 auto;
 }
-.contact-intro-text {
-  grid-area: intro;
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
 .contact-statement {
-  grid-area: details;
   display: flex;
   flex-direction: column;
   gap: 32px;
-}
-.contact-residency {
-  grid-area: form;
 }
 .contact-statement-q {
   font-family: var(--display);
@@ -3472,7 +3458,9 @@ a.footer-contact-val:hover { color: #fff; }
   .ind-tagline { margin-bottom: 60px; }
 
   /* CONTACT */
-  .contact-spread { grid-template-columns: 1fr; grid-template-areas: none; gap: 48px; max-width: 620px; }
+  .contact-spread { grid-template-columns: 1fr; gap: 48px; max-width: 620px; }
+  .contact-residency { order: 1; }
+  .contact-statement { order: 2; }
   .contact-hours { grid-template-columns: repeat(3, 1fr); }
   .ledger-row { grid-template-columns: 120px 1fr; }
   .ledger-row .lr-hint { grid-column: 1 / -1; padding-left: 24px; }
