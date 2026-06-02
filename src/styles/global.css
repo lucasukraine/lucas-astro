@@ -3459,6 +3459,8 @@ a.footer-contact-val:hover { color: #fff; }
 
   /* CONTACT */
   .contact-spread { grid-template-columns: 1fr; gap: 48px; max-width: 620px; }
+  .contact-residency { order: 1; }
+  .contact-statement { order: 2; }
   .contact-hours { grid-template-columns: repeat(3, 1fr); }
   .ledger-row { grid-template-columns: 120px 1fr; }
   .ledger-row .lr-hint { grid-column: 1 / -1; padding-left: 24px; }
