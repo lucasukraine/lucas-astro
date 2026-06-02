@@ -1135,13 +1135,13 @@ a.footer-contact-val:hover { color: #fff; }
     max-width: 360px;
   }
   .hero-lead {
-    margin-top: 20px;
+    margin-top: 40px;
     font-size: clamp(17px, 4.5vw, 20px);
     line-height: 1.45;
     max-width: 360px;
   }
   .hero-actions {
-    margin-top: 26px;
+    margin-top: 78px;
     margin-bottom: 0;
     display: flex;
     width: 100%;
