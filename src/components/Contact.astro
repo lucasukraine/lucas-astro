@@ -144,19 +144,27 @@ const t = {
   if (!form) return;
 
   // ─── Динамічне завантаження EmailJS ──────────────────────────
+  // Defer until contact section enters viewport to avoid blocking first paint
   var ejsLoaded = false;
-  var ejsScript = document.createElement('script');
-  ejsScript.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
-  ejsScript.onload = function () {
-    if (window.emailjs) {
-      window.emailjs.init({ publicKey: 'iY16Y2CF5ffzdZCbh' });
-      ejsLoaded = true;
-    }
-  };
-  ejsScript.onerror = function () {
-    console.warn('[Contact] EmailJS не вдалось завантажити.');
-  };
-  document.head.appendChild(ejsScript);
+  function loadEmailJS() {
+    if (ejsLoaded) return;
+    var s = document.createElement('script');
+    s.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
+    s.onload = function () {
+      if (window.emailjs) { window.emailjs.init({ publicKey: 'iY16Y2CF5ffzdZCbh' }); ejsLoaded = true; }
+    };
+    s.onerror = function () { console.warn('[Contact] EmailJS не вдалось завантажити.'); };
+    document.head.appendChild(s);
+  }
+  var contactSection = form.closest('section') || form;
+  if ('IntersectionObserver' in window) {
+    var _io = new IntersectionObserver(function(entries) {
+      if (entries[0].isIntersecting) { loadEmailJS(); _io.disconnect(); }
+    }, { rootMargin: '300px' });
+    _io.observe(contactSection);
+  } else {
+    loadEmailJS();
+  }
 
   // ─── Email reveal ─────────────────────────────────────────────
   var revealBtn = document.getElementById('contact-email-reveal');

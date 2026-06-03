@@ -101,8 +101,8 @@ if (lang === 'en') {
     <link rel="icon" type="image/x-icon" href={base + '/favicon.ico'} />
     <link rel="apple-touch-icon" href={base + '/apple-touch-icon.png'} />
     <!-- Preload critical font subsets (cyrillic = UA content, latin = fallback) -->
-    <link rel="preload" href={base + '/fonts/onest/onest-cyrillic.woff2'} as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href={base + '/fonts/manrope/manrope-cyrillic.woff2'} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={base + '/fonts/onest/onest-cyrillic.woff2'} as="font" type="font/woff2" crossorigin fetchpriority="high" />
+    <link rel="preload" href={base + '/fonts/manrope/manrope-cyrillic.woff2'} as="font" type="font/woff2" crossorigin fetchpriority="high" />
     <script type="application/ld+json" is:inline set:html={orgSchema} />
     <slot name="head" />
   </head>

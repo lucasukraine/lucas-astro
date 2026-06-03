@@ -1117,10 +1117,50 @@ a.footer-contact-val:hover { color: #fff; }
 }
 
 /* =============================================================
+   REDUCED MOTION — disable all decorative animations
+   ============================================================= */
+@media (prefers-reduced-motion: reduce) {
+  .hero-atmos { animation: none; }
+
+  .ha {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .hero-card-wrap {
+    animation: none;
+    opacity: 1;
+  }
+  .hero-card-wrap.l .hero-card { animation: none; }
+  .hero-card-wrap.c .hero-card { animation: none; }
+  .hero-card-wrap.r .hero-card { animation: none; }
+
+  .hero h1 .underline::after {
+    animation: none;
+    transform: scaleX(1);
+  }
+  .dot-cyan { animation: none; }
+}
+
+/* =============================================================
    RESPONSIVE — Hero
    ============================================================= */
 @media (max-width: 1080px) {
   .hero-cards { display: none; }
+}
+
+@media (max-width: 720px) {
+  /* Disable expensive blur animation — static gradients remain visible */
+  .hero-atmos { animation: none; }
+
+  /* Compress entrance timeline: H1 visible sooner → faster LCP */
+  .ha { animation-duration: .5s; }
+  .ha.d1 { animation-delay: 0s; }
+  .ha.d2 { animation-delay: .07s; }
+  .ha.d3 { animation-delay: .14s; }
+  .ha.d4 { animation-delay: .21s; }
+  .ha.d5 { animation-delay: .30s; }
+  .hero h1 .underline::after { animation-delay: .45s; }
 }
 
 @media (max-width: 720px) {
