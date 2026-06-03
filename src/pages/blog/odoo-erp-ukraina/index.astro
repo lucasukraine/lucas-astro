@@ -1,14 +1,15 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
 import ArticleCTA from '../../../components/ArticleCTA.astro';
 import ArticleAuthor from '../../../components/ArticleAuthor.astro';
 import ArticleRelated from '../../../components/ArticleRelated.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-<BaseLayout
+<ArticleLayout
   title="Odoo ERP: що це таке, як працює і чи підходить для України"
   description="Огляд Odoo ERP для українського бізнесу: модулі, бухгалтерія, податки, інтеграції, переваги, обмеження та роль локалізації для переходу з 1С/BAS."
+  isoDate="2026-03-20"
 >
   <main>
 

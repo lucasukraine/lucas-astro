@@ -5,14 +5,49 @@ import ServiceAeo from '../../components/ServiceAeo.astro';
 import FaqAccordion from '../../components/FaqAccordion.astro';
 import ServiceCTA from '../../components/ServiceCTA.astro';
 import ServiceBlogBlock from '../../components/ServiceBlogBlock.astro';
+import SchemaOrg from '../../components/SchemaOrg.astro';
 import { odooMigrationFaq } from '../../data/odooMigrationFaq';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'ProfessionalService',
+      '@id': 'https://www.lucasua.com/odoo-migration/',
+      name: 'Міграція з 1С/BAS на Odoo — LUCAS',
+      url: 'https://www.lucasua.com/odoo-migration/',
+      provider: { '@id': 'https://www.lucasua.com/#organization' },
+      description: 'Міграція обліку з 1С/BAS на Odoo під методологічним контролем аудиторів LUCAS. Коректне перенесення даних, відповідність вимогам звітності, тандем аудитор+розробник.',
+      areaServed: 'Ukraine',
+      serviceType: ['Міграція ERP', 'Перехід з 1С на Odoo', 'Впровадження Odoo'],
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Головна', item: 'https://www.lucasua.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Міграція з 1С / BAS на Odoo', item: 'https://www.lucasua.com/odoo-migration/' },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: odooMigrationFaq.map(item => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: { '@type': 'Answer', text: item.answer },
+      })),
+    },
+  ],
+};
 ---
 
 <ServiceLayout
   title="Міграція з 1С / BAS на Odoo — перехід ERP під контролем аудиторів | LUCAS"
-  description="Міграція обліку з 1С/BAS на Odoo під методологічним контролем аудиторської команди LUCAS. Заборона 1С 2026, тандем аудитор+розробник, економія до 40% вартості впровадження."
+  description="Перехід з 1С/BAS на Odoo під контролем аудиторів LUCAS. Заборона 1С у 2026 — плануйте міграцію завчасно. Тандем аудитор+розробник, дані без втрат."
 >
+  <Fragment slot="head">
+    <SchemaOrg schema={jsonLd} />
+  </Fragment>
   <ServiceHero
     eyebrow="Послуга 03"
     title="Міграція з 1С / BAS на Odoo"

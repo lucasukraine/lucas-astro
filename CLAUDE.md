@@ -2,9 +2,9 @@
 
 ## Про проєкт
 
-**Сайт:** https://lucasukraine.github.io/lucas-astro  
+**Сайт:** https://www.lucasua.com  
 **Репозиторій:** https://github.com/lucasukraine/lucas-astro  
-**Технології:** Astro.js (статичний сайт), GitHub Pages  
+**Технології:** Astro.js (статичний сайт), GitHub Pages (custom domain: www.lucasua.com)  
 **Мова контенту:** Українська
 
 **Що робить LUCAS:**

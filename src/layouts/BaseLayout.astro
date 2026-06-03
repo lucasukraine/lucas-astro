@@ -20,6 +20,43 @@ const {
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const site = (Astro.site?.toString() ?? '').replace(/\/$/, '');
+
+const orgSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': 'https://www.lucasua.com/#organization',
+      name: 'LUCAS',
+      url: 'https://www.lucasua.com',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.lucasua.com/og-default.jpg',
+        width: 1200,
+        height: 630,
+      },
+      description:
+        'Аудиторська та технологічна компанія в Україні: аудит фінансової звітності, SAF-T Connector, міграція з 1С/BAS на Odoo, трансфертне ціноутворення.',
+      areaServed: 'Ukraine',
+      telephone: '+380443447915',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'пл. Спортивна 1а, БЦ Гулівер, Вежа А, 17 поверх',
+        addressLocality: 'Київ',
+        postalCode: '01601',
+        addressCountry: 'UA',
+      },
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://www.lucasua.com/#website',
+      url: 'https://www.lucasua.com',
+      name: 'LUCAS',
+      publisher: { '@id': 'https://www.lucasua.com/#organization' },
+      inLanguage: ['uk', 'en'],
+    },
+  ],
+});
 const pathname = Astro.url.pathname;
 
 let ukUrl: string;
@@ -47,12 +84,26 @@ if (lang === 'en') {
     <link rel="alternate" hreflang="uk" href={ukUrl} />
     <link rel="alternate" hreflang="en" href={enUrl} />
     <link rel="alternate" hreflang="x-default" href={ukUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="LUCAS" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={lang === 'en' ? enUrl : ukUrl} />
+    <meta property="og:locale" content={lang === 'en' ? 'en_US' : 'uk_UA'} />
+    <meta property="og:image" content="https://www.lucasua.com/og-default.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://www.lucasua.com/og-default.jpg" />
     <link rel="icon" type="image/svg+xml" href={base + '/favicon.svg'} />
     <link rel="icon" type="image/x-icon" href={base + '/favicon.ico'} />
     <link rel="apple-touch-icon" href={base + '/apple-touch-icon.png'} />
     <!-- Preload critical font subsets (cyrillic = UA content, latin = fallback) -->
     <link rel="preload" href={base + '/fonts/onest/onest-cyrillic.woff2'} as="font" type="font/woff2" crossorigin />
     <link rel="preload" href={base + '/fonts/manrope/manrope-cyrillic.woff2'} as="font" type="font/woff2" crossorigin />
+    <script type="application/ld+json" is:inline set:html={orgSchema} />
     <slot name="head" />
   </head>
   <body>

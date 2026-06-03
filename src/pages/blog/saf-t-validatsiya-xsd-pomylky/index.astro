@@ -1,14 +1,15 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
 import ArticleCTA from '../../../components/ArticleCTA.astro';
 import ArticleAuthor from '../../../components/ArticleAuthor.astro';
 import ArticleRelated from '../../../components/ArticleRelated.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-<BaseLayout
+<ArticleLayout
   title="Валідація SAF-T UA: XSD-схема, бізнес-правила і типові помилки | LUCAS"
-  description="Як валідувати SAF-T UA файл: XSD-схема, логічна перевірка даних, топ типових помилок і способи їх виправити. Практичний гайд для бухгалтерів і технічних спеціалістів."
+  description="Як валідувати SAF-T UA: XSD-схема, логічна перевірка даних, типові помилки та способи їх виправити. Практичний гайд для бухгалтерів і технічних спеціалістів."
+  isoDate="2026-04-14"
 >
   <main>
 

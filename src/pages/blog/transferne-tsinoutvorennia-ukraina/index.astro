@@ -1,14 +1,15 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
 import ArticleCTA from '../../../components/ArticleCTA.astro';
 import ArticleAuthor from '../../../components/ArticleAuthor.astro';
 import ArticleRelated from '../../../components/ArticleRelated.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-<BaseLayout
-  title="Трансфертне ціноутворення в Україні: правила ТЦУ, контрольовані операції, звітність"
-  description="Що таке трансфертне ціноутворення в Україні, кого стосуються правила ТЦУ, що таке принцип витягнутої руки, які операції можуть бути контрольованими і що має перевірити CFO."
+<ArticleLayout
+  title="Трансфертне ціноутворення в Україні: правила ТЦУ і контрольовані операції"
+  description="Що таке трансфертне ціноутворення в Україні, кого стосуються правила ТЦУ, що таке принцип витягнутої руки і які операції є контрольованими."
+  isoDate="2026-01-22"
 >
   <main>
 

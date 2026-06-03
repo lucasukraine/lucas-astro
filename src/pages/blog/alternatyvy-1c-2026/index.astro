@@ -1,14 +1,15 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
 import ArticleCTA from '../../../components/ArticleCTA.astro';
 import ArticleAuthor from '../../../components/ArticleAuthor.astro';
 import ArticleRelated from '../../../components/ArticleRelated.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-<BaseLayout
+<ArticleLayout
   title="Альтернативи 1С в Україні: Odoo, SAP, Microsoft Dynamics та інші ERP"
-  description="Огляд альтернатив 1С/BAS для українського бізнесу: Odoo, SAP, Microsoft Dynamics, локальні ERP та кастомні рішення. Як обрати систему для бухгалтерії, податків і управлінського обліку."
+  description="Огляд альтернатив 1С/BAS для українського бізнесу: Odoo, SAP, Microsoft Dynamics та локальні ERP. Як обрати систему для бухгалтерії та управлінського обліку."
+  isoDate="2026-02-10"
 >
   <main>
 

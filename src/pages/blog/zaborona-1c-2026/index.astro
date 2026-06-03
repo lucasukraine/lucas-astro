@@ -1,14 +1,15 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
 import ArticleCTA from '../../../components/ArticleCTA.astro';
 import ArticleAuthor from '../../../components/ArticleAuthor.astro';
 import ArticleRelated from '../../../components/ArticleRelated.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-<BaseLayout
+<ArticleLayout
   title="Заборона 1С, BAS і BAF в Україні 2026: ризики, штрафи, альтернатива"
   description="Що відомо про заборону 1С, BAS і BAF в Україні у 2026 році, які ризики створюють санкції та законопроєкт №13505, і як перейти з 1С/BAS на Odoo або іншу ERP."
+  isoDate="2026-01-12"
 >
   <main>
 

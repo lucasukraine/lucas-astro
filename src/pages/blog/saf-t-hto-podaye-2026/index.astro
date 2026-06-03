@@ -1,14 +1,15 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
 import ArticleCTA from '../../../components/ArticleCTA.astro';
 import ArticleAuthor from '../../../components/ArticleAuthor.astro';
 import ArticleRelated from '../../../components/ArticleRelated.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-<BaseLayout
+<ArticleLayout
   title="Хто подає SAF-T UA у 2026 році: великі платники та е-аудит | LUCAS"
-  description="Хто подає SAF-T UA у 2026 році та чи є SAF-T регулярною звітністю: великі платники на запит ДПС, критерії, статус ПСІ і МСБ. Без зайвого ускладнення. Станом на травень 2026."
+  description="Хто подає SAF-T UA у 2026 році: великі платники на запит ДПС, критерії, статус ПСІ і МСБ. Чи є SAF-T регулярною звітністю — актуально на червень 2026."
+  isoDate="2026-02-26"
 >
   <main>
 

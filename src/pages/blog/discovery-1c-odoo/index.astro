@@ -1,14 +1,15 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
 import ArticleCTA from '../../../components/ArticleCTA.astro';
 import ArticleAuthor from '../../../components/ArticleAuthor.astro';
 import ArticleRelated from '../../../components/ArticleRelated.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-<BaseLayout
+<ArticleLayout
   title="Перехід з 1С на Odoo: Discovery, бюджет, строки і план міграції"
   description="Навіщо потрібен Discovery перед міграцією з 1С/BAS на Odoo: як оцінити бюджет, строки, ризики, модулі, інтеграції та обсяг кастомізації."
+  isoDate="2026-05-28"
 >
   <main>
 

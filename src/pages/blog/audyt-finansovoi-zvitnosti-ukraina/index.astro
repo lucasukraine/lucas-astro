@@ -1,14 +1,15 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
 import ArticleCTA from '../../../components/ArticleCTA.astro';
 import ArticleAuthor from '../../../components/ArticleAuthor.astro';
 import ArticleRelated from '../../../components/ArticleRelated.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-<BaseLayout
+<ArticleLayout
   title="Аудит фінансової звітності в Україні: обов'язковий аудит, етапи, висновок"
-  description="Хто зобов'язаний проходити аудит фінансової звітності в Україні, як відбувається аудиторська перевірка за МСА, які документи перевіряє аудитор і що означає аудиторський звіт."
+  description="Хто зобов'язаний проходити аудит фінансової звітності в Україні, як відбувається аудиторська перевірка за МСА та що означає аудиторський висновок."
+  isoDate="2026-01-30"
 >
   <main>
 

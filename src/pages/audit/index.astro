@@ -9,51 +9,48 @@ import { auditFaq } from '../../data/auditFaq';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const jsonLd = JSON.stringify({
-  "@context": "https://schema.org",
-  "@graph": [
+  '@context': 'https://schema.org',
+  '@graph': [
     {
-      "@type": "AccountingService",
-      "@id": "https://lucasua.com/audit/",
-      "name": "LUCAS",
-      "url": "https://lucasua.com/audit/",
-      "description": "LUCAS — аудиторська фірма в Україні, що надає послуги аудиту фінансової звітності, обов'язкового аудиту, аудиту за МСА, аудиту МСФЗ-звітності, групового аудиту, огляду звітності та погоджених процедур.",
-      "areaServed": "Ukraine",
-      "serviceType": [
-        "Аудит фінансової звітності",
+      '@type': 'AccountingService',
+      '@id': 'https://www.lucasua.com/audit/',
+      name: 'LUCAS — Аудит фінансової звітності',
+      url: 'https://www.lucasua.com/audit/',
+      provider: { '@id': 'https://www.lucasua.com/#organization' },
+      description: "Незалежний аудит фінансової звітності за МСА. Обов'язковий аудит, груповий аудит, МСФЗ-звітність, огляд звітності та погоджені процедури для підприємств в Україні.",
+      areaServed: 'Ukraine',
+      serviceType: [
+        'Аудит фінансової звітності',
         "Обов'язковий аудит",
-        "Аудит за МСА",
-        "Аудит фінансової звітності за МСФЗ",
-        "Груповий аудит",
-        "Огляд фінансової звітності",
-        "Погоджені процедури"
+        'Аудит за МСА',
+        'Аудит МСФЗ-звітності',
+        'Груповий аудит',
+        'Огляд фінансової звітності',
+        'Погоджені процедури',
       ],
-      "telephone": "+380443447915",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "пл. Спортивна 1а, БЦ Гулівер, Вежа А, 17 поверх",
-        "addressLocality": "Київ",
-        "postalCode": "01601",
-        "addressCountry": "UA"
-      }
     },
     {
-      "@type": "FAQPage",
-      "mainEntity": auditFaq.map(item => ({
-        "@type": "Question",
-        "name": item.question,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": item.answer
-        }
-      }))
-    }
-  ]
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Головна', item: 'https://www.lucasua.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Аудит та звітність', item: 'https://www.lucasua.com/audit/' },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: auditFaq.map(item => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: { '@type': 'Answer', text: item.answer },
+      })),
+    },
+  ],
 });
 ---
 
 <ServiceLayout
   title="Аудиторська фірма LUCAS — аудит фінансової звітності в Україні"
-  description="LUCAS — аудиторська фірма в Україні. Проводимо обов'язковий аудит, аудит фінансової звітності відповідно до МСА, аудит фінансової звітності за МСФЗ, груповий аудит, огляд звітності та погоджені процедури."
+  description="Обов'язковий аудит і МСФЗ-звітність за МСА для підприємств в Україні. LUCAS — груповий аудит, огляд звітності та погоджені процедури."
 >
   <Fragment slot="head">
     <script type="application/ld+json" is:inline set:html={jsonLd}></script>

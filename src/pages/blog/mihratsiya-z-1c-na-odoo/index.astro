@@ -1,14 +1,15 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
 import ArticleCTA from '../../../components/ArticleCTA.astro';
 import ArticleAuthor from '../../../components/ArticleAuthor.astro';
 import ArticleRelated from '../../../components/ArticleRelated.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-<BaseLayout
+<ArticleLayout
   title="Міграція з 1С на Odoo: складнощі, ризики і план переходу"
-  description="Як перейти з 1С/BAS на Odoo без втрати даних і бухгалтерської логіки: типові проблеми і ризики міграції, непорозуміння між IT та бухгалтерами, Discovery, тестування і роль аудиторів."
+  description="Як перейти з 1С/BAS на Odoo без втрати даних: типові ризики міграції, роль Discovery, тестування та аудиторський контроль над переходом ERP."
+  isoDate="2026-04-22"
 >
   <main>
 

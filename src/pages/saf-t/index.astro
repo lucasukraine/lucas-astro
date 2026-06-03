@@ -5,14 +5,49 @@ import ServiceAeo from '../../components/ServiceAeo.astro';
 import FaqAccordion from '../../components/FaqAccordion.astro';
 import ServiceCTA from '../../components/ServiceCTA.astro';
 import ServiceBlogBlock from '../../components/ServiceBlogBlock.astro';
+import SchemaOrg from '../../components/SchemaOrg.astro';
 import { saftFaq } from '../../data/saftFaq';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'ProfessionalService',
+      '@id': 'https://www.lucasua.com/saf-t/',
+      name: 'SAF-T Connector від LUCAS',
+      url: 'https://www.lucasua.com/saf-t/',
+      provider: { '@id': 'https://www.lucasua.com/#organization' },
+      description: 'ERP-незалежна платформа для підготовки XML-файлів SAF-T UA. Підключається до SAP, BAS/1C, Odoo, Microsoft Dynamics і кастомних систем. On-premise, XSD-валідація, впровадження під ключ.',
+      areaServed: 'Ukraine',
+      serviceType: ['SAF-T UA підготовка', 'Впровадження SAF-T Connector', 'XSD-валідація SAF-T'],
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Головна', item: 'https://www.lucasua.com/' },
+        { '@type': 'ListItem', position: 2, name: 'SAF-T Connector', item: 'https://www.lucasua.com/saf-t/' },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: saftFaq.map(item => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: { '@type': 'Answer', text: item.answer },
+      })),
+    },
+  ],
+};
 ---
 
 <ServiceLayout
   title="Рішення для SAF-T UA — SAF-T Connector з будь-якої ERP | LUCAS"
-  description="SAF-T Connector від LUCAS — ERP-незалежне рішення для підготовки XML-файлів SAF-T UA з SAP, BAS/1C, Odoo, Microsoft Dynamics і кастомних систем. On-premise, XSD-валідація, впровадження під ключ."
+  description="SAF-T Connector від LUCAS — ERP-незалежна платформа для XML-файлів SAF-T UA з SAP, BAS, Odoo та інших систем. Впровадження під ключ, XSD-валідація, on-premise."
 >
+  <Fragment slot="head">
+    <SchemaOrg schema={jsonLd} />
+  </Fragment>
   <ServiceHero
     eyebrow="Послуга 02"
     title="SAF-T Connector"

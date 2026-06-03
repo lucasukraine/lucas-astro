@@ -1,14 +1,15 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
 import ArticleCTA from '../../../components/ArticleCTA.astro';
 import ArticleAuthor from '../../../components/ArticleAuthor.astro';
 import ArticleRelated from '../../../components/ArticleRelated.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-<BaseLayout
-  title="IFRS 1: перший перехід на МСФЗ — дата переходу, вступний баланс, звільнення | LUCAS"
-  description="Як вперше перейти на МСФЗ за IFRS 1: дата переходу, opening balance sheet, облікова політика, обов'язкові винятки, добровільні звільнення, розкриття і типові помилки."
+<ArticleLayout
+  title="IFRS 1: перший перехід на МСФЗ — вступний баланс і звільнення | LUCAS"
+  description="Перехід на МСФЗ за IFRS 1: дата переходу, вступний баланс, облікова політика, обов'язкові та добровільні звільнення, типові помилки при першому застосуванні."
+  isoDate="2026-04-03"
 >
   <main>
 

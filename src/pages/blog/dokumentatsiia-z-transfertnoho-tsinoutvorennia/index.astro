@@ -1,14 +1,15 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
 import ArticleCTA from '../../../components/ArticleCTA.astro';
 import ArticleAuthor from '../../../components/ArticleAuthor.astro';
 import ArticleRelated from '../../../components/ArticleRelated.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-<BaseLayout
+<ArticleLayout
   title="Документація з трансфертного ціноутворення: TP file, local file, master file"
-  description="Що входить до TP file (документації з ТЦУ), чим local file відрізняється від master file, що таке benchmark і функціональний аналіз, коли готувати документацію і як захистити позицію при запиті ДПС."
+  description="Що входить до TP file: local file, master file, benchmark і функціональний аналіз. Коли готувати ТЦ-документацію і як захистити позицію на запит ДПС."
+  isoDate="2026-04-09"
 >
   <main>
 

@@ -1,14 +1,15 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
 import ArticleCTA from '../../../components/ArticleCTA.astro';
 import ArticleAuthor from '../../../components/ArticleAuthor.astro';
 import ArticleRelated from '../../../components/ArticleRelated.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-<BaseLayout
+<ArticleLayout
   title="Обов'язковий аудит в Україні 2026: хто зобов'язаний, строки, штрафи"
-  description="Хто зобов'язаний проходити обов'язковий аудит фінансової звітності в Україні, як визначити категорію підприємства, які строки оприлюднення аудиторського звіту та які ризики за порушення."
+  description="Хто зобов'язаний проходити обов'язковий аудит в Україні: категорії підприємств, строки оприлюднення аудиторського звіту та наслідки за порушення вимог."
+  isoDate="2026-03-03"
 >
   <main>
 

@@ -1,14 +1,15 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
 import ArticleCTA from '../../../components/ArticleCTA.astro';
 import ArticleAuthor from '../../../components/ArticleAuthor.astro';
 import ArticleRelated from '../../../components/ArticleRelated.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-<BaseLayout
+<ArticleLayout
   title="Звіт про контрольовані операції 2026: хто подає, критерії, строки | LUCAS"
-  description="Хто має подавати звіт про контрольовані операції у 2026 році, які діють критерії 150 млн грн і 10 млн грн, як визначити пов'язаних осіб, строки подання, повідомлення про МГК і штрафи."
+  description="Хто подає звіт про контрольовані операції у 2026 році: критерії 150 млн і 10 млн грн, строки подання, повідомлення про МГК і штрафи за порушення."
+  isoDate="2026-03-26"
 >
   <main>
 

@@ -1,14 +1,15 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
 import ArticleCTA from '../../../components/ArticleCTA.astro';
 import ArticleAuthor from '../../../components/ArticleAuthor.astro';
 import ArticleRelated from '../../../components/ArticleRelated.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-<BaseLayout
+<ArticleLayout
   title="Фінансова звітність за МСФЗ в Україні: хто зобов'язаний, строки, XBRL"
   description="Хто зобов'язаний складати фінансову звітність за МСФЗ в Україні, які строки подання у 2025–2026 роках, як перейти з НП(С)БО на МСФЗ та коли потрібен аудит."
+  isoDate="2026-02-18"
 >
   <main>
 
