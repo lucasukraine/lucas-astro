@@ -118,7 +118,9 @@ if (lang === 'uk') {
         header.classList.toggle('scrolled', past);
         if (scrim) scrim.classList.toggle('light', past);
       };
-      onScroll();
+      // Skip forced layout on initial load — header is not scrolled when page
+      // starts at top. Only check if pre-scrolled (e.g. hash navigation).
+      if (window.scrollY > 0) requestAnimationFrame(onScroll);
       window.addEventListener('scroll', onScroll, { passive: true });
       window.addEventListener('resize', onScroll);
     };

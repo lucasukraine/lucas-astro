@@ -48,10 +48,18 @@ const {
   // Запускається один раз після повного завантаження DOM,
   // тому безпечно при кількох <FaqAccordion /> на одній сторінці.
   (() => {
+    // FAQ is below the fold — defer setup to idle to avoid blocking first load
+    const schedule = () => {
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(initAllFaqs, { timeout: 3000 });
+      } else {
+        setTimeout(initAllFaqs, 300);
+      }
+    };
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initAllFaqs);
+      document.addEventListener('DOMContentLoaded', schedule);
     } else {
-      initAllFaqs();
+      schedule();
     }
 
     function initAllFaqs() {

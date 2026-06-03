@@ -166,7 +166,7 @@ const t = {
     loadEmailJS();
   }
 
-  // ─── Email reveal ─────────────────────────────────────────────
+  // ─── Email reveal (lightweight, runs immediately) ────────────
   var revealBtn = document.getElementById('contact-email-reveal');
   if (revealBtn) {
     revealBtn.addEventListener('click', function () {
@@ -179,7 +179,10 @@ const t = {
     }, { once: true });
   }
 
-  // ─── Validation ───────────────────────────────────────────────
+  // ─── Validation + Submit — deferred to idle ───────────────────
+  // Contact form is below the fold; users must scroll before interacting.
+  // Deferring setup avoids DOM queries + addEventListener blocking first load.
+  function initForm() {
   var validators = {
     name:    function (v) { return v.trim().length >= 2; },
     email:   function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()); },
@@ -289,5 +292,12 @@ const t = {
       setTimeout(function () { errMsg.remove(); }, 6000);
     });
   });
+  } // end initForm
+
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(initForm, { timeout: 2000 });
+  } else {
+    setTimeout(initForm, 200);
+  }
 })();
 </script>
