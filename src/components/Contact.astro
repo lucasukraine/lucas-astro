@@ -279,6 +279,9 @@ const t = {
       btn.style.color      = '#fff';
       form.reset();
       form.querySelectorAll('.field-err-msg').forEach(function (el) { el.remove(); });
+      if (typeof gtag === 'function') {
+        gtag('event', 'form_submit', { event_category: 'contact', event_label: 'lucas_contact_form' });
+      }
     }).catch(function () {
       btn.disabled  = false;
       submitted     = false;

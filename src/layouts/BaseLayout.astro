@@ -104,6 +104,14 @@ if (lang === 'en') {
     <link rel="preload" href={base + '/fonts/onest/onest-cyrillic.woff2'} as="font" type="font/woff2" crossorigin fetchpriority="high" />
     <link rel="preload" href={base + '/fonts/manrope/manrope-cyrillic.woff2'} as="font" type="font/woff2" crossorigin fetchpriority="high" />
     <script type="application/ld+json" is:inline set:html={orgSchema} />
+    <!-- Google Analytics -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-RLGTE1PBF9"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-RLGTE1PBF9');
+    </script>
     <slot name="head" />
   </head>
   <body>
