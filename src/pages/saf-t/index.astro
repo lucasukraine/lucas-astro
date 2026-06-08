@@ -13,14 +13,25 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
-      '@type': 'ProfessionalService',
+      '@type': 'Service',
       '@id': 'https://www.lucasua.com/saf-t/',
-      name: 'SAF-T Connector від LUCAS',
+      name: 'SAF-T Connector — підготовка SAF-T UA для е-аудиту ДПС',
       url: 'https://www.lucasua.com/saf-t/',
       provider: { '@id': 'https://www.lucasua.com/#organization' },
-      description: 'ERP-незалежна платформа для підготовки XML-файлів SAF-T UA. Підключається до SAP, BAS/1C, Odoo, Microsoft Dynamics і кастомних систем. On-premise, XSD-валідація, впровадження під ключ.',
+      description: 'ERP-незалежна платформа для підготовки XML-файлів SAF-T UA на запит ДПС у межах е-аудиту. Підключається до SAP, BAS/1C, Odoo, Microsoft Dynamics і кастомних систем. On-premise, XSD-валідація, впровадження під ключ.',
       areaServed: 'Ukraine',
-      serviceType: ['SAF-T UA підготовка', 'Впровадження SAF-T Connector', 'XSD-валідація SAF-T'],
+      serviceType: ['SAF-T UA підготовка', 'Е-аудит ДПС', 'Впровадження SAF-T Connector', 'XSD-валідація SAF-T'],
+      offers: {
+        '@type': 'Offer',
+        priceCurrency: 'EUR',
+        price: '9900',
+        priceSpecification: {
+          '@type': 'PriceSpecification',
+          minPrice: '9900',
+          priceCurrency: 'EUR',
+          description: 'Впровадження SAF-T Connector під ключ від 9 900 євро',
+        },
+      },
     },
     {
       '@type': 'BreadcrumbList',
@@ -42,35 +53,35 @@ const jsonLd = {
 ---
 
 <ServiceLayout
-  title="Рішення для SAF-T UA — SAF-T Connector з будь-якої ERP | LUCAS"
-  description="SAF-T Connector від LUCAS — ERP-незалежна платформа для XML-файлів SAF-T UA з SAP, BAS, Odoo та інших систем. Впровадження під ключ, XSD-валідація, on-premise."
+  title="SAF-T UA — підготовка XML для е-аудиту ДПС | LUCAS"
+  description="ERP-незалежна платформа для підготовки XML-файлів SAF-T UA та е-аудиту ДПС. Великі платники, SAP, BAS, Odoo. XSD-валідація, on-premise, впровадження під ключ."
 >
   <Fragment slot="head">
     <SchemaOrg schema={jsonLd} />
   </Fragment>
   <ServiceHero
     eyebrow="Послуга 02"
-    title="SAF-T Connector"
-    lead="SAF-T Connector — ERP-незалежне рішення для підготовки файлів SAF-T UA з SAP, BAS/1C, Odoo, Microsoft Dynamics, кастомних систем або кількох джерел даних одночасно. Встановлюється on-premise та впроваджується під ключ командою LUCAS."
+    title="SAF-T Connector — підготовка SAF-T UA для е-аудиту ДПС"
+    lead="SAF-T Connector — ERP-незалежне рішення для підготовки файлів SAF-T UA на запит ДПС у межах е-аудиту (документальних перевірок). Підключається до SAP, BAS/1C, Odoo, Microsoft Dynamics, кастомних систем або кількох джерел даних одночасно. Встановлюється on-premise та впроваджується під ключ командою LUCAS."
     accent="cyan"
   />
 
   <ServiceAeo
-    title="Коротко про SAF-T Connector від LUCAS"
-    lead="SAF-T Connector — ERP-незалежне рішення для підготовки XML-файлів SAF-T UA з будь-якої облікової системи: SAP, BAS/1C, Odoo, Microsoft Dynamics, кастомних ERP або кількох джерел даних одночасно. Встановлюється on-premise, включає XSD-валідацію та логічні перевірки, впроваджується під ключ командою LUCAS. Підходить для компаній, що мають великі транзакційні дані, кілька облікових систем або планують міграцію на нову ERP."
+    title="SAF-T UA та е-аудит ДПС: що таке SAF-T Connector"
+    lead="SAF-T Connector — ERP-незалежне рішення для підготовки XML-файлів SAF-T UA на запит ДПС у межах е-аудиту. Відповідно до ст. 85 Податкового кодексу України, великі платники зобов'язані надавати SAF-T UA на вимогу ДПС під час документальних перевірок. Connector підключається до SAP, BAS/1C, Odoo, Microsoft Dynamics або кількох джерел даних одночасно. Встановлюється on-premise, включає XSD-валідацію та логічні перевірки, впроваджується під ключ командою LUCAS."
     rows={[
-      { label: 'Що таке',          value: 'SAF-T Connector — власний продукт LUCAS для підготовки XML-файлів SAF-T UA' },
-      { label: 'Що робить',        value: 'Витягує облікові дані з ERP, формує XML-файл SAF-T UA, виконує XSD-валідацію та логічні перевірки даних' },
-      { label: 'Для кого',         value: 'Великі платники податків, компанії з SAP, BAS/1C, Odoo, Microsoft Dynamics або кількома джерелами даних' },
+      { label: 'Що таке',          value: 'SAF-T Connector — власний продукт LUCAS для підготовки XML-файлів SAF-T UA для е-аудиту ДПС' },
+      { label: 'Що робить',        value: 'Витягує облікові дані з ERP, формує XML-файл SAF-T UA, виконує XSD-валідацію та логічні перевірки перед поданням до ДПС' },
+      { label: 'Для кого',         value: 'Великі платники податків на е-аудит ДПС, компанії з SAP, BAS/1C, Odoo, Microsoft Dynamics або кількома джерелами даних' },
       { label: 'Чим відрізняється',value: 'ERP-незалежне on-premise рішення, швидка обробка великих даних, впровадження під ключ, конкурентна вартість' },
-      { label: 'Результат',        value: 'XML-файл SAF-T UA, готовий до подання на запит ДПС' },
+      { label: 'Результат',        value: 'XML-файл SAF-T UA, готовий до подання на запит ДПС у межах е-аудиту' },
     ]}
   />
 
   <section class="sp-statement">
     <div class="sp-statement-inner">
       <p>SAF-T Connector не залежить від вашої ERP або облікової системи.</p>
-      <div class="sp-statement-note">SAF-T Connector — окремий продукт, не вбудований у жодну ERP-систему. Впроваджуємо самостійно: клієнт надає доступ до даних, далі LUCAS працює автономно — без створення великої внутрішньої проєктної команди з боку клієнта.</div>
+      <div class="sp-statement-note">SAF-T Connector — окремий продукт, не вбудований у жодну ERP-систему. Впроваджуємо самостійно: клієнт надає доступ до даних, далі LUCAS працює автономно — без створення великої внутрішньої проєктної команди з боку клієнта. Команда LUCAS об'єднує фахівців з аудиту та е-аудиту, що поєднують досвід Big 4 та реальне знання вимог ДПС до SAF-T UA.</div>
     </div>
   </section>
 
@@ -80,7 +91,7 @@ const jsonLd = {
       <div class="sp-block">
         <div>
           <div class="sp-block-label cyan">ERP-незалежність</div>
-          <h2 class="sp-block-h2">Підключається до будь-яких джерел даних</h2>
+          <h2 class="sp-block-h2">SAF-T UA з SAP, 1С/BAS, Odoo та MS Dynamics: підключення до будь-якої ERP</h2>
         </div>
         <div class="sp-block-body">
           <p>На відміну від рішень, прив'язаних до однієї ERP, SAF-T Connector підключається до SAP, 1С/BAS, Odoo, Microsoft Dynamics та будь-яких кастомних систем. Рішення може працювати з кількома джерелами даних одночасно.</p>
@@ -115,7 +126,7 @@ const jsonLd = {
       <div class="sp-block">
         <div>
           <div class="sp-block-label cyan">Продуктивність · Python</div>
-          <h2 class="sp-block-h2">Швидко обробляє великі дані</h2>
+          <h2 class="sp-block-h2">Обробка великих обсягів даних великих платників SAF-T UA</h2>
         </div>
         <div class="sp-block-body">
           <p>Алгоритм SAF-T Connector написаний на Python і оптимізований для обробки великих масивів транзакційних даних. Для компаній з великими обсягами операцій це означає швидше формування SAF-T UA XML, менше навантаження на облікову систему та стабільнішу роботу з історичними періодами.</p>
@@ -130,7 +141,7 @@ const jsonLd = {
       <div class="sp-block">
         <div>
           <div class="sp-block-label cyan">Валідація</div>
-          <h2 class="sp-block-h2">Серія перевірок даних перед поданням</h2>
+          <h2 class="sp-block-h2">XSD-валідація SAF-T UA та перевірки даних перед поданням до ДПС</h2>
         </div>
         <div class="sp-block-body">
           <p>Автоматична XSD-валідація та додаткові шари перевірок допомагають виявити помилки до подання файлу SAF-T UA. Помилки супроводжуються описом, зрозумілим для фінансових, податкових та облікових команд.</p>
@@ -163,7 +174,7 @@ const jsonLd = {
       <div class="sp-block">
         <div>
           <div class="sp-block-label cyan">Turnkey · 3–4 місяці</div>
-          <h2 class="sp-block-h2">Впровадження не стає проєктом клієнта</h2>
+          <h2 class="sp-block-h2">Впровадження SAF-T Connector під ключ за 3–4 місяці</h2>
         </div>
         <div class="sp-block-body">
           <p>З боку клієнта достатньо доступу до даних та надання інформації за точковими питаннями. Основне проєктне навантаження бере на себе LUCAS. Типовий строк впровадження — 3–4 місяці, залежно від кількості джерел даних, якості облікової інформації та складності мапінгу.</p>
