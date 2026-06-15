@@ -146,6 +146,7 @@ const t = {
   // ─── Динамічне завантаження EmailJS ──────────────────────────
   // Defer until contact section enters viewport to avoid blocking first paint
   var ejsLoaded = false;
+  var formLoadTime = 0;
   function loadEmailJS() {
     if (ejsLoaded) return;
     var s = document.createElement('script');
@@ -159,10 +160,11 @@ const t = {
   var contactSection = form.closest('section') || form;
   if ('IntersectionObserver' in window) {
     var _io = new IntersectionObserver(function(entries) {
-      if (entries[0].isIntersecting) { loadEmailJS(); _io.disconnect(); }
+      if (entries[0].isIntersecting) { formLoadTime = Date.now(); loadEmailJS(); _io.disconnect(); }
     }, { rootMargin: '300px' });
     _io.observe(contactSection);
   } else {
+    formLoadTime = Date.now();
     loadEmailJS();
   }
 
@@ -234,12 +236,61 @@ const t = {
   var btn = document.getElementById('lucas-submit');
   var submitted = false;
 
+  // ─── Spam filters ─────────────────────────────────────────────
+  var BLOCKED_DOMAINS = ['jmailservice.com','mailservice.com','yopmail.com',
+    'guerrillamail.com','tempmail.com','throwaway.email','maildrop.cc',
+    'sharklasers.com','spam4.me','trashmail.com','dispostable.com'];
+  var SPAM_PHRASES = ['appear first','rank higher','rank #1',
+    'first page of google','increase your traffic','increase traffic',
+    'search engine optimization service','guaranteed clicks','buy backlinks',
+    'link building service','would you take that spot'];
+  function isBlockedDomain(email) {
+    var parts = email.split('@');
+    return parts.length === 2 && BLOCKED_DOMAINS.indexOf(parts[1].toLowerCase()) !== -1;
+  }
+  function containsUrl(text) { return /https?:\/\/|www\./i.test(text); }
+  function hasSpamPhrases(text) {
+    var lower = text.toLowerCase();
+    for (var i = 0; i < SPAM_PHRASES.length; i++) {
+      if (lower.indexOf(SPAM_PHRASES[i]) !== -1) return true;
+    }
+    return false;
+  }
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
     // Honeypot
     if (form.querySelector('[name="website"]').value) return;
     if (submitted) return;
+
+    // Time-based check: block submissions under 5s (bot behaviour)
+    if (formLoadTime && (Date.now() - formLoadTime) < 5000) return;
+
+    var msgInput   = form.querySelector('[name="message"]');
+    var emailInput = form.querySelector('[name="email"]');
+    var msgVal     = msgInput   ? msgInput.value          : '';
+    var emailVal   = emailInput ? emailInput.value.trim() : '';
+
+    // Silent spam checks (no feedback to spammer)
+    if (hasSpamPhrases(msgVal) || isBlockedDomain(emailVal)) return;
+
+    // URL in message — show error so real users can fix it
+    if (containsUrl(msgVal)) {
+      var msgWrap = msgInput.closest('.field');
+      var urlErr  = msgWrap && msgWrap.querySelector('.field-err-msg');
+      msgInput.classList.add('field-error');
+      if (msgWrap && !urlErr) {
+        urlErr = document.createElement('span');
+        urlErr.className = 'field-err-msg';
+        msgWrap.appendChild(urlErr);
+      }
+      if (urlErr) urlErr.textContent = isEn
+        ? 'Please describe your task without URLs'
+        : 'Опишіть задачу без посилань';
+      msgInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
 
     // Validate all fields
     var fields = Array.from(form.querySelectorAll('input[name], textarea[name]'))
