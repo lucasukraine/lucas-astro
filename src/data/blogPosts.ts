@@ -226,4 +226,15 @@ export const blogPosts = [
     service: ["saft"],
     href: `${base}/blog/saf-t-readiness-assessment/`,
   },
+  {
+    category: "Аудит та звітність",
+    title: "Вартість аудиту в Україні у 2026 році: реальні діапазони цін",
+    cardTitle: "Вартість аудиту в Україні у 2026 році",
+    readingTime: "12 хв читання",
+    excerpt: "Скільки реально коштує аудит фінансової звітності в Україні у 2026 році. Реалістичні ринкові діапазони за типами підприємств і методика коректного аналізу цін на Prozorro.",
+    date: "6 липня 2026",
+    isoDate: "2026-07-06",
+    service: ["audit"],
+    href: `${base}/blog/vartist-audytu-v-ukraini-2026/`,
+  },
 ];
