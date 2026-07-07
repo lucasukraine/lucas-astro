@@ -1,0 +1,23 @@
+---
+// ArticleTocCta.astro
+// Компактна CTA-картка одразу під змістом статті (.art-toc) — щоб питання
+// вартості не вимагало скролу до кінця статті (де стоїть ArticleCTA).
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+interface Props {
+  text?: string;
+  href?: string;
+  linkText?: string;
+}
+
+const {
+  text = 'Потрібна консультація щодо цієї теми?',
+  href = base + '/#contact',
+  linkText = 'Запитати вартість',
+} = Astro.props;
+---
+
+<aside class="art-toc-cta">
+  <p class="art-toc-cta-text">{text}</p>
+  <a class="btn cta-orange" href={href}>{linkText} <span class="arrow"></span></a>
+</aside>

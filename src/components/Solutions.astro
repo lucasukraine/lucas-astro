@@ -16,6 +16,7 @@ const t = {
     ? "We don't limit ourselves to individual services — we build solutions around the client's tasks in accounting, taxation and digital finance transformation."
     : 'Ми не обмежуємося переліком типових послуг. Ми збираємо потрібну комбінацію експертизи під конкретну задачу клієнта.',
   navLabel: lang === 'en' ? 'Jump to service' : 'Перейти до послуги',
+  priceLabel: lang === 'en' ? 'Ask for pricing' : 'Запитати вартість',
 
   nav: [
     { num: '01', name: lang === 'en' ? 'Audit & Reporting'        : 'Аудит та звітність' },
@@ -240,11 +241,15 @@ const t = {
         <div class="service-team-label">{t.ch1.teamLabel}</div>
         <p class="service-team-text">{t.ch1.teamText}</p>
       </div>
-      <a class="arrow-link on-dark" href={base + p + '/audit/'}>{t.ch1.link}</a>
+      <div class="service-actions">
+        <a class="btn cta-orange" href={base + p + '/#contact'}>{t.priceLabel} <span class="arrow"></span></a>
+        <a class="arrow-link on-dark" href={base + p + '/audit/'}>{t.ch1.link}</a>
+      </div>
     </div>
     <div class="service-features">
 
       <a class="svc-mob-page-link" href={base + p + '/audit/'}>{t.ch1.mobLink}</a>
+      <a class="svc-mob-price-link" href={base + p + '/#contact'}>{t.priceLabel}</a>
 
       <div class="fc-divider">
         <span class="fc-divider-label">{t.ch1.div1}</span>
@@ -286,11 +291,15 @@ const t = {
         <div class="service-team-label">{t.ch2.teamLabel}</div>
         <p class="service-team-text">{t.ch2.teamText}</p>
       </div>
-      <a class="arrow-link on-dark" href={base + p + '/saf-t/'}>{t.ch2.link}</a>
+      <div class="service-actions">
+        <a class="btn cta-orange" href={base + p + '/#contact'}>{t.priceLabel} <span class="arrow"></span></a>
+        <a class="arrow-link on-dark" href={base + p + '/saf-t/'}>{t.ch2.link}</a>
+      </div>
     </div>
     <div class="service-features">
 
       <a class="svc-mob-page-link" href={base + p + '/saf-t/'}>{t.ch2.mobLink}</a>
+      <a class="svc-mob-price-link" href={base + p + '/#contact'}>{t.priceLabel}</a>
 
       <div class="fc-divider">
         <span class="fc-divider-label">{t.ch2.div1}</span>
@@ -332,11 +341,15 @@ const t = {
         <div class="service-team-label">{t.ch3.teamLabel}</div>
         <p class="service-team-text">{t.ch3.teamText}</p>
       </div>
-      <a class="arrow-link on-dark" href={base + p + '/odoo-migration/'}>{t.ch3.link}</a>
+      <div class="service-actions">
+        <a class="btn cta-orange" href={base + p + '/#contact'}>{t.priceLabel} <span class="arrow"></span></a>
+        <a class="arrow-link on-dark" href={base + p + '/odoo-migration/'}>{t.ch3.link}</a>
+      </div>
     </div>
     <div class="service-features">
 
       <a class="svc-mob-page-link" href={base + p + '/odoo-migration/'}>{t.ch3.mobLink}</a>
+      <a class="svc-mob-price-link" href={base + p + '/#contact'}>{t.priceLabel}</a>
 
       <div class="fc-divider">
         <span class="fc-divider-label">{t.ch3.div1}</span>
@@ -378,11 +391,15 @@ const t = {
         <div class="service-team-label">{t.ch4.teamLabel}</div>
         <p class="service-team-text">{t.ch4.teamText}</p>
       </div>
-      <a class="arrow-link on-dark" href={base + p + '/transfer-pricing/'}>{t.ch4.link}</a>
+      <div class="service-actions">
+        <a class="btn cta-orange" href={base + p + '/#contact'}>{t.priceLabel} <span class="arrow"></span></a>
+        <a class="arrow-link on-dark" href={base + p + '/transfer-pricing/'}>{t.ch4.link}</a>
+      </div>
     </div>
     <div class="service-features">
 
       <a class="svc-mob-page-link" href={base + p + '/transfer-pricing/'}>{t.ch4.mobLink}</a>
+      <a class="svc-mob-price-link" href={base + p + '/#contact'}>{t.priceLabel}</a>
 
       <div class="fc-divider">
         <span class="fc-divider-label">{t.ch4.div1}</span>
@@ -420,11 +437,15 @@ const t = {
       <h2 class="service-name">{t.ch5.name}</h2>
       <div class="service-accent"></div>
       <p class="service-desc">{t.ch5.desc}</p>
-      <a class="arrow-link on-dark" href={base + p + '/other-services/'}>{t.ch5.link}</a>
+      <div class="service-actions">
+        <a class="btn cta-orange" href={base + p + '/#contact'}>{t.priceLabel} <span class="arrow"></span></a>
+        <a class="arrow-link on-dark" href={base + p + '/other-services/'}>{t.ch5.link}</a>
+      </div>
     </div>
     <div class="service-features">
 
       <a class="svc-mob-page-link" href={base + p + '/other-services/'}>{t.ch5.mobLink}</a>
+      <a class="svc-mob-price-link" href={base + p + '/#contact'}>{t.priceLabel}</a>
 
       <div class="fc-divider">
         <span class="fc-divider-label">{t.ch5.div1}</span>

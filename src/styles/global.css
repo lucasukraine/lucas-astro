@@ -1972,6 +1972,28 @@ a.footer-contact-val:hover { color: #fff; }
 }
 .art-toc a:hover { color: var(--orange); }
 
+.art-toc-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  background: var(--ink);
+  border-radius: 12px;
+  padding: 22px 26px;
+  margin-bottom: 48px;
+}
+.art-toc-cta-text {
+  font-family: var(--display);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: rgba(255,255,255,.82);
+  margin: 0;
+  max-width: 380px;
+}
+.art-toc-cta .btn { flex: none; }
+
 .art-prose {
   font-family: var(--body);
   font-size: 17px;
@@ -2088,6 +2110,8 @@ a.footer-contact-val:hover { color: #fff; }
   .art-body { padding: 48px var(--gut) 64px; }
   .art-prose { font-size: 16px; }
   .art-author-inner { flex-direction: column; gap: 16px; }
+  .art-toc-cta { flex-direction: column; align-items: stretch; }
+  .art-toc-cta .btn { justify-content: center; }
 }
 
 /* =============================================================
@@ -2214,6 +2238,7 @@ a.footer-contact-val:hover { color: #fff; }
 
 /* Mobile-only service page link — visible only inside mobile accordion */
 .svc-mob-page-link { display: none; }
+.svc-mob-price-link { display: none; }
 
 /* ============================================================
    HOME SOLUTIONS — .solutions, .service-chapter, .fc, .fc-divider
@@ -2405,7 +2430,14 @@ a.footer-contact-val:hover { color: #fff; }
   color: rgba(255,255,255,.72);
   font-style: italic;
 }
-.service-context .arrow-link { margin-top: 36px; }
+.service-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 28px;
+  margin-top: 36px;
+}
+.service-actions .arrow-link { margin-top: 0; }
 
 .service-features {
   padding: 80px var(--gut);
@@ -2585,7 +2617,7 @@ a.footer-contact-val:hover { color: #fff; }
   .service-context .service-accent,
   .service-context .service-desc,
   .service-context .service-team,
-  .service-context .arrow-link { display: none; }
+  .service-context .service-actions { display: none; }
   .service-features {
     display: block;
     max-height: 0;
@@ -2633,6 +2665,26 @@ a.footer-contact-val:hover { color: #fff; }
     outline: 2px solid var(--cyan);
     outline-offset: -2px;
   }
+
+  .svc-mob-price-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px var(--gut);
+    border-bottom: 1px solid rgba(255,255,255,.1);
+    background: var(--orange);
+    color: #fff;
+    font-family: var(--body);
+    font-size: 14.5px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    min-height: 52px;
+    transition: background .2s;
+  }
+  .svc-mob-price-link::after { content: '→'; flex: none; font-size: 18px; }
+  .svc-mob-price-link:hover,
+  .svc-mob-price-link:focus-visible { background: #fff; color: var(--ink); }
 }
 
 /* ============================================================

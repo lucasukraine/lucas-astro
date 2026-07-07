@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from '../../../layouts/ArticleLayout.astro';
 import ArticleCTA from '../../../components/ArticleCTA.astro';
+import ArticleTocCta from '../../../components/ArticleTocCta.astro';
 import ArticleAuthor from '../../../components/ArticleAuthor.astro';
 import ArticleRelated from '../../../components/ArticleRelated.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
@@ -58,6 +59,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
               <li><a href="#faq">Часті запитання</a></li>
             </ol>
           </nav>
+
+          <ArticleTocCta />
 
           <div class="art-prose">
 
