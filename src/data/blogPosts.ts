@@ -270,4 +270,15 @@ export const blogPosts = [
     service: ["transfer-pricing"],
     href: `${base}/blog/transfertne-tsinoutvorennia-pidhotovka-do-zapytu-dps/`,
   },
+  {
+    category: "ERP, облік та комплаєнс",
+    title: "Перелік забороненого ПЗ оновлено: що робити бізнесу з 1С, BAS та обліковими системами",
+    cardTitle: "Перелік забороненого ПЗ: що робити з 1С/BAS",
+    readingTime: "12 хв читання",
+    excerpt: "Перелік забороненого ПЗ розширено до 1079 позицій, серед них — 1С і BAS. Що це означає для приватного бізнесу, які ризики і як планувати перехід на нову ERP.",
+    date: "10 липня 2026",
+    isoDate: "2026-07-10",
+    service: ["odoo"],
+    href: `${base}/blog/perelik-zaboronenoho-pz-1c-bas-erp-migratsia/`,
+  },
 ];
