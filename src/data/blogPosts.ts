@@ -259,4 +259,15 @@ export const blogPosts = [
     service: ["audit"],
     href: `${base}/blog/audyt-serednikh-pidpryiemstv-2026/`,
   },
+  {
+    category: "Трансфертне ціноутворення",
+    title: "Трансфертне ціноутворення в Україні: як підготуватися до запиту ДПС",
+    cardTitle: "ТЦУ: як підготуватися до запиту ДПС",
+    readingTime: "15 хв читання",
+    excerpt: "Документацію з трансфертного ціноутворення не можна готувати після запиту ДПС. Чеклист документів, таймлайн підготовки, типові помилки та нові коди пов'язаності 525/526.",
+    date: "9 липня 2026",
+    isoDate: "2026-07-09",
+    service: ["transfer-pricing"],
+    href: `${base}/blog/transfertne-tsinoutvorennia-pidhotovka-do-zapytu-dps/`,
+  },
 ];
