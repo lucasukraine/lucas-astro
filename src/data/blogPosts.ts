@@ -292,4 +292,15 @@ export const blogPosts = [
     service: ["saft"],
     href: `${base}/blog/saf-t-ua-2027-platnyky-pdv/`,
   },
+  {
+    category: "Аудит та звітність",
+    title: "Чи можна відкласти публікацію аудійованої фінансової звітності до кінця воєнного стану",
+    cardTitle: "Відтермінування публікації звітності: чи можна",
+    readingTime: "14 хв читання",
+    excerpt: "Воєнне відтермінування не скасовує обов'язковий аудит. LUCAS пояснює, коли можна відкласти оприлюднення аудійованої звітності, у чому це не працює і чому після завершення воєнного стану може виникнути дефіцит аудиторів.",
+    date: "24 червня 2026",
+    isoDate: "2026-06-24",
+    service: ["audit"],
+    href: `${base}/blog/vidterminuvannia-publikatsii-audytovanoi-finansovoi-zvitnosti-voiennyi-stan/`,
+  },
 ];
