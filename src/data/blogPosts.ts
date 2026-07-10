@@ -281,4 +281,15 @@ export const blogPosts = [
     service: ["odoo"],
     href: `${base}/blog/perelik-zaboronenoho-pz-1c-bas-erp-migratsia/`,
   },
+  {
+    category: "Е-аудит та SAF-T",
+    title: "SAF-T UA з 2027 року для всіх платників ПДВ: чи справді потрібно готуватися",
+    cardTitle: "SAF-T UA з 2027 року для платників ПДВ",
+    readingTime: "12 хв читання",
+    excerpt: "ДПС повідомляє, що з 2027 року SAF-T UA має застосовуватися до всіх платників ПДВ на запит під час перевірки. Що відомо, що невідомо і як бізнесу готуватися без паніки.",
+    date: "15 червня 2026",
+    isoDate: "2026-06-15",
+    service: ["saft"],
+    href: `${base}/blog/saf-t-ua-2027-platnyky-pdv/`,
+  },
 ];
