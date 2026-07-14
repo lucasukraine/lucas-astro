@@ -86,6 +86,8 @@ const t = {
           <div class="hp-field">
             <input type="text" name="website" tabindex="-1" autocomplete="off">
           </div>
+          <!-- Прихована мітка сайту — щоб розрізняти запити з різних сайтів, які використовують цю саму форму/EmailJS-акаунт -->
+          <input type="hidden" name="site_name" value="LUCAS">
           <button type="submit" class="residency-submit" id="lucas-submit">
             {t.submit} <span class="arrow"></span>
           </button>
@@ -324,6 +326,7 @@ const t = {
       phone:     form.querySelector('[name="phone"]').value.trim(),
       message:   form.querySelector('[name="message"]').value.trim(),
       site:      window.location.hostname,
+      site_name: form.querySelector('[name="site_name"]').value.trim(),
     }).then(function () {
       btn.innerHTML        = isEn ? '✓ Request sent' : '✓ Запит надіслано';
       btn.style.background = 'var(--orange)';
