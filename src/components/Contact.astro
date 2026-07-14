@@ -326,6 +326,7 @@ const t = {
       phone:     form.querySelector('[name="phone"]').value.trim(),
       message:   form.querySelector('[name="message"]').value.trim(),
       site:      window.location.hostname,
+      site_name: form.querySelector('[name="site_name"]').value.trim(),
     }).then(function () {
       btn.innerHTML        = isEn ? '✓ Request sent' : '✓ Запит надіслано';
       btn.style.background = 'var(--orange)';
