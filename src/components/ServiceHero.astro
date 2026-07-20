@@ -5,8 +5,10 @@ interface Props {
   lead: string;
   breadcrumb?: string;
   accent?: 'orange' | 'cyan';
+  productUrl?: string;
+  productLabel?: string;
 }
-const { eyebrow, title, lead, breadcrumb, accent = 'orange' } = Astro.props;
+const { eyebrow, title, lead, breadcrumb, accent = 'orange', productUrl, productLabel } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
@@ -27,5 +29,10 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       <a class="btn cta-orange" href={base + '/#contact'}>Запитати вартість <span class="arrow"></span></a>
       <a class="btn ghost-dark" href={base + '/#services'}>Усі послуги</a>
     </div>
+    {productUrl && (
+      <a class="sp-product-link" href={productUrl} target="_blank" rel="noopener noreferrer">
+        {productLabel ?? productUrl.replace(/^https?:\/\//, '')} <span class="sp-product-link-icon" aria-hidden="true">↗</span>
+      </a>
+    )}
   </div>
 </section>

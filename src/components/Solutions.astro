@@ -17,6 +17,7 @@ const t = {
     : 'Ми не обмежуємося переліком типових послуг. Ми збираємо потрібну комбінацію експертизи під конкретну задачу клієнта.',
   navLabel: lang === 'en' ? 'Jump to service' : 'Перейти до послуги',
   priceLabel: lang === 'en' ? 'Ask for pricing' : 'Запитати вартість',
+  productLabel: lang === 'en' ? 'Product website saftconnector.com' : 'Сайт продукту saftconnector.com',
 
   nav: [
     { num: '01', name: lang === 'en' ? 'Audit & Reporting'        : 'Аудит та звітність' },
@@ -295,11 +296,15 @@ const t = {
         <a class="btn cta-orange" href={base + p + '/#contact'}>{t.priceLabel} <span class="arrow"></span></a>
         <a class="arrow-link on-dark" href={base + p + '/saf-t/'}>{t.ch2.link}</a>
       </div>
+      <a class="sp-product-link" href="https://saftconnector.com" target="_blank" rel="noopener noreferrer">
+        {t.productLabel} <span class="sp-product-link-icon" aria-hidden="true">↗</span>
+      </a>
     </div>
     <div class="service-features">
 
       <a class="svc-mob-page-link" href={base + p + '/saf-t/'}>{t.ch2.mobLink}</a>
       <a class="svc-mob-price-link" href={base + p + '/#contact'}>{t.priceLabel}</a>
+      <a class="svc-mob-product-link" href="https://saftconnector.com" target="_blank" rel="noopener noreferrer">{t.productLabel}</a>
 
       <div class="fc-divider">
         <span class="fc-divider-label">{t.ch2.div1}</span>

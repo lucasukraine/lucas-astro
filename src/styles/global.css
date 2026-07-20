@@ -1590,6 +1590,20 @@ a.footer-contact-val:hover { color: #fff; }
 .sp-hero-actions {
   margin-top: 44px; display: flex; gap: 14px; flex-wrap: wrap;
 }
+.sp-product-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 22px;
+  font-family: var(--body);
+  font-size: 13.5px;
+  font-weight: 500;
+  color: rgba(255,255,255,.55);
+  text-decoration: none;
+  transition: color .2s var(--ease);
+}
+.sp-product-link-icon { font-size: 12.5px; }
+.sp-product-link:hover { color: var(--cyan); }
 
 @media (max-width: 980px) {
   .sp-hero { padding: 130px var(--gut) 80px; }
@@ -2239,6 +2253,7 @@ a.footer-contact-val:hover { color: #fff; }
 /* Mobile-only service page link — visible only inside mobile accordion */
 .svc-mob-page-link { display: none; }
 .svc-mob-price-link { display: none; }
+.svc-mob-product-link { display: none; }
 
 /* ============================================================
    HOME SOLUTIONS — .solutions, .service-chapter, .fc, .fc-divider
@@ -2617,7 +2632,8 @@ a.footer-contact-val:hover { color: #fff; }
   .service-context .service-accent,
   .service-context .service-desc,
   .service-context .service-team,
-  .service-context .service-actions { display: none; }
+  .service-context .service-actions,
+  .service-context .sp-product-link { display: none; }
   .service-features {
     display: block;
     max-height: 0;
@@ -2690,6 +2706,26 @@ a.footer-contact-val:hover { color: #fff; }
   }
   .svc-mob-price-link:hover::after,
   .svc-mob-price-link:focus-visible::after { transform: translateX(5px); }
+
+  .svc-mob-product-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px var(--gut);
+    border-bottom: 1px solid rgba(255,255,255,.1);
+    background: rgba(255,255,255,.04);
+    color: rgba(255,255,255,.72);
+    font-family: var(--body);
+    font-size: 13.5px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    min-height: 52px;
+    transition: color .2s, background .2s;
+  }
+  .svc-mob-product-link::after { content: '↗'; flex: none; font-size: 15px; color: var(--cyan); }
+  .svc-mob-product-link:hover,
+  .svc-mob-product-link:focus-visible { color: #fff; background: rgba(255,255,255,.07); }
 }
 
 /* ============================================================
