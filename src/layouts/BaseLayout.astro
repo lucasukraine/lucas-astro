@@ -104,9 +104,13 @@ if (lang === 'en') {
     <link rel="preload" href={base + '/fonts/onest/onest-cyrillic.woff2'} as="font" type="font/woff2" crossorigin fetchpriority="high" />
     <link rel="preload" href={base + '/fonts/manrope/manrope-cyrillic.woff2'} as="font" type="font/woff2" crossorigin fetchpriority="high" />
     <script type="application/ld+json" is:inline set:html={orgSchema} />
-    <!-- Google Analytics — dataLayer queues immediately, actual script deferred to
-         idle so it doesn't compete with LCP for the main thread (see PageSpeed:
-         gtag.js was the source of the long tasks during initial render). -->
+    <!-- Google Analytics — dataLayer queues immediately, actual script deferred
+         until window.load so it doesn't compete with LCP/TBT for the main
+         thread (see PageSpeed: gtag.js was the source of the long tasks
+         during initial render). requestIdleCallback was tried first but fires
+         too early on fast/desktop runs — right inside the FCP→TTI window
+         Lighthouse uses for TBT — so window.load is used instead: later and
+         consistent regardless of device/CPU speed. -->
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -119,8 +123,8 @@ if (lang === 'en') {
         s.src = 'https://www.googletagmanager.com/gtag/js?id=G-RLGTE1PBF9';
         document.head.appendChild(s);
       }
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(loadGtagScript, { timeout: 3000 });
+      if (document.readyState === 'complete') {
+        loadGtagScript();
       } else {
         window.addEventListener('load', loadGtagScript);
       }
