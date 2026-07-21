@@ -104,13 +104,26 @@ if (lang === 'en') {
     <link rel="preload" href={base + '/fonts/onest/onest-cyrillic.woff2'} as="font" type="font/woff2" crossorigin fetchpriority="high" />
     <link rel="preload" href={base + '/fonts/manrope/manrope-cyrillic.woff2'} as="font" type="font/woff2" crossorigin fetchpriority="high" />
     <script type="application/ld+json" is:inline set:html={orgSchema} />
-    <!-- Google Analytics -->
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-RLGTE1PBF9"></script>
+    <!-- Google Analytics — dataLayer queues immediately, actual script deferred to
+         idle so it doesn't compete with LCP for the main thread (see PageSpeed:
+         gtag.js was the source of the long tasks during initial render). -->
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-RLGTE1PBF9');
+
+      function loadGtagScript() {
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-RLGTE1PBF9';
+        document.head.appendChild(s);
+      }
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadGtagScript, { timeout: 3000 });
+      } else {
+        window.addEventListener('load', loadGtagScript);
+      }
     </script>
     <slot name="head" />
   </head>
