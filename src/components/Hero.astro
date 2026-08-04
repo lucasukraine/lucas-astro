@@ -140,4 +140,12 @@ const t = {
   document.querySelectorAll('.cur-year').forEach(el => {
     el.textContent = new Date().getFullYear();
   });
+
+  // Прибираємо transform одразу після завершення .ha entrance-анімації.
+  // Chrome інакше лишає елемент на окремому композитному шарі (навіть з
+  // translateY(0)) — і backdrop-filter фіксованого header перестає
+  // розмивати текст під ним. Firefox/Safari цього бага не мають.
+  document.querySelectorAll('.ha').forEach(el => {
+    el.addEventListener('animationend', () => { el.style.transform = 'none'; }, { once: true });
+  });
 </script>
