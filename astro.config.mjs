@@ -21,4 +21,15 @@ export default defineConfig({
   site: 'https://www.lucasua.com',
   base: '/',
   integrations: [sitemap(), sitemapAlias],
+  vite: {
+    build: {
+      // Vite 8's default lightningcss minifier drops the unprefixed
+      // `backdrop-filter` whenever `-webkit-backdrop-filter` is also present,
+      // keeping only the prefixed version — which current Chrome/Edge no
+      // longer honor (breaks the header/glass blur effects there while
+      // Firefox/Safari still work via the surviving -webkit- property).
+      // https://github.com/vitejs/vite/issues/22649
+      cssMinify: 'esbuild',
+    },
+  },
 });
