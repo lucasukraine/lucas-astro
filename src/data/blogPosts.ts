@@ -323,6 +323,6 @@ export const blogPosts = [
     date: "5 серпня 2026",
     isoDate: "2026-08-05",
     service: ["transfer-pricing"],
-    href: `${base}/blog/tsu-2026/`,
+    href: `${base}/blog/transfertne-tsinoutvorennia-2026/`,
   },
 ];
