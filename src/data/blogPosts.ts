@@ -303,4 +303,15 @@ export const blogPosts = [
     service: ["audit"],
     href: `${base}/blog/vidterminuvannia-publikatsii-audytovanoi-finansovoi-zvitnosti-voiennyi-stan/`,
   },
+  {
+    category: "Аудит та звітність",
+    title: "Аудит: що це таке, навіщо потрібен, які бувають види та як проходить аудит підприємства",
+    cardTitle: "Аудит: повний практичний довідник",
+    readingTime: "24 хв читання",
+    excerpt: "Що таке аудит, хто його проводить, які бувають види аудиту, як проходить перевірка крок за кроком і чим аудит відрізняється від ревізії, податкової перевірки та Due Diligence.",
+    date: "16 липня 2026",
+    isoDate: "2026-07-16",
+    service: ["audit"],
+    href: `${base}/blog/audyt-shcho-tse-take/`,
+  },
 ];
