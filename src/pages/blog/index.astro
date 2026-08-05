@@ -3,6 +3,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import BlogCard from '../../components/BlogCard.astro';
 import { getAllPosts } from '../../lib/blog';
 const posts = getAllPosts();
+
+// Порядок відповідає порядку послуг на головній (Аудит → SAF-T → ERP → ТЦУ).
+// Джерело істини для тегів — категорії в blogPosts.ts; тут лише фіксований
+// порядок показу фільтрів, а не перелік дозволених значень.
+const categoryOrder = ['Аудит та звітність', 'Е-аудит та SAF-T', 'ERP та облік', 'Трансфертне ціноутворення'];
+const categories = categoryOrder.filter(cat => posts.some(p => p.category === cat));
 ---
 
 <BaseLayout
@@ -22,7 +28,13 @@ const posts = getAllPosts();
 
     <section class="blog-list">
       <div class="blog-list-inner">
-        <div class="blog-grid">
+        <div class="blog-filters" role="group" aria-label="Фільтр за темою">
+          <button class="blog-filter is-active" type="button" data-filter="all">Усі</button>
+          {categories.map(cat => (
+            <button class="blog-filter" type="button" data-filter={cat}>{cat}</button>
+          ))}
+        </div>
+        <div class="blog-grid" id="blog-grid">
           {posts.map(post => (
             <BlogCard
               category={post.category}
@@ -39,3 +51,21 @@ const posts = getAllPosts();
 
   </main>
 </BaseLayout>
+
+<script is:inline>
+  (() => {
+    const filters = document.querySelectorAll('.blog-filter');
+    const cards = document.querySelectorAll('#blog-grid .blog-card');
+    filters.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filters.forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        const filter = btn.dataset.filter;
+        cards.forEach(card => {
+          const show = filter === 'all' || card.dataset.category === filter;
+          card.style.display = show ? '' : 'none';
+        });
+      });
+    });
+  })();
+</script>

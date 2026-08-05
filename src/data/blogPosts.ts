@@ -128,7 +128,7 @@ export const blogPosts = [
     href: `${base}/blog/metody-transfertnoho-tsinoutvorennia/`,
   },
   {
-    category: "МСФЗ та звітність",
+    category: "Аудит та звітність",
     title: "IFRS 1: перший перехід на МСФЗ — покрокова інструкція",
     cardTitle: "IFRS 1: перший перехід на МСФЗ",
     readingTime: "13 хв читання",
@@ -150,7 +150,7 @@ export const blogPosts = [
     href: `${base}/blog/audyt-finansovoi-zvitnosti-ukraina/`,
   },
   {
-    category: "МСФЗ та звітність",
+    category: "Аудит та звітність",
     title: "Фінансова звітність за МСФЗ в Україні: хто зобов'язаний і як підготувати",
     cardTitle: "Фінансова звітність за МСФЗ в Україні",
     readingTime: "15 хв читання",
@@ -271,7 +271,7 @@ export const blogPosts = [
     href: `${base}/blog/transfertne-tsinoutvorennia-pidhotovka-do-zapytu-dps/`,
   },
   {
-    category: "ERP, облік та комплаєнс",
+    category: "ERP та облік",
     title: "Перелік забороненого ПЗ оновлено: що робити бізнесу з 1С, BAS та обліковими системами",
     cardTitle: "Перелік забороненого ПЗ: що робити з 1С/BAS",
     readingTime: "12 хв читання",

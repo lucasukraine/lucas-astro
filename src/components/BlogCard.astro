@@ -10,7 +10,7 @@ interface Props {
 const { category, readingTime, cardTitle, excerpt, date, href } = Astro.props;
 ---
 
-<a class="blog-card" href={href}>
+<a class="blog-card" href={href} data-category={category}>
   <div class="blog-card-meta">
     <span class="blog-card-cat">{category}</span>
     <span>{readingTime}</span>
