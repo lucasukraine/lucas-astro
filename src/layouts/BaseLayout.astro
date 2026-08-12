@@ -116,6 +116,10 @@ if (lang === 'en') {
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-RLGTE1PBF9');
+      // Google Ads conversion tracking — same gtag/dataLayer, no separate
+      // gtag.js load. See src/analytics/adsConversion.js for the actual
+      // conversion event (fired only on confirmed form-submit success).
+      gtag('config', 'AW-11119473489');
 
       function loadGtagScript() {
         var s = document.createElement('script');

@@ -140,6 +140,12 @@ const t = {
   </div>
 </section>
 
+<script>
+  import { trackLeadConversion } from '../analytics/adsConversion.js';
+  // @ts-ignore — навмисно прив'язуємо до window, щоб is:inline-скрипт нижче міг викликати.
+  window.__lucasTrackLeadConversion = trackLeadConversion;
+</script>
+
 <script is:inline>
 (function () {
   var form = document.getElementById('lucas-contact-form');
@@ -336,6 +342,11 @@ const t = {
       form.querySelectorAll('.field-err-msg').forEach(function (el) { el.remove(); });
       if (typeof gtag === 'function') {
         gtag('event', 'form_submit', { event_category: 'contact', event_label: 'lucas_contact_form' });
+      }
+      // Google Ads conversion + GA4 generate_lead — see src/analytics/adsConversion.js.
+      // Guarded: never throw if the module script failed to load (ad blocker etc.).
+      if (typeof window.__lucasTrackLeadConversion === 'function') {
+        window.__lucasTrackLeadConversion({ formId: 'lucas_contact_form' });
       }
     }).catch(function () {
       btn.disabled  = false;
