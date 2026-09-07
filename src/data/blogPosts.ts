@@ -325,4 +325,15 @@ export const blogPosts = [
     service: ["transfer-pricing"],
     href: `${base}/blog/transfertne-tsinoutvorennia-2026/`,
   },
+  {
+    category: "Трансфертне ціноутворення",
+    title: "Податкова нагадує: строк подання Звіту про КО та Повідомлення про МГК за 2025 рік",
+    cardTitle: "Строк подання Звіту про КО за 2025 рік — 30 вересня",
+    readingTime: "4 хв читання",
+    excerpt: "Східне міжрегіональне управління ДПС нагадало: граничний строк подання Звіту про контрольовані операції та Повідомлення про участь у МГК за 2025 рік — 30 вересня 2026 року.",
+    date: "3 вересня 2026",
+    isoDate: "2026-09-03",
+    service: ["transfer-pricing"],
+    href: `${base}/blog/termin-podannya-zvitu-pro-ko-2025/`,
+  },
 ];
