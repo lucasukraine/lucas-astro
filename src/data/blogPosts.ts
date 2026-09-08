@@ -358,4 +358,15 @@ export const blogPosts = [
     service: ["saft"],
     href: `${base}/blog/saft-ua-dlia-1c/`,
   },
+  {
+    category: "Е-аудит та SAF-T",
+    title: "SAF-T UA для SAP: ECC, S/4HANA, SAP Cloud та Business One",
+    cardTitle: "SAF-T UA для SAP: мапінг, трансформації, архітектура",
+    readingTime: "24 хв читання",
+    excerpt: "У SAP зазвичай є великий обсяг потрібних SAF-T даних, але вони часто розподілені між FI, MM, SD, AA та іншими модулями і потребують трансформації та enrichment. Розбираємо особливості ECC, S/4HANA, SAP Cloud і Business One.",
+    date: "8 вересня 2026",
+    isoDate: "2026-09-08",
+    service: ["saft"],
+    href: `${base}/blog/saft-ua-dlia-sap/`,
+  },
 ];
