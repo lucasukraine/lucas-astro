@@ -347,4 +347,15 @@ export const blogPosts = [
     service: ["audit"],
     href: `${base}/blog/audyt-zvitnosti-zi-staloho-rozvytku-ukraina/`,
   },
+  {
+    category: "Е-аудит та SAF-T",
+    title: "SAF-T UA для 1С: як сформувати стандартний аудиторський файл",
+    cardTitle: "SAF-T UA для 1С: мапінг, проблеми, архітектура",
+    readingTime: "20 хв читання",
+    excerpt: "У більшості конфігурацій 1С значна частина даних, необхідних для SAF-T UA, уже ведеться у потрібній деталізації. Пояснюємо, як побудувати мапінг, які проблеми виникають у типових і кастомних базах та чому SAF-T-рішення краще не прив'язувати жорстко до ERP.",
+    date: "8 вересня 2026",
+    isoDate: "2026-09-08",
+    service: ["saft"],
+    href: `${base}/blog/saft-ua-dlia-1c/`,
+  },
 ];
