@@ -1,7 +1,8 @@
 ---
 // ArticleTocCta.astro
-// Компактна CTA-картка одразу під змістом статті (.art-toc) — щоб питання
-// вартості не вимагало скролу до кінця статті (де стоїть ArticleCTA).
+// Компактна CTA-картка — за замовчуванням під змістом статті (.art-toc),
+// або (variant="hero") одразу під лідом у темному хіро-блоці .art-header —
+// щоб питання вартості не вимагало скролу до кінця статті (де ArticleCTA).
 //
 // ПРАВИЛО для prop `text` (кастомізація дозволена й заохочується, але):
 // питання має стосуватись ОСНОВНОЇ послуги LUCAS, під яку написана стаття
@@ -17,16 +18,18 @@ interface Props {
   text?: string;
   href?: string;
   linkText?: string;
+  variant?: 'default' | 'hero';
 }
 
 const {
   text = 'Потрібні послуги щодо цієї теми?',
   href = base + '/#contact',
   linkText = 'Запитати вартість',
+  variant = 'default',
 } = Astro.props;
 ---
 
-<aside class="art-toc-cta">
+<aside class={variant === 'hero' ? 'art-toc-cta art-toc-cta--hero' : 'art-toc-cta'}>
   <p class="art-toc-cta-text">{text}</p>
   <a class="btn cta-orange" href={href}>{linkText} <span class="arrow"></span></a>
 </aside>
