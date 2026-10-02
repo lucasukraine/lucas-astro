@@ -369,4 +369,15 @@ export const blogPosts = [
     service: ["saft"],
     href: `${base}/blog/saft-ua-dlia-sap/`,
   },
+  {
+    category: "Е-аудит та SAF-T",
+    title: "Типові технічні помилки SAF-T UA за переліком ДПС: огляд",
+    cardTitle: "Типові технічні помилки SAF-T UA: огляд переліку ДПС",
+    readingTime: "13 хв читання",
+    excerpt: "ДПС оприлюднила перелік типових технічних помилок автоматизованої перевірки SAF-T UA — 116 перевірок ідентифікації (FE) і 18 перевірок логічної узгодженості (RE). Розбираємо структуру переліку і що це означає для підготовки файлу.",
+    date: "2 жовтня 2026",
+    isoDate: "2026-10-02",
+    service: ["saft"],
+    href: `${base}/blog/saf-t-ua-typovi-tehnichni-pomylky/`,
+  },
 ];
