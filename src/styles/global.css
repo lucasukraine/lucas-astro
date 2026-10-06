@@ -105,7 +105,16 @@
 
 /* ── Base resets (потрібні для коректної роботи header) ─────── */
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: auto; -webkit-text-size-adjust: 100%; }
+html {
+  scroll-behavior: auto;
+  -webkit-text-size-adjust: 100%;
+  /* Корінь для page-level горизонтального скролу — саме html, не body.
+     overflow-x:hidden нижче на body сам по собі цього не стримує: якщо
+     якийсь дочірній елемент (напр. нестилізована <table> в статті) ширший
+     за viewport, скрол все одно з'являється на html. Тримати обидва. */
+  overflow-x: hidden;
+  max-width: 100%;
+}
 body {
   margin: 0;
   font-family: var(--body);
@@ -2049,6 +2058,47 @@ a.footer-contact-val:hover { color: #fff; }
     0 24px 48px -12px rgba(0,0,0,.55);
 }
 .art-toc-cta--hero .art-toc-cta-text { color: rgba(255,255,255,.88); }
+
+/* Таблиці в статтях — без цього <table> рендериться на свою природну
+   ширину і штовхає всю сторінку вшир на мобільному (горизонтальний скрол
+   усього сайту, не лише таблиці). overflow-x:auto тут робить скрол
+   локальним і контрольованим, замість випадкового page-level. */
+.art-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.art-table-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--body);
+  font-size: 15px;
+  line-height: 1.5;
+}
+.art-table-wrap th,
+.art-table-wrap td {
+  padding: 11px 16px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line-strong);
+  white-space: nowrap;
+}
+.art-table-wrap th {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+.art-table-wrap td {
+  color: var(--ink-soft);
+  white-space: normal;
+}
+.art-table-wrap tr:last-child td { border-bottom: none; }
+.art-table-wrap th:first-child,
+.art-table-wrap td:first-child { padding-left: 0; }
+.art-table-wrap th:last-child,
+.art-table-wrap td:last-child { padding-right: 0; }
 
 .art-prose {
   font-family: var(--body);
