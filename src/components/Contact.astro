@@ -86,8 +86,13 @@ const t = {
           <div class="hp-field">
             <input type="text" name="website" tabindex="-1" autocomplete="off" aria-label="Не заповнюйте це поле" aria-hidden="true">
           </div>
-          <!-- Прихована мітка сайту — щоб розрізняти запити з різних сайтів, які використовують цю саму форму/EmailJS-акаунт -->
-          <input type="hidden" name="site_name" value="LUCAS">
+          <!-- Cloudflare Turnstile — скрипт довантажується лінькво (див. нижче),
+               div уже в DOM від старту, щоб implicit-рендер підхопив його одразу
+               після завантаження api.js. site_name сервер визначає сам з Origin.
+               appearance="interaction-only" — офіційний режим Turnstile: віджет
+               не показує панель, якщо не потрібна реальна інтерактивна перевірка
+               (на відміну від приховування через CSS, яке порушує їхні ToS). -->
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAAFQLhQMdMLbFOG3j" data-theme="auto" data-appearance="interaction-only"></div>
           <button type="submit" class="residency-submit" id="lucas-submit">
             {t.submit} <span class="arrow"></span>
           </button>
@@ -151,29 +156,31 @@ const t = {
   var form = document.getElementById('lucas-contact-form');
   if (!form) return;
 
-  // ─── Динамічне завантаження EmailJS ──────────────────────────
+  var WORKER_URL = 'https://contact-form.ared8840.workers.dev/submit';
+
+  // ─── Динамічне завантаження Cloudflare Turnstile ──────────────
   // Defer until contact section enters viewport to avoid blocking first paint
-  var ejsLoaded = false;
+  var turnstileLoaded = false;
   var formLoadTime = 0;
-  function loadEmailJS() {
-    if (ejsLoaded) return;
+  function loadTurnstile() {
+    if (turnstileLoaded) return;
     var s = document.createElement('script');
-    s.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
-    s.onload = function () {
-      if (window.emailjs) { window.emailjs.init({ publicKey: 'iY16Y2CF5ffzdZCbh' }); ejsLoaded = true; }
-    };
-    s.onerror = function () { console.warn('[Contact] EmailJS не вдалось завантажити.'); };
+    s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+    s.async = true;
+    s.defer = true;
+    s.onload = function () { turnstileLoaded = true; };
+    s.onerror = function () { console.warn('[Contact] Turnstile не вдалось завантажити.'); };
     document.head.appendChild(s);
   }
   var contactSection = form.closest('section') || form;
   if ('IntersectionObserver' in window) {
     var _io = new IntersectionObserver(function(entries) {
-      if (entries[0].isIntersecting) { formLoadTime = Date.now(); loadEmailJS(); _io.disconnect(); }
+      if (entries[0].isIntersecting) { formLoadTime = Date.now(); loadTurnstile(); _io.disconnect(); }
     }, { rootMargin: '300px' });
     _io.observe(contactSection);
   } else {
     formLoadTime = Date.now();
-    loadEmailJS();
+    loadTurnstile();
   }
 
   // ─── Email reveal (lightweight, runs immediately) ────────────
@@ -310,15 +317,18 @@ const t = {
       return;
     }
 
-    // EmailJS guard
-    if (!window.emailjs || !ejsLoaded) {
-      var noEjs = document.createElement('p');
-      noEjs.style.cssText = 'color:rgba(255,92,31,.9);font-size:13px;margin-top:10px;font-family:var(--mono)';
-      noEjs.textContent = isEn
-        ? 'The sending service is still loading. Please try again or write to info@lucasua.com'
-        : 'Сервіс відправки ще завантажується. Спробуйте ще раз або напишіть на info@lucasua.com';
-      btn.parentNode.insertBefore(noEjs, btn.nextSibling);
-      setTimeout(function () { noEjs.remove(); }, 6000);
+    // Turnstile guard — токен з'являється в прихованому полі, яке сам
+    // віджет вставляє всередину .cf-turnstile після рендеру.
+    var tsInput = form.querySelector('[name="cf-turnstile-response"]');
+    var turnstileToken = tsInput ? tsInput.value : '';
+    if (!window.turnstile || !turnstileToken) {
+      var noTs = document.createElement('p');
+      noTs.style.cssText = 'color:rgba(255,92,31,.9);font-size:13px;margin-top:10px;font-family:var(--mono)';
+      noTs.textContent = isEn
+        ? 'Verification is still loading. Please try again in a moment.'
+        : 'Перевірка ще завантажується. Спробуйте ще раз за мить.';
+      btn.parentNode.insertBefore(noTs, btn.nextSibling);
+      setTimeout(function () { noTs.remove(); }, 6000);
       return;
     }
 
@@ -326,40 +336,56 @@ const t = {
     btn.disabled = true;
     btn.innerHTML = isEn ? 'Sending…' : 'Надсилається…';
 
-    window.emailjs.send('service_ocdfpq8', 'template_wz7w36q', {
-      from_name: form.querySelector('[name="name"]').value.trim(),
-      reply_to:  form.querySelector('[name="email"]').value.trim(),
-      phone:     form.querySelector('[name="phone"]').value.trim(),
-      message:   form.querySelector('[name="message"]').value.trim(),
-      site:      window.location.hostname,
-      site_name: form.querySelector('[name="site_name"]').value.trim(),
-    }).then(function () {
-      btn.innerHTML        = isEn ? '✓ Request sent' : '✓ Запит надіслано';
-      btn.style.background = 'var(--orange)';
-      btn.style.borderColor= 'var(--orange)';
-      btn.style.color      = '#fff';
-      form.reset();
-      form.querySelectorAll('.field-err-msg').forEach(function (el) { el.remove(); });
-      if (typeof gtag === 'function') {
-        gtag('event', 'form_submit', { event_category: 'contact', event_label: 'lucas_contact_form' });
-      }
-      // Google Ads conversion + GA4 generate_lead — see src/analytics/adsConversion.js.
-      // Guarded: never throw if the module script failed to load (ad blocker etc.).
-      if (typeof window.__lucasTrackLeadConversion === 'function') {
-        window.__lucasTrackLeadConversion({ formId: 'lucas_contact_form' });
-      }
-    }).catch(function () {
-      btn.disabled  = false;
-      submitted     = false;
-      btn.innerHTML = (isEn ? 'Send request' : 'Надіслати запит') + ' <span class="arrow"></span>';
-      var errMsg = document.createElement('p');
-      errMsg.style.cssText = 'color:rgba(255,92,31,.9);font-size:13px;margin-top:10px;font-family:var(--mono)';
-      errMsg.textContent   = isEn
-        ? 'Send error. Please try again or write to info@lucasua.com'
-        : 'Помилка відправки. Спробуйте ще раз або напишіть на info@lucasua.com';
-      btn.parentNode.insertBefore(errMsg, btn.nextSibling);
-      setTimeout(function () { errMsg.remove(); }, 6000);
-    });
+    fetch(WORKER_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name:      form.querySelector('[name="name"]').value.trim(),
+        email:     form.querySelector('[name="email"]').value.trim(),
+        phone:     form.querySelector('[name="phone"]').value.trim(),
+        message:   form.querySelector('[name="message"]').value.trim(),
+        website:   form.querySelector('[name="website"]').value,
+        openedAt:  formLoadTime,
+        turnstileToken: turnstileToken,
+      }),
+    })
+      .then(function (res) {
+        return res.json().catch(function () { return {}; });
+      })
+      .then(function (data) {
+        if (!data || data.ok !== true) {
+          throw new Error((data && data.error) || 'send_failed');
+        }
+        btn.innerHTML        = isEn ? '✓ Request sent' : '✓ Запит надіслано';
+        btn.style.background = 'var(--orange)';
+        btn.style.borderColor= 'var(--orange)';
+        btn.style.color      = '#fff';
+        form.reset();
+        form.querySelectorAll('.field-err-msg').forEach(function (el) { el.remove(); });
+        if (typeof gtag === 'function') {
+          gtag('event', 'form_submit', { event_category: 'contact', event_label: 'lucas_contact_form' });
+        }
+        // Google Ads conversion + GA4 generate_lead — see src/analytics/adsConversion.js.
+        // Guarded: never throw if the module script failed to load (ad blocker etc.).
+        if (typeof window.__lucasTrackLeadConversion === 'function') {
+          window.__lucasTrackLeadConversion({ formId: 'lucas_contact_form' });
+        }
+      })
+      .catch(function () {
+        btn.disabled  = false;
+        submitted     = false;
+        btn.innerHTML = (isEn ? 'Send request' : 'Надіслати запит') + ' <span class="arrow"></span>';
+        if (window.turnstile) {
+          try { window.turnstile.reset(); } catch (resetErr) {}
+        }
+        var errMsg = document.createElement('p');
+        errMsg.style.cssText = 'color:rgba(255,92,31,.9);font-size:13px;margin-top:10px;font-family:var(--mono)';
+        errMsg.textContent   = isEn
+          ? 'Send error. Please try again or write to info@lucasua.com'
+          : 'Помилка відправки. Спробуйте ще раз або напишіть на info@lucasua.com';
+        btn.parentNode.insertBefore(errMsg, btn.nextSibling);
+        setTimeout(function () { errMsg.remove(); }, 6000);
+      });
   });
   } // end initForm
 

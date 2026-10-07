@@ -214,7 +214,10 @@ export default {
         },
         env.EMAILJS_PRIVATE_KEY
       );
-    } catch {
+    } catch (err) {
+      // Лишаємо в логах (wrangler tail) — корисно для діагностики, якщо
+      // EmailJS колись знову поверне помилку (квота, зміна шаблону тощо).
+      console.error('EmailJS send failed:', err && err.message);
       return json({ ok: false, error: 'send_failed' }, 502, origin);
     }
 
