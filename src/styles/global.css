@@ -109,9 +109,13 @@ html {
   scroll-behavior: auto;
   -webkit-text-size-adjust: 100%;
   /* Корінь для page-level горизонтального скролу — саме html, не body.
-     overflow-x:hidden нижче на body сам по собі цього не стримує: якщо
-     якийсь дочірній елемент (напр. нестилізована <table> в статті) ширший
-     за viewport, скрол все одно з'являється на html. Тримати обидва. */
+     ВАЖЛИВО: overflow-x:hidden має стояти ТІЛЬКИ тут, не на body теж.
+     Якщо задати його на обох — body стає власним scroll-контейнером
+     (друга вісь автоматично рахується як auto), і будь-який нащадок з
+     position:sticky прив'язується до body замість viewport. Body при
+     цьому сам ніколи не скролиться (скролиться html/viewport), тому
+     sticky-елементи просто перестають прилипати. Це реально ламало
+     sticky-колонку послуг на головній — не повторювати цю помилку. */
   overflow-x: hidden;
   max-width: 100%;
 }
@@ -124,7 +128,6 @@ body {
   background: var(--warm);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
 }
 a { color: inherit; text-decoration: none; }
 img, svg { display: block; max-width: 100%; }
