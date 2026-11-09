@@ -98,7 +98,7 @@
 
 | Категорія | Статей | Основні статті |
 |---|---|---|
-| Аудит та звітність | 12 | `audyt-shcho-tse-take`, `obovyazkovyi-audyt-ukraina-2025` |
+| Аудит, облік та звітність | 12 | `audyt-shcho-tse-take`, `obovyazkovyi-audyt-ukraina-2025` |
 | Е-аудит та SAF-T | 9 | `saf-t-ukraina-povny-gayd`, хаби `saft-ua-dlia-1c` і `saft-ua-dlia-sap` |
 | Трансфертне ціноутворення | 8 | `transfertne-tsinoutvorennia-2026` |
 | ERP та облік | 6 | `zaborona-1c-2026`, `mihratsiya-z-1c-na-odoo` |
