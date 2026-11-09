@@ -44,6 +44,7 @@ seo-specialist → coder → tester
 ```
 seo-specialist (ключові слова) → content-maker → fact-checker → reviewer
 ```
+Перед роботою над статтею прочитай [docs/content/article-brief.md](docs/content/article-brief.md): будова статті, що змінюється при додаванні, уроки фактчеку й SEO.
 
 ### Повний аудит сайту
 ```
