@@ -211,6 +211,11 @@ export default {
           message: message.trim(),
           site: new URL(origin).hostname,
           site_name: siteConfig.site_name,
+          // Діагностика спаму — ті самі поля, що й saf-t-website шле в той
+          // самий EmailJS-шаблон (page/fill_s/ua), інакше вони порожні в листі.
+          page: String(body.page || ''),
+          fill_s: openedAt ? Math.round((Date.now() - openedAt) / 1000) : '',
+          ua: request.headers.get('User-Agent') || '',
         },
         env.EMAILJS_PRIVATE_KEY
       );
