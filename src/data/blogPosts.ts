@@ -128,7 +128,7 @@ export const blogPosts = [
     href: `${base}/blog/metody-transfertnoho-tsinoutvorennia/`,
   },
   {
-    category: "Аудит, облік та звітність",
+    category: "Аудит та звітність",
     title: "IFRS 1: перший перехід на МСФЗ — покрокова інструкція",
     cardTitle: "IFRS 1: перший перехід на МСФЗ",
     readingTime: "13 хв читання",
@@ -139,7 +139,7 @@ export const blogPosts = [
     href: `${base}/blog/ifrs-1-pershyy-perehid-msfz/`,
   },
   {
-    category: "Аудит, облік та звітність",
+    category: "Аудит та звітність",
     title: "Аудит фінансової звітності в Україні: що перевіряють і як це відбувається",
     cardTitle: "Аудит фінансової звітності в Україні",
     readingTime: "13 хв читання",
@@ -150,7 +150,7 @@ export const blogPosts = [
     href: `${base}/blog/audyt-finansovoi-zvitnosti-ukraina/`,
   },
   {
-    category: "Аудит, облік та звітність",
+    category: "Аудит та звітність",
     title: "Фінансова звітність за МСФЗ в Україні: хто зобов'язаний і як підготувати",
     cardTitle: "Фінансова звітність за МСФЗ в Україні",
     readingTime: "15 хв читання",
@@ -161,7 +161,7 @@ export const blogPosts = [
     href: `${base}/blog/finansova-zvitnist-msfz-ukraina/`,
   },
   {
-    category: "Аудит, облік та звітність",
+    category: "Аудит та звітність",
     title: "Обов'язковий аудит в Україні: хто зобов'язаний і що буде за порушення",
     cardTitle: "Обов'язковий аудит в Україні 2026",
     readingTime: "14 хв читання",
@@ -172,7 +172,7 @@ export const blogPosts = [
     href: `${base}/blog/obovyazkovyi-audyt-ukraina-2025/`,
   },
   {
-    category: "Аудит, облік та звітність",
+    category: "Аудит та звітність",
     title: "Підготовка до аудиту фінансової звітності: чеклист і типові помилки",
     cardTitle: "Підготовка до аудиту: чеклист",
     readingTime: "14 хв читання",
@@ -227,7 +227,7 @@ export const blogPosts = [
     href: `${base}/blog/saf-t-readiness-assessment/`,
   },
   {
-    category: "Аудит, облік та звітність",
+    category: "Аудит та звітність",
     title: "Вартість аудиту в Україні у 2026 році: реальні ціни та методика оцінки",
     cardTitle: "Вартість аудиту в Україні у 2026 році",
     readingTime: "12 хв читання",
@@ -238,7 +238,7 @@ export const blogPosts = [
     href: `${base}/blog/vartist-audytu-v-ukraini-2026/`,
   },
   {
-    category: "Аудит, облік та звітність",
+    category: "Аудит та звітність",
     title: "Обов'язковий аудит великих підприємств та інших ПСІ у 2026 році: хто зобов'язаний",
     cardTitle: "Аудит великих підприємств та ПСІ у 2026 році",
     readingTime: "14 хв читання",
@@ -249,7 +249,7 @@ export const blogPosts = [
     href: `${base}/blog/audyt-velykykh-pidpryiemstv-ta-psi-2026/`,
   },
   {
-    category: "Аудит, облік та звітність",
+    category: "Аудит та звітність",
     title: "Обов'язковий аудит середніх підприємств у 2026 році: критерії, строки та вимоги",
     cardTitle: "Аудит середніх підприємств у 2026 році",
     readingTime: "12 хв читання",
@@ -293,7 +293,7 @@ export const blogPosts = [
     href: `${base}/blog/saf-t-ua-2027-platnyky-pdv/`,
   },
   {
-    category: "Аудит, облік та звітність",
+    category: "Аудит та звітність",
     title: "Чи можна відкласти публікацію аудійованої фінансової звітності до кінця воєнного стану",
     cardTitle: "Відтермінування публікації звітності: чи можна",
     readingTime: "14 хв читання",
@@ -304,7 +304,7 @@ export const blogPosts = [
     href: `${base}/blog/vidterminuvannia-publikatsii-audytovanoi-finansovoi-zvitnosti-voiennyi-stan/`,
   },
   {
-    category: "Аудит, облік та звітність",
+    category: "Аудит та звітність",
     title: "Аудит: що це таке, навіщо потрібен, які бувають види та як проходить аудит підприємства",
     cardTitle: "Аудит: повний практичний довідник",
     readingTime: "24 хв читання",
@@ -381,7 +381,7 @@ export const blogPosts = [
     href: `${base}/blog/saf-t-ua-typovi-tehnichni-pomylky/`,
   },
   {
-    category: "Аудит, облік та звітність",
+    category: "Аудит та звітність",
     title: "Аудиторська фірма: що це таке, вимоги, регулювання та відповідальність",
     cardTitle: "Аудиторська фірма: вимоги, регулювання, відповідальність",
     readingTime: "16 хв читання",
@@ -392,7 +392,7 @@ export const blogPosts = [
     href: `${base}/blog/audytorska-firma-shcho-tse-take/`,
   },
   {
-    category: "Аудит, облік та звітність",
+    category: "Аудит та звітність",
     title: "Аудиторські послуги в Україні: що це таке, стандарти, регулювання та сумісність з іншими послугами",
     cardTitle: "Аудиторські послуги: види і сумісність",
     readingTime: "17 хв читання",
@@ -403,7 +403,7 @@ export const blogPosts = [
     href: `${base}/blog/audytorski-poslugy-shcho-tse-take/`,
   },
   {
-    category: "Аудит, облік та звітність",
+    category: "ERP та облік",
     title: "Ведення ФОП у 2026 році: повний практичний гайд",
     cardTitle: "Ведення ФОП у 2026 році",
     readingTime: "27 хв читання",
