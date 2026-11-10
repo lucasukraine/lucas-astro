@@ -121,6 +121,22 @@ if (lang === 'en') {
       // conversion event (fired only on confirmed form-submit success).
       gtag('config', 'AW-11119473489');
 
+      // Першого доторку з реклами — gclid/utm_* з'являються лише в URL
+      // сторінки приземлення, тож зберігаємо раз за сесію, інакше інфо
+      // загубиться, якщо форму заповнять уже на іншій сторінці сайту.
+      try {
+        if (!sessionStorage.getItem('lucas_ad_src')) {
+          var qs = new URLSearchParams(window.location.search);
+          var gclid = qs.get('gclid');
+          var utmSource = qs.get('utm_source');
+          var utmMedium = qs.get('utm_medium');
+          var adSrc = gclid
+            ? 'Google Ads (gclid)'
+            : (utmSource ? 'utm: ' + utmSource + (utmMedium ? '/' + utmMedium : '') : '');
+          if (adSrc) sessionStorage.setItem('lucas_ad_src', adSrc);
+        }
+      } catch (e) {}
+
       function loadGtagScript() {
         var s = document.createElement('script');
         s.async = true;

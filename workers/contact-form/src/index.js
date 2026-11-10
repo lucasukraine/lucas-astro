@@ -216,6 +216,9 @@ export default {
           page: String(body.page || ''),
           fill_s: openedAt ? Math.round((Date.now() - openedAt) / 1000) : '',
           ua: request.headers.get('User-Agent') || '',
+          // Джерело заходу (gclid/utm_* з першої сторінки сесії, див.
+          // BaseLayout.astro) — порожнє означає органіку/прямий захід.
+          ad_source: String(body.adSource || '').slice(0, 60),
         },
         env.EMAILJS_PRIVATE_KEY
       );
