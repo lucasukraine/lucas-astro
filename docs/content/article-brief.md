@@ -95,17 +95,17 @@
 - `tax.gov.ua` блокує автоматичні запити. Обхід описано в пам'яті проєкту.
 - Уже перевірений факт не пом'якшувати без нового джерела, інакше він розмивається (`6503240`).
 
-## 8. Карта контенту (37 статей на 2026-11-09)
+## 8. Карта контенту (38 статей на 2026-11-10)
 
 | Категорія | Статей | Основні статті |
 |---|---|---|
 | Аудит та звітність | 12 | `audyt-shcho-tse-take`, `obovyazkovyi-audyt-ukraina-2025` |
-| Е-аудит та SAF-T | 9 | `saf-t-ukraina-povny-gayd`, хаби `saft-ua-dlia-1c` і `saft-ua-dlia-sap` |
+| Е-аудит та SAF-T | 10 | `saf-t-ukraina-povny-gayd`, хаби `saft-ua-dlia-1c` і `saft-ua-dlia-sap`, `reiestr-vpp-2027-saf-t` |
 | Трансфертне ціноутворення | 8 | `transfertne-tsinoutvorennia-2026` |
 | ERP та облік | 7 | `zaborona-1c-2026`, `mihratsiya-z-1c-na-odoo`, `vedennia-fop` |
 | Аудит та звітність зі сталого розвитку | 1 | `audyt-zvitnosti-zi-staloho-rozvytku-ukraina` |
 
-Повний перелік: `src/data/blogPosts.ts`. Найновіша стаття має дату 2026-11-09.
+Повний перелік: `src/data/blogPosts.ts`. Найновіша стаття має дату 2026-11-10.
 
 ## 9. Відкриті питання
 
