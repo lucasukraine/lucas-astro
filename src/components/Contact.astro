@@ -273,8 +273,10 @@ const t = {
   }
   function getAdSource() {
     try {
-      if (getCookie('_gcl_aw')) return 'Google Ads (gclid cookie)';
-      return sessionStorage.getItem('lucas_ad_src') || '';
+      var base = getCookie('_gcl_aw') ? 'Google Ads (gclid cookie)' : (sessionStorage.getItem('lucas_ad_src') || '');
+      var campaign = sessionStorage.getItem('lucas_utm_campaign') || '';
+      if (base && campaign) return base + ' · ' + campaign;
+      return campaign || base;
     } catch (e) { return ''; }
   }
   function hasSpamPhrases(text) {

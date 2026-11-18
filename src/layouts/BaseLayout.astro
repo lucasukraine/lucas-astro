@@ -134,6 +134,13 @@ if (lang === 'en') {
             ? 'Google Ads (gclid)'
             : (utmSource ? 'utm: ' + utmSource + (utmMedium ? '/' + utmMedium : '') : '');
           if (adSrc) sessionStorage.setItem('lucas_ad_src', adSrc);
+          // utm_campaign — додається суфіксом кінцевої URL-адреси в налаштуваннях
+          // кампанії Google Ads (окремо по кожній), щоб розрізняти кампанії,
+          // коли на сайті декілька таргетують ту саму послугу (напр. Pmax + Пошук).
+          var utmCampaign = qs.get('utm_campaign');
+          if (utmCampaign && !sessionStorage.getItem('lucas_utm_campaign')) {
+            sessionStorage.setItem('lucas_utm_campaign', utmCampaign);
+          }
         }
       } catch (e) {}
 
