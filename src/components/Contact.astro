@@ -264,6 +264,19 @@ const t = {
     return parts.length === 2 && BLOCKED_DOMAINS.indexOf(parts[1].toLowerCase()) !== -1;
   }
   function containsUrl(text) { return /https?:\/\/|www\./i.test(text); }
+  // _gcl_aw — власний first-party cookie Google Ads (ставить сам gtag.js,
+  // живе до 90 днів), тому надійніший за наш sessionStorage: ловить і клік,
+  // що стався в іншій вкладці/сесії задовго до відправки форми.
+  function getCookie(name) {
+    var m = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
+    return m ? decodeURIComponent(m[1]) : '';
+  }
+  function getAdSource() {
+    try {
+      if (getCookie('_gcl_aw')) return 'Google Ads (gclid cookie)';
+      return sessionStorage.getItem('lucas_ad_src') || '';
+    } catch (e) { return ''; }
+  }
   function hasSpamPhrases(text) {
     var lower = text.toLowerCase();
     for (var i = 0; i < SPAM_PHRASES.length; i++) {
@@ -347,7 +360,7 @@ const t = {
         website:   form.querySelector('[name="website"]').value,
         openedAt:  formLoadTime,
         page:      window.location.pathname,
-        adSource:  (function () { try { return sessionStorage.getItem('lucas_ad_src') || ''; } catch (e) { return ''; } })(),
+        adSource:  getAdSource(),
         turnstileToken: turnstileToken,
       }),
     })
